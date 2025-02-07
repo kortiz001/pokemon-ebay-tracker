@@ -1,0 +1,45 @@
+name: CDK Bootstrap
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Assume role with OIDC
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::870927831149:role/kortiz-github-repository
+          role-session-name: GitHubActionsSession
+          aws-region: us-east-1
+
+      - name: Install Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install CDK
+        run: |
+          npm install -g aws-cdk
+          cdk --version
+
+      - name: Initialize virtualenv
+        run: |
+          python -m venv cdk/.venv
+          source cdk/.venv/bin/activate
+          python -m pip install --upgrade pip
+          python -m pip install -r cdk/requirements.txt
+
+      - name: Bootstrap CDK
+        run: |
+          source cdk/.venv/bin/activate
+          cd cdk
+          cdk bootstrap
