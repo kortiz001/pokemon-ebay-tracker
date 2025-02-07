@@ -3,20 +3,20 @@ import os
 
 import aws_cdk as cdk
 
-from cdk.vpc_stack import PokemonVpcStack
-from cdk.pokemon_tracker_stack import PokemonTrackerStack
+from cdk.pokemon_tracker_vpc_stack import PokemonTrackerVpcStack
+from cdk.pokemon_tracker_app_stack import PokemonTrackerAppStack
 
 
 app = cdk.App()
-PokemonVpcStack(
+PokemonTrackerVpcStack(
     app, 
     "pokemon-tracker-vpc-cdk",
     env=cdk.Environment(account=os.getenv('CDK_DEFAULT_ACCOUNT'), region=os.getenv('CDK_DEFAULT_REGION')),
 )
 
-PokemonTrackerStack(
+PokemonTrackerAppStack(
     app, 
-    "pokemon-tracker-vpc-cdk",
+    "pokemon-tracker-app-cdk",
     env=cdk.Environment(account=os.getenv('CDK_DEFAULT_ACCOUNT'), region=os.getenv('CDK_DEFAULT_REGION')),
 )
 
