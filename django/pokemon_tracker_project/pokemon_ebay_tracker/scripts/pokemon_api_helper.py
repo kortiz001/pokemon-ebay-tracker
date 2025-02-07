@@ -10,9 +10,9 @@ def fetch_pokemon_cards():
     query_end_time = (datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(hours=1)).strftime('%Y-%m-%dT%H:%M:%S') + 'Z'
 
     sets = [
-        {"name": "151", "code": "sv3pt5"},
-        {"name": "Temporal Forces", "code": "sv5"},
-        {"name": "Paldea Evolved", "code": "sv2"},
+        # {"name": "151", "code": "sv3pt5"},
+        # {"name": "Temporal Forces", "code": "sv5"},
+        # {"name": "Paldea Evolved", "code": "sv2"},
         {"name": "Crown Zenith Galarian Gallery", "code": "swsh12pt5gg"},
         {"name": "Evolving Skies", "code": "swsh7"},
         {"name": "Crown Zenith", "code": "swsh12pt5"},

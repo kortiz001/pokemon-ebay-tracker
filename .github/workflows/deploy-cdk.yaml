@@ -40,5 +40,6 @@ jobs:
 
       - name: Deploy CDK
         run: |
+          source cdk/.venv/bin/activate
           cd cdk
           cdk deploy
