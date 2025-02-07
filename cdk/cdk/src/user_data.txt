@@ -1,1 +1,17 @@
-echo "Hello World!"
+sudo yum update -y
+sudo yum install python3 -y
+sudo yum install python3-pip -y
+
+mkdir /django
+touch /django/django.log
+
+aws s3 cp --recursive s3://pokemon-tracker-s3-bucket/django /django
+
+cd /django/pokemon_tracker_project
+
+python3 -m venv venv
+source venv/bin/activate
+pip install django==1.11.29 pokemontcgsdk requests
+pip install --upgrade urllib3==1.26.15
+
+nohup python3 manage.py runserver 0.0.0.0:8000 &> /django/django.log &

@@ -62,7 +62,7 @@ class PokemonTrackerAppStack(Stack):
             vpc=vpc,
             vpc_subnets=ec2.SubnetSelection(subnet_type=ec2.SubnetType.PUBLIC),
             security_group=security_group,
-            user_data=ec2.UserData.for_linux(),
+            user_data=user_data,
         )
         self.ec2_instance = ec2_instance
 
