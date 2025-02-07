@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mt-4">Pokemon Cards on eBay</h1>
+    <div class="row">
+        {% for card in cards_info %}
+        <div class="card col-12 col-sm-12 col-md-4">
+            <img src="{{ card.image_url }}" alt="Card Image" class="card-img-top d-block mx-auto" style="width: 80%; height: auto;">
+            <div class="card-body">
+                <h5 class="card-title">{{ card.card_name }}</h5>
+                <p class="card-text">
+                    <strong>Time Left:</strong> {{ card.time_left }}<br>
+                    <strong>Current Bid:</strong> ${{ card.current_bid_price }}<br>
+                    <strong>Market Value:</strong> ${{ card.market_value }}
+                </p>
+                <a href="{{ card.view_item_url }}" class="btn btn-primary" target="_blank">View on eBay</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
