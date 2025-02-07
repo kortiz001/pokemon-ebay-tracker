@@ -53,18 +53,18 @@ class PokemonTrackerAppStack(Stack):
         with open(str(user_data_file), "r") as f:
             user_data.add_commands(f.read())
 
-        # ec2_instance = ec2.Instance(
-        #     self, 
-        #     "pokemon_tracker_ec2_instance",
-        #     instance_type=ec2.InstanceType("t2.nano"),
-        #     machine_image=ec2.AmazonLinuxImage(generation=ec2.AmazonLinuxGeneration.AMAZON_LINUX_2),
-        #     role=iam_role,
-        #     vpc=vpc,
-        #     vpc_subnets=ec2.SubnetSelection(subnet_type=ec2.SubnetType.PUBLIC),
-        #     security_group=security_group,
-        #     user_data=ec2.UserData.for_linux(),
-        # )
-        # self.ec2_instance = ec2_instance
+        ec2_instance = ec2.Instance(
+            self, 
+            "pokemon_tracker_ec2_instance",
+            instance_type=ec2.InstanceType("t2.nano"),
+            machine_image=ec2.AmazonLinuxImage(generation=ec2.AmazonLinuxGeneration.AMAZON_LINUX_2),
+            role=iam_role,
+            vpc=vpc,
+            vpc_subnets=ec2.SubnetSelection(subnet_type=ec2.SubnetType.PUBLIC),
+            security_group=security_group,
+            user_data=ec2.UserData.for_linux(),
+        )
+        self.ec2_instance = ec2_instance
 
         s3_bucket = s3.Bucket(
             self,
