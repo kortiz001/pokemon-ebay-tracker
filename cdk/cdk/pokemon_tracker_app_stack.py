@@ -1,4 +1,5 @@
 from aws_cdk import (
+    aws_autoscaling as autoscaling,
     aws_ec2 as ec2,
     aws_iam as iam,
     aws_s3 as s3,
@@ -53,18 +54,30 @@ class PokemonTrackerAppStack(Stack):
         with open(str(user_data_file), "r") as f:
             user_data.add_commands(f.read())
 
-        ec2_instance = ec2.Instance(
-            self, 
-            "pokemon_tracker_ec2_instance",
+        ec2_lt = ec2.LaunchTemplate(
+            self,
+            "pokemon_tracker_ec2_lt",
             instance_type=ec2.InstanceType("t2.nano"),
-            machine_image=ec2.AmazonLinuxImage(generation=ec2.AmazonLinuxGeneration.AMAZON_LINUX_2),
+            machine_image=ec2.MachineImage.latest_amazon_linux(),
             role=iam_role,
             vpc=vpc,
             vpc_subnets=ec2.SubnetSelection(subnet_type=ec2.SubnetType.PUBLIC),
             security_group=security_group,
             user_data=user_data,
+            spot_options=ec2.LaunchTemplateSpotOptions(
+                max_price=0.01,
+            )
         )
-        self.ec2_instance = ec2_instance
+        self.ec2_lt = ec2_lt
+
+        asg = autoscaling.AutoScalingGroup(
+            self, 
+            "pokemon_tracker_ec2_asg",
+            launch_template=ec2_lt,
+            min_capacity=1,
+            max_capacity=1,
+        )
+        self.asg = asg
 
         s3_bucket = s3.Bucket(
             self,
