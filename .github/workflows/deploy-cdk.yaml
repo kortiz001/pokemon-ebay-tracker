@@ -1,0 +1,23 @@
+name: CDK Deploy
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Assume role with OIDC
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          role-arn: arn:aws:iam::870927831149:role/kortiz-github-repository
+          role-session-name: GitHubActionsSession
+          aws-region: us-east-1
+
+      - name: Run AWS CLI command
+        run: |
+          aws sts get-caller-identity
