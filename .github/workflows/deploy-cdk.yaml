@@ -21,6 +21,12 @@ jobs:
           role-session-name: GitHubActionsSession
           aws-region: us-east-1
 
-      - name: Run AWS CLI command
+      - name: Initialize CDK
         run: |
-          aws sts get-caller-identity
+          source cdk/.venv/bin/activate
+          python -m pip install -r cdk/requirements.txt
+
+      - name: Deploy CDK
+        run: |
+          cd cdk
+          cdk deploy
