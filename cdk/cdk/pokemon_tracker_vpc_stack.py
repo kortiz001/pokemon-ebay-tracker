@@ -21,7 +21,7 @@ class PokemonTrackerVpcStack(Stack):
                 ),
             ],
             max_azs=1,
-            cidr="237.84.2.178/16",
+            cidr="100.0.0.0/16",
             nat_gateways=0
         )
         self.vpc = vpc
