@@ -82,7 +82,7 @@ class PokemonTrackerAppStack(Stack):
             assumed_by=iam.ServicePrincipal("lambda.amazonaws.com"),
             role_name="pokemon-tracker-s3-deploy-role",
             managed_policies=[
-                iam.ManagedPolicy.from_aws_managed_policy_name("AWSLambdaBasicExecutionRole"),
+                iam.ManagedPolicy.from_aws_managed_policy_name("service-role/AWSLambdaBasicExecutionRole"),
                 iam.ManagedPolicy.from_aws_managed_policy_name("AmazonS3FullAccess")
             ]
         )
