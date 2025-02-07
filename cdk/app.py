@@ -18,7 +18,6 @@ PokemonTrackerAppStack(
     app, 
     "pokemon-tracker-app-cdk",
     env=cdk.Environment(account=os.getenv('CDK_DEFAULT_ACCOUNT'), region=os.getenv('CDK_DEFAULT_REGION')),
-    vpc=pokemon_tracker_vpc_stack.vpc,
 )
 
 app.synth()

@@ -6,8 +6,14 @@ from constructs import Construct
 
 class PokemonTrackerAppStack(Stack):
 
-    def __init__(self, scope: Construct, construct_id: str, env, vpc, **kwargs) -> None:
+    def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
+
+        vpc = ec2.Vpc.from_lookup(
+            self,
+            "pokemon_tracker_vpc", 
+            vpc_name="pokemon-tracker-vpc" 
+        )
 
         security_group = ec2.SecurityGroup(
             self,
