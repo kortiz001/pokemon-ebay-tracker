@@ -26,7 +26,7 @@ class PokemonTrackerAppStack(Stack):
             self, 
             "pokemon_tracker_ec2_instance",
             instance_type=ec2.InstanceType("t2.nano"),
-            machine_image=ec2.AmazonLinuxImage(generation=ec2.AmazonLinuxGeneration.AMAZON_LINUX_23),
+            machine_image=ec2.AmazonLinuxImage(generation=ec2.AmazonLinuxGeneration.AMAZON_LINUX_2),
             vpc=vpc,
             vpc_subnets=ec2.SubnetSelection(subnet_type=ec2.SubnetType.PUBLIC),
             security_group=security_group
