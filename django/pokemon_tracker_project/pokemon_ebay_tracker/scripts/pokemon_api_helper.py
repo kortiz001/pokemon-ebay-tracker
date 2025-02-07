@@ -12,12 +12,12 @@ def fetch_pokemon_cards():
     sets = [
         {"name": "151", "code": "sv3pt5"},
         {"name": "Temporal Forces", "code": "sv5"},
-        # {"name": "Paldea Evolved", "code": "sv2"},
-        # {"name": "Crown Zenith Galarian Gallery", "code": "swsh12pt5gg"},
-        # {"name": "Evolving Skies", "code": "swsh7"},
-        # {"name": "Crown Zenith", "code": "swsh12pt5"},
-        # {"name": "Surging Sparks", "code": "sv8"},
-        # {"name": "Prismatic Evolutions", "code": "sv8pt5"}
+        {"name": "Paldea Evolved", "code": "sv2"},
+        {"name": "Crown Zenith Galarian Gallery", "code": "swsh12pt5gg"},
+        {"name": "Evolving Skies", "code": "swsh7"},
+        {"name": "Crown Zenith", "code": "swsh12pt5"},
+        {"name": "Surging Sparks", "code": "sv8"},
+        {"name": "Prismatic Evolutions", "code": "sv8pt5"}
     ]
 
     cards_info = []

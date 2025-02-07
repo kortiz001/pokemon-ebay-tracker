@@ -21,9 +21,21 @@ jobs:
           role-session-name: GitHubActionsSession
           aws-region: us-east-1
 
-      - name: Initialize CDK
+      - name: Install Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install CDK
         run: |
+          npm install -g aws-cdk
+          cdk --version
+
+      - name: Initialize virtualenv
+        run: |
+          python -m venv cdk/.venv
           source cdk/.venv/bin/activate
+          python -m pip install --upgrade pip
           python -m pip install -r cdk/requirements.txt
 
       - name: Deploy CDK
