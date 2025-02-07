@@ -1,23 +1,71 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container">
-    <h1 class="mt-4">Pokemon Cards on eBay</h1>
+<!-- Container where data will be displayed -->
+<div class="container cards pt-4">
     <div class="row">
-        {% for card in cards_info %}
-        <div class="card col-12 col-sm-12 col-md-4">
-            <img src="{{ card.image_url }}" alt="Card Image" class="card-img-top d-block mx-auto" style="width: 80%; height: auto;">
-            <div class="card-body">
-                <h5 class="card-title">{{ card.card_name }}</h5>
-                <p class="card-text">
-                    <strong>Time Left:</strong> {{ card.time_left }}<br>
-                    <strong>Current Bid:</strong> ${{ card.current_bid_price }}<br>
-                    <strong>Market Value:</strong> ${{ card.market_value }}
-                </p>
-                <a href="{{ card.view_item_url }}" class="btn btn-primary" target="_blank">View on eBay</a>
-            </div>
+        <div class="col-12">
+            <h1 class="mt-4 mb-2">Pokemon Cards on eBay</h1>
         </div>
-        {% endfor %}
+        <div class="col-12 d-flex justify-content-between align-items-center d-md-flex d-block">
+            <div class="form-group">
+                <label for="ebay-api-key">Enter eBay API key:</label>
+                <input type="text" id="ebay-api-key" placeholder="Enter eBay API key">
+            </div>
+            <button id="loadDataBtn">Load Data</button>
+        </div>
     </div>
+    <div class="row card"></div>
 </div>
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        $(document).ready(function() {
+            // This function runs when the page is loaded and the button is clicked
+            $('#loadDataBtn').click(function() {
+
+                // Get the value of the eBay API key input field
+                var ebayApiKey = $('#ebay-api-key').val();
+
+                // Show the loading icon
+                $('.row.card').html('<i class="fas fa-spinner fa-spin"></i>');
+
+                $.ajax({
+                    url: '/load_data/?ebay_api_key=' + encodeURIComponent(ebayApiKey),
+                    method: 'GET',
+                    dataType: 'json',  // Specify the data type as JSON
+                    success: function(response) {
+                        var cardsInfo = response.cards_info;
+                        var dataList = '<div class="row g-3">';
+                        cardsInfo.forEach(function(item) {
+                            dataList += `
+                                <div class="card-item col-12 col-sm-12 col-md-4 col-lg-4">
+                                    <img src="${item.image_url}" alt="Card Image" class="card-img-top d-block mx-auto" style="width: 80%; height: auto;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">${item.card_name}</h5>
+                                        <p class="card-text">
+                                            <strong>Time Left:</strong> ${item.time_left}<br>
+                                            <strong>Current Bid:</strong> $${item.current_bid_price}<br>
+                                            <strong>Market Value:</strong> $${item.market_value}
+                                        </p>
+                                        <a href="${item.view_item_url}" class="btn btn-primary" target="_blank">View on eBay</a>
+                                    </div>
+                                </div>
+                            `;
+                        });
+                        dataList += '</div>';
+                        $('.row.card').html(dataList);
+                    },
+                    error: function(xhr, status, error) {
+                        alert('An error occurred: ' + error);
+                    }
+                });
+            });
+        });
+    </script>
+
+    <!-- AJAX Request Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+
 {% endblock %}
