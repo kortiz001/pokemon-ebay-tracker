@@ -57,14 +57,11 @@ class PokemonTrackerAppStack(Stack):
         ec2_lt = ec2.LaunchTemplate(
             self,
             "pokemon_tracker_ec2_lt",
-            instance_type=ec2.InstanceType("t3.micro"),
+            instance_type=ec2.InstanceType("t3.nano"),
             machine_image=ec2.MachineImage.latest_amazon_linux2(),
             role=iam_role,
             security_group=security_group,
             user_data=user_data,
-            spot_options=ec2.LaunchTemplateSpotOptions(
-                max_price=0.01,
-            ),
             launch_template_name="pokemon_tracker_ec2_lt",
         )
         self.ec2_lt = ec2_lt
