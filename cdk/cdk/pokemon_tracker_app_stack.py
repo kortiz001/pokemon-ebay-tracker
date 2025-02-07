@@ -4,6 +4,7 @@ from aws_cdk import (
     aws_s3 as s3,
     Stack,
 )
+from pathlib import Path
 from constructs import Construct
 
 class PokemonTrackerAppStack(Stack):
@@ -43,7 +44,11 @@ class PokemonTrackerAppStack(Stack):
         self.iam_role = iam_role
 
         user_data = ec2.UserData.for_linux()
-        with open("src/user_data.txt") as f:
+
+        current_file = Path(__file__).resolve()
+        user_data_file = current_file.parent / "src" / "user_data.txt"
+
+        with open(str(user_data_file), "r") as f:
             user_data.add_commands(f.read())
 
         ec2_instance = ec2.Instance(
