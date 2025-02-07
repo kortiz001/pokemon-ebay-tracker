@@ -60,8 +60,6 @@ class PokemonTrackerAppStack(Stack):
             instance_type=ec2.InstanceType("t2.nano"),
             machine_image=ec2.MachineImage.latest_amazon_linux(),
             role=iam_role,
-            vpc=vpc,
-            vpc_subnets=ec2.SubnetSelection(subnet_type=ec2.SubnetType.PUBLIC),
             security_group=security_group,
             user_data=user_data,
             spot_options=ec2.LaunchTemplateSpotOptions(
@@ -73,6 +71,8 @@ class PokemonTrackerAppStack(Stack):
         asg = autoscaling.AutoScalingGroup(
             self, 
             "pokemon_tracker_ec2_asg",
+            vpc=vpc,
+            vpc_subnets=ec2.SubnetSelection(subnet_type=ec2.SubnetType.PUBLIC),
             launch_template=ec2_lt,
             min_capacity=1,
             max_capacity=1,
