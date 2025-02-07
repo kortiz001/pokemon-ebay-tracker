@@ -1,6 +1,7 @@
 from aws_cdk import (
     aws_ec2 as ec2,
     aws_iam as iam,
+    aws_s3 as s3,
     Stack,
 )
 from constructs import Construct
@@ -41,6 +42,10 @@ class PokemonTrackerAppStack(Stack):
         )
         self.iam_role = iam_role
 
+        user_data = ec2.UserData.for_linux()
+        with open("src/user_data.txt") as f:
+            user_data.add_commands(f.read())
+
         ec2_instance = ec2.Instance(
             self, 
             "pokemon_tracker_ec2_instance",
@@ -49,6 +54,17 @@ class PokemonTrackerAppStack(Stack):
             role=iam_role,
             vpc=vpc,
             vpc_subnets=ec2.SubnetSelection(subnet_type=ec2.SubnetType.PUBLIC),
-            security_group=security_group
+            security_group=security_group,
+            user_data=ec2.UserData.for_linux(),
         )
         self.ec2_instance = ec2_instance
+
+        s3_bucket = s3.Bucket(
+            self,
+            "pokemon_tracker_s3_bucket",
+            bucket_name="pokemon-tracker-s3-bucket",
+            block_public_access=s3.BlockPublicAccess.BLOCK_ALL,
+            encryption=s3.BucketEncryption.S3_MANAGED,
+        )
+        self.s3_bucket = s3_bucket
+        s3_bucket.grant_read(iam_role)
