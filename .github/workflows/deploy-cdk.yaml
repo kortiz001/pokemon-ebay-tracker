@@ -12,9 +12,9 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Assume role with OIDC
-        uses: aws-actions/configure-aws-credentials@v2
+        uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-arn: arn:aws:iam::870927831149:role/kortiz-github-repository
+          role-to-assume: arn:aws:iam::870927831149:role/kortiz-github-repository
           role-session-name: GitHubActionsSession
           aws-region: us-east-1
 
