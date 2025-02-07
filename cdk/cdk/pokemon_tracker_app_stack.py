@@ -2,8 +2,10 @@ from aws_cdk import (
     aws_ec2 as ec2,
     aws_iam as iam,
     aws_s3 as s3,
+    aws_s3_deployment as s3_deployment,
     Stack,
 )
+import os
 from pathlib import Path
 from constructs import Construct
 
@@ -73,3 +75,24 @@ class PokemonTrackerAppStack(Stack):
         )
         self.s3_bucket = s3_bucket
         s3_bucket.grant_read(iam_role)
+
+        s3_deploy_role = iam.Role(
+            self,
+            "pokemon_tracker_s3_deploy_role",
+            assumed_by=iam.ServicePrincipal("lambda.amazonaws.com"),
+            role_name="pokemon-tracker-s3-deploy-role",
+            managed_policies=[
+                iam.ManagedPolicy.from_aws_managed_policy_name("AWSLambdaBasicExecutionRole"),
+                iam.ManagedPolicy.from_aws_managed_policy_name("AmazonS3FullAccess")
+            ]
+        )
+        self.s3_deploy_role = s3_deploy_role
+
+        s3_deployment.BucketDeployment(
+            self,
+            "pokemon_tracker_s3_bucket_deployment",
+            sources=[s3_deployment.Source.asset(f"{os.getenv('GITHUB_WORKSPACE')}/django")],
+            destination_bucket=s3_bucket,
+            destination_key_prefix="django",
+            role=s3_deploy_role
+        )
