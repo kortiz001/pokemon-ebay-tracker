@@ -1,5 +1,6 @@
 from aws_cdk import (
     aws_ec2 as ec2,
+    aws_iam as iam,
     Stack,
 )
 from constructs import Construct
@@ -28,11 +29,24 @@ class PokemonTrackerAppStack(Stack):
             description="Allow HTTP"
         )
 
+        iam_role = iam.Role(
+            self,
+            "pokemon_tracker_iam_role",
+            assumed_by=iam.ServicePrincipal("ec2.amazonaws.com"),
+            role_name="pokemon-tracker-iam-role",
+            managed_policies=[
+                iam.ManagedPolicy.from_aws_managed_policy_name("AmazonSSMManagedInstanceCore"),
+                iam.ManagedPolicy.from_aws_managed_policy_name("AmazonS3ReadOnlyAccess")
+            ]
+        )
+        self.iam_role = iam_role
+
         ec2_instance = ec2.Instance(
             self, 
             "pokemon_tracker_ec2_instance",
             instance_type=ec2.InstanceType("t2.nano"),
             machine_image=ec2.AmazonLinuxImage(generation=ec2.AmazonLinuxGeneration.AMAZON_LINUX_2),
+            role=iam_role,
             vpc=vpc,
             vpc_subnets=ec2.SubnetSelection(subnet_type=ec2.SubnetType.PUBLIC),
             security_group=security_group
