@@ -58,7 +58,7 @@ class PokemonTrackerAppStack(Stack):
             self,
             "pokemon_tracker_ec2_lt",
             instance_type=ec2.InstanceType("t3.micro"),
-            machine_image=ec2.MachineImage.latest_amazon_linux(),
+            machine_image=ec2.AmazonLinuxImage(generation=ec2.AmazonLinuxGeneration.AMAZON_LINUX_2),
             role=iam_role,
             security_group=security_group,
             user_data=user_data,
