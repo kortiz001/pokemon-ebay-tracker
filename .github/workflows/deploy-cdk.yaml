@@ -42,4 +42,4 @@ jobs:
         run: |
           source cdk/.venv/bin/activate
           cd cdk
-          cdk deploy --all
+          cdk deploy --all --require-approval never
