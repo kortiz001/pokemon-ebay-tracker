@@ -30,7 +30,7 @@ class PokemonTrackerAppStack(Stack):
 
         security_group.add_ingress_rule(
             peer=ec2.Peer.ipv4("0.0.0.0/0"),
-            connection=ec2.Port.tcp(80),
+            connection=ec2.Port.tcp(8000),
             description="Allow HTTP"
         )
 
