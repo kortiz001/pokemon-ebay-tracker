@@ -1,7 +1,6 @@
 from aws_cdk import (
-    # Duration,
+    aws_ec2 as ec2,
     Stack,
-    # aws_sqs as sqs,
 )
 from constructs import Construct
 
@@ -10,10 +9,19 @@ class PokemonTrackerVpcStack(Stack):
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
-        # The code that defines your stack goes here
-
-        # example resource
-        # queue = sqs.Queue(
-        #     self, "CdkQueue",
-        #     visibility_timeout=Duration.seconds(300),
-        # )
+        vpc = ec2.Vpc(
+            self, 
+            "PokemonTrackerVpc",
+            vpc_name="pokemon-tracker-vpc",
+            subnet_configuration=[
+                ec2.SubnetConfiguration(
+                    name="public",
+                    subnet_type=ec2.SubnetType.PUBLIC,
+                    cidr_mask=24
+                ),
+            ],
+            max_azs=1,
+            cidr="237.84.2.178/16",
+            nat_gateways=0
+        )
+        self.vpc = vpc
