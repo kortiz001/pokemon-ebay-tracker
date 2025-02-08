@@ -2,17 +2,17 @@
 
 {% block content %}
 <!-- Container where data will be displayed -->
-<div class="container cards pt-4">
+<div class="container cards">
     <div class="row">
         <div class="col-12">
-            <h1 class="mt-4 mb-2">Pokemon Cards on eBay</h1>
+            <h1>Pokemon Cards on eBay</h1>
         </div>
         <div class="col-12 d-flex justify-content-between align-items-center d-md-flex d-block">
             <div class="form-group">
                 <label for="ebay-api-key">Enter eBay API key:</label>
-                <input type="text" id="ebay-api-key" placeholder="Enter eBay API key">
+                <input type="text" id="ebay-api-key">
             </div>
-            <button id="loadDataBtn">Load Data</button>
+            <button id="loadDataBtn" class="btn btn-dark">Load Data</button>
         </div>
     </div>
     <div class="row card"></div>
