@@ -44,7 +44,7 @@ def generate_tcgplayer_json():
             else:
                 continue
 
-            if tcg_player_market > 60:
+            if tcg_player_market > 20:
                 full_set_dicts[set.get("name")]["cards"].append({
                     "name": card.name,
                     "market": tcg_player_market,
