@@ -82,6 +82,14 @@ def fetch_pokemon_cards(ebay_api_key):
     # ]
 
     sets = [
+        {"name": "Paradox Rift", "code": "sv4"},
+        {"name": "Paldean Fates", "code": "sv4pt5"},
+        {"name": "Twilight Masquerade", "code": "sv6"},
+        {"name": "Brilliant Stars", "code": "swsh9"},
+        {"name": "Astral Radiance", "code": "swsh10"},
+        {"name": "Silver Tempest", "code": "swsh12"},
+        {"name": "Vivid Voltage", "code": "swsh4"},
+        {"name": "Obsidian Flames", "code": "sv3"},
         {"name": "151", "code": "sv3pt5"},
         {"name": "Temporal Forces", "code": "sv5"},
         {"name": "Paldea Evolved", "code": "sv2"},
