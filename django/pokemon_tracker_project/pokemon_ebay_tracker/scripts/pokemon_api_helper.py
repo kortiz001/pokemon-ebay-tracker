@@ -40,7 +40,7 @@ def fetch_pokemon_cards(ebay_api_key, tcg_player_cards):
                     "q": f"{card.get('name')} {card.get('number')}/{card.get('printed_total')}",
                     "filter": [
                         "buyingOptions:{AUCTION}",
-                        f"price:[5..{card.get('market') * 0.70:.2f}]",
+                        f"price:[5..{card.get('market') * 0.8:.2f}]",
                         "priceCurrency:USD",
                         f"itemEndDate:[..{query_end_time}]",
                         "conditionIds:{2750}",
