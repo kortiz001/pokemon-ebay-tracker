@@ -59,7 +59,7 @@
                         $('.row.card').html(dataList);
                     },
                     error: function(xhr, status, error) {
-                        alert('An error occurred: ' + error);
+                        $('.row.card').html(error);
                     }
                 });
             });
