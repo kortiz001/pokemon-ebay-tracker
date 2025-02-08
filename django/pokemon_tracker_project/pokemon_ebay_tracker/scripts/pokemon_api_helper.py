@@ -7,7 +7,7 @@ RestClient.configure('102d86ed-ff3b-44ce-8278-7d0c72c037a4')
 
 def fetch_pokemon_cards(ebay_api_key):
     API_TOKEN = ebay_api_key
-    query_end_time = (datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(minutes=30)).strftime('%Y-%m-%dT%H:%M:%S') + 'Z'
+    query_end_time = (datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(hours=1)).strftime('%Y-%m-%dT%H:%M:%S') + 'Z'
 
     # sets = [
     #     {"name": "SM Black Star Promos", "code": "smp"},
@@ -91,7 +91,6 @@ def fetch_pokemon_cards(ebay_api_key):
         {"name": "Vivid Voltage", "code": "swsh4"},
         {"name": "Obsidian Flames", "code": "sv3"},
         {"name": "151", "code": "sv3pt5"},
-        {"name": "Temporal Forces", "code": "sv5"},
         {"name": "Paldea Evolved", "code": "sv2"},
         {"name": "Crown Zenith Galarian Gallery", "code": "swsh12pt5gg"},
         {"name": "Evolving Skies", "code": "swsh7"},
@@ -130,7 +129,7 @@ def fetch_pokemon_cards(ebay_api_key):
                         "q": f"{card.name} {card.number}/{card.set.printedTotal}",
                         "filter": [
                             "buyingOptions:{AUCTION}",
-                            f"price:[0..{tcg_player_market * 0.80:.2f}]",
+                            f"price:[20..{tcg_player_market * 0.75:.2f}]",
                             "priceCurrency:USD",
                             f"itemEndDate:[..{query_end_time}]",
                             "conditionIds:{2750|4000}"
@@ -160,12 +159,13 @@ def fetch_pokemon_cards(ebay_api_key):
                                     minutes, seconds = divmod(time_left, 60)
 
                                     cards_info.append({
-                                        "card_name": card.name,
-                                        "view_item_url": response['itemWebUrl'],
+                                        "card_name": response["title"],
+                                        "view_item_url": response["itemWebUrl"],
                                         "time_left": f"{int(minutes)} minutes {int(seconds)} seconds",
                                         "current_bid_price": response["currentBidPrice"]["value"],
                                         "market_value": tcg_player_market,
-                                        "image_url": response.get("image").get("imageUrl")
+                                        "image_url": response.get("image").get("imageUrl"),
+                                        "end_time": response.get("itemEndDate")
                                     })
                     else:
                         print(f"Error: {response.status_code}")
@@ -174,4 +174,5 @@ def fetch_pokemon_cards(ebay_api_key):
                 except requests.exceptions.RequestException as e:
                     print(e)
     
+    cards_info.sort(key=lambda x: x['end_time'], reverse=True)
     return cards_info
