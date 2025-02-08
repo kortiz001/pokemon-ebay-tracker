@@ -66,7 +66,6 @@ def fetch_pokemon_cards(
                     ]
                 }
                 response = requests.get(url, headers=headers, params=params)
-                print(response.json())
 
                 if response.status_code == 200:
                     response_dict = response.json()
