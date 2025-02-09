@@ -2,6 +2,7 @@ from aws_cdk import (
     aws_autoscaling as autoscaling,
     aws_ec2 as ec2,
     aws_iam as iam,
+    aws_lambda as lambda_,
     aws_s3 as s3,
     aws_s3_deployment as s3_deployment,
     Stack,
@@ -107,3 +108,47 @@ class PokemonTrackerAppStack(Stack):
             destination_key_prefix="django",
             role=s3_deploy_role
         )
+
+        elastic_ip = ec2.CfnEIP(
+            self,
+            "pokemon_tracker_elastic_ip",
+            domain="vpc"
+        )
+        self.elastic_ip = elastic_ip
+
+        iam_role_asg_eip = iam.Role(
+            self,
+            "pokemon_tracker_asg_eip_iam_role",
+            assumed_by=iam.ServicePrincipal("lambda.amazonaws.com"),
+            role_name="pokemon-tracker-asg_eip_iam-role",
+            managed_policies=[
+                iam.ManagedPolicy.from_aws_managed_policy_name("service-role/AWSLambdaBasicExecutionRole"),
+                iam.ManagedPolicy.from_aws_managed_policy_name("service-role/AWSLambdaVPCAccessExecutionRole")
+            ]
+        )
+        self.iam_role_asg_eip = iam_role_asg_eip
+        iam_role_asg_eip.add_inline_policy(
+            iam.PolicyStatement(
+                actions=[
+                    "ec2:AssignPrivateIpAddresses",
+                    "ec2:AssociateAddress"
+                ],
+                resources=["*"],
+                effect=iam.Effect.ALLOW
+            )
+        )
+
+        lambda_file_path = current_file.parent / "src" / "index.py"
+        asg_eip_lambda = lambda_.Function(
+            self,
+            "pokemon_tracker_asg_eip_lambda",
+            function_name="pokemon_tracker_asg_eip_lambda",
+            runtime=lambda_.Runtime.PYTHON_3_8,
+            handler="index.lambda_handler",
+            code=lambda_.Code.from_asset(lambda_file_path),
+            environment={
+                "ELASTIC_IP_ADDRESS_ALLOCATION_ID": elastic_ip.attr_allocation_id
+            },
+            role=iam_role_asg_eip
+        )
+        self.asg_eip_lambda = asg_eip_lambda
