@@ -5,6 +5,7 @@ from aws_cdk import (
     aws_lambda as lambda_,
     aws_s3 as s3,
     aws_s3_deployment as s3_deployment,
+    aws_ssm as ssm,
     Stack,
 )
 import os
@@ -109,6 +110,15 @@ class PokemonTrackerAppStack(Stack):
             role=s3_deploy_role
         )
 
+        ssm_document_deploy_code = current_file.parent / "src" / "ssm_document_deploy_code.json"
+        ssm_document = ssm.Document(
+            self,
+            "pokemon_tracker_ssm_document",
+            name="pokemon_tracker_ssm_document",
+            content=ssm_document_deploy_code.read_text()
+        )
+        self.ssm_document = ssm_document
+
         elastic_ip = ec2.CfnEIP(
             self,
             "pokemon_tracker_elastic_ip",
@@ -127,16 +137,18 @@ class PokemonTrackerAppStack(Stack):
             ]
         )
         self.iam_role_asg_eip = iam_role_asg_eip
-        iam_role_asg_eip.attach_inline_policy(
-            iam.PolicyStatement(
-                actions=[
-                    "ec2:AssignPrivateIpAddresses",
-                    "ec2:AssociateAddress"
-                ],
-                resources=["*"],
-                effect=iam.Effect.ALLOW
-            )
-        )
+        iam_role_asg_eip.role.attach_inline_policy(iam.Policy(self, "attach-elastic-ip-policy",
+            statements=[
+                iam.PolicyStatement(
+                    actions=[
+                        "ec2:AssignPrivateIpAddresses",
+                        "ec2:AssociateAddress"
+                    ],
+                    resources=["*"],
+                    effect=iam.Effect.ALLOW
+                )
+            ]
+        ))
 
         lambda_file_path = current_file.parent / "src" / "index.py"
         asg_eip_lambda = lambda_.Function(
