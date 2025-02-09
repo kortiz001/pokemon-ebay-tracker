@@ -155,7 +155,7 @@ class PokemonTrackerAppStack(Stack):
             ]
         ))
 
-        lambda_file_path = str(current_file.parent / "src" / "index.py")
+        lambda_file_path = str(current_file.parent / "src" / "lambda")
         asg_eip_lambda = lambda_.Function(
             self,
             "pokemon_tracker_asg_eip_lambda",
