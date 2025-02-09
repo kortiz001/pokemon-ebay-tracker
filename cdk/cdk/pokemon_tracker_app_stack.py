@@ -1,11 +1,13 @@
 from aws_cdk import (
     aws_autoscaling as autoscaling,
+    aws_events as events,
     aws_ec2 as ec2,
     aws_iam as iam,
     aws_lambda as lambda_,
     aws_s3 as s3,
     aws_s3_deployment as s3_deployment,
     aws_ssm as ssm,
+    aws_targets as targets,
     Stack,
     Tags
 )
@@ -197,3 +199,18 @@ class PokemonTrackerAppStack(Stack):
             role=iam_role_asg_eip
         )
         self.asg_eip_lambda = asg_eip_lambda
+
+        asg_eip_rule = events.Rule(
+            self, 
+            "pokemon_tracker_asg_eip_event_rule",
+            event_pattern=events.EventPattern(
+                source=["aws.autoscaling"],
+                detail_type=["EC2 Instance-launch Lifecycle Action"],
+                detail={
+                    "AutoScalingGroupName": [asg.auto_scaling_group_name],
+                    "LifecycleTransition": ["autoscaling:EC2_INSTANCE_LAUNCHING"]
+                }
+            )
+        )
+
+        asg_eip_rule.add_target(targets.LambdaFunction(asg_eip_lambda))
