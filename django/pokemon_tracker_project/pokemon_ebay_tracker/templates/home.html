@@ -39,6 +39,7 @@
                     <option value="Twilight Masquerade">Twilight Masquerade</option>
                     <option value="Paldean Fates">Paldean Fates</option>
                     <option value="Paradox Rift">Paradox Rift</option>
+                    <option value="Base Set">Base Set</option>
                 </select>
             </div>
             <div class="form-group mb-3 mb-md-0 ms-md-3">
@@ -60,6 +61,7 @@
         </div>
     </div>
     <div class="row card"></div>
+    <div class="api-counter"></div>
 </div>
 
 {% endblock %}
@@ -89,7 +91,7 @@
                 var timeLeftHours = $('#time-left-hours').val();
 
                 // Show the loading icon
-                $('.row.card').html('<i class="fas fa-spinner fa-spin"></i>');
+                $('.row.card').html('<div class="spinner"><i class="fas fa-spinner fa-spin"></i></div>');
 
                 $.ajax({
                     url: '/load_data/?ebay_api_key=' + encodeURIComponent(ebayApiKey) +
@@ -120,8 +122,10 @@
                             `;
                         });
                         dataList += '</div>';
+                        api_counter = response.api_counter;
                         console.log(dataList);
                         $('.row.card').html(dataList);
+                        $('.api-counter').html('API Counter: ' + api_counter);
                     },
                     error: function(xhr, status, error) {
                         $('.row.card').html(error);

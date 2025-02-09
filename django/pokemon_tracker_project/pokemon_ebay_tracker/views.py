@@ -21,7 +21,7 @@ def load_data(request):
         maximum_bid_percentage=maximum_bid_percentage,
         time_left_hours=time_left_hours
     ) 
-    return JsonResponse({'cards_info': cards_info})
+    return JsonResponse({'cards_info': cards_info["cards"], 'api_counter': cards_info["api_counter"]})
 
 def home(request):
     return render(request, 'home.html')

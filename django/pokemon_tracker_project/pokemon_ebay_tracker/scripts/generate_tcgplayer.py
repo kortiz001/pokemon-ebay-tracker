@@ -6,6 +6,7 @@ RestClient.configure('102d86ed-ff3b-44ce-8278-7d0c72c037a4')
 
 def generate_tcgplayer_json():
     sets = [
+        {"name": "Base Set", "code": "base1"},
         {"name": "Paradox Rift", "code": "sv4"},
         {"name": "Paldean Fates", "code": "sv4pt5"},
         {"name": "Twilight Masquerade", "code": "sv6"},
@@ -40,6 +41,7 @@ def generate_tcgplayer_json():
             for price_type in ['normal', 'holofoil', 'reverse_holofoil']:
                 if getattr(tcg_player_prices, price_type):
                     tcg_player_market = getattr(tcg_player_prices, price_type).market
+                    tcg_player_high = getattr(tcg_player_prices, price_type).high
                     break
             else:
                 continue
@@ -48,6 +50,7 @@ def generate_tcgplayer_json():
                 full_set_dicts[set.get("name")]["cards"].append({
                     "name": card.name,
                     "market": tcg_player_market,
+                    "price_high": tcg_player_high,
                     "printed_total": card.set.printedTotal,
                     "number": card.number,
                     "card_link": tcg_player.url

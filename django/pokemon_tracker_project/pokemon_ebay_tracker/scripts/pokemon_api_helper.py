@@ -31,6 +31,7 @@ def fetch_pokemon_cards(
             "Twilight Masquerade",
             "Paldean Fates",
             "Paradox Rift",
+            "Base Set"
         ]
 
     if graded_check == "Graded":
@@ -40,12 +41,17 @@ def fetch_pokemon_cards(
     elif graded_check == "All":
         condition_ids = "{2750|4000}"
 
-    cards_info = []
+    cards_info = {}
+    cards_info["cards"] = []
+    api_counter = 0
 
     for set in sets_to_check:
         cards = tcg_player_cards[set]["cards"]
 
         for card in cards:
+            if card.get("price_high") < 50.00:
+                continue
+
             try:
                 url = "https://api.ebay.com/buy/browse/v1/item_summary/search"
                 headers = {
@@ -79,7 +85,7 @@ def fetch_pokemon_cards(
                             time_left = (end_time - datetime.datetime.now(datetime.timezone.utc)).total_seconds()
                             minutes, seconds = divmod(time_left, 60)
 
-                            cards_info.append({
+                            cards_info["cards"].append({
                                 "card_name": item.get("title"),
                                 "tcg_player_card_link": card.get("card_link"),
                                 "view_item_url": item.get("itemWebUrl"),
@@ -89,6 +95,8 @@ def fetch_pokemon_cards(
                                 "image_url": item.get("image").get("imageUrl"),
                                 "end_time": item.get("itemEndDate")
                             })
+
+                    api_counter += 1
                 else:
                     print(f"Error: {item_summary_response.status_code}")
                     print(item_summary_response.text)
@@ -96,5 +104,6 @@ def fetch_pokemon_cards(
             except requests.exceptions.RequestException as e:
                 print(e)
     
-    cards_info.sort(key=lambda x: x['end_time'])
+    cards_info["cards"].sort(key=lambda x: x['end_time'])
+    cards_info["api_counter"] = api_counter
     return cards_info

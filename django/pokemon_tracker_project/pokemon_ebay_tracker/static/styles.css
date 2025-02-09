@@ -30,3 +30,7 @@
 .container.cards #loadDataBtn {
     margin-bottom: 10px;
 }
+
+.api-counter {
+    padding-top: 25px;
+  }
