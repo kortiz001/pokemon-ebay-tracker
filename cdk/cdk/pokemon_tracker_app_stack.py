@@ -114,7 +114,7 @@ class PokemonTrackerAppStack(Stack):
         )
 
         ssm_document_deploy_code = current_file.parent / "src" / "ssm_document_deploy_code.yaml"
-        ssm_document = ssm.cfnDocument(
+        ssm_document = ssm.CfnDocument(
             self,
             "pokemon_tracker_ssm_document",
             name="pokemon_tracker_ssm_document",
