@@ -71,32 +71,24 @@ def fetch_pokemon_cards(
                     item_summary_response_dict = item_summary_response.json()
                     if item_summary_response_dict and 'itemSummaries' in item_summary_response_dict:
                         for item in item_summary_response_dict['itemSummaries']:
-                            item_id = item['itemId']
-                            
-                            url = f"https://api.ebay.com/buy/browse/v1/item/{item_id}"
-                            response = requests.get(url, headers=headers, params=params)
-                            
-                            if response.status_code == 200:
-                                response = response.json()
+                            if item.get("seller").get("feedbackPercentage") < "95.0":
+                                continue
 
-                                if response.get("seller").get("feedbackPercentage") < "95.0":
-                                    continue
+                            end_time = datetime.datetime.strptime(item.get("itemEndDate"), '%Y-%m-%dT%H:%M:%S.%fZ')
+                            end_time = end_time.replace(tzinfo=datetime.timezone.utc)
+                            time_left = (end_time - datetime.datetime.now(datetime.timezone.utc)).total_seconds()
+                            minutes, seconds = divmod(time_left, 60)
 
-                                end_time = datetime.datetime.strptime(response.get("itemEndDate"), '%Y-%m-%dT%H:%M:%S.%fZ')
-                                end_time = end_time.replace(tzinfo=datetime.timezone.utc)
-                                time_left = (end_time - datetime.datetime.now(datetime.timezone.utc)).total_seconds()
-                                minutes, seconds = divmod(time_left, 60)
-
-                                cards_info.append({
-                                    "card_name": response["title"],
-                                    "tcg_player_card_link": card.get("card_link"),
-                                    "view_item_url": response["itemWebUrl"],
-                                    "time_left": f"{int(minutes)} minutes {int(seconds)} seconds",
-                                    "current_bid_price": response["currentBidPrice"]["value"],
-                                    "market_value": card.get("market"),
-                                    "image_url": response.get("image").get("imageUrl"),
-                                    "end_time": response.get("itemEndDate")
-                                })
+                            cards_info.append({
+                                "card_name": item.get("title"),
+                                "tcg_player_card_link": card.get("card_link"),
+                                "view_item_url": item.get("itemWebUrl"),
+                                "time_left": f"{int(minutes)} minutes {int(seconds)} seconds",
+                                "current_bid_price": item.get("currentBidPrice").get("value"),
+                                "market_value": card.get("market"),
+                                "image_url": item.get("image").get("imageUrl"),
+                                "end_time": item.get("itemEndDate")
+                            })
                 else:
                     print(f"Error: {item_summary_response.status_code}")
                     print(item_summary_response.text)

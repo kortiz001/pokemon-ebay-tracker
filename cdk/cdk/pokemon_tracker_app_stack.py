@@ -204,6 +204,7 @@ class PokemonTrackerAppStack(Stack):
         asg_eip_rule = events.Rule(
             self, 
             "pokemon_tracker_asg_eip_event_rule",
+            rule_name="pokemon_tracker_asg_eip_event_rule",
             event_pattern=events.EventPattern(
                 source=["aws.autoscaling"],
                 detail_type=["EC2 Instance-launch Lifecycle Action"]
