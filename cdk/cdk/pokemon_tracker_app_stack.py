@@ -141,6 +141,18 @@ class PokemonTrackerAppStack(Stack):
         )
         self.ssm_document = ssm_document
 
+        ssm_association = ssm.CfnAssociation(
+            self,
+            f"pokemon_tracker_ssm_association_{os.getenv('GITHUB_RUN_ID')}",
+            name="pokemon_tracker_ssm_association",
+            targets=[ssm.CfnAssociation.TargetProperty(
+                key="pokemon_ec2",
+                values=["true"]
+            )],            
+            document_name=ssm_document.name
+        )
+        self.ssm_association = ssm_association
+
         elastic_ip = ec2.CfnEIP(
             self,
             "pokemon_tracker_elastic_ip",
