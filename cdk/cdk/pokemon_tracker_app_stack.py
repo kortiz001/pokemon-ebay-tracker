@@ -127,7 +127,7 @@ class PokemonTrackerAppStack(Stack):
             ]
         )
         self.iam_role_asg_eip = iam_role_asg_eip
-        iam_role_asg_eip.add_inline_policy(
+        iam_role_asg_eip.attach_inline_policy(
             iam.PolicyStatement(
                 actions=[
                     "ec2:AssignPrivateIpAddresses",
