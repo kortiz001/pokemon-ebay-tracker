@@ -116,7 +116,6 @@ class PokemonTrackerAppStack(Stack):
         ssm_document_content = {
             "schemaVersion": "2.2",
             "description": "Copy Django files from S3 to EC2",
-            "documentType": "Command",
             "mainSteps": [
                 {
                     "action": "aws:runShellScript",
@@ -137,7 +136,8 @@ class PokemonTrackerAppStack(Stack):
             "pokemon_tracker_ssm_document",
             name="pokemon_tracker_ssm_document",
             content=ssm_document_content,
-            target_type="/AWS::EC2::Instance"
+            target_type="/AWS::EC2::Instance",
+            document_type="Command"
         )
         self.ssm_document = ssm_document
 
