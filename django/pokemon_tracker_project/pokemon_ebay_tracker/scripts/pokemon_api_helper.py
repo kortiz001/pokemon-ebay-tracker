@@ -12,9 +12,7 @@ def fetch_pokemon_cards(
     ):
     query_end_time = (datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(hours=int(time_left_hours))).strftime('%Y-%m-%dT%H:%M:%S') + 'Z'
 
-    if set_to_check != "All":
-        sets_to_check = [set_to_check]
-    else:
+    if set_to_check == "All New Sets":
         sets_to_check = [
             "Prismatic Evolutions",
             "Surging Sparks",
@@ -31,8 +29,33 @@ def fetch_pokemon_cards(
             "Twilight Masquerade",
             "Paldean Fates",
             "Paradox Rift",
-            "Base Set"
         ]
+    elif set_to_check == "Old Sets":
+        sets_to_check = [
+            "Base",
+            "Jungle",
+            "Wizards Black Star Promos",
+            "Fossil",
+            "Base Set 2",
+            "Team Rocket",
+            "Gym Heroes",
+            "Gym Challenge",
+            "Neo Genesis",
+            "Neo Discovery",
+            "Southern Islands",
+            "Neo Revelation",
+            "Neo Destiny",
+            "Legendary Collection", 
+            "Expedition Base Set",
+            "Aquapolis",
+            "Skyridge",
+            "Ruby & Sapphire",
+            "Sandstorm",
+            "Dragon"
+        ]
+    else:
+        sets_to_check = [set_to_check]
+
 
     if graded_check == "Graded":
         condition_ids = "{2750}"
