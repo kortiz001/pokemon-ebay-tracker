@@ -146,7 +146,7 @@ class PokemonTrackerAppStack(Stack):
             f"pokemon_tracker_ssm_association_{os.getenv('GITHUB_RUN_ID')}",
             name=ssm_document.name,
             targets=[ssm.CfnAssociation.TargetProperty(
-                key="pokemon_ec2",
+                key="tag:pokemon_ec2",
                 values=["true"]
             )],            
         )
