@@ -113,13 +113,31 @@ class PokemonTrackerAppStack(Stack):
             role=s3_deploy_role
         )
 
+        ssm_document_content = {
+            "schemaVersion": "2.2",
+            "description": "Copy Django files from S3 to EC2",
+            "mainSteps": [
+                {
+                    "action": "aws:runShellScript",
+                    "name": "copyAndUpdateDjangoFiles",
+                    "inputs": {
+                        "runCommand": [
+                            "#!/bin/bash",
+                            "echo \"Starting S3 copy to Django directory...\"",
+                            "aws s3 cp s3://pokemon-tracker-s3-bucket/django/ /django/ --recursive",
+                            "echo \"Django files copied successfully.\""
+                        ]
+                    }
+                }
+            ]
+        }
+
         ssm_document_deploy_code = current_file.parent / "src" / "ssm_document_deploy_code.yaml"
         ssm_document = ssm.CfnDocument(
             self,
             "pokemon_tracker_ssm_document",
             name="pokemon_tracker_ssm_document",
-            content=ssm_document_deploy_code.read_text(),
-            document_format="YAML",
+            content=ssm_document_content,
             target_type="/AWS::EC2::Instance"
         )
         self.ssm_document = ssm_document
