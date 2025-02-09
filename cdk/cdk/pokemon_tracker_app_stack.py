@@ -144,12 +144,11 @@ class PokemonTrackerAppStack(Stack):
         ssm_association = ssm.CfnAssociation(
             self,
             f"pokemon_tracker_ssm_association_{os.getenv('GITHUB_RUN_ID')}",
-            name="pokemon_tracker_ssm_association",
+            name=ssm_document.name,
             targets=[ssm.CfnAssociation.TargetProperty(
                 key="pokemon_ec2",
                 values=["true"]
             )],            
-            document_name=ssm_document.name
         )
         self.ssm_association = ssm_association
 
