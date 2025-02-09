@@ -142,7 +142,7 @@ class PokemonTrackerAppStack(Stack):
             ]
         )
         self.iam_role_asg_eip = iam_role_asg_eip
-        iam_role_asg_eip.role.attach_inline_policy(iam.Policy(self, "attach-elastic-ip-policy",
+        iam_role_asg_eip.attach_inline_policy(iam.Policy(self, "attach-elastic-ip-policy",
             statements=[
                 iam.PolicyStatement(
                     actions=[
