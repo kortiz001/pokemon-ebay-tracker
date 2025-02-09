@@ -8,6 +8,7 @@ from aws_cdk import (
     aws_s3_deployment as s3_deployment,
     aws_ssm as ssm,
     aws_events_targets as targets,
+    Duration,
     Stack,
     Tags
 )
@@ -197,7 +198,8 @@ class PokemonTrackerAppStack(Stack):
             environment={
                 "ELASTIC_IP_ADDRESS_ALLOCATION_ID": elastic_ip.attr_allocation_id
             },
-            role=iam_role_asg_eip
+            role=iam_role_asg_eip,
+            timeout=Duration.seconds(60)
         )
         self.asg_eip_lambda = asg_eip_lambda
 
