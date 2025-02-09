@@ -65,12 +65,12 @@ def fetch_pokemon_cards(
                         f"conditionIds:{condition_ids}",
                     ]
                 }
-                response = requests.get(url, headers=headers, params=params)
+                item_summary_response = requests.get(url, headers=headers, params=params)
 
-                if response.status_code == 200:
-                    response_dict = response.json()
-                    if response_dict and 'itemSummaries' in response_dict:
-                        for item in response_dict['itemSummaries']:
+                if item_summary_response.status_code == 200:
+                    item_summary_response_dict = item_summary_response.json()
+                    if item_summary_response_dict and 'itemSummaries' in item_summary_response_dict:
+                        for item in item_summary_response_dict['itemSummaries']:
                             item_id = item['itemId']
                             
                             url = f"https://api.ebay.com/buy/browse/v1/item/{item_id}"
@@ -98,8 +98,8 @@ def fetch_pokemon_cards(
                                     "end_time": response.get("itemEndDate")
                                 })
                 else:
-                    print(f"Error: {response.status_code}")
-                    print(response.text)
+                    print(f"Error: {item_summary_response.status_code}")
+                    print(item_summary_response.text)
 
             except requests.exceptions.RequestException as e:
                 print(e)

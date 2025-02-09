@@ -76,6 +76,7 @@ class PokemonTrackerAppStack(Stack):
         asg = autoscaling.AutoScalingGroup(
             self, 
             "pokemon_tracker_ec2_asg",
+            auto_scaling_group_name="pokemon_tracker_ec2_asg",
             vpc=vpc,
             vpc_subnets=ec2.SubnetSelection(subnet_type=ec2.SubnetType.PUBLIC),
             launch_template=ec2_lt,
@@ -210,6 +211,13 @@ class PokemonTrackerAppStack(Stack):
                     "AutoScalingGroupName": [asg.auto_scaling_group_name],
                 }
             )
+        )
+
+        asg_eip_lambda.add_permission(
+            "pokemon_tracker_asg_eip_lambda_permission",
+            principal=iam.ServicePrincipal("events.amazonaws.com"),
+            action="lambda:InvokeFunction",
+            source_arn=asg_eip_rule.rule_arn
         )
 
         asg_eip_rule.add_target(targets.LambdaFunction(asg_eip_lambda))
