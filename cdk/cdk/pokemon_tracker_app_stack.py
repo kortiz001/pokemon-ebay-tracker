@@ -108,7 +108,7 @@ class PokemonTrackerAppStack(Stack):
         )
         self.s3_deploy_role = s3_deploy_role
 
-        s3_deployment.BucketDeployment(
+        bucket_deployment = s3_deployment.BucketDeployment(
             self,
             "pokemon_tracker_s3_bucket_deployment",
             sources=[s3_deployment.Source.asset(f"{os.getenv('GITHUB_WORKSPACE')}/django")],
@@ -116,6 +116,7 @@ class PokemonTrackerAppStack(Stack):
             destination_key_prefix="django",
             role=s3_deploy_role
         )
+        self.bucket_deployment = bucket_deployment
 
         ssm_document_content = {
             "schemaVersion": "2.2",
@@ -155,6 +156,7 @@ class PokemonTrackerAppStack(Stack):
             )],            
         )
         self.ssm_association = ssm_association
+        ssm_association.add_dependency(bucket_deployment.node.default_child)
 
         elastic_ip = ec2.CfnEIP(
             self,
