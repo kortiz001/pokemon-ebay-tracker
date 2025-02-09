@@ -7,6 +7,7 @@ from aws_cdk import (
     aws_s3_deployment as s3_deployment,
     aws_ssm as ssm,
     Stack,
+    Tags
 )
 import os
 from pathlib import Path
@@ -65,7 +66,9 @@ class PokemonTrackerAppStack(Stack):
             security_group=security_group,
             user_data=user_data,
             launch_template_name="pokemon_tracker_ec2_lt",
+            
         )
+        Tags.of(ec2_lt).add('pokemon_ec2', 'true')
         self.ec2_lt = ec2_lt
 
         asg = autoscaling.AutoScalingGroup(
@@ -110,12 +113,14 @@ class PokemonTrackerAppStack(Stack):
             role=s3_deploy_role
         )
 
-        ssm_document_deploy_code = current_file.parent / "src" / "ssm_document_deploy_code.json"
-        ssm_document = ssm.Document(
+        ssm_document_deploy_code = current_file.parent / "src" / "ssm_document_deploy_code.yaml"
+        ssm_document = ssm.cfnDocument(
             self,
             "pokemon_tracker_ssm_document",
             name="pokemon_tracker_ssm_document",
-            content=ssm_document_deploy_code.read_text()
+            content=ssm_document_deploy_code.read_text(),
+            document_format="YAML",
+            target_type="/AWS::EC2::Instance"
         )
         self.ssm_document = ssm_document
 
