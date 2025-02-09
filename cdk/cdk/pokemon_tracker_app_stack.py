@@ -208,7 +208,6 @@ class PokemonTrackerAppStack(Stack):
                 detail_type=["EC2 Instance-launch Lifecycle Action"],
                 detail={
                     "AutoScalingGroupName": [asg.auto_scaling_group_name],
-                    "LifecycleTransition": ["autoscaling:EC2_INSTANCE_LAUNCHING"]
                 }
             )
         )
