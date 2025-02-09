@@ -4,7 +4,7 @@ import os
 import aws_cdk as cdk
 
 from cdk.pokemon_tracker_vpc_stack import PokemonTrackerVpcStack
-from cdk.cdk.pokemon_tracker_app_stack import PokemonTrackerAppStack
+from cdk.pokemon_tracker_app_stack import PokemonTrackerAppStack
 
 
 app = cdk.App()
