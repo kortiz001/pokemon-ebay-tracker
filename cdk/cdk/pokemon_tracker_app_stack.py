@@ -156,7 +156,6 @@ class PokemonTrackerAppStack(Stack):
             )],            
         )
         self.ssm_association = ssm_association
-        ssm_association.add_dependency(bucket_deployment.node.default_child)
 
         elastic_ip = ec2.CfnEIP(
             self,
