@@ -12,7 +12,7 @@ def fetch_pokemon_cards(
     ):
     query_end_time = (datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(hours=int(time_left_hours))).strftime('%Y-%m-%dT%H:%M:%S') + 'Z'
 
-    if set_to_check == "All New Sets":
+    if set_to_check == "All":
         sets_to_check = [
             "Prismatic Evolutions",
             "Surging Sparks",
