@@ -115,7 +115,7 @@ def fetch_pokemon_cards(
                                 "time_left": f"{int(minutes)} minutes {int(seconds)} seconds",
                                 "current_bid_price": item.get("currentBidPrice").get("value"),
                                 "market_value": card.get("market"),
-                                "image_url": item.get("image").get("imageUrl"),
+                                "image_url": item.get("image").get("imageUrl").replace("l225.jpg", "l1600.jpg"),
                                 "end_time": item.get("itemEndDate")
                             })
 
@@ -128,5 +128,6 @@ def fetch_pokemon_cards(
                 print(e)
     
     cards_info["cards"].sort(key=lambda x: x['end_time'])
+    cards_info["cards"] = [dict(t) for i, t in enumerate(cards_info["cards"]) if t not in cards_info["cards"][:i]]
     cards_info["api_counter"] = api_counter
     return cards_info
