@@ -33,4 +33,19 @@
 
 .api-counter {
     padding-top: 25px;
+}
+
+.pokemon-logo {
+  max-width: 40%;
+  padding-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+    .pokemon-logo {
+        max-width: 90%;
+    }
+}
+
+.header-title {
+    text-align: center;
   }

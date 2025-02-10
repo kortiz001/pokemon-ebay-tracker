@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 <!-- Container where data will be displayed -->
 <div class="container cards">
     <div class="row">
-        <div class="col-12">
-            <h1>Pokemon Cards on eBay</h1>
+        <div class="col-12 header-title">
+            <img src="{% static 'header-logo.png' %}" alt="Pokemon Logo" class="pokemon-logo">
         </div>
         <div class="col-12 d-flex flex-column flex-md-row justify-content-between align-items-start d-md-flex d-block">
             <div class="form-group mb-3 mb-md-0">
