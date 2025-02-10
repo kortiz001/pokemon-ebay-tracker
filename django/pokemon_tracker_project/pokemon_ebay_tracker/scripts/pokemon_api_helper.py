@@ -1,5 +1,6 @@
 import datetime
 import requests
+import urllib.parse
 
 def fetch_pokemon_cards(
         ebay_api_key: str,
@@ -92,12 +93,14 @@ def fetch_pokemon_cards(
                         f"price:[{minimum_bid_price}..{maximum_bid_price}]", 
                         f"itemEndDate:[..{query_end_time}]",
                         f"conditionIds:{condition_ids}",
+                        "listingMarketplaceId': 'EBAY_US'",
                     ]
                 }
                 item_summary_response = requests.get(url, headers=headers, params=params)
 
                 if item_summary_response.status_code == 200:
                     item_summary_response_dict = item_summary_response.json()
+
                     if item_summary_response_dict and 'itemSummaries' in item_summary_response_dict:
                         for item in item_summary_response_dict['itemSummaries']:
                             if item.get("seller").get("feedbackPercentage") < "95.0":
@@ -106,17 +109,38 @@ def fetch_pokemon_cards(
                             end_time = datetime.datetime.strptime(item.get("itemEndDate"), '%Y-%m-%dT%H:%M:%S.%fZ')
                             end_time = end_time.replace(tzinfo=datetime.timezone.utc)
                             time_left = (end_time - datetime.datetime.now(datetime.timezone.utc)).total_seconds()
+                            hours = None
                             minutes, seconds = divmod(time_left, 60)
+                            if minutes > 60:
+                                hours, minutes = divmod(minutes, 60)
+
+                            if hours:
+                                time_left_message = f"{int(hours)} hours {int(minutes)} minutes"
+                            else:
+                                time_left_message = f"{int(minutes)} minutes {int(seconds)} seconds"
+
+                            shipping_cost = None
+                            shipping_cost_type = None
+                            if item.get("shippingOptions"):
+                                shipping_cost_type = item.get("shippingOptions")[0].get("shippingCostType")
+                                if shipping_cost_type == "FIXED":
+                                    shipping_cost = item.get("shippingOptions")[0].get("shippingCost").get("value")
+
+                            sold_link = f"https://www.ebay.com/sch/i.html?_nkw={urllib.parse.quote(item.get('title'))}&_sacat=0&_from=R40&rt=nc&LH_Sold=1&LH_Complete=1"
 
                             cards_info["cards"].append({
+                                "item_id": item.get("itemId"),
                                 "card_name": item.get("title"),
                                 "tcg_player_card_link": card.get("card_link"),
                                 "view_item_url": item.get("itemWebUrl"),
-                                "time_left": f"{int(minutes)} minutes {int(seconds)} seconds",
+                                "time_left": time_left_message,
                                 "current_bid_price": item.get("currentBidPrice").get("value"),
                                 "market_value": card.get("market"),
                                 "image_url": item.get("image").get("imageUrl").replace("l225.jpg", "l1600.jpg"),
-                                "end_time": item.get("itemEndDate")
+                                "end_time": item.get("itemEndDate"),
+                                "shipping_cost": shipping_cost,
+                                "shipping_cost_type": shipping_cost_type,
+                                "sold_link": sold_link
                             })
 
                     api_counter += 1
@@ -130,4 +154,5 @@ def fetch_pokemon_cards(
     cards_info["cards"].sort(key=lambda x: x['end_time'])
     cards_info["cards"] = [dict(t) for i, t in enumerate(cards_info["cards"]) if t not in cards_info["cards"][:i]]
     cards_info["api_counter"] = api_counter
+
     return cards_info
