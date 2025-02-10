@@ -96,28 +96,6 @@ class PokemonTrackerAppStack(Stack):
         self.s3_bucket = s3_bucket
         s3_bucket.grant_read(iam_role)
 
-        s3_deploy_role = iam.Role(
-            self,
-            "pokemon_tracker_s3_deploy_role",
-            assumed_by=iam.ServicePrincipal("lambda.amazonaws.com"),
-            role_name="pokemon-tracker-s3-deploy-role",
-            managed_policies=[
-                iam.ManagedPolicy.from_aws_managed_policy_name("service-role/AWSLambdaBasicExecutionRole"),
-                iam.ManagedPolicy.from_aws_managed_policy_name("AmazonS3FullAccess")
-            ]
-        )
-        self.s3_deploy_role = s3_deploy_role
-
-        bucket_deployment = s3_deployment.BucketDeployment(
-            self,
-            "pokemon_tracker_s3_bucket_deployment",
-            sources=[s3_deployment.Source.asset(f"{os.getenv('GITHUB_WORKSPACE')}/django")],
-            destination_bucket=s3_bucket,
-            destination_key_prefix="django",
-            role=s3_deploy_role
-        )
-        self.bucket_deployment = bucket_deployment
-
         ssm_document_content = {
             "schemaVersion": "2.2",
             "description": "Copy Django files from S3 to EC2",
