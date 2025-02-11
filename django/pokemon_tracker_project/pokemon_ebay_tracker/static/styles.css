@@ -38,6 +38,7 @@
 .pokemon-logo {
   max-width: 40%;
   padding-bottom: 15px;
+  filter: brightness(85%);
 }
 
 @media (max-width: 768px) {

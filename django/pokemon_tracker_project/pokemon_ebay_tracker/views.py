@@ -11,9 +11,11 @@ def load_data(request):
     minimum_bid_price = request.GET.get('min_bid_price', 10)
     maximum_bid_percentage = request.GET.get('max_bid_percentage', 0.8)
     time_left_hours = request.GET.get('time_left_hours', 1)
+    listing_type = request.GET.get('listing_type', "Auction")
     tcg_player_cards = tcgplayer_cards_info.cards_info
     cards_info = pokemon_api_helper.fetch_pokemon_cards(
         ebay_api_key=ebay_api_key,
+        listing_type=listing_type,
         tcg_player_cards=tcg_player_cards,
         graded_check=graded_check,
         set_to_check=set_to_check,

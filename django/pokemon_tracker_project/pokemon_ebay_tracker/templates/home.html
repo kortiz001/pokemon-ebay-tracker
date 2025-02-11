@@ -14,8 +14,15 @@
                 <input type="text" id="ebay-api-key" class="form-control">
             </div>
             <div class="form-group mb-3 mb-md-0 ms-md-3">
+                <label for="listing-type">Listing Type:</label>
+                <select id="listing-type" class="form-select form-select-sm" onchange="toggleTimeLeftHours()">
+                    <option value="Auction" selected>Auction</option>
+                    <option value="Buy It Now">Buy It Now</option>
+                </select>
+            </div>
+            <div class="form-group mb-3 mb-md-0 ms-md-3">
                 <label for="graded-check">Graded:</label>
-                <select id="graded-check" class="form-select">
+                <select id="graded-check" class="form-select form-select-sm">
                     <option value="All" selected>All</option>
                     <option value="Graded">Graded</option>
                     <option value="Ungraded">Ungraded</option>
@@ -23,7 +30,7 @@
             </div>
             <div class="form-group mb-3 mb-md-0 ms-md-3">
                 <label for="set-to-check">Set to Check:</label>
-                <select id="set-to-check" class="form-select">
+                <select id="set-to-check" class="form-select form-select-sm">
                     <option value="All" selected>All</option>
                     <option value="Prismatic Evolutions">Prismatic Evolutions</option>
                     <option value="Surging Sparks">Surging Sparks</option>
@@ -53,7 +60,7 @@
                 <input type="number" id="max-bid-percentage" class="form-control" value="0.80" step="0.01" min="0" max="1">
             </div>
             <!-- New Time Left Hours Input Field -->
-            <div class="form-group mb-3 mb-md-0 ms-md-3">
+            <div class="form-group mb-3 mb-md-0 ms-md-3 time-left-hours-container" style="display: none;">
                 <label for="time-left-hours">Time Left Hours:</label>
                 <input type="number" id="time-left-hours" class="form-control" value="1" min="0">
             </div>
@@ -70,12 +77,24 @@
 
 {% block scripts %}
     <script>
+        function toggleTimeLeftHours(listingType) {
+            var timeLeftHoursContainer = document.querySelector(".time-left-hours-container");
+            if (listingType === "Buy It Now") {
+                timeLeftHoursContainer.style.display = "none";
+            } else {
+                timeLeftHoursContainer.style.display = "block";
+            }
+        }
+
         $(document).ready(function() {
             // This function runs when the page is loaded and the button is clicked
             $('#loadDataBtn').click(function() {
 
                 // Get the value of the eBay API key input field
                 var ebayApiKey = $('#ebay-api-key').val();
+
+                // Get the value of the Listing Type dropdown
+                var listingType = $('#listing-type').val();
 
                 // Get the value of the Graded Check dropdown
                 var gradedCheck = $('#graded-check').val();
@@ -98,6 +117,7 @@
                 $.ajax({
                     url: '/load_data/?ebay_api_key=' + encodeURIComponent(ebayApiKey) +
                         '&graded_check=' + encodeURIComponent(gradedCheck) +
+                        '&listing_type=' + encodeURIComponent(listingType) +
                         '&set_to_check=' + encodeURIComponent(setToCheck) +
                         '&time_left_hours=' + encodeURIComponent(timeLeftHours) +
                         '&min_bid_price=' + encodeURIComponent(minBidPrice) +
@@ -109,14 +129,16 @@
                         var dataList = '<div class="row g-3">';
                         cardsInfo.forEach(function(item) {
                             var shippingCostHtml = item.shipping_cost !== null ? `<strong>Shipping Cost: </strong> $${item.shipping_cost}<br>` : '<strong>Shipping Cost: </strong> Calculated<br>';
+                            var timeLeftHtml = listingType === "Buy It Now" ? '' : `<strong>Time Left:</strong> ${item.time_left}<br>`;
+                            var currentBidHtml = listingType === "Buy It Now" ? `<strong>Buy It Now Price:</strong> $${item.current_bid_price}<br>` : `<strong>Current Bid:</strong> $${item.current_bid_price}<br>`;
                             dataList += `
                                 <div class="card-item col-12 col-sm-12 col-md-4 col-lg-4">
                                     <img src="${item.image_url}" alt="Card Image" class="card-img-top d-block mx-auto" style="height: 260px; object-fit: contain; width: 100%;">
                                     <div class="card-body">
                                         <h5 class="card-title">${item.card_name}</h5>
                                         <p class="card-text">
-                                            <strong>Time Left:</strong> ${item.time_left}<br>
-                                            <strong>Current Bid:</strong> $${item.current_bid_price}<br>
+                                            ${timeLeftHtml}
+                                            ${currentBidHtml}
                                             <strong>Market Value:</strong> $${item.market_value}<br>
                                             <strong>Last Sold:</strong><a href="${item.sold_link}" target="_blank"> Link</a><br>
                                             ${shippingCostHtml}
