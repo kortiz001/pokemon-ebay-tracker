@@ -12,5 +12,7 @@ cd /django/pokemon_tracker_project
 pip3 install django==2.0.2 pokemontcgsdk requests typing-extensions
 pip3 install --upgrade urllib3==1.26.15
 
+echo "0 3 * * * /usr/bin/python3 /django/pokemon_tracker_project/pokemon_ebay_tracker/scripts/generate_tcgplayer.py" | crontab -
+
 python3 /django/pokemon_tracker_project/manage.py collectstatic --noinput
 nohup python3 /django/pokemon_tracker_project/manage.py runserver 0.0.0.0:80 --insecure &> /django/django.log &

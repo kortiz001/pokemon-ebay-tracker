@@ -2,6 +2,17 @@ import datetime
 import requests
 import urllib.parse
 
+def remove_duplicate_dicts(lst):
+    unique_dicts = []
+    unique_names = set()
+    
+    for d in lst:
+        if d["card_name"] not in unique_names:
+            unique_dicts.append(d)
+            unique_names.add(d["card_name"])
+    
+    return unique_dicts
+
 def fetch_pokemon_cards(
         ebay_api_key: str,
         listing_type: str,
@@ -70,8 +81,8 @@ def fetch_pokemon_cards(
     cards_info["cards"] = []
     api_counter = 0
 
-    for set in sets_to_check:
-        cards = tcg_player_cards[set]["cards"]
+    for item in sets_to_check:
+        cards = tcg_player_cards[item]["cards"]
 
         for card in cards:
             if card.get("price_high") < 50.00:
@@ -90,6 +101,7 @@ def fetch_pokemon_cards(
                     "buyingOptions:{AUCTION}",
                     "priceCurrency:USD",
                     "deliveryCountry:US",
+                    "itemLocationCountry:US",
                     f"price:[{minimum_bid_price}..{maximum_bid_price}]", 
                     f"conditionIds:{condition_ids}",
                     "listingMarketplaceId': 'EBAY_US'",
@@ -167,7 +179,15 @@ def fetch_pokemon_cards(
     
     if listing_type == "Auction":
         cards_info["cards"].sort(key=lambda x: x['end_time'])
-    cards_info["cards"] = [dict(t) for i, t in enumerate(cards_info["cards"]) if t not in cards_info["cards"][:i]]
+
+    seen = []
+    for card in cards_info["cards"]:
+        for item in seen:
+            if card["card_name"] == item["card_name"]:
+                continue
+        seen.append(card)
+    cards_info["cards"] = seen
+
     cards_info["api_counter"] = api_counter
 
     return cards_info
