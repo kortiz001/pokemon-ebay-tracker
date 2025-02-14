@@ -4,15 +4,15 @@ cards_info = {
         "cards": [
             {
                 "name": "Alakazam",
-                "market": 30.9,
-                "price_high": 159.99,
+                "market": 36.53,
+                "price_high": 99.99,
                 "printed_total": 130,
                 "number": "1",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/base4-1"
             },
             {
                 "name": "Blastoise",
-                "market": 95.86,
+                "market": 96.81,
                 "price_high": 250.0,
                 "printed_total": 130,
                 "number": "2",
@@ -28,7 +28,7 @@ cards_info = {
             },
             {
                 "name": "Charizard",
-                "market": 304.68,
+                "market": 310.12,
                 "price_high": 999.99,
                 "printed_total": 130,
                 "number": "4",
@@ -37,14 +37,14 @@ cards_info = {
             {
                 "name": "Blastoise",
                 "market": 174.08,
-                "price_high": 247.37,
+                "price_high": 244.94,
                 "printed_total": 102,
                 "number": "2",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/base1-2"
             },
             {
                 "name": "Chansey",
-                "market": 36.19,
+                "market": 36.16,
                 "price_high": 74.98,
                 "printed_total": 102,
                 "number": "3",
@@ -52,7 +52,7 @@ cards_info = {
             },
             {
                 "name": "Charizard",
-                "market": 441.24,
+                "market": 440.18,
                 "price_high": 1249.99,
                 "printed_total": 102,
                 "number": "4",
@@ -60,7 +60,7 @@ cards_info = {
             },
             {
                 "name": "Clefairy",
-                "market": 26.83,
+                "market": 27.02,
                 "price_high": 47.99,
                 "printed_total": 102,
                 "number": "5",
@@ -68,7 +68,7 @@ cards_info = {
             },
             {
                 "name": "Gyarados",
-                "market": 34.67,
+                "market": 34.83,
                 "price_high": 87.59,
                 "printed_total": 102,
                 "number": "6",
@@ -76,7 +76,7 @@ cards_info = {
             },
             {
                 "name": "Gyarados",
-                "market": 26.15,
+                "market": 26.92,
                 "price_high": 51.25,
                 "printed_total": 130,
                 "number": "7",
@@ -84,7 +84,7 @@ cards_info = {
             },
             {
                 "name": "Hitmonchan",
-                "market": 21.58,
+                "market": 20.99,
                 "price_high": 999.99,
                 "printed_total": 102,
                 "number": "7",
@@ -116,7 +116,7 @@ cards_info = {
             },
             {
                 "name": "Mewtwo",
-                "market": 35.67,
+                "market": 35.77,
                 "price_high": 99.99,
                 "printed_total": 130,
                 "number": "10",
@@ -124,7 +124,7 @@ cards_info = {
             },
             {
                 "name": "Nidoking",
-                "market": 26.08,
+                "market": 26.65,
                 "price_high": 51.59,
                 "printed_total": 130,
                 "number": "11",
@@ -132,7 +132,7 @@ cards_info = {
             },
             {
                 "name": "Mewtwo",
-                "market": 40.01,
+                "market": 39.61,
                 "price_high": 9999.0,
                 "printed_total": 102,
                 "number": "10",
@@ -140,7 +140,7 @@ cards_info = {
             },
             {
                 "name": "Nidoking",
-                "market": 31.24,
+                "market": 31.26,
                 "price_high": 69.99,
                 "printed_total": 102,
                 "number": "11",
@@ -156,7 +156,7 @@ cards_info = {
             },
             {
                 "name": "Nidoqueen",
-                "market": 20.41,
+                "market": 20.6,
                 "price_high": 37.79,
                 "printed_total": 130,
                 "number": "12",
@@ -164,7 +164,7 @@ cards_info = {
             },
             {
                 "name": "Ninetales",
-                "market": 23.1,
+                "market": 22.69,
                 "price_high": 59.99,
                 "printed_total": 102,
                 "number": "12",
@@ -180,7 +180,7 @@ cards_info = {
             },
             {
                 "name": "Ninetales",
-                "market": 23.78,
+                "market": 24.17,
                 "price_high": 29.99,
                 "printed_total": 130,
                 "number": "13",
@@ -220,8 +220,8 @@ cards_info = {
             },
             {
                 "name": "Raichu",
-                "market": 44.87,
-                "price_high": 74.99,
+                "market": 44.69,
+                "price_high": 999.99,
                 "printed_total": 102,
                 "number": "14",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/base1-14"
@@ -252,15 +252,15 @@ cards_info = {
             },
             {
                 "name": "Scyther",
-                "market": 20.56,
-                "price_high": 30.0,
+                "market": 21.01,
+                "price_high": 26.91,
                 "printed_total": 130,
                 "number": "17",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/base4-17"
             },
             {
                 "name": "Zapdos",
-                "market": 39.96,
+                "market": 39.59,
                 "price_high": 77.99,
                 "printed_total": 102,
                 "number": "16",
@@ -300,7 +300,7 @@ cards_info = {
             },
             {
                 "name": "Zapdos",
-                "market": 23.11,
+                "market": 23.27,
                 "price_high": 44.99,
                 "printed_total": 130,
                 "number": "20",
@@ -421,7 +421,7 @@ cards_info = {
             {
                 "name": "Raichu",
                 "market": 101.96,
-                "price_high": 168.26,
+                "price_high": 181.03,
                 "printed_total": 165,
                 "number": "25",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ecard1-25"
@@ -461,7 +461,7 @@ cards_info = {
             {
                 "name": "Venusaur",
                 "market": 108.33,
-                "price_high": 106.35,
+                "price_high": 107.92,
                 "printed_total": 165,
                 "number": "30",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ecard1-30"
@@ -484,8 +484,8 @@ cards_info = {
             },
             {
                 "name": "Blastoise",
-                "market": 26.92,
-                "price_high": 50.0,
+                "market": 26.95,
+                "price_high": 60.0,
                 "printed_total": 165,
                 "number": "36",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ecard1-36"
@@ -500,7 +500,7 @@ cards_info = {
             },
             {
                 "name": "Charizard",
-                "market": 93.24,
+                "market": 84.39,
                 "price_high": 250.0,
                 "printed_total": 165,
                 "number": "39",
@@ -524,7 +524,7 @@ cards_info = {
             },
             {
                 "name": "Gengar",
-                "market": 33.98,
+                "market": 34.6,
                 "price_high": 101.49,
                 "printed_total": 165,
                 "number": "48",
@@ -532,7 +532,7 @@ cards_info = {
             },
             {
                 "name": "Mew",
-                "market": 31.49,
+                "market": 32.37,
                 "price_high": 60.0,
                 "printed_total": 165,
                 "number": "55",
@@ -557,11 +557,19 @@ cards_info = {
         "cards": [
             {
                 "name": "Mew",
-                "market": 41.6,
+                "market": 42.56,
                 "price_high": 55.0,
                 "printed_total": 53,
                 "number": "9",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/basep-9"
+            },
+            {
+                "name": "Eevee",
+                "market": 20.59,
+                "price_high": 49.99,
+                "printed_total": 53,
+                "number": "11",
+                "card_link": "https://prices.pokemontcg.io/tcgplayer/basep-11"
             },
             {
                 "name": "Mewtwo",
@@ -581,24 +589,24 @@ cards_info = {
             },
             {
                 "name": "Cool Porygon",
-                "market": 36.8,
-                "price_high": 100.0,
+                "market": 37.16,
+                "price_high": 149.99,
                 "printed_total": 53,
                 "number": "15",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/basep-15"
             },
             {
                 "name": "Dark Persian",
-                "market": 40.99,
-                "price_high": 73.55,
+                "market": 41.18,
+                "price_high": 73.0,
                 "printed_total": 53,
                 "number": "17",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/basep-17"
             },
             {
                 "name": "Sabrina's Abra",
-                "market": 25.48,
-                "price_high": 52.55,
+                "market": 25.5,
+                "price_high": 42.55,
                 "printed_total": 53,
                 "number": "19",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/basep-19"
@@ -613,15 +621,15 @@ cards_info = {
             },
             {
                 "name": "Flying Pikachu",
-                "market": 29.59,
-                "price_high": 31.86,
+                "market": 29.83,
+                "price_high": 69.97,
                 "printed_total": 53,
                 "number": "25",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/basep-25"
             },
             {
                 "name": "Pikachu",
-                "market": 27.03,
+                "market": 27.76,
                 "price_high": 33.6,
                 "printed_total": 53,
                 "number": "26",
@@ -629,7 +637,7 @@ cards_info = {
             },
             {
                 "name": "Pichu",
-                "market": 27.03,
+                "market": 27.17,
                 "price_high": 49.0,
                 "printed_total": 53,
                 "number": "35",
@@ -637,7 +645,7 @@ cards_info = {
             },
             {
                 "name": "Mew",
-                "market": 51.31,
+                "market": 49.26,
                 "price_high": 60.5,
                 "printed_total": 53,
                 "number": "47",
@@ -645,7 +653,7 @@ cards_info = {
             },
             {
                 "name": "Articuno",
-                "market": 30.76,
+                "market": 30.72,
                 "price_high": 40.45,
                 "printed_total": 53,
                 "number": "48",
@@ -653,15 +661,15 @@ cards_info = {
             },
             {
                 "name": "Snorlax",
-                "market": 89.33,
-                "price_high": 114.0,
+                "market": 99.27,
+                "price_high": 129.99,
                 "printed_total": 53,
                 "number": "49",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/basep-49"
             },
             {
                 "name": "Celebi",
-                "market": 30.42,
+                "market": 30.08,
                 "price_high": 34.97,
                 "printed_total": 53,
                 "number": "50",
@@ -669,7 +677,7 @@ cards_info = {
             },
             {
                 "name": "Suicune",
-                "market": 29.28,
+                "market": 30.23,
                 "price_high": 34.19,
                 "printed_total": 53,
                 "number": "53",
@@ -686,15 +694,15 @@ cards_info = {
         "cards": [
             {
                 "name": "Alakazam",
-                "market": 30.9,
-                "price_high": 159.99,
+                "market": 36.53,
+                "price_high": 99.99,
                 "printed_total": 130,
                 "number": "1",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/base4-1"
             },
             {
                 "name": "Blastoise",
-                "market": 95.86,
+                "market": 96.81,
                 "price_high": 250.0,
                 "printed_total": 130,
                 "number": "2",
@@ -702,7 +710,7 @@ cards_info = {
             },
             {
                 "name": "Charizard",
-                "market": 304.68,
+                "market": 310.12,
                 "price_high": 999.99,
                 "printed_total": 130,
                 "number": "4",
@@ -710,7 +718,7 @@ cards_info = {
             },
             {
                 "name": "Gyarados",
-                "market": 26.15,
+                "market": 26.92,
                 "price_high": 51.25,
                 "printed_total": 130,
                 "number": "7",
@@ -718,7 +726,7 @@ cards_info = {
             },
             {
                 "name": "Mewtwo",
-                "market": 35.67,
+                "market": 35.77,
                 "price_high": 99.99,
                 "printed_total": 130,
                 "number": "10",
@@ -726,7 +734,7 @@ cards_info = {
             },
             {
                 "name": "Nidoking",
-                "market": 26.08,
+                "market": 26.65,
                 "price_high": 51.59,
                 "printed_total": 130,
                 "number": "11",
@@ -734,7 +742,7 @@ cards_info = {
             },
             {
                 "name": "Nidoqueen",
-                "market": 20.41,
+                "market": 20.6,
                 "price_high": 37.79,
                 "printed_total": 130,
                 "number": "12",
@@ -742,7 +750,7 @@ cards_info = {
             },
             {
                 "name": "Ninetales",
-                "market": 23.78,
+                "market": 24.17,
                 "price_high": 29.99,
                 "printed_total": 130,
                 "number": "13",
@@ -766,8 +774,8 @@ cards_info = {
             },
             {
                 "name": "Scyther",
-                "market": 20.56,
-                "price_high": 30.0,
+                "market": 21.01,
+                "price_high": 26.91,
                 "printed_total": 130,
                 "number": "17",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/base4-17"
@@ -782,7 +790,7 @@ cards_info = {
             },
             {
                 "name": "Zapdos",
-                "market": 23.11,
+                "market": 23.27,
                 "price_high": 44.99,
                 "printed_total": 130,
                 "number": "20",
@@ -796,14 +804,14 @@ cards_info = {
             {
                 "name": "Azumarill",
                 "market": 24.76,
-                "price_high": 35.42,
+                "price_high": 34.83,
                 "printed_total": 109,
                 "number": "1",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ex7-1"
             },
             {
                 "name": "Dark Ampharos",
-                "market": 39.58,
+                "market": 40.06,
                 "price_high": 68.99,
                 "printed_total": 109,
                 "number": "2",
@@ -828,7 +836,7 @@ cards_info = {
             {
                 "name": "Dark Hypno",
                 "market": 36.19,
-                "price_high": 104.19,
+                "price_high": 100.16,
                 "printed_total": 109,
                 "number": "6",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ex7-6"
@@ -836,7 +844,7 @@ cards_info = {
             {
                 "name": "Dark Marowak",
                 "market": 40.9,
-                "price_high": 57.24,
+                "price_high": 57.56,
                 "printed_total": 109,
                 "number": "7",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ex7-7"
@@ -850,6 +858,14 @@ cards_info = {
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ex7-9"
             },
             {
+                "name": "Dark Steelix",
+                "market": 30.21,
+                "price_high": 36.45,
+                "printed_total": 109,
+                "number": "10",
+                "card_link": "https://prices.pokemontcg.io/tcgplayer/ex7-10"
+            },
+            {
                 "name": "Kingdra",
                 "market": 20.59,
                 "price_high": 29.99,
@@ -860,7 +876,7 @@ cards_info = {
             {
                 "name": "Togetic",
                 "market": 50.23,
-                "price_high": 65.3,
+                "price_high": 55.73,
                 "printed_total": 109,
                 "number": "14",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ex7-14"
@@ -868,7 +884,7 @@ cards_info = {
             {
                 "name": "Dark Dragonite",
                 "market": 24.05,
-                "price_high": 33.33,
+                "price_high": 19.37,
                 "printed_total": 109,
                 "number": "15",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ex7-15"
@@ -883,7 +899,7 @@ cards_info = {
             },
             {
                 "name": "Rocket's Entei ex",
-                "market": 339.0,
+                "market": 319.5,
                 "price_high": 499.99,
                 "printed_total": 109,
                 "number": "97",
@@ -891,7 +907,7 @@ cards_info = {
             },
             {
                 "name": "Rocket's Hitmonchan ex",
-                "market": 95.16,
+                "market": 102.78,
                 "price_high": 499.99,
                 "printed_total": 109,
                 "number": "98",
@@ -899,7 +915,7 @@ cards_info = {
             },
             {
                 "name": "Rocket's Mewtwo ex",
-                "market": 400.0,
+                "market": 499.5,
                 "price_high": 1999.99,
                 "printed_total": 109,
                 "number": "99",
@@ -916,7 +932,7 @@ cards_info = {
             {
                 "name": "Rocket's Scizor ex",
                 "market": 249.65,
-                "price_high": 239.99,
+                "price_high": 99.99,
                 "printed_total": 109,
                 "number": "101",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ex7-101"
@@ -1000,8 +1016,8 @@ cards_info = {
             },
             {
                 "name": "Togepi",
-                "market": 54.29,
-                "price_high": 62.27,
+                "market": 54.67,
+                "price_high": 42.1,
                 "printed_total": 18,
                 "number": "4",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/si1-4"
@@ -1016,7 +1032,7 @@ cards_info = {
             },
             {
                 "name": "Marill",
-                "market": 32.17,
+                "market": 33.76,
                 "price_high": 100.0,
                 "printed_total": 18,
                 "number": "11",
@@ -1025,14 +1041,14 @@ cards_info = {
             {
                 "name": "Lapras",
                 "market": 29.07,
-                "price_high": 40.0,
+                "price_high": 60.0,
                 "printed_total": 18,
                 "number": "12",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/si1-12"
             },
             {
                 "name": "Slowking",
-                "market": 44.36,
+                "market": 44.37,
                 "price_high": 76.99,
                 "printed_total": 18,
                 "number": "14",
@@ -1040,7 +1056,7 @@ cards_info = {
             },
             {
                 "name": "Wartortle",
-                "market": 24.97,
+                "market": 25.25,
                 "price_high": 34.51,
                 "printed_total": 18,
                 "number": "15",
@@ -1048,7 +1064,7 @@ cards_info = {
             },
             {
                 "name": "Vileplume",
-                "market": 24.53,
+                "market": 25.28,
                 "price_high": 50.0,
                 "printed_total": 18,
                 "number": "17",
@@ -1110,7 +1126,7 @@ cards_info = {
             {
                 "name": "Dark Persian",
                 "market": 33.84,
-                "price_high": 49.99,
+                "price_high": 54.75,
                 "printed_total": 110,
                 "number": "6",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/base6-6"
@@ -1150,7 +1166,7 @@ cards_info = {
             {
                 "name": "Gengar",
                 "market": 157.54,
-                "price_high": 168.29,
+                "price_high": 165.42,
                 "printed_total": 110,
                 "number": "11",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/base6-11"
@@ -1205,7 +1221,7 @@ cards_info = {
             },
             {
                 "name": "Zapdos",
-                "market": 38.14,
+                "market": 37.89,
                 "price_high": 99.99,
                 "printed_total": 110,
                 "number": "19",
@@ -1419,7 +1435,7 @@ cards_info = {
             {
                 "name": "Raichu",
                 "market": 101.96,
-                "price_high": 168.26,
+                "price_high": 181.03,
                 "printed_total": 165,
                 "number": "25",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ecard1-25"
@@ -1459,7 +1475,7 @@ cards_info = {
             {
                 "name": "Venusaur",
                 "market": 108.33,
-                "price_high": 106.35,
+                "price_high": 107.92,
                 "printed_total": 165,
                 "number": "30",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ecard1-30"
@@ -1482,8 +1498,8 @@ cards_info = {
             },
             {
                 "name": "Blastoise",
-                "market": 26.92,
-                "price_high": 50.0,
+                "market": 26.95,
+                "price_high": 60.0,
                 "printed_total": 165,
                 "number": "36",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ecard1-36"
@@ -1498,7 +1514,7 @@ cards_info = {
             },
             {
                 "name": "Charizard",
-                "market": 93.24,
+                "market": 84.39,
                 "price_high": 250.0,
                 "printed_total": 165,
                 "number": "39",
@@ -1522,7 +1538,7 @@ cards_info = {
             },
             {
                 "name": "Gengar",
-                "market": 33.98,
+                "market": 34.6,
                 "price_high": 101.49,
                 "printed_total": 165,
                 "number": "48",
@@ -1530,7 +1546,7 @@ cards_info = {
             },
             {
                 "name": "Mew",
-                "market": 31.49,
+                "market": 32.37,
                 "price_high": 60.0,
                 "printed_total": 165,
                 "number": "55",
@@ -1551,7 +1567,7 @@ cards_info = {
         "cards": [
             {
                 "name": "Exeggutor",
-                "market": 52.82,
+                "market": 52.72,
                 "price_high": 125.0,
                 "printed_total": 147,
                 "number": "H10",
@@ -1640,7 +1656,7 @@ cards_info = {
             {
                 "name": "Slowking",
                 "market": 199.99,
-                "price_high": 350.0,
+                "price_high": 351.99,
                 "printed_total": 147,
                 "number": "H22",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ecard2-H22"
@@ -1687,8 +1703,8 @@ cards_info = {
             },
             {
                 "name": "Tyranitar",
-                "market": 289.66,
-                "price_high": 617.2,
+                "market": 289.5,
+                "price_high": 619.06,
                 "printed_total": 147,
                 "number": "H28",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ecard2-H28"
@@ -1696,7 +1712,7 @@ cards_info = {
             {
                 "name": "Umbreon",
                 "market": 399.8,
-                "price_high": 399.8,
+                "price_high": 325.0,
                 "printed_total": 147,
                 "number": "H29",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ecard2-H29"
@@ -1711,8 +1727,8 @@ cards_info = {
             },
             {
                 "name": "Vileplume",
-                "market": 87.99,
-                "price_high": 99.99,
+                "market": 91.99,
+                "price_high": 101.19,
                 "printed_total": 147,
                 "number": "H31",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ecard2-H31"
@@ -1743,8 +1759,8 @@ cards_info = {
             },
             {
                 "name": "Houndoom",
-                "market": 21.19,
-                "price_high": 45.97,
+                "market": 23.66,
+                "price_high": 29.7,
                 "printed_total": 147,
                 "number": "15",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ecard2-15"
@@ -1752,14 +1768,14 @@ cards_info = {
             {
                 "name": "Scizor",
                 "market": 28.52,
-                "price_high": 34.99,
+                "price_high": 35.0,
                 "printed_total": 147,
                 "number": "32",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ecard2-32"
             },
             {
                 "name": "Slowbro",
-                "market": 20.62,
+                "market": 23.49,
                 "price_high": 39.99,
                 "printed_total": 147,
                 "number": "33",
@@ -1791,7 +1807,7 @@ cards_info = {
             },
             {
                 "name": "Psyduck",
-                "market": 23.88,
+                "market": 24.06,
                 "price_high": 89.98,
                 "printed_total": 147,
                 "number": "104",
@@ -1807,7 +1823,7 @@ cards_info = {
             },
             {
                 "name": "Lugia",
-                "market": 2386.0,
+                "market": 1235.75,
                 "price_high": 9999.99,
                 "printed_total": 147,
                 "number": "149",
@@ -1845,7 +1861,7 @@ cards_info = {
             {
                 "name": "Jolteon",
                 "market": 300.0,
-                "price_high": 399.99,
+                "price_high": 299.7,
                 "printed_total": 144,
                 "number": "H12",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ecard3-H12"
@@ -1989,7 +2005,7 @@ cards_info = {
             {
                 "name": "Vaporeon",
                 "market": 296.99,
-                "price_high": 499.95,
+                "price_high": 430.0,
                 "printed_total": 144,
                 "number": "H31",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ecard3-H31"
@@ -2004,8 +2020,8 @@ cards_info = {
             },
             {
                 "name": "Alakazam",
-                "market": 45.49,
-                "price_high": 36.16,
+                "market": 46.69,
+                "price_high": 41.15,
                 "printed_total": 144,
                 "number": "2",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ecard3-2"
@@ -2037,7 +2053,7 @@ cards_info = {
             {
                 "name": "Crobat",
                 "market": 29.13,
-                "price_high": 52.67,
+                "price_high": 51.86,
                 "printed_total": 144,
                 "number": "6",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ecard3-6"
@@ -2052,8 +2068,8 @@ cards_info = {
             },
             {
                 "name": "Gengar",
-                "market": 199.99,
-                "price_high": 199.69,
+                "market": 199.84,
+                "price_high": 198.7,
                 "printed_total": 144,
                 "number": "10",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ecard3-10"
@@ -2085,7 +2101,7 @@ cards_info = {
             {
                 "name": "Nidoqueen",
                 "market": 24.95,
-                "price_high": 47.0,
+                "price_high": 47.96,
                 "printed_total": 144,
                 "number": "22",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ecard3-22"
@@ -2093,7 +2109,7 @@ cards_info = {
             {
                 "name": "Piloswine",
                 "market": 20.89,
-                "price_high": 672.96,
+                "price_high": 991.71,
                 "printed_total": 144,
                 "number": "24",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ecard3-24"
@@ -2125,7 +2141,7 @@ cards_info = {
             {
                 "name": "Raikou",
                 "market": 32.6,
-                "price_high": 32.0,
+                "price_high": 33.97,
                 "printed_total": 144,
                 "number": "28",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ecard3-28"
@@ -2181,7 +2197,7 @@ cards_info = {
             {
                 "name": "Swinub",
                 "market": 26.19,
-                "price_high": 33.5,
+                "price_high": 29.92,
                 "printed_total": 144,
                 "number": "107",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ecard3-107"
@@ -2250,7 +2266,7 @@ cards_info = {
             {
                 "name": "Swampert",
                 "market": 39.24,
-                "price_high": 47.42,
+                "price_high": 46.63,
                 "printed_total": 109,
                 "number": "13",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ex1-13"
@@ -2265,31 +2281,31 @@ cards_info = {
             },
             {
                 "name": "Electabuzz ex",
-                "market": 35.14,
-                "price_high": 47.41,
+                "market": 35.61,
+                "price_high": 49.46,
                 "printed_total": 109,
                 "number": "97",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ex1-97"
             },
             {
                 "name": "Hitmonchan ex",
-                "market": 31.55,
-                "price_high": 78.43,
+                "market": 32.5,
+                "price_high": 74.29,
                 "printed_total": 109,
                 "number": "98",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ex1-98"
             },
             {
                 "name": "Lapras ex",
-                "market": 52.85,
-                "price_high": 81.19,
+                "market": 52.77,
+                "price_high": 81.54,
                 "printed_total": 109,
                 "number": "99",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ex1-99"
             },
             {
                 "name": "Magmar ex",
-                "market": 25.64,
+                "market": 25.85,
                 "price_high": 41.27,
                 "printed_total": 109,
                 "number": "100",
@@ -2297,23 +2313,23 @@ cards_info = {
             },
             {
                 "name": "Mewtwo ex",
-                "market": 101.11,
-                "price_high": 103.1,
+                "market": 101.31,
+                "price_high": 105.0,
                 "printed_total": 109,
                 "number": "101",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ex1-101"
             },
             {
                 "name": "Scyther ex",
-                "market": 56.26,
-                "price_high": 70.0,
+                "market": 57.32,
+                "price_high": 90.0,
                 "printed_total": 109,
                 "number": "102",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ex1-102"
             },
             {
                 "name": "Sneasel ex",
-                "market": 37.3,
+                "market": 38.16,
                 "price_high": 99.99,
                 "printed_total": 109,
                 "number": "103",
@@ -2343,15 +2359,15 @@ cards_info = {
             {
                 "name": "Ludicolo",
                 "market": 22.78,
-                "price_high": 36.34,
+                "price_high": 38.98,
                 "printed_total": 100,
                 "number": "7",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ex2-7"
             },
             {
                 "name": "Mawile",
-                "market": 26.76,
-                "price_high": 36.04,
+                "market": 27.0,
+                "price_high": 36.38,
                 "printed_total": 100,
                 "number": "9",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ex2-9"
@@ -2382,7 +2398,7 @@ cards_info = {
             },
             {
                 "name": "Aggron ex",
-                "market": 56.04,
+                "market": 55.75,
                 "price_high": 70.0,
                 "printed_total": 100,
                 "number": "95",
@@ -2399,7 +2415,7 @@ cards_info = {
             {
                 "name": "Kabutops ex",
                 "market": 47.37,
-                "price_high": 68.53,
+                "price_high": 66.69,
                 "printed_total": 100,
                 "number": "97",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ex2-97"
@@ -2423,7 +2439,7 @@ cards_info = {
             {
                 "name": "Wailord ex",
                 "market": 60.06,
-                "price_high": 69.6,
+                "price_high": 70.38,
                 "printed_total": 100,
                 "number": "100",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ex2-100"
@@ -2436,15 +2452,15 @@ cards_info = {
             {
                 "name": "Absol",
                 "market": 43.36,
-                "price_high": 38.66,
+                "price_high": 45.0,
                 "printed_total": 97,
                 "number": "1",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ex3-1"
             },
             {
                 "name": "Altaria",
-                "market": 22.31,
-                "price_high": 22.31,
+                "market": 22.29,
+                "price_high": 19.99,
                 "printed_total": 97,
                 "number": "2",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ex3-2"
@@ -2452,7 +2468,7 @@ cards_info = {
             {
                 "name": "Flygon",
                 "market": 34.99,
-                "price_high": 41.99,
+                "price_high": 42.37,
                 "printed_total": 97,
                 "number": "4",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ex3-4"
@@ -2475,8 +2491,8 @@ cards_info = {
             },
             {
                 "name": "Salamence",
-                "market": 39.6,
-                "price_high": 50.83,
+                "market": 38.75,
+                "price_high": 50.75,
                 "printed_total": 97,
                 "number": "10",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ex3-10"
@@ -2491,15 +2507,15 @@ cards_info = {
             },
             {
                 "name": "Feraligatr \u03b4",
-                "market": 24.26,
-                "price_high": 38.41,
+                "market": 24.71,
+                "price_high": 33.46,
                 "printed_total": 101,
                 "number": "2",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ex15-2"
             },
             {
                 "name": "Torkoal",
-                "market": 24.67,
+                "market": 24.77,
                 "price_high": 44.98,
                 "printed_total": 97,
                 "number": "12",
@@ -2508,7 +2524,7 @@ cards_info = {
             {
                 "name": "Ninetales \u03b4",
                 "market": 50.19,
-                "price_high": 67.96,
+                "price_high": 54.46,
                 "printed_total": 101,
                 "number": "8",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ex15-8"
@@ -2531,7 +2547,7 @@ cards_info = {
             },
             {
                 "name": "Typhlosion \u03b4",
-                "market": 20.04,
+                "market": 20.16,
                 "price_high": 49.99,
                 "printed_total": 101,
                 "number": "12",
@@ -2539,7 +2555,7 @@ cards_info = {
             },
             {
                 "name": "Reshiram-GX",
-                "market": 21.86,
+                "market": 22.37,
                 "price_high": 55.55,
                 "printed_total": 70,
                 "number": "71",
@@ -2555,7 +2571,7 @@ cards_info = {
             },
             {
                 "name": "White Kyurem-GX",
-                "market": 21.64,
+                "market": 21.79,
                 "price_high": 49.99,
                 "printed_total": 70,
                 "number": "74",
@@ -2563,8 +2579,8 @@ cards_info = {
             },
             {
                 "name": "Ultra Necrozma-GX",
-                "market": 74.97,
-                "price_high": 119.94,
+                "market": 74.95,
+                "price_high": 122.48,
                 "printed_total": 70,
                 "number": "78",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sm75-78"
@@ -2628,7 +2644,7 @@ cards_info = {
             {
                 "name": "Muk ex",
                 "market": 32.93,
-                "price_high": 60.6,
+                "price_high": 620.75,
                 "printed_total": 97,
                 "number": "96",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ex3-96"
@@ -2636,7 +2652,7 @@ cards_info = {
             {
                 "name": "Rayquaza ex",
                 "market": 261.89,
-                "price_high": 304.95,
+                "price_high": 298.69,
                 "printed_total": 97,
                 "number": "97",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ex3-97"
@@ -2652,7 +2668,7 @@ cards_info = {
             {
                 "name": "Charmeleon",
                 "market": 68.79,
-                "price_high": 107.52,
+                "price_high": 102.0,
                 "printed_total": 97,
                 "number": "99",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ex3-99"
@@ -2660,7 +2676,7 @@ cards_info = {
             {
                 "name": "Charizard",
                 "market": 449.0,
-                "price_high": 294.76,
+                "price_high": 345.55,
                 "printed_total": 97,
                 "number": "100",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ex3-100"
@@ -2668,7 +2684,7 @@ cards_info = {
             {
                 "name": "Altaria ex \u03b4",
                 "market": 49.73,
-                "price_high": 71.99,
+                "price_high": 78.43,
                 "printed_total": 101,
                 "number": "90",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ex15-90"
@@ -2683,8 +2699,8 @@ cards_info = {
             },
             {
                 "name": "Flygon ex \u03b4",
-                "market": 74.85,
-                "price_high": 105.92,
+                "market": 74.87,
+                "price_high": 114.77,
                 "printed_total": 101,
                 "number": "92",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ex15-92"
@@ -2739,8 +2755,8 @@ cards_info = {
             },
             {
                 "name": "Tyranitar ex \u03b4",
-                "market": 150.0,
-                "price_high": 201.24,
+                "market": 175.0,
+                "price_high": 210.0,
                 "printed_total": 101,
                 "number": "99",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ex15-99"
@@ -2748,7 +2764,7 @@ cards_info = {
             {
                 "name": "Mew \u2605 \u03b4",
                 "market": 1500.0,
-                "price_high": 379.98,
+                "price_high": 374.98,
                 "printed_total": 101,
                 "number": "101",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/ex15-101"
@@ -2760,7 +2776,7 @@ cards_info = {
         "cards": [
             {
                 "name": "Plusle",
-                "market": 21.05,
+                "market": 22.07,
                 "price_high": 49.99,
                 "printed_total": 182,
                 "number": "193",
@@ -2768,15 +2784,15 @@ cards_info = {
             },
             {
                 "name": "Minun",
-                "market": 25.5,
-                "price_high": 49.99,
+                "market": 26.66,
+                "price_high": 53.06,
                 "printed_total": 182,
                 "number": "194",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv4-194"
             },
             {
                 "name": "Groudon",
-                "market": 106.22,
+                "market": 105.81,
                 "price_high": 199.99,
                 "printed_total": 182,
                 "number": "199",
@@ -2784,7 +2800,7 @@ cards_info = {
             },
             {
                 "name": "Yveltal",
-                "market": 20.74,
+                "market": 21.86,
                 "price_high": 60.0,
                 "printed_total": 182,
                 "number": "205",
@@ -2792,15 +2808,15 @@ cards_info = {
             },
             {
                 "name": "Steelix",
-                "market": 30.84,
-                "price_high": 99.48,
+                "market": 33.21,
+                "price_high": 101.47,
                 "printed_total": 182,
                 "number": "208",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv4-208"
             },
             {
                 "name": "Swablu",
-                "market": 20.94,
+                "market": 20.73,
                 "price_high": 59.98,
                 "printed_total": 182,
                 "number": "213",
@@ -2808,7 +2824,7 @@ cards_info = {
             },
             {
                 "name": "Garchomp ex",
-                "market": 46.39,
+                "market": 50.0,
                 "price_high": 100.0,
                 "printed_total": 182,
                 "number": "245",
@@ -2816,7 +2832,7 @@ cards_info = {
             },
             {
                 "name": "Iron Valiant ex",
-                "market": 32.75,
+                "market": 34.19,
                 "price_high": 75.0,
                 "printed_total": 182,
                 "number": "249",
@@ -2824,7 +2840,7 @@ cards_info = {
             },
             {
                 "name": "Roaring Moon ex",
-                "market": 59.07,
+                "market": 60.46,
                 "price_high": 120.0,
                 "printed_total": 182,
                 "number": "251",
@@ -2832,7 +2848,7 @@ cards_info = {
             },
             {
                 "name": "Gholdengo ex",
-                "market": 23.43,
+                "market": 24.06,
                 "price_high": 43.69,
                 "printed_total": 182,
                 "number": "252",
@@ -2840,8 +2856,8 @@ cards_info = {
             },
             {
                 "name": "Altaria ex",
-                "market": 65.42,
-                "price_high": 99.0,
+                "market": 67.99,
+                "price_high": 102.08,
                 "printed_total": 182,
                 "number": "253",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv4-253"
@@ -2853,15 +2869,15 @@ cards_info = {
         "cards": [
             {
                 "name": "Charmander",
-                "market": 27.13,
-                "price_high": 42.48,
+                "market": 27.04,
+                "price_high": 42.6,
                 "printed_total": 91,
                 "number": "109",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv4pt5-109"
             },
             {
                 "name": "Pikachu",
-                "market": 41.98,
+                "market": 47.39,
                 "price_high": 130.99,
                 "printed_total": 91,
                 "number": "131",
@@ -2869,7 +2885,7 @@ cards_info = {
             },
             {
                 "name": "Snorlax",
-                "market": 23.56,
+                "market": 22.52,
                 "price_high": 45.0,
                 "printed_total": 91,
                 "number": "202",
@@ -2877,7 +2893,7 @@ cards_info = {
             },
             {
                 "name": "Mew ex",
-                "market": 413.69,
+                "market": 401.54,
                 "price_high": 10000.0,
                 "printed_total": 91,
                 "number": "232",
@@ -2885,7 +2901,7 @@ cards_info = {
             },
             {
                 "name": "Gardevoir ex",
-                "market": 92.86,
+                "market": 91.85,
                 "price_high": 185.86,
                 "printed_total": 91,
                 "number": "233",
@@ -2893,8 +2909,8 @@ cards_info = {
             },
             {
                 "name": "Charizard ex",
-                "market": 219.26,
-                "price_high": 320.0,
+                "market": 211.08,
+                "price_high": 299.99,
                 "printed_total": 91,
                 "number": "234",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv4pt5-234"
@@ -2905,8 +2921,16 @@ cards_info = {
         "code": "sv6",
         "cards": [
             {
+                "name": "Hisuian Growlithe",
+                "market": 21.15,
+                "price_high": 42.69,
+                "printed_total": 167,
+                "number": "181",
+                "card_link": "https://prices.pokemontcg.io/tcgplayer/sv6-181"
+            },
+            {
                 "name": "Chansey",
-                "market": 25.84,
+                "market": 24.37,
                 "price_high": 58.02,
                 "printed_total": 167,
                 "number": "187",
@@ -2914,7 +2938,7 @@ cards_info = {
             },
             {
                 "name": "Eevee",
-                "market": 98.17,
+                "market": 96.19,
                 "price_high": 214.99,
                 "printed_total": 167,
                 "number": "188",
@@ -2922,7 +2946,7 @@ cards_info = {
             },
             {
                 "name": "Teal Mask Ogerpon ex",
-                "market": 24.41,
+                "market": 24.22,
                 "price_high": 65.99,
                 "printed_total": 167,
                 "number": "211",
@@ -2930,7 +2954,7 @@ cards_info = {
             },
             {
                 "name": "Sinistcha ex",
-                "market": 21.95,
+                "market": 22.27,
                 "price_high": 39.99,
                 "printed_total": 167,
                 "number": "210",
@@ -2938,15 +2962,15 @@ cards_info = {
             },
             {
                 "name": "Greninja ex",
-                "market": 339.32,
-                "price_high": 598.96,
+                "market": 350.87,
+                "price_high": 694.94,
                 "printed_total": 167,
                 "number": "214",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv6-214"
             },
             {
                 "name": "Bloodmoon Ursaluna ex",
-                "market": 38.72,
+                "market": 39.37,
                 "price_high": 80.0,
                 "printed_total": 167,
                 "number": "216",
@@ -2959,7 +2983,7 @@ cards_info = {
         "cards": [
             {
                 "name": "Charizard V",
-                "market": 22.44,
+                "market": 22.47,
                 "price_high": 500.0,
                 "printed_total": 172,
                 "number": "153",
@@ -2967,7 +2991,7 @@ cards_info = {
             },
             {
                 "name": "Charizard V",
-                "market": 200.29,
+                "market": 198.1,
                 "price_high": 1500.0,
                 "printed_total": 172,
                 "number": "154",
@@ -2975,7 +2999,7 @@ cards_info = {
             },
             {
                 "name": "Arceus V",
-                "market": 44.58,
+                "market": 45.86,
                 "price_high": 149.99,
                 "printed_total": 172,
                 "number": "166",
@@ -2983,7 +3007,7 @@ cards_info = {
             },
             {
                 "name": "Charizard VSTAR",
-                "market": 57.02,
+                "market": 56.96,
                 "price_high": 5000.0,
                 "printed_total": 172,
                 "number": "174",
@@ -2991,7 +3015,7 @@ cards_info = {
             },
             {
                 "name": "Sylveon V",
-                "market": 42.68,
+                "market": 43.58,
                 "price_high": 149.99,
                 "printed_total": 30,
                 "number": "TG14",
@@ -2999,7 +3023,7 @@ cards_info = {
             },
             {
                 "name": "Sylveon VMAX",
-                "market": 55.24,
+                "market": 55.98,
                 "price_high": 100.0,
                 "printed_total": 30,
                 "number": "TG15",
@@ -3007,15 +3031,15 @@ cards_info = {
             },
             {
                 "name": "Mimikyu V",
-                "market": 33.36,
-                "price_high": 75.0,
+                "market": 34.35,
+                "price_high": 80.0,
                 "printed_total": 30,
                 "number": "TG16",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/swsh9tg-TG16"
             },
             {
                 "name": "Mimikyu VMAX",
-                "market": 38.78,
+                "market": 42.56,
                 "price_high": 77.38,
                 "printed_total": 30,
                 "number": "TG17",
@@ -3023,7 +3047,7 @@ cards_info = {
             },
             {
                 "name": "Umbreon V",
-                "market": 54.54,
+                "market": 56.11,
                 "price_high": 147.99,
                 "printed_total": 30,
                 "number": "TG22",
@@ -3031,7 +3055,7 @@ cards_info = {
             },
             {
                 "name": "Umbreon VMAX",
-                "market": 82.53,
+                "market": 86.49,
                 "price_high": 200.0,
                 "printed_total": 30,
                 "number": "TG23",
@@ -3044,7 +3068,7 @@ cards_info = {
         "cards": [
             {
                 "name": "Beedrill V",
-                "market": 38.25,
+                "market": 38.22,
                 "price_high": 79.99,
                 "printed_total": 189,
                 "number": "161",
@@ -3052,15 +3076,15 @@ cards_info = {
             },
             {
                 "name": "Origin Forme Palkia V",
-                "market": 64.42,
-                "price_high": 150.0,
+                "market": 65.25,
+                "price_high": 300.0,
                 "printed_total": 189,
                 "number": "167",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/swsh10-167"
             },
             {
                 "name": "Machamp V",
-                "market": 150.9,
+                "market": 153.34,
                 "price_high": 292.82,
                 "printed_total": 189,
                 "number": "172",
@@ -3068,7 +3092,7 @@ cards_info = {
             },
             {
                 "name": "Hisuian Sneasler V",
-                "market": 25.62,
+                "market": 25.78,
                 "price_high": 59.99,
                 "printed_total": 189,
                 "number": "175",
@@ -3076,7 +3100,7 @@ cards_info = {
             },
             {
                 "name": "Origin Forme Dialga V",
-                "market": 65.09,
+                "market": 67.2,
                 "price_high": 199.0,
                 "printed_total": 189,
                 "number": "177",
@@ -3084,7 +3108,7 @@ cards_info = {
             },
             {
                 "name": "Starmie V",
-                "market": 91.74,
+                "market": 93.46,
                 "price_high": 169.99,
                 "printed_total": 30,
                 "number": "TG13",
@@ -3092,7 +3116,7 @@ cards_info = {
             },
             {
                 "name": "Zacian V",
-                "market": 23.17,
+                "market": 24.79,
                 "price_high": 43.1,
                 "printed_total": 30,
                 "number": "TG21",
@@ -3100,7 +3124,7 @@ cards_info = {
             },
             {
                 "name": "Garchomp V",
-                "market": 68.14,
+                "market": 69.1,
                 "price_high": 999.99,
                 "printed_total": 30,
                 "number": "TG23",
@@ -3113,7 +3137,7 @@ cards_info = {
         "cards": [
             {
                 "name": "Unown V",
-                "market": 21.67,
+                "market": 21.09,
                 "price_high": 114.0,
                 "printed_total": 195,
                 "number": "177",
@@ -3121,7 +3145,7 @@ cards_info = {
             },
             {
                 "name": "Lugia V",
-                "market": 284.43,
+                "market": 290.84,
                 "price_high": 591.2,
                 "printed_total": 195,
                 "number": "186",
@@ -3129,7 +3153,7 @@ cards_info = {
             },
             {
                 "name": "Lugia VSTAR",
-                "market": 30.49,
+                "market": 30.57,
                 "price_high": 64.64,
                 "printed_total": 195,
                 "number": "202",
@@ -3137,7 +3161,7 @@ cards_info = {
             },
             {
                 "name": "Blaziken V",
-                "market": 25.3,
+                "market": 26.17,
                 "price_high": 65.0,
                 "printed_total": 30,
                 "number": "TG14",
@@ -3145,7 +3169,7 @@ cards_info = {
             },
             {
                 "name": "Blaziken VMAX",
-                "market": 26.64,
+                "market": 27.94,
                 "price_high": 79.95,
                 "printed_total": 30,
                 "number": "TG15",
@@ -3153,7 +3177,7 @@ cards_info = {
             },
             {
                 "name": "Rayquaza VMAX",
-                "market": 76.68,
+                "market": 78.24,
                 "price_high": 150.0,
                 "printed_total": 30,
                 "number": "TG20",
@@ -3166,7 +3190,7 @@ cards_info = {
         "cards": [
             {
                 "name": "Pikachu VMAX",
-                "market": 159.69,
+                "market": 157.98,
                 "price_high": 291.76,
                 "printed_total": 185,
                 "number": "188",
@@ -3179,15 +3203,15 @@ cards_info = {
         "cards": [
             {
                 "name": "Ninetales",
-                "market": 27.06,
-                "price_high": 100.0,
+                "market": 30.35,
+                "price_high": 150.0,
                 "printed_total": 197,
                 "number": "199",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv3-199"
             },
             {
                 "name": "Cleffa",
-                "market": 23.36,
+                "market": 24.65,
                 "price_high": 60.0,
                 "printed_total": 197,
                 "number": "202",
@@ -3195,7 +3219,7 @@ cards_info = {
             },
             {
                 "name": "Charizard ex",
-                "market": 23.57,
+                "market": 24.79,
                 "price_high": 95.0,
                 "printed_total": 197,
                 "number": "228",
@@ -3203,8 +3227,8 @@ cards_info = {
             },
             {
                 "name": "Charizard ex",
-                "market": 72.83,
-                "price_high": 180.0,
+                "market": 68.42,
+                "price_high": 175.0,
                 "printed_total": 197,
                 "number": "223",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv3-223"
@@ -3216,7 +3240,7 @@ cards_info = {
         "cards": [
             {
                 "name": "Pikachu",
-                "market": 34.81,
+                "market": 36.78,
                 "price_high": 100.0,
                 "printed_total": 165,
                 "number": "173",
@@ -3224,7 +3248,7 @@ cards_info = {
             },
             {
                 "name": "Charmander",
-                "market": 57.09,
+                "market": 54.74,
                 "price_high": 100.0,
                 "printed_total": 165,
                 "number": "168",
@@ -3232,15 +3256,15 @@ cards_info = {
             },
             {
                 "name": "Bulbasaur",
-                "market": 46.94,
-                "price_high": 89.99,
+                "market": 48.38,
+                "price_high": 130.0,
                 "printed_total": 165,
                 "number": "166",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv3pt5-166"
             },
             {
                 "name": "Charmeleon",
-                "market": 43.46,
+                "market": 39.89,
                 "price_high": 150.0,
                 "printed_total": 165,
                 "number": "169",
@@ -3248,7 +3272,7 @@ cards_info = {
             },
             {
                 "name": "Wartortle",
-                "market": 33.04,
+                "market": 33.95,
                 "price_high": 70.0,
                 "printed_total": 165,
                 "number": "171",
@@ -3256,7 +3280,7 @@ cards_info = {
             },
             {
                 "name": "Ivysaur",
-                "market": 32.29,
+                "market": 32.63,
                 "price_high": 85.0,
                 "printed_total": 165,
                 "number": "167",
@@ -3264,7 +3288,7 @@ cards_info = {
             },
             {
                 "name": "Squirtle",
-                "market": 48.69,
+                "market": 49.73,
                 "price_high": 100.0,
                 "printed_total": 165,
                 "number": "170",
@@ -3272,7 +3296,7 @@ cards_info = {
             },
             {
                 "name": "Mew ex",
-                "market": 20.81,
+                "market": 22.4,
                 "price_high": 100.0,
                 "printed_total": 165,
                 "number": "193",
@@ -3280,7 +3304,7 @@ cards_info = {
             },
             {
                 "name": "Dragonair",
-                "market": 27.89,
+                "market": 29.84,
                 "price_high": 1700.0,
                 "printed_total": 165,
                 "number": "181",
@@ -3288,7 +3312,7 @@ cards_info = {
             },
             {
                 "name": "Psyduck",
-                "market": 20.31,
+                "market": 20.9,
                 "price_high": 70.0,
                 "printed_total": 165,
                 "number": "175",
@@ -3296,7 +3320,7 @@ cards_info = {
             },
             {
                 "name": "Poliwhirl",
-                "market": 20.96,
+                "market": 22.3,
                 "price_high": 100.0,
                 "printed_total": 165,
                 "number": "176",
@@ -3304,23 +3328,31 @@ cards_info = {
             },
             {
                 "name": "Charizard ex",
-                "market": 43.0,
+                "market": 43.93,
                 "price_high": 100.0,
                 "printed_total": 165,
                 "number": "183",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv3pt5-183"
             },
             {
-                "name": "Venusaur ex",
-                "market": 80.86,
+                "name": "Blastoise ex",
+                "market": 20.54,
                 "price_high": 300.0,
+                "printed_total": 165,
+                "number": "184",
+                "card_link": "https://prices.pokemontcg.io/tcgplayer/sv3pt5-184"
+            },
+            {
+                "name": "Venusaur ex",
+                "market": 80.42,
+                "price_high": 500.0,
                 "printed_total": 165,
                 "number": "198",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv3pt5-198"
             },
             {
                 "name": "Charizard ex",
-                "market": 251.83,
+                "market": 251.16,
                 "price_high": 1925.0,
                 "printed_total": 165,
                 "number": "199",
@@ -3328,7 +3360,7 @@ cards_info = {
             },
             {
                 "name": "Blastoise ex",
-                "market": 79.83,
+                "market": 82.1,
                 "price_high": 195.0,
                 "printed_total": 165,
                 "number": "200",
@@ -3336,15 +3368,15 @@ cards_info = {
             },
             {
                 "name": "Alakazam ex",
-                "market": 51.86,
-                "price_high": 300.0,
+                "market": 50.34,
+                "price_high": 120.0,
                 "printed_total": 165,
                 "number": "201",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv3pt5-201"
             },
             {
                 "name": "Zapdos ex",
-                "market": 63.46,
+                "market": 64.12,
                 "price_high": 300.0,
                 "printed_total": 165,
                 "number": "202",
@@ -3356,8 +3388,16 @@ cards_info = {
         "code": "sv2",
         "cards": [
             {
+                "name": "Heracross",
+                "market": 20.8,
+                "price_high": 80.0,
+                "printed_total": 193,
+                "number": "194",
+                "card_link": "https://prices.pokemontcg.io/tcgplayer/sv2-194"
+            },
+            {
                 "name": "Fuecoco",
-                "market": 29.87,
+                "market": 30.32,
                 "price_high": 100.0,
                 "printed_total": 193,
                 "number": "201",
@@ -3365,7 +3405,7 @@ cards_info = {
             },
             {
                 "name": "Magikarp",
-                "market": 231.2,
+                "market": 242.62,
                 "price_high": 400.0,
                 "printed_total": 193,
                 "number": "203",
@@ -3373,15 +3413,15 @@ cards_info = {
             },
             {
                 "name": "Sprigatito",
-                "market": 20.48,
-                "price_high": 44.99,
+                "market": 20.69,
+                "price_high": 100.0,
                 "printed_total": 193,
                 "number": "196",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv2-196"
             },
             {
                 "name": "Raichu",
-                "market": 56.34,
+                "market": 54.55,
                 "price_high": 124.94,
                 "printed_total": 193,
                 "number": "211",
@@ -3389,7 +3429,7 @@ cards_info = {
             },
             {
                 "name": "Tyranitar",
-                "market": 46.29,
+                "market": 48.13,
                 "price_high": 119.99,
                 "printed_total": 193,
                 "number": "222",
@@ -3397,15 +3437,15 @@ cards_info = {
             },
             {
                 "name": "Mismagius",
-                "market": 22.07,
-                "price_high": 59.99,
+                "market": 22.81,
+                "price_high": 64.78,
                 "printed_total": 193,
                 "number": "212",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv2-212"
             },
             {
                 "name": "Maushold",
-                "market": 31.94,
+                "market": 33.75,
                 "price_high": 9999.0,
                 "printed_total": 193,
                 "number": "226",
@@ -3413,15 +3453,23 @@ cards_info = {
             },
             {
                 "name": "Marill",
-                "market": 33.08,
+                "market": 34.28,
                 "price_high": 86.15,
                 "printed_total": 193,
                 "number": "204",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv2-204"
             },
             {
+                "name": "Baxcalibur",
+                "market": 20.6,
+                "price_high": 38.73,
+                "printed_total": 193,
+                "number": "210",
+                "card_link": "https://prices.pokemontcg.io/tcgplayer/sv2-210"
+            },
+            {
                 "name": "Chien-Pao ex",
-                "market": 20.51,
+                "market": 21.07,
                 "price_high": 54.99,
                 "printed_total": 193,
                 "number": "261",
@@ -3429,15 +3477,15 @@ cards_info = {
             },
             {
                 "name": "Skeledirge ex",
-                "market": 23.51,
-                "price_high": 50.0,
+                "market": 23.8,
+                "price_high": 90.0,
                 "printed_total": 193,
                 "number": "258",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv2-258"
             },
             {
                 "name": "Chi-Yu ex",
-                "market": 29.82,
+                "market": 31.08,
                 "price_high": 99.99,
                 "printed_total": 193,
                 "number": "259",
@@ -3445,8 +3493,8 @@ cards_info = {
             },
             {
                 "name": "Tinkaton ex",
-                "market": 27.05,
-                "price_high": 69.97,
+                "market": 27.32,
+                "price_high": 67.63,
                 "printed_total": 193,
                 "number": "262",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv2-262"
@@ -3458,7 +3506,7 @@ cards_info = {
         "cards": [
             {
                 "name": "Mew",
-                "market": 22.0,
+                "market": 21.45,
                 "price_high": 100.0,
                 "printed_total": 70,
                 "number": "GG10",
@@ -3466,7 +3514,7 @@ cards_info = {
             },
             {
                 "name": "Leafeon VSTAR",
-                "market": 49.0,
+                "market": 44.52,
                 "price_high": 115.0,
                 "printed_total": 70,
                 "number": "GG35",
@@ -3474,7 +3522,7 @@ cards_info = {
             },
             {
                 "name": "Entei V",
-                "market": 28.99,
+                "market": 28.15,
                 "price_high": 100.23,
                 "printed_total": 70,
                 "number": "GG36",
@@ -3482,7 +3530,7 @@ cards_info = {
             },
             {
                 "name": "Suicune V",
-                "market": 43.15,
+                "market": 38.66,
                 "price_high": 100.0,
                 "printed_total": 70,
                 "number": "GG38",
@@ -3490,7 +3538,7 @@ cards_info = {
             },
             {
                 "name": "Glaceon VSTAR",
-                "market": 46.53,
+                "market": 42.78,
                 "price_high": 100.0,
                 "printed_total": 70,
                 "number": "GG40",
@@ -3498,7 +3546,7 @@ cards_info = {
             },
             {
                 "name": "Raikou V",
-                "market": 29.87,
+                "market": 29.63,
                 "price_high": 99.99,
                 "printed_total": 70,
                 "number": "GG41",
@@ -3506,15 +3554,15 @@ cards_info = {
             },
             {
                 "name": "Mewtwo VSTAR",
-                "market": 124.38,
-                "price_high": 200.0,
+                "market": 123.05,
+                "price_high": 225.0,
                 "printed_total": 70,
                 "number": "GG44",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/swsh12pt5gg-GG44"
             },
             {
                 "name": "Deoxys VMAX",
-                "market": 45.23,
+                "market": 44.67,
                 "price_high": 100.0,
                 "printed_total": 70,
                 "number": "GG45",
@@ -3522,15 +3570,15 @@ cards_info = {
             },
             {
                 "name": "Darkrai VSTAR",
-                "market": 34.37,
-                "price_high": 59.99,
+                "market": 34.06,
+                "price_high": 69.98,
                 "printed_total": 70,
                 "number": "GG50",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/swsh12pt5gg-GG50"
             },
             {
                 "name": "Hisuian Zoroark VSTAR",
-                "market": 20.38,
+                "market": 21.08,
                 "price_high": 100.0,
                 "printed_total": 70,
                 "number": "GG56",
@@ -3538,7 +3586,7 @@ cards_info = {
             },
             {
                 "name": "Origin Forme Palkia VSTAR",
-                "market": 79.68,
+                "market": 82.36,
                 "price_high": 249.99,
                 "printed_total": 70,
                 "number": "GG67",
@@ -3546,7 +3594,7 @@ cards_info = {
             },
             {
                 "name": "Origin Forme Dialga VSTAR",
-                "market": 79.97,
+                "market": 80.78,
                 "price_high": 199.96,
                 "printed_total": 70,
                 "number": "GG68",
@@ -3554,7 +3602,7 @@ cards_info = {
             },
             {
                 "name": "Giratina VSTAR",
-                "market": 206.56,
+                "market": 210.34,
                 "price_high": 499.99,
                 "printed_total": 70,
                 "number": "GG69",
@@ -3562,7 +3610,7 @@ cards_info = {
             },
             {
                 "name": "Arceus VSTAR",
-                "market": 127.59,
+                "market": 129.96,
                 "price_high": 249.99,
                 "printed_total": 70,
                 "number": "GG70",
@@ -3575,23 +3623,23 @@ cards_info = {
         "cards": [
             {
                 "name": "Leafeon V",
-                "market": 129.49,
-                "price_high": 224.68,
+                "market": 129.85,
+                "price_high": 223.69,
                 "printed_total": 203,
                 "number": "167",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/swsh7-167"
             },
             {
                 "name": "Jolteon V",
-                "market": 22.43,
-                "price_high": 30.0,
+                "market": 21.37,
+                "price_high": 30.72,
                 "printed_total": 203,
                 "number": "177",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/swsh7-177"
             },
             {
                 "name": "Glaceon V",
-                "market": 141.01,
+                "market": 142.65,
                 "price_high": 274.08,
                 "printed_total": 203,
                 "number": "175",
@@ -3599,7 +3647,7 @@ cards_info = {
             },
             {
                 "name": "Espeon V",
-                "market": 175.66,
+                "market": 171.51,
                 "price_high": 300.0,
                 "printed_total": 203,
                 "number": "180",
@@ -3607,23 +3655,15 @@ cards_info = {
             },
             {
                 "name": "Sylveon V",
-                "market": 138.49,
-                "price_high": 280.0,
+                "market": 138.84,
+                "price_high": 224.97,
                 "printed_total": 203,
                 "number": "184",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/swsh7-184"
             },
             {
-                "name": "Golurk V",
-                "market": 20.24,
-                "price_high": 99.98,
-                "printed_total": 203,
-                "number": "182",
-                "card_link": "https://prices.pokemontcg.io/tcgplayer/swsh7-182"
-            },
-            {
                 "name": "Sylveon V",
-                "market": 24.15,
+                "market": 24.31,
                 "price_high": 100.0,
                 "printed_total": 203,
                 "number": "183",
@@ -3631,15 +3671,15 @@ cards_info = {
             },
             {
                 "name": "Umbreon V",
-                "market": 34.5,
-                "price_high": 59.99,
+                "market": 34.38,
+                "price_high": 69.69,
                 "printed_total": 203,
                 "number": "188",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/swsh7-188"
             },
             {
                 "name": "Umbreon V",
-                "market": 249.65,
+                "market": 253.24,
                 "price_high": 499.99,
                 "printed_total": 203,
                 "number": "189",
@@ -3647,7 +3687,7 @@ cards_info = {
             },
             {
                 "name": "Rayquaza V",
-                "market": 20.81,
+                "market": 20.83,
                 "price_high": 100.0,
                 "printed_total": 203,
                 "number": "193",
@@ -3655,7 +3695,7 @@ cards_info = {
             },
             {
                 "name": "Dragonite V",
-                "market": 210.57,
+                "market": 210.96,
                 "price_high": 300.0,
                 "printed_total": 203,
                 "number": "192",
@@ -3663,15 +3703,15 @@ cards_info = {
             },
             {
                 "name": "Rayquaza V",
-                "market": 190.09,
-                "price_high": 249.99,
+                "market": 191.88,
+                "price_high": 287.85,
                 "printed_total": 203,
                 "number": "194",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/swsh7-194"
             },
             {
                 "name": "Noivern V",
-                "market": 37.72,
+                "market": 37.32,
                 "price_high": 69.99,
                 "printed_total": 203,
                 "number": "196",
@@ -3679,7 +3719,7 @@ cards_info = {
             },
             {
                 "name": "Leafeon VMAX",
-                "market": 425.06,
+                "market": 424.21,
                 "price_high": 699.69,
                 "printed_total": 203,
                 "number": "205",
@@ -3695,7 +3735,7 @@ cards_info = {
             },
             {
                 "name": "Glaceon VMAX",
-                "market": 26.09,
+                "market": 25.76,
                 "price_high": 69.99,
                 "printed_total": 203,
                 "number": "208",
@@ -3703,15 +3743,15 @@ cards_info = {
             },
             {
                 "name": "Gyarados VMAX",
-                "market": 36.54,
-                "price_high": 70.26,
+                "market": 36.43,
+                "price_high": 68.77,
                 "printed_total": 203,
                 "number": "207",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/swsh7-207"
             },
             {
                 "name": "Sylveon VMAX",
-                "market": 401.47,
+                "market": 428.11,
                 "price_high": 799.99,
                 "printed_total": 203,
                 "number": "212",
@@ -3719,7 +3759,7 @@ cards_info = {
             },
             {
                 "name": "Sylveon VMAX",
-                "market": 42.53,
+                "market": 43.61,
                 "price_high": 99.99,
                 "printed_total": 203,
                 "number": "211",
@@ -3727,7 +3767,7 @@ cards_info = {
             },
             {
                 "name": "Glaceon VMAX",
-                "market": 334.47,
+                "market": 343.42,
                 "price_high": 799.99,
                 "printed_total": 203,
                 "number": "209",
@@ -3735,7 +3775,7 @@ cards_info = {
             },
             {
                 "name": "Umbreon VMAX",
-                "market": 50.22,
+                "market": 50.4,
                 "price_high": 100.0,
                 "printed_total": 203,
                 "number": "214",
@@ -3743,15 +3783,15 @@ cards_info = {
             },
             {
                 "name": "Rayquaza VMAX",
-                "market": 703.98,
-                "price_high": 1064.18,
+                "market": 730.23,
+                "price_high": 1088.37,
                 "printed_total": 203,
                 "number": "218",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/swsh7-218"
             },
             {
                 "name": "Umbreon VMAX",
-                "market": 1681.58,
+                "market": 1707.46,
                 "price_high": 2199.99,
                 "printed_total": 203,
                 "number": "215",
@@ -3759,7 +3799,7 @@ cards_info = {
             },
             {
                 "name": "Rayquaza VMAX",
-                "market": 51.06,
+                "market": 49.77,
                 "price_high": 175.11,
                 "printed_total": 203,
                 "number": "217",
@@ -3767,7 +3807,7 @@ cards_info = {
             },
             {
                 "name": "Duraludon VMAX",
-                "market": 23.29,
+                "market": 23.34,
                 "price_high": 60.0,
                 "printed_total": 203,
                 "number": "220",
@@ -3780,7 +3820,7 @@ cards_info = {
         "cards": [
             {
                 "name": "Mew",
-                "market": 22.0,
+                "market": 21.45,
                 "price_high": 100.0,
                 "printed_total": 70,
                 "number": "GG10",
@@ -3788,7 +3828,7 @@ cards_info = {
             },
             {
                 "name": "Leafeon VSTAR",
-                "market": 49.0,
+                "market": 44.52,
                 "price_high": 115.0,
                 "printed_total": 70,
                 "number": "GG35",
@@ -3796,7 +3836,7 @@ cards_info = {
             },
             {
                 "name": "Entei V",
-                "market": 28.99,
+                "market": 28.15,
                 "price_high": 100.23,
                 "printed_total": 70,
                 "number": "GG36",
@@ -3804,7 +3844,7 @@ cards_info = {
             },
             {
                 "name": "Suicune V",
-                "market": 43.15,
+                "market": 38.66,
                 "price_high": 100.0,
                 "printed_total": 70,
                 "number": "GG38",
@@ -3812,7 +3852,7 @@ cards_info = {
             },
             {
                 "name": "Glaceon VSTAR",
-                "market": 46.53,
+                "market": 42.78,
                 "price_high": 100.0,
                 "printed_total": 70,
                 "number": "GG40",
@@ -3820,7 +3860,7 @@ cards_info = {
             },
             {
                 "name": "Raikou V",
-                "market": 29.87,
+                "market": 29.63,
                 "price_high": 99.99,
                 "printed_total": 70,
                 "number": "GG41",
@@ -3828,15 +3868,15 @@ cards_info = {
             },
             {
                 "name": "Mewtwo VSTAR",
-                "market": 124.38,
-                "price_high": 200.0,
+                "market": 123.05,
+                "price_high": 225.0,
                 "printed_total": 70,
                 "number": "GG44",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/swsh12pt5gg-GG44"
             },
             {
                 "name": "Deoxys VMAX",
-                "market": 45.23,
+                "market": 44.67,
                 "price_high": 100.0,
                 "printed_total": 70,
                 "number": "GG45",
@@ -3844,15 +3884,15 @@ cards_info = {
             },
             {
                 "name": "Darkrai VSTAR",
-                "market": 34.37,
-                "price_high": 59.99,
+                "market": 34.06,
+                "price_high": 69.98,
                 "printed_total": 70,
                 "number": "GG50",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/swsh12pt5gg-GG50"
             },
             {
                 "name": "Hisuian Zoroark VSTAR",
-                "market": 20.38,
+                "market": 21.08,
                 "price_high": 100.0,
                 "printed_total": 70,
                 "number": "GG56",
@@ -3860,7 +3900,7 @@ cards_info = {
             },
             {
                 "name": "Origin Forme Palkia VSTAR",
-                "market": 79.68,
+                "market": 82.36,
                 "price_high": 249.99,
                 "printed_total": 70,
                 "number": "GG67",
@@ -3868,7 +3908,7 @@ cards_info = {
             },
             {
                 "name": "Origin Forme Dialga VSTAR",
-                "market": 79.97,
+                "market": 80.78,
                 "price_high": 199.96,
                 "printed_total": 70,
                 "number": "GG68",
@@ -3876,7 +3916,7 @@ cards_info = {
             },
             {
                 "name": "Giratina VSTAR",
-                "market": 206.56,
+                "market": 210.34,
                 "price_high": 499.99,
                 "printed_total": 70,
                 "number": "GG69",
@@ -3884,7 +3924,7 @@ cards_info = {
             },
             {
                 "name": "Arceus VSTAR",
-                "market": 127.59,
+                "market": 129.96,
                 "price_high": 249.99,
                 "printed_total": 70,
                 "number": "GG70",
@@ -3897,7 +3937,7 @@ cards_info = {
         "cards": [
             {
                 "name": "Ceruledge",
-                "market": 36.56,
+                "market": 38.18,
                 "price_high": 90.0,
                 "printed_total": 191,
                 "number": "197",
@@ -3905,7 +3945,7 @@ cards_info = {
             },
             {
                 "name": "Latios",
-                "market": 40.93,
+                "market": 41.82,
                 "price_high": 95.0,
                 "printed_total": 191,
                 "number": "203",
@@ -3913,7 +3953,7 @@ cards_info = {
             },
             {
                 "name": "Pikachu ex",
-                "market": 32.03,
+                "market": 31.77,
                 "price_high": 65.0,
                 "printed_total": 191,
                 "number": "219",
@@ -3921,7 +3961,7 @@ cards_info = {
             },
             {
                 "name": "Durant ex",
-                "market": 34.73,
+                "market": 34.81,
                 "price_high": 55.19,
                 "printed_total": 191,
                 "number": "236",
@@ -3929,7 +3969,7 @@ cards_info = {
             },
             {
                 "name": "Milotic ex",
-                "market": 147.06,
+                "market": 147.0,
                 "price_high": 249.99,
                 "printed_total": 191,
                 "number": "237",
@@ -3937,7 +3977,7 @@ cards_info = {
             },
             {
                 "name": "Pikachu ex",
-                "market": 469.42,
+                "market": 471.65,
                 "price_high": 868.0,
                 "printed_total": 191,
                 "number": "238",
@@ -3945,7 +3985,7 @@ cards_info = {
             },
             {
                 "name": "Latias ex",
-                "market": 243.32,
+                "market": 246.26,
                 "price_high": 519.98,
                 "printed_total": 191,
                 "number": "239",
@@ -3953,7 +3993,7 @@ cards_info = {
             },
             {
                 "name": "Hydreigon ex",
-                "market": 83.72,
+                "market": 83.13,
                 "price_high": 160.0,
                 "printed_total": 191,
                 "number": "240",
@@ -3961,7 +4001,7 @@ cards_info = {
             },
             {
                 "name": "Archaludon ex",
-                "market": 32.48,
+                "market": 32.53,
                 "price_high": 70.0,
                 "printed_total": 191,
                 "number": "241",
@@ -3969,7 +4009,7 @@ cards_info = {
             },
             {
                 "name": "Alolan Exeggutor ex",
-                "market": 61.29,
+                "market": 58.26,
                 "price_high": 169.99,
                 "printed_total": 191,
                 "number": "242",
@@ -3977,8 +4017,8 @@ cards_info = {
             },
             {
                 "name": "Pikachu ex",
-                "market": 122.69,
-                "price_high": 300.0,
+                "market": 122.76,
+                "price_high": 280.0,
                 "printed_total": 191,
                 "number": "247",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv8-247"
@@ -3990,7 +4030,7 @@ cards_info = {
         "cards": [
             {
                 "name": "Leafeon ex",
-                "market": 372.71,
+                "market": 358.09,
                 "price_high": 688.88,
                 "printed_total": 131,
                 "number": "144",
@@ -3998,7 +4038,7 @@ cards_info = {
             },
             {
                 "name": "Teal Mask Ogerpon ex",
-                "market": 35.85,
+                "market": 35.35,
                 "price_high": 67.99,
                 "printed_total": 131,
                 "number": "145",
@@ -4006,7 +4046,7 @@ cards_info = {
             },
             {
                 "name": "Ceruledge ex",
-                "market": 210.12,
+                "market": 220.89,
                 "price_high": 350.0,
                 "printed_total": 131,
                 "number": "147",
@@ -4014,7 +4054,7 @@ cards_info = {
             },
             {
                 "name": "Flareon ex",
-                "market": 315.36,
+                "market": 322.1,
                 "price_high": 799.99,
                 "printed_total": 131,
                 "number": "146",
@@ -4022,7 +4062,7 @@ cards_info = {
             },
             {
                 "name": "Palafin ex",
-                "market": 88.63,
+                "market": 90.05,
                 "price_high": 149.99,
                 "printed_total": 131,
                 "number": "151",
@@ -4030,7 +4070,7 @@ cards_info = {
             },
             {
                 "name": "Jolteon ex",
-                "market": 266.18,
+                "market": 267.98,
                 "price_high": 799.99,
                 "printed_total": 131,
                 "number": "153",
@@ -4038,15 +4078,15 @@ cards_info = {
             },
             {
                 "name": "Hearthflame Mask Ogerpon ex",
-                "market": 28.5,
-                "price_high": 59.99,
+                "market": 27.83,
+                "price_high": 55.63,
                 "printed_total": 131,
                 "number": "148",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv8pt5-148"
             },
             {
                 "name": "Glaceon ex",
-                "market": 314.63,
+                "market": 316.3,
                 "price_high": 405.0,
                 "printed_total": 131,
                 "number": "150",
@@ -4054,7 +4094,7 @@ cards_info = {
             },
             {
                 "name": "Wellspring Mask Ogerpon ex",
-                "market": 23.35,
+                "market": 22.76,
                 "price_high": 49.95,
                 "printed_total": 131,
                 "number": "152",
@@ -4062,7 +4102,7 @@ cards_info = {
             },
             {
                 "name": "Vaporeon ex",
-                "market": 306.39,
+                "market": 296.65,
                 "price_high": 649.0,
                 "printed_total": 131,
                 "number": "149",
@@ -4070,7 +4110,7 @@ cards_info = {
             },
             {
                 "name": "Iron Hands ex",
-                "market": 55.91,
+                "market": 55.06,
                 "price_high": 299.95,
                 "printed_total": 131,
                 "number": "154",
@@ -4078,7 +4118,7 @@ cards_info = {
             },
             {
                 "name": "Espeon ex",
-                "market": 401.44,
+                "market": 397.15,
                 "price_high": 899.0,
                 "printed_total": 131,
                 "number": "155",
@@ -4086,7 +4126,7 @@ cards_info = {
             },
             {
                 "name": "Iron Valiant ex",
-                "market": 60.36,
+                "market": 61.81,
                 "price_high": 299.95,
                 "printed_total": 131,
                 "number": "157",
@@ -4094,15 +4134,15 @@ cards_info = {
             },
             {
                 "name": "Sylveon ex",
-                "market": 522.94,
-                "price_high": 750.0,
+                "market": 513.43,
+                "price_high": 650.0,
                 "printed_total": 131,
                 "number": "156",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv8pt5-156"
             },
             {
                 "name": "Iron Crown ex",
-                "market": 49.76,
+                "market": 50.01,
                 "price_high": 99.98,
                 "printed_total": 131,
                 "number": "158",
@@ -4110,15 +4150,15 @@ cards_info = {
             },
             {
                 "name": "Sandy Shocks ex",
-                "market": 40.44,
-                "price_high": 55.0,
+                "market": 41.53,
+                "price_high": 47.0,
                 "printed_total": 131,
                 "number": "159",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv8pt5-159"
             },
             {
                 "name": "Cornerstone Mask Ogerpon ex",
-                "market": 27.37,
+                "market": 27.61,
                 "price_high": 83.5,
                 "printed_total": 131,
                 "number": "160",
@@ -4126,7 +4166,7 @@ cards_info = {
             },
             {
                 "name": "Roaring Moon ex",
-                "market": 170.85,
+                "market": 174.16,
                 "price_high": 239.99,
                 "printed_total": 131,
                 "number": "162",
@@ -4134,23 +4174,23 @@ cards_info = {
             },
             {
                 "name": "Umbreon ex",
-                "market": 1584.56,
-                "price_high": 1850.0,
+                "market": 1565.08,
+                "price_high": 3000.0,
                 "printed_total": 131,
                 "number": "161",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv8pt5-161"
             },
             {
                 "name": "Pecharunt ex",
-                "market": 37.17,
-                "price_high": 86.85,
+                "market": 41.38,
+                "price_high": 130.87,
                 "printed_total": 131,
                 "number": "163",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv8pt5-163"
             },
             {
                 "name": "Gholdengo ex",
-                "market": 69.48,
+                "market": 69.71,
                 "price_high": 186.78,
                 "printed_total": 131,
                 "number": "164",
@@ -4158,15 +4198,15 @@ cards_info = {
             },
             {
                 "name": "Dragapult ex",
-                "market": 157.64,
-                "price_high": 215.0,
+                "market": 166.7,
+                "price_high": 250.0,
                 "printed_total": 131,
                 "number": "165",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv8pt5-165"
             },
             {
                 "name": "Raging Bolt ex",
-                "market": 117.89,
+                "market": 116.47,
                 "price_high": 249.99,
                 "printed_total": 131,
                 "number": "166",
@@ -4174,7 +4214,7 @@ cards_info = {
             },
             {
                 "name": "Eevee ex",
-                "market": 244.37,
+                "market": 242.57,
                 "price_high": 300.0,
                 "printed_total": 131,
                 "number": "167",
@@ -4182,7 +4222,7 @@ cards_info = {
             },
             {
                 "name": "Bloodmoon Ursaluna ex",
-                "market": 73.24,
+                "market": 76.0,
                 "price_high": 299.99,
                 "printed_total": 131,
                 "number": "168",
@@ -4190,7 +4230,7 @@ cards_info = {
             },
             {
                 "name": "Terapagos ex",
-                "market": 68.96,
+                "market": 67.35,
                 "price_high": 99.99,
                 "printed_total": 131,
                 "number": "169",
@@ -4198,7 +4238,7 @@ cards_info = {
             },
             {
                 "name": "Terapagos ex",
-                "market": 23.22,
+                "market": 22.38,
                 "price_high": 97.99,
                 "printed_total": 131,
                 "number": "180",
@@ -4206,7 +4246,7 @@ cards_info = {
             },
             {
                 "name": "Pikachu ex",
-                "market": 87.51,
+                "market": 89.5,
                 "price_high": 325.0,
                 "printed_total": 131,
                 "number": "179",
