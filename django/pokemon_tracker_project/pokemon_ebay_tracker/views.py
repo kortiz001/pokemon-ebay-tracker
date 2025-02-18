@@ -9,7 +9,7 @@ def load_data(request):
     graded_check = request.GET.get('graded_check', "All")
     set_to_check = request.GET.get('set_to_check', "All")
     minimum_bid_price = request.GET.get('min_bid_price', 10)
-    max_market_value = request.GET.get('max_market_value', 200)
+    max_market_value = request.GET.get('max_market_value', 150)
     maximum_bid_percentage = request.GET.get('max_bid_percentage', 0.8)
     time_left_hours = request.GET.get('time_left_hours', 1)
     listing_type = request.GET.get('listing_type', "Auction")
