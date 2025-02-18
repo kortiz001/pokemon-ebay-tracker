@@ -8,67 +8,94 @@
         <div class="col-12 header-title">
             <img src="{% static 'header-logo.png' %}" alt="Pokemon Logo" class="pokemon-logo">
         </div>
-        <div class="col-12 d-flex flex-column flex-md-row justify-content-between align-items-start d-md-flex d-block">
+        <div class="col-12 d-flex flex-column flex-md-row justify-content-between align-items-start">
+            <!-- First Row -->
+            <div class="row w-100">
+                <div class="card-form-field col-12 col-md-6 mb-3">
+                    <div class="form-group mb-3 mb-md-0">
+                        <label for="ebay-api-key">Enter eBay API key:</label>
+                        <input type="text" id="ebay-api-key" class="form-control">
+                    </div>
+                </div>
+                <div class="card-form-field col-12 col-md-6 mb-3">
+                    <div class="form-group mb-3 mb-md-0">
+                        <label for="listing-type">Listing Type:</label>
+                        <select id="listing-type" class="form-select form-select-sm" onchange="toggleTimeLeftHours(this.value)">
+                            <option value="Auction" selected>Auction</option>
+                            <option value="Buy It Now">Buy It Now</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="card-form-field col-12 col-md-6 mb-3">
+                    <div class="form-group mb-3 mb-md-0">
+                        <label for="graded-check">Graded:</label>
+                        <select id="graded-check" class="form-select form-select-sm">
+                            <option value="All">All</option>
+                            <option value="Graded" selected>Graded</option>
+                            <option value="Ungraded">Ungraded</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="card-form-field col-12 col-md-6 mb-3">
+                    <div class="form-group mb-3 mb-md-0">
+                        <label for="set-to-check">Set to Check:</label>
+                        <select id="set-to-check" class="form-select form-select-sm">
+                            <option value="All" selected>All</option>
+                            <option value="Prismatic Evolutions">Prismatic Evolutions</option>
+                            <option value="Surging Sparks">Surging Sparks</option>
+                            <option value="Crown Zenith">Crown Zenith</option>
+                            <option value="Crown Zenith Galarian Gallery">Crown Zenith Galarian Gallery</option>
+                            <option value="Evolving Skies">Evolving Skies</option>
+                            <option value="Paldea Evolved">Paldea Evolved</option>
+                            <option value="151">151</option>
+                            <option value="Obsidian Flames">Obsidian Flames</option>
+                            <option value="Vivid Voltage">Vivid Voltage</option>
+                            <option value="Silver Tempest">Silver Tempest</option>
+                            <option value="Astral Radiance">Astral Radiance</option>
+                            <option value="Brilliant Stars">Brilliant Stars</option>
+                            <option value="Twilight Masquerade">Twilight Masquerade</option>
+                            <option value="Paldean Fates">Paldean Fates</option>
+                            <option value="Paradox Rift">Paradox Rift</option>
+                            <option value="Base">Base Set</option>
+                            <option value="Old Sets">Old Sets</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Second Row -->
+            <div class="row w-100">
+                <div class="card-form-field col-12 col-md-6 mb-3">
+                    <div class="form-group mb-3 mb-md-0">
+                        <label for="min-bid-price">Min Bid:</label>
+                        <input type="number" id="min-bid-price" class="form-control" value="10" min="0">
+                    </div>
+                </div>
+                <div class="card-form-field col-12 col-md-6 mb-3">
+                    <div class="form-group mb-3 mb-md-0">
+                        <label for="max-market-value">Max Market Value:</label>
+                        <input type="number" id="max-market-value" class="form-control" value="200" min="0">
+                    </div>
+                </div>
+                <div class="card-form-field col-12 col-md-6 mb-3">
+                    <div class="form-group mb-3 mb-md-0">
+                        <label for="max-bid-percentage">Max Bid %:</label>
+                        <input type="number" id="max-bid-percentage" class="form-control" value="0.80" step="0.01" min="0" max="1">
+                    </div>
+                </div>
+                <div class="card-form-field col-12 col-md-6 mb-3 time-left-hours-container" style="display: block;">
+                    <div class="form-group mb-3 mb-md-0">
+                        <label for="time-left-hours">Time Left Hours:</label>
+                        <input type="number" id="time-left-hours" class="form-control" value="1" min="0">
+                    </div>
+                </div>
+            </div>
+        </div>        
+        <div class="card-form-field col-12 col-md-6 mb-3">
             <div class="form-group mb-3 mb-md-0">
-                <label for="ebay-api-key">Enter eBay API key:</label>
-                <input type="text" id="ebay-api-key" class="form-control">
-            </div>
-            <div class="form-group mb-3 mb-md-0 ms-md-3">
-                <label for="listing-type">Listing Type:</label>
-                <select id="listing-type" class="form-select form-select-sm" onchange="toggleTimeLeftHours(this.value)">
-                    <option value="Auction" selected>Auction</option>
-                    <option value="Buy It Now">Buy It Now</option>
-                </select>
-            </div>
-            <div class="form-group mb-3 mb-md-0 ms-md-3">
-                <label for="graded-check">Graded:</label>
-                <select id="graded-check" class="form-select form-select-sm">
-                    <option value="All" selected>All</option>
-                    <option value="Graded">Graded</option>
-                    <option value="Ungraded">Ungraded</option>
-                </select>
-            </div>
-            <div class="form-group mb-3 mb-md-0 ms-md-3">
-                <label for="set-to-check">Set to Check:</label>
-                <select id="set-to-check" class="form-select form-select-sm">
-                    <option value="All" selected>All</option>
-                    <option value="Prismatic Evolutions">Prismatic Evolutions</option>
-                    <option value="Surging Sparks">Surging Sparks</option>
-                    <option value="Crown Zenith">Crown Zenith</option>
-                    <option value="Crown Zenith Galarian Gallery">Crown Zenith Galarian Gallery</option>
-                    <option value="Evolving Skies">Evolving Skies</option>
-                    <option value="Paldea Evolved">Paldea Evolved</option>
-                    <option value="151">151</option>
-                    <option value="Obsidian Flames">Obsidian Flames</option>
-                    <option value="Vivid Voltage">Vivid Voltage</option>
-                    <option value="Silver Tempest">Silver Tempest</option>
-                    <option value="Astral Radiance">Astral Radiance</option>
-                    <option value="Brilliant Stars">Brilliant Stars</option>
-                    <option value="Twilight Masquerade">Twilight Masquerade</option>
-                    <option value="Paldean Fates">Paldean Fates</option>
-                    <option value="Paradox Rift">Paradox Rift</option>
-                    <option value="Base">Base Set</option>
-                    <option value="Old Sets">Old Sets</option>
-                </select>
-            </div>
-            <div class="form-group mb-3 mb-md-0 ms-md-3">
-                <label for="min-bid-price">Min Bid:</label>
-                <input type="number" id="min-bid-price" class="form-control" value="10" min="0">
-            </div>
-            <div class="form-group mb-3 mb-md-0 ms-md-3">
-                <label for="max-bid-percentage">Max Bid %:</label>
-                <input type="number" id="max-bid-percentage" class="form-control" value="0.80" step="0.01" min="0" max="1">
-            </div>
-            <!-- New Time Left Hours Input Field -->
-            <div class="form-group mb-3 mb-md-0 ms-md-3 time-left-hours-container" style="display: block;">
-                <label for="time-left-hours">Time Left Hours:</label>
-                <input type="number" id="time-left-hours" class="form-control" value="1" min="0">
-            </div>
-            <div class="form-group mb-3 mb-md-0 ms-md-3">
                 <button id="loadDataBtn" class="btn btn-dark">Load Data</button>
             </div>
         </div>
-    </div>
     <div class="row card"></div>
     <div class="api-counter"></div>
 </div>
@@ -107,6 +134,9 @@
                 // Get the value of the Minimum Bid Price input field
                 var minBidPrice = $('#min-bid-price').val();
 
+                // Get the value of the Maximum Market Value input field
+                var maxMarketValue = $('#max-market-value').val();
+
                 // Get the value of the Maximum Bid Percentage input field
                 var maxBidPercentage = $('#max-bid-percentage').val();
 
@@ -123,6 +153,7 @@
                         '&set_to_check=' + encodeURIComponent(setToCheck) +
                         '&time_left_hours=' + encodeURIComponent(timeLeftHours) +
                         '&min_bid_price=' + encodeURIComponent(minBidPrice) +
+                        '&max_market_value=' + encodeURIComponent(maxMarketValue) +
                         '&max_bid_percentage=' + encodeURIComponent(maxBidPercentage),
                     method: 'GET',
                     dataType: 'json',  // Specify the data type as JSON

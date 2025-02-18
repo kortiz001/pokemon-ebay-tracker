@@ -47,6 +47,12 @@
     }
 }
 
+@media (min-width: 768px) {
+    .card-form-field {
+        padding-right: 30px !important;
+    }
+}
+
 .header-title {
     text-align: center;
   }

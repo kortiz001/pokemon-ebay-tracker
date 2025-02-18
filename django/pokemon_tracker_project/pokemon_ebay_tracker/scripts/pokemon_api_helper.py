@@ -20,6 +20,7 @@ def fetch_pokemon_cards(
         graded_check: str,
         set_to_check: str,
         minimum_bid_price: int,
+        max_market_value: int,
         maximum_bid_percentage: float,
         time_left_hours: int
     ):
@@ -86,6 +87,8 @@ def fetch_pokemon_cards(
 
         for card in cards:
             if card.get("price_high") < 50.00:
+                continue
+            if int(float(card.get("market"))) > int(max_market_value):
                 continue
 
             try:
