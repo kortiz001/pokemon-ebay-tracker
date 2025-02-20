@@ -1,4 +1,5 @@
 import json
+from japanese_sets.dict import TERESTAL_FESTIVAL
 from pokemontcgsdk import Card, Set, RestClient
 
 # Configure RestClient with your API key
@@ -84,6 +85,8 @@ def generate_tcgplayer_json():
 
 if __name__ == "__main__":
     cards_info = generate_tcgplayer_json()
+
+    cards_info["Terestal Festival"] = TERESTAL_FESTIVAL
 
     with open('tcgplayer_cards_info.py', 'w') as f:
         f.write('cards_info = ' + json.dumps(cards_info, indent=4) + '\n')

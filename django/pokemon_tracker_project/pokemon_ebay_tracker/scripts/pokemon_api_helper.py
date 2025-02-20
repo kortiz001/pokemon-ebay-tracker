@@ -98,7 +98,7 @@ def fetch_pokemon_cards(
                     "Content-Type": "application/json"
                 }
 
-                maximum_bid_price = int(float(card.get('market')) * float(maximum_bid_percentage))
+                maximum_bid_price = int(float(card.get('market')) * float(int(maximum_bid_percentage) * 0.01))
                 
                 filters_list = [
                     "buyingOptions:{AUCTION}",
@@ -107,7 +107,6 @@ def fetch_pokemon_cards(
                     "itemLocationCountry:US",
                     f"price:[{minimum_bid_price}..{maximum_bid_price}]", 
                     f"conditionIds:{condition_ids}",
-                    "listingMarketplaceId': 'EBAY_US'",
                 ]
                 if listing_type == "Buy It Now":
                     filters_list.append("buyingOptions:{FIXED_PRICE}")
@@ -126,7 +125,8 @@ def fetch_pokemon_cards(
 
                     if item_summary_response_dict and 'itemSummaries' in item_summary_response_dict:
                         for item in item_summary_response_dict['itemSummaries']:
-                            if item.get("seller").get("feedbackPercentage") < "95.0":
+                            feed_back_percentage = int(float(item.get("seller").get("feedbackPercentage")))
+                            if feed_back_percentage < 95:
                                 continue
 
                             if listing_type == "Auction":
