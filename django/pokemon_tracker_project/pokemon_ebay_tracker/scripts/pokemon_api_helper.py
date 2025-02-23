@@ -20,6 +20,8 @@ def generate_pricecharting_url(card_name, card_number, set_name):
         full_set_name = "pokemon-scarlet-&-violet-151"
     if set_name =="Terestal Festival":
         full_set_name = "pokemon-japanese-terastal-festival"
+    if set_name == "Base":
+        full_set_name = "pokemon-base-set"
 
     base_url = f"https://pricecharting.com/game/{full_set_name}/{card_name.lower().replace(' ', '-')}-{card_number}"
     return base_url
@@ -29,14 +31,12 @@ def return_graded_prices(pricecharting_url):
         response = requests.get(pricecharting_url)
         response.raise_for_status()  # Raise an exception for HTTP errors
     except requests.exceptions.RequestException as e:
-        print(f"Error: {e}")
-        return None
+        return(f"Error: {e}")
 
     try:
         soup = BeautifulSoup(response.content, 'html.parser')
     except Exception as e:
-        print(f"Error parsing HTML: {e}")
-        return None
+        return(f"Error parsing HTML: {e}")
 
     ungraded_price_td = soup.find('td', {'id': 'used_price'})
     grade7_price_td = soup.find('td', {'id': 'complete_price'})
@@ -76,10 +76,9 @@ def return_graded_prices(pricecharting_url):
         else:
             grade10_price = "N/A"
 
-        return ungraded_price, grade7_price, grade8_price, grade9_price, grade95_price, grade10_price
+        return response, ungraded_price, grade7_price, grade8_price, grade9_price, grade95_price, grade10_price
     except Exception as e:
-        print(f"Error extracting prices: {e}")
-        return None
+        return(f"Error extracting prices: {e}")
 
 def fetch_pokemon_cards(
         ebay_api_key: str,
@@ -246,7 +245,7 @@ def fetch_pokemon_cards(
                                 "shipping_cost_type": shipping_cost_type,
                                 "sold_link": sold_link
                             })
-
+                    print(f"card_name: {card.get('name')}, card_number: {card.get('number')}")
                     api_counter += 1
                 else:
                     print(f"Error: {item_summary_response.status_code}")
@@ -266,10 +265,13 @@ def fetch_pokemon_cards(
         seen.append(card)
     cards_info["cards"] = seen
 
+    print(cards_info["cards"])
+
     # Add Graded Card Prices
     for card in cards_info["cards"]:
         price_charting_url = generate_pricecharting_url(card.get('original_card_name'), card.get('card_number'), card.get("set"))
-        ungraded_price, grade7_price, grade8_price, grade9_price, grade95_price, grade10_price = return_graded_prices(price_charting_url)
+        pricecharting_response, ungraded_price, grade7_price, grade8_price, grade9_price, grade95_price, grade10_price = return_graded_prices(price_charting_url)
+        print(pricecharting_response)
         card["ungraded_price"] = ungraded_price
         card["grade7_price"] = grade7_price
         card["grade8_price"] = grade8_price
