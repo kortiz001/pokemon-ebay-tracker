@@ -1,3 +1,5 @@
+import json
+from decimal import Decimal
 from datetime import datetime, date
 from django.shortcuts import render
 from django.http import JsonResponse
@@ -81,8 +83,19 @@ def write_saved_item(request):
 def home(request):
     return render(request, 'home.html')
 
+def decimal_default(obj):
+    if isinstance(obj, Decimal):
+        return float(obj)
+    elif isinstance(obj, date):
+        return obj.isoformat()
+    raise TypeError
+
 def tracker(request):
-    return render(request, 'tracker.html')
+    current_date = date.today()
+    objects = SavedItem.objects.filter(date=current_date)
+    saved_items = list(objects.values())
+    saved_items_json = json.dumps(saved_items, default=decimal_default)
+    return render(request, 'tracker.html', {'saved_items': saved_items_json})
 
 def saved(request):
     today = date.today()

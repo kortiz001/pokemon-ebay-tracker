@@ -176,7 +176,7 @@ def fetch_pokemon_cards(
                             suggested_price = f"${suggested_price:,.2f}"
 
                             cards_info["cards"].append({
-                                "item_id": item.get("itemId"),
+                                "item_id": item.get("itemId").replace("v1|", "").replace("|0", ""),
                                 "card_name": item.get("title"),
                                 "set": set,
                                 "original_card_name": card.get("name"),
