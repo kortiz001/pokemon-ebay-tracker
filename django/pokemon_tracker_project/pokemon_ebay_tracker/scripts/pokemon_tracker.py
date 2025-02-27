@@ -1,7 +1,6 @@
 import datetime
 import requests
 import urllib.parse
-from bs4 import BeautifulSoup
 
 def remove_duplicate_dicts(lst):
     unique_dicts = []
@@ -13,72 +12,6 @@ def remove_duplicate_dicts(lst):
             unique_names.add(d["card_name"])
     
     return unique_dicts
-
-def generate_pricecharting_url(card_name, card_number, set_name):
-    full_set_name = f"pokemon-{set_name.lower().replace(' ', '-')}"
-    if set_name == "151":
-        full_set_name = "pokemon-scarlet-&-violet-151"
-    if set_name =="Terestal Festival":
-        full_set_name = "pokemon-japanese-terastal-festival"
-    if set_name == "Base":
-        full_set_name = "pokemon-base-set"
-
-    base_url = f"https://pricecharting.com/game/{full_set_name}/{card_name.lower().replace(' ', '-')}-{card_number}"
-    return base_url
-
-def return_graded_prices(pricecharting_url):
-    try:
-        response = requests.get(pricecharting_url)
-        response.raise_for_status()  # Raise an exception for HTTP errors
-    except requests.exceptions.RequestException as e:
-        return(f"Error: {e}")
-
-    try:
-        soup = BeautifulSoup(response.content, 'html.parser')
-    except Exception as e:
-        return(f"Error parsing HTML: {e}")
-
-    ungraded_price_td = soup.find('td', {'id': 'used_price'})
-    grade7_price_td = soup.find('td', {'id': 'complete_price'})
-    grade8_price_td = soup.find('td', {'id': 'new_price'})
-    grade9_price_td = soup.find('td', {'id': 'graded_price'})
-    grade95_price_td = soup.find('td', {'id': 'box_only_price'})
-    grade10_price_td = soup.find('td', {'id': 'manual_only_price'})
-
-    try:
-        if ungraded_price_td:
-            ungraded_price = ungraded_price_td.find('span', {'class': 'price'}).text.strip() or "N/A"
-        else:
-            ungraded_price = "N/A"
-
-        if grade7_price_td:
-            grade7_price = grade7_price_td.find('span', {'class': 'price'}).text.strip() or "N/A"
-        else:
-            grade7_price = "N/A"
-
-        if grade8_price_td:
-            grade8_price = grade8_price_td.find('span', {'class': 'price'}).text.strip() or "N/A"
-        else:
-            grade8_price = "N/A"
-
-        if grade9_price_td:
-            grade9_price = grade9_price_td.find('span', {'class': 'price'}).text.strip() or "N/A"
-        else:
-            grade9_price = "N/A"
-
-        if grade95_price_td:
-            grade95_price = grade95_price_td.find('span', {'class': 'price'}).text.strip() or "N/A"
-        else:
-            grade95_price = "N/A"
-
-        if grade10_price_td:
-            grade10_price = grade10_price_td.find('span', {'class': 'price'}).text.strip() or "N/A"
-        else:
-            grade10_price = "N/A"
-
-        return response, ungraded_price, grade7_price, grade8_price, grade9_price, grade95_price, grade10_price
-    except Exception as e:
-        return(f"Error extracting prices: {e}")
 
 def fetch_pokemon_cards(
         ebay_api_key: str,
@@ -227,7 +160,21 @@ def fetch_pokemon_cards(
                                 sold_link = f"https://www.ebay.com/sch/i.html?_nkw={urllib.parse.quote(item.get('title'))}&_sacat=0&_from=R40&rt=nc&LH_Sold=1&LH_Complete=1&Graded=Yes&_dcat=183454"
                             else:
                                 sold_link = f"https://www.ebay.com/sch/i.html?_nkw={urllib.parse.quote(item.get('title'))}&_sacat=0&_from=R40&rt=nc&LH_Sold=1&LH_Complete=1"
-                            
+
+                            suggested_price = "N/A"
+                            if "PSA 7" in item.get("title") or "CGC 7" in item.get("title"):
+                                suggested_price = float(card.get("graded_prices").get("grade7").replace("$", "")) * 0.7
+                            if "PSA 8" in item.get("title") or "CGC 8" in item.get("title"):
+                                suggested_price = float(card.get("graded_prices").get("grade8").replace("$", "")) * 0.7
+                            if "PSA 9" in item.get("title") or "CGC 9" in item.get("title"):
+                                suggested_price = float(card.get("graded_prices").get("grade9").replace("$", "")) * 0.7
+                            if "CGC 9.5" in item.get("title"):
+                                suggested_price = float(card.get("graded_prices").get("grade95").replace("$", "")) * 0.7
+                            if "PSA 10" in item.get("title") or "CGC 10" in item.get("title"):
+                                suggested_price = float(card.get("graded_prices").get("grade10").replace("$", "")) * 0.7
+                            suggested_price = round(suggested_price, 2)
+                            suggested_price = f"${suggested_price:,.2f}"
+
                             cards_info["cards"].append({
                                 "item_id": item.get("itemId"),
                                 "card_name": item.get("title"),
@@ -243,9 +190,16 @@ def fetch_pokemon_cards(
                                 "end_time": item.get("itemEndDate"),
                                 "shipping_cost": shipping_cost,
                                 "shipping_cost_type": shipping_cost_type,
-                                "sold_link": sold_link
+                                "sold_link": sold_link,
+                                "ungraded_price":  card.get("graded_prices").get("ungraded"),
+                                "grade7_price": card.get("graded_prices").get("grade7"),
+                                "grade8_price": card.get("graded_prices").get("grade8"),
+                                "grade9_price": card.get("graded_prices").get("grade9"),
+                                "grade95_price": card.get("graded_prices").get("grade95"),
+                                "grade10_price": card.get("graded_prices").get("grade10"),
+                                "suggested_price": suggested_price
                             })
-                    print(f"card_name: {card.get('name')}, card_number: {card.get('number')}")
+
                     api_counter += 1
                 else:
                     print(f"Error: {item_summary_response.status_code}")
@@ -264,20 +218,6 @@ def fetch_pokemon_cards(
                 continue
         seen.append(card)
     cards_info["cards"] = seen
-
-    print(cards_info["cards"])
-
-    # Add Graded Card Prices
-    for card in cards_info["cards"]:
-        price_charting_url = generate_pricecharting_url(card.get('original_card_name'), card.get('card_number'), card.get("set"))
-        pricecharting_response, ungraded_price, grade7_price, grade8_price, grade9_price, grade95_price, grade10_price = return_graded_prices(price_charting_url)
-        print(pricecharting_response)
-        card["ungraded_price"] = ungraded_price
-        card["grade7_price"] = grade7_price
-        card["grade8_price"] = grade8_price
-        card["grade9_price"] = grade9_price
-        card["grade95_price"] = grade95_price
-        card["grade10_price"] = grade10_price
 
     cards_info["api_counter"] = api_counter
 

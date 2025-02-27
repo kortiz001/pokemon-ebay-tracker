@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block title %}Saved - Pokemon Ebay Tracker{% endblock %}
+{% load static %}
+
+{% block content %}
+  <div class="row card">
+    <div class="row g-3">
+      {% for item in saved_items %}
+      <div class="card-item col-12 col-sm-12 col-md-4 col-lg-4">
+          <img src="{{ item.image_url }}" alt="Card Image" class="card-img-top d-block mx-auto" style="height: 260px; object-fit: contain; width: 100%;">
+          <div class="card-body" data-image-url="{{ item.image_url }}" data-ebay-id="{{ item.ebay_id }}" data-current-bid-price="91.00">
+              <h5 class="card-title">{{ item.name }}</h5>
+              <p class="card-text">
+                  <strong>Item Number: </strong>{{ item.ebay_id }}<br>
+                  <strong>Time Left: </strong>{{ item.time_left }}<br>
+                  <strong>Current Bid: </strong>${{ item.price }}<br>
+                  <strong>Max Bid: </strong>${{ item.max_bid_price }}<br>
+                  <br>
+                  {% if item.ungraded_price %}
+                  <strong>Ungraded Price:</strong> ${{ item.ungraded_price }}<br>
+                  {% endif %}
+                  {% if item.grade7_price %}
+                      <strong>Grade 7 Price:</strong> {{ item.grade7_price }}<br>
+                  {% endif %}
+                  {% if item.grade8_price %}
+                      <strong>Grade 8 Price:</strong> {{ item.grade8_price }}<br>
+                  {% endif %}
+                  {% if item.grade9_price %}
+                      <strong>Grade 9 Price:</strong> ${{ item.grade9_price }}<br>
+                  {% endif %}
+                  {% if item.grade95_price %}
+                      <strong>Grade 9.5 Price:</strong> ${{ item.grade95_price }}<br>
+                  {% endif %}
+                  {% if item.grade10_price %}
+                      <strong>Grade 10 Price:</strong> ${{ item.grade10_price }}<br>
+                  {% endif %}
+                  </p>
+              <p></p>
+              <a href="https://www.gixen.com/main/home_2.php" class="btn btn-dark ebay-link" target="_blank">Go to Gixen</a>
+              <a href="{{ item.ebay_url }}" class="btn btn-dark ebay-link" target="_blank">View on eBay</a>
+          </div>
+      </div>
+      {% empty %}
+        <div class="alert alert-info">
+          No saved items found.
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+{% endblock %}

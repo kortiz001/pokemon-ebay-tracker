@@ -4,6 +4,9 @@ from . import views
 app_name = 'pokemon_ebay_tracker'
 
 urlpatterns = [
-    path('', views.home, name='home'),  # Homepage view
+    path('', views.home, name='home'),
+    path('tracker/', views.tracker, name='tracker'),
+    path('saved/', views.saved, name='saved'),
     path('load_data/', views.load_data, name='load_data'),  # AJAX data request
+    path('write_saved_item/', views.write_saved_item, name='write_saved_item'),
 ]

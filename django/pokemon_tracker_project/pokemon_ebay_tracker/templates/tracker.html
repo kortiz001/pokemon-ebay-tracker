@@ -1,0 +1,261 @@
+{% extends 'base.html' %}
+{% block title %}Tracker - Pokemon Ebay Tracker{% endblock %}
+{% load static %}
+
+{% block content %}
+<!-- Container where data will be displayed -->
+<div class="container cards">
+    <div class="row">
+        <div class="col-12 d-flex flex-column flex-md-row justify-content-between align-items-start">
+            <!-- First Row -->
+            <div class="row w-100">
+                <div class="card-form-field col-12 col-md-6 mb-3">
+                    <div class="form-group mb-3 mb-md-0">
+                        <label for="ebay-api-key">Enter eBay API key:</label>
+                        <input type="text" id="ebay-api-key" class="form-control">
+                    </div>
+                </div>
+                <div class="card-form-field col-12 col-md-6 mb-3">
+                    <div class="form-group mb-3 mb-md-0">
+                        <label for="listing-type">Listing Type:</label>
+                        <select id="listing-type" class="form-select form-select-sm" onchange="toggleTimeLeftHours(this.value)">
+                            <option value="Auction" selected>Auction</option>
+                            <option value="Buy It Now">Buy It Now</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="card-form-field col-12 col-md-6 mb-3">
+                    <div class="form-group mb-3 mb-md-0">
+                        <label for="graded-check">Graded:</label>
+                        <select id="graded-check" class="form-select form-select-sm">
+                            <option value="All">All</option>
+                            <option value="Graded" selected>Graded</option>
+                            <option value="Ungraded">Ungraded</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="card-form-field col-12 col-md-6 mb-3">
+                    <div class="form-group mb-3 mb-md-0">
+                        <label for="set-to-check">Set to Check:</label>
+                        <select id="set-to-check" class="form-select form-select-sm">
+                            <option value="All" selected>All</option>
+                            <option value="Prismatic Evolutions">Prismatic Evolutions</option>
+                            <option value="Terestal Festival">Terestal Festival</option>
+                            <option value="Surging Sparks">Surging Sparks</option>
+                            <option value="Crown Zenith">Crown Zenith</option>
+                            <option value="Crown Zenith Galarian Gallery">Crown Zenith Galarian Gallery</option>
+                            <option value="Evolving Skies">Evolving Skies</option>
+                            <option value="Paldea Evolved">Paldea Evolved</option>
+                            <option value="151">151</option>
+                            <option value="Obsidian Flames">Obsidian Flames</option>
+                            <option value="Vivid Voltage">Vivid Voltage</option>
+                            <option value="Silver Tempest">Silver Tempest</option>
+                            <option value="Astral Radiance">Astral Radiance</option>
+                            <option value="Brilliant Stars">Brilliant Stars</option>
+                            <option value="Twilight Masquerade">Twilight Masquerade</option>
+                            <option value="Paldean Fates">Paldean Fates</option>
+                            <option value="Paradox Rift">Paradox Rift</option>
+                            <option value="Base">Base Set</option>
+                            <option value="Old Sets">Old Sets</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Second Row -->
+            <div class="row w-100">
+                <div class="card-form-field col-12 col-md-6 mb-3">
+                    <div class="form-group mb-3 mb-md-0">
+                        <label for="min-bid-price">Min Bid:</label>
+                        <input type="number" id="min-bid-price" class="form-control" value="10" min="0">
+                    </div>
+                </div>
+                <div class="card-form-field col-12 col-md-6 mb-3">
+                    <div class="form-group mb-3 mb-md-0">
+                        <label for="max-market-value">Max Market Value:</label>
+                        <input type="number" id="max-market-value" class="form-control" value="150" min="0">
+                    </div>
+                </div>
+                <div class="card-form-field col-12 col-md-6 mb-3">
+                    <div class="form-group mb-3 mb-md-0">
+                        <label for="max-bid-percentage">Max Bid %:</label>
+                        <input type="number" id="max-bid-percentage" class="form-control" value="80" step="1" min="0" max="300">
+                    </div>
+                </div>
+                <div class="card-form-field col-12 col-md-6 mb-3 time-left-hours-container" style="display: block;">
+                    <div class="form-group mb-3 mb-md-0">
+                        <label for="time-left-hours">Time Left Hours:</label>
+                        <input type="number" id="time-left-hours" class="form-control" value="1" min="0">
+                    </div>
+                </div>
+            </div>
+        </div>        
+        <div class="card-form-field col-12 col-md-6 mb-3">
+            <div class="form-group mb-3 mb-md-0">
+                <button id="loadDataBtn" class="btn btn-dark">Load Data</button>
+            </div>
+        </div>
+    <div class="row card"></div>
+    <div class="api-counter"></div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+    function toggleTimeLeftHours(listingType) {
+        var timeLeftHoursContainer = document.querySelector(".time-left-hours-container");
+        if (listingType === "Buy It Now") {
+            timeLeftHoursContainer.style.display = "none";
+        } else {
+            timeLeftHoursContainer.style.display = "block";
+        }
+    }
+
+    $(document).ready(function() {
+        toggleTimeLeftHours($('#listing-type').val());
+
+        $(document).on('click', '.saveButton', function() {
+            var cardContainer = $(this).closest('.card-body');
+            var saveButton = $(this);
+
+            // Extract values from the card
+            var ebayId = cardContainer.data('ebay-id') || ''; // Make sure this is being set correctly in the HTML
+            var date = new Date().toISOString().split('T')[0]; // Date in YYYY-MM-DD format
+            var name = cardContainer.find('.card-title').text().trim();
+            var imageUrl = cardContainer.data('image-url');
+            var ebayUrl = cardContainer.data('ebay-url');
+            var price = parseFloat(cardContainer.data('current-bid-price')) || 0.00; // Ensure correct price extraction
+            var maxBidPrice = parseFloat(cardContainer.find('.maxBid').val()) || 0.00;
+            var timeLeft = cardContainer.data('time-left');
+            var ungraded_price = parseFloat(cardContainer.data('ungraded-price').replace('$', '').replace(',', '')) || 0;;
+            var grade7_price = parseFloat(cardContainer.data('grade-7-price').replace('$', '').replace(',', '')) || 0;;
+            var grade8_price = parseFloat(cardContainer.data('grade-8-price').replace('$', '').replace(',', '')) || 0;;
+            var grade9_price = parseFloat(cardContainer.data('grade-9-price').replace('$', '').replace(',', '')) || 0;;
+            var grade95_price = parseFloat(cardContainer.data('grade-95-price').replace('$', '').replace(',', '')) || 0;;
+            var grade10_price = parseFloat(cardContainer.data('grade-10-price').replace('$', '').replace(',', '')) || 0;;
+
+
+            ebayId = ebayId.replace("v1|", "").replace("|0", "");
+            
+            // Log to console for debugging
+            console.log("Sending values:", { ebayId, date, name, imageUrl, ebayUrl, price, maxBidPrice, timeLeft, ungraded_price, grade9_price, grade95_price, grade10_price });
+
+            if (!ebayId) {
+                console.error("Error: eBay ID is missing!");
+                alert("Error: Could not retrieve eBay ID.");
+                return;
+            }
+
+            // Construct the request URL
+            var requestUrl = `/write_saved_item?` +
+                `ebay_id=${encodeURIComponent(ebayId)}` +
+                `&date=${encodeURIComponent(date)}` +
+                `&name=${encodeURIComponent(name)}` +
+                `&image_url=${encodeURIComponent(imageUrl)}` +
+                `&ebay_url=${encodeURIComponent(ebayUrl)}` +
+                `&price=${encodeURIComponent(price)}` +
+                `&max_bid_price=${encodeURIComponent(maxBidPrice)}` +
+                `&time_left=${encodeURIComponent(timeLeft)}` +
+                `&ungraded_price=${encodeURIComponent(ungraded_price)}` +
+                `&grade9_price=${encodeURIComponent(grade9_price)}` +
+                `&grade95_price=${encodeURIComponent(grade95_price)}` +
+                `&grade10_price=${encodeURIComponent(grade10_price)}`;
+
+            console.log("Saving bid request URL:", requestUrl); // Log the URL to make sure it's correct
+
+            // Send the AJAX request
+            $.ajax({
+                type: 'GET',
+                url: requestUrl,
+                success: function(data) {
+                    console.log("Response from server:", data);
+
+                    if (data.message === 'Saved item created successfully') {
+                        saveButton.text('Saved')
+                            .removeClass('btn-primary')
+                            .addClass('btn-success')
+                            .prop('disabled', true);
+                    } else {
+                        alert('Error saving item: ' + data.message);
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error("Error during save operation:", xhr.responseText || error);
+                }
+            });
+        });
+
+        $('#loadDataBtn').click(function() {
+            var ebayApiKey = $('#ebay-api-key').val();
+            var listingType = $('#listing-type').val();
+            var gradedCheck = $('#graded-check').val();
+            var setToCheck = $('#set-to-check').val();
+            var minBidPrice = $('#min-bid-price').val();
+            var maxMarketValue = $('#max-market-value').val();
+            var maxBidPercentage = $('#max-bid-percentage').val();
+            var timeLeftHours = $('#time-left-hours').val();
+
+            $('.row.card').html('<div class="spinner"><i class="fas fa-spinner fa-spin"></i></div>');
+
+            $.ajax({
+                url: '/load_data/?ebay_api_key=' + encodeURIComponent(ebayApiKey) +
+                    '&graded_check=' + encodeURIComponent(gradedCheck) +
+                    '&listing_type=' + encodeURIComponent(listingType) +
+                    '&set_to_check=' + encodeURIComponent(setToCheck) +
+                    '&time_left_hours=' + encodeURIComponent(timeLeftHours) +
+                    '&min_bid_price=' + encodeURIComponent(minBidPrice) +
+                    '&max_market_value=' + encodeURIComponent(maxMarketValue) +
+                    '&max_bid_percentage=' + encodeURIComponent(maxBidPercentage),
+                method: 'GET',
+                dataType: 'json',
+                success: function(response) {
+                    var cardsInfo = response.cards_info;
+                    var dataList = '<div class="row g-3">';
+                    cardsInfo.forEach(function(item) {
+                        var shippingCostHtml = item.shipping_cost !== null ? `<strong>Shipping Cost: </strong> $${item.shipping_cost}<br>` : '<strong>Shipping Cost: </strong> Calculated<br>';
+                        var timeLeftHtml = listingType === "Buy It Now" ? '' : `<strong>Time Left:</strong> ${item.time_left}<br>`;
+                        var currentBidHtml = listingType === "Buy It Now" ? `<strong>Buy It Now Price:</strong> $${item.current_bid_price}<br>` : `<strong>Current Bid:</strong> $${item.current_bid_price}<br>`;
+                        dataList += `
+                        <div class="card-item col-12 col-sm-12 col-md-4 col-lg-4">
+                            <img src="${item.image_url}" alt="Card Image" class="card-img-top d-block mx-auto" style="height: 260px; object-fit: contain; width: 100%;">
+                            <div class="card-body" data-ebay-url="${item.view_item_url}" data-time-left="${item.time_left}" data-ungraded-price="${item.ungraded_price}" data-grade-7-price="${item.grade7_price}" data-grade-8-price="${item.grade8_price}" data-grade-9-price="${item.grade9_price}" data-grade-95-price="${item.grade95_price}" data-grade-10-price="${item.grade10_price}" data-image-url="${item.image_url}" data-ebay-id="${item.item_id}" data-current-bid-price="${item.current_bid_price}">
+                                <h5 class="card-title">${item.card_name}</h5>
+                                <p class="card-text">
+                                    ${timeLeftHtml}
+                                    ${currentBidHtml}
+                                    <strong>Last Sold:</strong><a href="${item.sold_link}" target="_blank" class="ebay-link"> Link</a><br>
+                                    ${shippingCostHtml}
+                                    <strong>Suggested Max Bid:</strong> ${item.suggested_price}<br>
+                                    <strong>Ungraded Price:</strong> ${item.ungraded_price}<br>
+                                    ${item.grade7_price != '-' ? '<strong>Grade 7 Price:</strong> ' + item.grade7_price + '<br>' : ''}
+                                    ${item.grade8_price != '-' ? '<strong>Grade 8 Price:</strong> ' + item.grade8_price + '<br>' : ''}
+                                    ${item.grade9_price != '-' ? '<strong>Grade 9 Price:</strong> ' + item.grade9_price + '<br>' : ''}
+                                    ${item.grade95_price != '-' ? '<strong>Grade 9.5 Price:</strong> ' + item.grade95_price + '<br>' : ''}
+                                    ${item.grade10_price != '-' ? '<strong>Grade 10 Price:</strong> ' + item.grade10_price + '<br>' : ''}
+                                    <div class="mb-3 d-flex align-items-center">
+                                        <input type="number" class="form-control maxBid flex-grow-1" style="max-width: 200px;" placeholder="Enter max bid">
+                                        <button type="button" class="btn btn-primary saveButton ms-2">Save</button>
+                                    </div>
+                                </p>
+                                <a href="${item.view_item_url}" class="btn btn-dark ebay-link" target="_blank">View on eBay</a>
+                            </div>
+                        </div>
+                        `;
+                    });
+                    dataList += '</div>';
+                    api_counter = response.api_counter;
+                    console.log(dataList);
+                    $('.row.card').html(dataList);
+                    $('.api-counter').html('API Counter: ' + api_counter);
+                },
+                error: function(xhr, status, error) {
+                    $('.row.card').html(error);
+                }
+            });
+        });
+    });
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+{% endblock %}
