@@ -113,5 +113,6 @@ def tracker(request):
 
 def saved(request):
     today = date.today()
+    print(today)
     saved_items = SavedItem.objects.filter(date=today)
     return render(request, 'saved.html', {'saved_items': saved_items})

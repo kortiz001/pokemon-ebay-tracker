@@ -172,7 +172,7 @@ def fetch_pokemon_cards(
                                 suggested_price = float(card.get("graded_prices").get("grade95").replace("$", "")) * 0.7
                             if "PSA 10" in item.get("title") or "CGC 10" in item.get("title"):
                                 suggested_price = float(card.get("graded_prices").get("grade10").replace("$", "")) * 0.7
-                            if suggested_price is not "N/A":
+                            if suggested_price != "N/A":
                                 suggested_price = round(suggested_price, 2)
                                 suggested_price = f"${suggested_price:,.2f}"
 
