@@ -142,7 +142,9 @@
             var grade10_price = parseFloat(cardContainer.data('grade-10-price').replace('$', '').replace(',', '')) || 0;;
 
 
-            ebayId = ebayId.replace("v1|", "").replace("|0", "");
+            if (typeof ebayId === 'string') {
+                ebayId = ebayId.replace("v1|", "").replace("|0", "");
+              }
             
             // Log to console for debugging
             console.log("Sending values:", { ebayId, date, name, imageUrl, ebayUrl, price, maxBidPrice, timeLeft, ungraded_price, grade9_price, grade95_price, grade10_price });
@@ -222,7 +224,7 @@
                         var shippingCostHtml = item.shipping_cost !== null ? `<strong>Shipping Cost: </strong> $${item.shipping_cost}<br>` : '<strong>Shipping Cost: </strong> Calculated<br>';
                         var timeLeftHtml = listingType === "Buy It Now" ? '' : `<strong>Time Left:</strong> ${item.time_left}<br>`;
                         var currentBidHtml = listingType === "Buy It Now" ? `<strong>Buy It Now Price:</strong> $${item.current_bid_price}<br>` : `<strong>Current Bid:</strong> $${item.current_bid_price}<br>`;
-                        var saveButtonHtml = ebayIds.includes(item.item_id) ? 'Already Saved!' : `
+                        var saveButtonHtml = ebayIds.includes(item.item_id) ? '<div class="already-saved">Already Saved!</div>' : `
                             <div class="mb-3 d-flex align-items-center">
                                 <input type="number" class="form-control maxBid flex-grow-1" style="max-width: 200px;" placeholder="Enter max bid">
                                 <button type="button" class="btn btn-primary saveButton ms-2">Save</button>
