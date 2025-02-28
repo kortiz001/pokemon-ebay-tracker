@@ -11,12 +11,6 @@
             <div class="row w-100">
                 <div class="card-form-field col-12 col-md-6 mb-3">
                     <div class="form-group mb-3 mb-md-0">
-                        <label for="ebay-api-key">Enter eBay API key:</label>
-                        <input type="text" id="ebay-api-key" class="form-control">
-                    </div>
-                </div>
-                <div class="card-form-field col-12 col-md-6 mb-3">
-                    <div class="form-group mb-3 mb-md-0">
                         <label for="listing-type">Listing Type:</label>
                         <select id="listing-type" class="form-select form-select-sm" onchange="toggleTimeLeftHours(this.value)">
                             <option value="Auction" selected>Auction</option>
@@ -60,16 +54,16 @@
                         </select>
                     </div>
                 </div>
-            </div>
-            
-            <!-- Second Row -->
-            <div class="row w-100">
                 <div class="card-form-field col-12 col-md-6 mb-3">
                     <div class="form-group mb-3 mb-md-0">
                         <label for="min-bid-price">Min Bid:</label>
                         <input type="number" id="min-bid-price" class="form-control" value="10" min="0">
                     </div>
                 </div>
+            </div>
+            
+            <!-- Second Row -->
+            <div class="row w-100">
                 <div class="card-form-field col-12 col-md-6 mb-3">
                     <div class="form-group mb-3 mb-md-0">
                         <label for="max-market-value">Max Market Value:</label>
@@ -90,11 +84,14 @@
                 </div>
             </div>
         </div>        
-        <div class="card-form-field col-12 col-md-6 mb-3">
-            <div class="form-group mb-3 mb-md-0">
-                <button id="loadDataBtn" class="btn btn-dark">Load Data</button>
+        <div class="row w-100">
+            <div class="card-form-field col-12 col-md-6 mb-3">
+                <div class="form-group mb-3 mb-md-0">
+                    <button id="loadDataBtn" class="btn btn-dark">Load Data</button>
+                </div>
             </div>
         </div>
+    </div>
     <div class="row card"></div>
     <div class="api-counter"></div>
 </div>
@@ -181,7 +178,7 @@
 
                     if (data.message === 'Saved item created successfully') {
                         saveButton.text('Saved')
-                            .removeClass('btn-primary')
+                            .removeClass('btn-dark')
                             .addClass('btn-success')
                             .prop('disabled', true);
                     } else {
@@ -195,7 +192,7 @@
         });
 
         $('#loadDataBtn').click(function() {
-            var ebayApiKey = $('#ebay-api-key').val();
+            var ebayApiKey = '{{ ebay_api_key|safe }}';
             var listingType = $('#listing-type').val();
             var gradedCheck = $('#graded-check').val();
             var setToCheck = $('#set-to-check').val();
@@ -227,7 +224,7 @@
                         var saveButtonHtml = ebayIds.includes(item.item_id) ? '<div class="already-saved">Already Saved!</div>' : `
                             <div class="mb-3 d-flex align-items-center">
                                 <input type="number" class="form-control maxBid flex-grow-1" style="max-width: 200px;" placeholder="Enter max bid">
-                                <button type="button" class="btn btn-primary saveButton ms-2">Save</button>
+                                <button type="button" class="btn btn-dark saveButton ms-2">Save</button>
                             </div>
                         `;
                         dataList += `

@@ -5,7 +5,7 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from django.views.decorators.http import require_GET
 from .scripts import pokemon_tracker, tcgplayer_cards_info
-from .models import SavedItem
+from .models import EbayAPIKey, SavedItem
 
 @require_GET
 def load_data(request):
@@ -80,6 +80,19 @@ def write_saved_item(request):
     except Exception as e:
         return JsonResponse({"message": f"Error: {str(e)}"}, status=500)
 
+def save_api_key(request):
+    try:
+        api_key = request.GET.get('ebay_api_key')
+        
+        EbayAPIKey.objects.update_or_create(
+            api_key=api_key,
+            defaults={'api_key': api_key}
+        )
+
+        return JsonResponse({"message": "API key saved successfully"})
+    except Exception as e:
+        return JsonResponse({"message": f"Error: {str(e)}"}, status=500)
+    
 def home(request):
     return render(request, 'home.html')
 
@@ -93,9 +106,10 @@ def decimal_default(obj):
 def tracker(request):
     current_date = date.today()
     objects = SavedItem.objects.filter(date=current_date)
+    ebay_api_key = EbayAPIKey.objects.first()
     saved_items = list(objects.values())
     saved_items_json = json.dumps(saved_items, default=decimal_default)
-    return render(request, 'tracker.html', {'saved_items': saved_items_json})
+    return render(request, 'tracker.html', {'saved_items': saved_items_json, 'ebay_api_key': ebay_api_key})
 
 def saved(request):
     today = date.today()

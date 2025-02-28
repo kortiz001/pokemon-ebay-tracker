@@ -18,3 +18,14 @@ class SavedItem(models.Model):
 
     def __str__(self):
         return self.name
+    
+class EbayAPIKey(models.Model):
+    api_key = models.CharField(max_length=3000)
+    time_updated = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.api_key
+    
+    class Meta:
+        verbose_name = 'eBay API Key'
+        verbose_name_plural = 'eBay API Keys'

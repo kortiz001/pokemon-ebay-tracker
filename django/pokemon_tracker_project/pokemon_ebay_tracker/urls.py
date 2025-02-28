@@ -9,4 +9,5 @@ urlpatterns = [
     path('saved/', views.saved, name='saved'),
     path('load_data/', views.load_data, name='load_data'),  # AJAX data request
     path('write_saved_item/', views.write_saved_item, name='write_saved_item'),
+    path('save_api_key/', views.save_api_key, name='save_api_key'),
 ]
