@@ -176,6 +176,10 @@ def fetch_pokemon_cards(
                                 suggested_price = round(suggested_price, 2)
                                 suggested_price = f"${suggested_price:,.2f}"
 
+                            if suggested_price is not "N/A":
+                                if float(current_bid_price) > float(suggested_price.replace("$", "")):
+                                    continue
+
                             cards_info["cards"].append({
                                 "item_id": item.get("itemId").replace("v1|", "").replace("|0", ""),
                                 "card_name": item.get("title"),
