@@ -114,7 +114,8 @@ def decimal_default(obj):
 def tracker(request):
     current_date = date.today()
     objects = SavedItem.objects.filter(date=current_date)
-    ebay_api_key = EbayAPIKey.objects.first()
+    ebay_api_key = EbayAPIKey.load()
+    ebay_api_key = ebay_api_key.api_key
     saved_items = list(objects.values())
     saved_items_json = json.dumps(saved_items, default=decimal_default)
     return render(request, 'tracker.html', {'saved_items': saved_items_json, 'ebay_api_key': ebay_api_key})

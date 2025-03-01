@@ -22,9 +22,18 @@ class SavedItem(models.Model):
 class EbayAPIKey(models.Model):
     api_key = models.CharField(max_length=3000)
 
-    def __str__(self):
-        return self.api_key
-    
+    def save(self, *args, **kwargs):
+        self.pk = 1  # Ensure only one instance exists
+        super().save(*args, **kwargs)
+
+    def delete(self, *args, **kwargs):
+        pass  # Prevent deletion
+
+    @classmethod
+    def load(cls):
+        obj, created = cls.objects.get_or_create(pk=1)
+        return obj
+
     class Meta:
         verbose_name = 'eBay API Key'
         verbose_name_plural = 'eBay API Keys'
