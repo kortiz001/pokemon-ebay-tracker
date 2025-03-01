@@ -2,6 +2,8 @@ sudo yum update -y
 sudo yum install python3 -y
 sudo yum install python3-pip -y
 
+sudo timedatectl set-timezone America/New_York
+
 mkdir /django
 touch /django/django.log
 
@@ -14,5 +16,9 @@ pip3 install --upgrade urllib3==1.26.15
 
 echo "0 3 * * * /usr/bin/python3 /django/pokemon_tracker_project/pokemon_ebay_tracker/scripts/generate_tcgplayer.py" | crontab -
 
+export DJANGO_SUPERUSER_PASSWORD=Zitro2021!
+# python3 /django/pokemon_tracker_project/manage.py createsuperuser --username ncs.kortiz --email ncs.kevin.ortiz@gmail.com
 python3 /django/pokemon_tracker_project/manage.py collectstatic --noinput
+python3 /django/pokemon_tracker_project/manage.py makemigrations --noinput
+python3 /django/pokemon_tracker_project/manage.py migrate --noinput
 nohup python3 /django/pokemon_tracker_project/manage.py runserver 0.0.0.0:80 --insecure &> /django/django.log &
