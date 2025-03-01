@@ -38,6 +38,13 @@
               <p></p>
               <a href="https://www.gixen.com/main/home_2.php" class="btn btn-dark ebay-link" target="_blank">Go to Gixen</a>
               <a href="{{ item.ebay_url }}" class="btn btn-dark ebay-link" target="_blank">View on eBay</a>
+              <div class="delete-item row w-100">
+                <div class="card-form-field col-12 col-md-6 mb-3">
+                    <div class="form-group mb-3 mb-md-0">
+                        <button id="deleteSavedItemBtn" class="btn btn-dark deleteSavedItemBtn">Delete Item</button>
+                    </div>
+                </div>
+            </div>
           </div>
       </div>
       {% empty %}
@@ -48,4 +55,51 @@
     </div>
   </div>
 
+{% endblock %}
+
+{% block scripts %}
+<script>
+    $(document).ready(function() {
+        $(document).on('click', '.deleteSavedItemBtn', function() {
+            var cardContainer = $(this).closest('.card-body');
+            var ebayId = cardContainer.data('ebay-id');
+            var deleteButton = $(this);
+
+            if (!ebayId) {
+                console.error("Error: eBay ID is missing!");
+                alert("Error: Could not retrieve eBay ID.");
+                return;
+            }
+
+            // Construct the request URL
+            var requestUrl = `/delete_saved_item?` +
+                `ebay_id=${encodeURIComponent(ebayId)}`;
+
+            console.log("Deleting saved item:", requestUrl)
+
+            // Send the AJAX request
+            $.ajax({
+                type: 'GET',
+                url: requestUrl,
+                success: function(data) {
+                    console.log("Response from server:", data);
+
+                    if (data.message === 'Saved item deleted successfully') {
+                        deleteButton.text('Deleted')
+                            .removeClass('btn-dark')
+                            .addClass('btn-success')
+                            .prop('disabled', true);
+                    } else {
+                        alert('Error deleting item: ' + data.message);
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error("Error during delete operation:", xhr.responseText || error);
+                }
+            });
+        });
+    });
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 {% endblock %}

@@ -79,6 +79,14 @@ def write_saved_item(request):
 
     except Exception as e:
         return JsonResponse({"message": f"Error: {str(e)}"}, status=500)
+    
+def delete_saved_item(request):
+    try:
+        ebay_id = request.GET.get('ebay_id')
+        SavedItem.objects.filter(ebay_id=ebay_id).delete()
+        return JsonResponse({"message": "Saved item deleted successfully"})
+    except Exception as e:
+        return JsonResponse({"message": f"Error: {str(e)}"}, status=500)
 
 def save_api_key(request):
     try:

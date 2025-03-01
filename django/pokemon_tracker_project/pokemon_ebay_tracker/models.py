@@ -21,7 +21,6 @@ class SavedItem(models.Model):
     
 class EbayAPIKey(models.Model):
     api_key = models.CharField(max_length=3000)
-    time_updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.api_key

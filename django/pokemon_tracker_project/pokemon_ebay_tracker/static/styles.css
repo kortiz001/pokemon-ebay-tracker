@@ -1,3 +1,7 @@
+body {
+    font-family: "Inter", sans-serif !important;
+}
+
 /* Apply the background image to the entire viewport */
 .outer-container {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/static/website_background.jpg');
@@ -89,4 +93,12 @@
     border: 1px solid #333;
     border-radius: 5px;
     opacity: 0.5;
+}
+
+.delete-item {
+    padding-top: 10px;
+}
+
+#saveApiKeyBtn {
+    margin-left: 20px;
 }
