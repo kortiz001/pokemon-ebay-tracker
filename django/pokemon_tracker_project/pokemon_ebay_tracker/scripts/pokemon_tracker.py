@@ -163,21 +163,21 @@ def fetch_pokemon_cards(
 
                             suggested_price = "N/A"
                             if "PSA 7" in item.get("title") or "CGC 7" in item.get("title"):
-                                suggested_price = float(card.get("graded_prices").get("grade7").replace("$", "")) * 0.7
+                                suggested_price = float(card.get("graded_prices").get("grade7").replace("$", "").replace(",", "")) * 0.68
                             if "PSA 8" in item.get("title") or "CGC 8" in item.get("title"):
-                                suggested_price = float(card.get("graded_prices").get("grade8").replace("$", "")) * 0.7
+                                suggested_price = float(card.get("graded_prices").get("grade8").replace("$", "").replace(",", "")) * 0.68
                             if "PSA 9" in item.get("title") or "CGC 9" in item.get("title"):
-                                suggested_price = float(card.get("graded_prices").get("grade9").replace("$", "")) * 0.7
+                                suggested_price = float(card.get("graded_prices").get("grade9").replace("$", "").replace(",", "")) * 0.68
                             if "CGC 9.5" in item.get("title"):
-                                suggested_price = float(card.get("graded_prices").get("grade95").replace("$", "")) * 0.7
+                                suggested_price = float(card.get("graded_prices").get("grade95").replace("$", "").replace(",", "")) * 0.68
                             if "PSA 10" in item.get("title") or "CGC 10" in item.get("title"):
-                                suggested_price = float(card.get("graded_prices").get("grade10").replace("$", "")) * 0.7
+                                suggested_price = float(card.get("graded_prices").get("grade10").replace("$", "").replace(",", "")) * 0.68
                             if suggested_price != "N/A":
                                 suggested_price = round(suggested_price, 2)
                                 suggested_price = f"${suggested_price:,.2f}"
 
                             if suggested_price is not "N/A":
-                                if float(current_bid_price) > float(suggested_price.replace("$", "")):
+                                if float(current_bid_price) > float(suggested_price.replace("$", "").replace(",", "")):
                                     continue
 
                             cards_info["cards"].append({
