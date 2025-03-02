@@ -2,6 +2,10 @@
   padding-top: 50px;
 }
 
+h1.section-title {
+  margin-bottom: 0;
+}
+
 @media screen and (max-width: 992px) {
   .container.cards {
     padding-left: 40px;
