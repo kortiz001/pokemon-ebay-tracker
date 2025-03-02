@@ -39,6 +39,7 @@ def write_saved_item(request):
         name = request.GET.get('name')
         image_url = request.GET.get('image_url')
         ebay_url = request.GET.get('ebay_url')
+        sold_url = request.GET.get('sold_url')
         price = request.GET.get('price')
         max_bid_price = request.GET.get('max_bid_price')
         time_left = request.GET.get('time_left')
@@ -69,6 +70,7 @@ def write_saved_item(request):
             name=name,
             image_url=image_url,
             ebay_url=ebay_url,
+            sold_url=sold_url,
             price=price,
             max_bid_price=max_bid_price,
             time_left=time_left,

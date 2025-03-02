@@ -7,6 +7,7 @@ class SavedItem(models.Model):
     name = models.CharField(max_length=255)
     image_url = models.URLField(default='https://example.com/default-image.jpg')
     ebay_url = models.URLField(default='https://www.ebay.com/')
+    sold_url = models.URLField(default='https://www.ebay.com/')
     price = models.DecimalField(max_digits=10, decimal_places=2)
     max_bid_price = models.DecimalField(max_digits=10, decimal_places=2)
     time_left = models.CharField(max_length=255, default='')

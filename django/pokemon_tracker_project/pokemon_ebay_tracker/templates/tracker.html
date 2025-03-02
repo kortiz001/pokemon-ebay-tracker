@@ -146,6 +146,7 @@
             var name = cardContainer.find('.card-title').text().trim();
             var imageUrl = cardContainer.data('image-url');
             var ebayUrl = cardContainer.data('ebay-url');
+            var soldUrl = cardContainer.data('sold-url');
             var price = parseFloat(cardContainer.data('current-bid-price')) || 0.00; // Ensure correct price extraction
             var maxBidPrice = parseFloat(cardContainer.find('.maxBid').val()) || 0.00;
             var timeLeft = cardContainer.data('time-left');
@@ -180,6 +181,7 @@
                 `&name=${encodeURIComponent(name)}` +
                 `&image_url=${encodeURIComponent(imageUrl)}` +
                 `&ebay_url=${encodeURIComponent(ebayUrl)}` +
+                `&sold_url=${encodeURIComponent(soldUrl)}` +
                 `&price=${encodeURIComponent(price)}` +
                 `&max_bid_price=${encodeURIComponent(maxBidPrice)}` +
                 `&end_time=${encodeURIComponent(endTime)}` +
@@ -253,7 +255,7 @@
                         <div class="col-md-4" role="group" aria-label="1 / 5">
                             <div class="product-item image-zoom-effect link-effect">
                             <img src="${item.image_url}" alt="Card Image" class="product-image img-fluid card-img-top d-block mx-auto" style="height: 260px; object-fit: contain; width: 100%;">
-                            <div class="card-body product-content" data-ebay-url="${item.view_item_url}" data-end-time="${item.end_time}" data-time-left="${item.time_left}" data-ungraded-price="${item.ungraded_price}" data-grade-7-price="${item.grade7_price}" data-grade-8-price="${item.grade8_price}" data-grade-9-price="${item.grade9_price}" data-grade-95-price="${item.grade95_price}" data-grade-10-price="${item.grade10_price}" data-image-url="${item.image_url}" data-ebay-id="${item.item_id}" data-current-bid-price="${item.current_bid_price}">
+                            <div class="card-body product-content" data-ebay-url="${item.view_item_url}" data-sold-url="${item.sold_link}" data-end-time="${item.end_time}" data-time-left="${item.time_left}" data-ungraded-price="${item.ungraded_price}" data-grade-7-price="${item.grade7_price}" data-grade-8-price="${item.grade8_price}" data-grade-9-price="${item.grade9_price}" data-grade-95-price="${item.grade95_price}" data-grade-10-price="${item.grade10_price}" data-image-url="${item.image_url}" data-ebay-id="${item.item_id}" data-current-bid-price="${item.current_bid_price}">
                                 <h5 class="card-title element-title text-uppercase fs-5 mt-3">${item.card_name}</h5>
                                 <p class="card-text">
                                     ${timeLeftHtml}

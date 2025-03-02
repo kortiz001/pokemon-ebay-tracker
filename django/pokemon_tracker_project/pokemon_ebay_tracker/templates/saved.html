@@ -47,15 +47,14 @@
                   {% endif %}
                   </p>
               <p></p>
-              <a href="https://www.gixen.com/main/home_2.php" class="btn btn-dark ebay-link" target="_blank">Go to Gixen</a>
-              <a href="{{ item.ebay_url }}" class="btn btn-dark ebay-link" target="_blank">View on eBay</a>
-              <div class="delete-item row w-100">
-                <div class="card-form-field col-12 col-md-6 mb-3">
-                    <div class="form-group mb-3 mb-md-0">
-                        <button id="deleteSavedItemBtn" class="btn btn-dark deleteSavedItemBtn">Delete Item</button>
-                    </div>
+              <div class="container button-container">
+                <div class="row">
+                  <a href="https://www.gixen.com/main/home_2.php" class="col-md-6 btn btn-dark ebay-link mb-2" target="_blank">Go to Gixen</a>
+                  <a href="{{ item.ebay_url }}" class="col-md-6 btn btn-dark ebay-link mb-2" target="_blank">View on eBay</a>
+                  <a href="{{ item.sold_url }}" class="col-md-6 btn btn-dark ebay-link mb-2" target="_blank">Recently Sold</a>
+                  <button id="deleteSavedItemBtn" class="col-md-6 btn btn-dark deleteSavedItemBtn mb-2">Delete Item</button>
                 </div>
-            </div>
+              </div>
           </div>
       </div>
       {% empty %}
