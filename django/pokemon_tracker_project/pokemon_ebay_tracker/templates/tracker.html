@@ -160,9 +160,13 @@
             if (typeof ebayId === 'string') {
                 ebayId = ebayId.replace("v1|", "").replace("|0", "");
             }
+
+            if (typeof endTime === 'string') {
+                endTime = endTime.replace(".000", "");
+            }
     
             // Log to console for debugging
-            console.log("Sending values:", { ebayId, name, imageUrl, ebayUrl, price, maxBidPrice, timeLeft, ungraded_price, grade9_price, grade95_price, grade10_price });
+            console.log("Sending values:", { ebayId, name, imageUrl, ebayUrl, price, maxBidPrice, timeLeft, endTime, grade9_price, grade95_price, grade10_price });
     
             if (!ebayId) {
                 console.error("Error: eBay ID is missing!");

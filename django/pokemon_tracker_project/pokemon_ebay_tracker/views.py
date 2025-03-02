@@ -56,6 +56,8 @@ def write_saved_item(request):
             eastern_dt = dt.astimezone(eastern)
             date = eastern_dt.strftime('%Y-%m-%d')
 
+            end_time = end_time[:-5] + 'Z'
+
         # Check if all required fields are present
         if not ebay_id or not name or not price or not max_bid_price:
             return JsonResponse({"message": "Missing required parameters"}, status=400)
@@ -127,5 +129,5 @@ def tracker(request):
 
 def saved(request):
     today = date.today()
-    saved_items = SavedItem.objects.filter(date=today)
+    saved_items = SavedItem.objects.filter(date__gte=today)
     return render(request, 'saved.html', {'saved_items': saved_items})
