@@ -52,7 +52,7 @@ def write_saved_item(request):
 
         eastern = pytz.timezone('US/Eastern')
         if end_time:
-            dt = datetime.fromisoformat(end_time)
+            dt = datetime.fromisoformat(end_time[:-1])
             eastern_dt = dt.astimezone(eastern)
             date = eastern_dt.strftime('%Y-%m-%d')
 
