@@ -84,7 +84,7 @@ def fetch_pokemon_cards(
 
     for item in sets_to_check:
         cards = tcg_player_cards[item]["cards"]
-        set = item
+        card_set = item
 
         for card in cards:
             if card.get("price_high") < 50.00:
@@ -183,7 +183,7 @@ def fetch_pokemon_cards(
                             cards_info["cards"].append({
                                 "item_id": item.get("itemId").replace("v1|", "").replace("|0", ""),
                                 "card_name": item.get("title"),
-                                "set": set,
+                                "set":card_set,
                                 "original_card_name": card.get("name"),
                                 "card_number": card.get("number"),
                                 "tcg_player_card_link": card.get("card_link"),
@@ -216,13 +216,13 @@ def fetch_pokemon_cards(
     if listing_type == "Auction":
         cards_info["cards"].sort(key=lambda x: x['end_time'])
 
-    seen = []
+    seen_ids = set()
+    unique_cards = []
     for card in cards_info["cards"]:
-        for item in seen:
-            if card["card_name"] == item["card_name"]:
-                continue
-        seen.append(card)
-    cards_info["cards"] = seen
+        if card["item_id"] not in seen_ids:
+            seen_ids.add(card["item_id"])
+            unique_cards.append(card)
+    cards_info["cards"] = unique_cards
 
     cards_info["api_counter"] = api_counter
 

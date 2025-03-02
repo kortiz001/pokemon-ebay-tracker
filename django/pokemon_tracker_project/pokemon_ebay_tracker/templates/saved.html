@@ -13,9 +13,9 @@
 
 <section id="new-arrival" class="new-arrival product-carousel py-5 position-relative overflow-hidden"></section>
   <div class="container">
-    <div class="card-items-container mx-auto row">
+    <div class="card-items-container mx-auto row card">
       {% for item in saved_items %}
-      <div class="card-item col-12 col-sm-12 col-md-4 col-lg-4">
+      <div class="product-item card-item col-12 col-sm-12 col-md-4 col-lg-4">
           <img src="{{ item.image_url }}" alt="Card Image" class="card-img-top d-block mx-auto product-image img-fluid" style="height: 260px; object-fit: contain; width: 100%;">
           <div class="card-body" data-image-url="{{ item.image_url }}" data-ebay-id="{{ item.ebay_id }}" data-current-bid-price="91.00">
               <h5 class="card-title">{{ item.name }}</h5>

@@ -2,6 +2,10 @@
   padding-top: 50px;
 }
 
+.card {
+  flex-direction: inherit !important;
+}
+
 h1.section-title {
   margin-bottom: 0;
 }
