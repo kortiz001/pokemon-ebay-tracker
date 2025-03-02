@@ -143,13 +143,13 @@
     
             // Extract values from the card
             var ebayId = cardContainer.data('ebay-id') || ''; // Make sure this is being set correctly in the HTML
-            var date = new Date().toISOString().split('T')[0]; // Date in YYYY-MM-DD format
             var name = cardContainer.find('.card-title').text().trim();
             var imageUrl = cardContainer.data('image-url');
             var ebayUrl = cardContainer.data('ebay-url');
             var price = parseFloat(cardContainer.data('current-bid-price')) || 0.00; // Ensure correct price extraction
             var maxBidPrice = parseFloat(cardContainer.find('.maxBid').val()) || 0.00;
             var timeLeft = cardContainer.data('time-left');
+            var endTime = cardContainer.data('end-time');
             var ungraded_price = parseFloat(cardContainer.data('ungraded-price').replace('$', '').replace(',', '')) || 0;;
             var grade7_price = parseFloat(cardContainer.data('grade-7-price').replace('$', '').replace(',', '')) || 0;;
             var grade8_price = parseFloat(cardContainer.data('grade-8-price').replace('$', '').replace(',', '')) || 0;;
@@ -162,7 +162,7 @@
             }
     
             // Log to console for debugging
-            console.log("Sending values:", { ebayId, date, name, imageUrl, ebayUrl, price, maxBidPrice, timeLeft, ungraded_price, grade9_price, grade95_price, grade10_price });
+            console.log("Sending values:", { ebayId, name, imageUrl, ebayUrl, price, maxBidPrice, timeLeft, ungraded_price, grade9_price, grade95_price, grade10_price });
     
             if (!ebayId) {
                 console.error("Error: eBay ID is missing!");
@@ -173,12 +173,12 @@
             // Construct the request URL
             var requestUrl = `/write_saved_item?` +
                 `ebay_id=${encodeURIComponent(ebayId)}` +
-                `&date=${encodeURIComponent(date)}` +
                 `&name=${encodeURIComponent(name)}` +
                 `&image_url=${encodeURIComponent(imageUrl)}` +
                 `&ebay_url=${encodeURIComponent(ebayUrl)}` +
                 `&price=${encodeURIComponent(price)}` +
                 `&max_bid_price=${encodeURIComponent(maxBidPrice)}` +
+                `&end_time=${encodeURIComponent(endTime)}` +
                 `&time_left=${encodeURIComponent(timeLeft)}` +
                 `&ungraded_price=${encodeURIComponent(ungraded_price)}` +
                 `&grade9_price=${encodeURIComponent(grade9_price)}` +
@@ -249,7 +249,7 @@
                         <div class="col-md-4" role="group" aria-label="1 / 5">
                             <div class="product-item image-zoom-effect link-effect">
                             <img src="${item.image_url}" alt="Card Image" class="product-image img-fluid card-img-top d-block mx-auto" style="height: 260px; object-fit: contain; width: 100%;">
-                            <div class="card-body product-content" data-ebay-url="${item.view_item_url}" data-time-left="${item.time_left}" data-ungraded-price="${item.ungraded_price}" data-grade-7-price="${item.grade7_price}" data-grade-8-price="${item.grade8_price}" data-grade-9-price="${item.grade9_price}" data-grade-95-price="${item.grade95_price}" data-grade-10-price="${item.grade10_price}" data-image-url="${item.image_url}" data-ebay-id="${item.item_id}" data-current-bid-price="${item.current_bid_price}">
+                            <div class="card-body product-content" data-ebay-url="${item.view_item_url}" data-end-time="${item.end_time}" data-time-left="${item.time_left}" data-ungraded-price="${item.ungraded_price}" data-grade-7-price="${item.grade7_price}" data-grade-8-price="${item.grade8_price}" data-grade-9-price="${item.grade9_price}" data-grade-95-price="${item.grade95_price}" data-grade-10-price="${item.grade10_price}" data-image-url="${item.image_url}" data-ebay-id="${item.item_id}" data-current-bid-price="${item.current_bid_price}">
                                 <h5 class="card-title element-title text-uppercase fs-5 mt-3">${item.card_name}</h5>
                                 <p class="card-text">
                                     ${timeLeftHtml}

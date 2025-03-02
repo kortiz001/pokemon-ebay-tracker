@@ -1,4 +1,5 @@
 import json
+import pytz
 from decimal import Decimal
 from datetime import datetime, date
 from django.shortcuts import render
@@ -35,13 +36,13 @@ def write_saved_item(request):
     try:
         # Getting parameters from the GET request
         ebay_id = request.GET.get('ebay_id')
-        date = request.GET.get('date')
         name = request.GET.get('name')
         image_url = request.GET.get('image_url')
         ebay_url = request.GET.get('ebay_url')
         price = request.GET.get('price')
         max_bid_price = request.GET.get('max_bid_price')
         time_left = request.GET.get('time_left')
+        end_time = request.GET.get('end_time')
         ungraded_price = request.GET.get('ungraded_price')
         grade7_price = request.GET.get('grade7_price')
         grade8_price = request.GET.get('grade8_price')
@@ -49,23 +50,27 @@ def write_saved_item(request):
         grade95_price = request.GET.get('grade95_price')
         grade10_price = request.GET.get('grade10_price')
 
+        eastern = pytz.timezone('US/Eastern')
+        if end_time:
+            dt = datetime.fromisoformat(end_time)
+            eastern_dt = dt.astimezone(eastern)
+            date = eastern_dt.strftime('%Y-%m-%d')
+
         # Check if all required fields are present
         if not ebay_id or not name or not price or not max_bid_price:
             return JsonResponse({"message": "Missing required parameters"}, status=400)
 
-        # Use datetime.datetime.strptime to convert the date string into a date object
-        date_object = datetime.strptime(date, '%Y-%m-%d').date()  # Correct usage of strptime
-
         # Save to the database
         saved_item = SavedItem(
             ebay_id=ebay_id,
-            date=date_object,
+            date=date,
             name=name,
             image_url=image_url,
             ebay_url=ebay_url,
             price=price,
             max_bid_price=max_bid_price,
             time_left=time_left,
+            end_time=end_time,
             ungraded_price=ungraded_price,
             grade7_price=grade7_price,
             grade8_price=grade8_price,
@@ -93,7 +98,7 @@ def save_api_key(request):
         api_key = request.GET.get('ebay_api_key')
         
         EbayAPIKey.objects.update_or_create(
-            api_key=api_key,
+            id=1,
             defaults={'api_key': api_key}
         )
 
@@ -122,6 +127,5 @@ def tracker(request):
 
 def saved(request):
     today = date.today()
-    print(today)
     saved_items = SavedItem.objects.filter(date=today)
     return render(request, 'saved.html', {'saved_items': saved_items})

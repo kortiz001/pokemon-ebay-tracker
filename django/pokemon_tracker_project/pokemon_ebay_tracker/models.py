@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 class SavedItem(models.Model):
     ebay_id = models.CharField(max_length=255)
@@ -9,6 +10,7 @@ class SavedItem(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
     max_bid_price = models.DecimalField(max_digits=10, decimal_places=2)
     time_left = models.CharField(max_length=255, default='')
+    end_time = models.DateTimeField(null=True)
     ungraded_price = models.DecimalField(max_digits=10, decimal_places=2, default=0, null=True)
     grade7_price = models.DecimalField(max_digits=10, decimal_places=2, default=0, null=True)
     grade8_price = models.DecimalField(max_digits=10, decimal_places=2, default=0, null=True)

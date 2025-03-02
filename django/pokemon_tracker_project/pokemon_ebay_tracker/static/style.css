@@ -34,8 +34,13 @@
 }
 
 .card-title {
-  padding-bottom: 15px;
+  padding-bottom: 10px;
   font-family: "Jost", Roboto, sans-serif;
+  line-height: 26px !important;
+}
+
+.copy-ebay-id {
+  margin-bottom: 3px;
 }
 
 .max-bid-container {
@@ -44,6 +49,10 @@
 
 .delete-item {
   padding-top: 10px;
+}
+
+.section-title {
+  font-size: 50px;
 }
 
 body {

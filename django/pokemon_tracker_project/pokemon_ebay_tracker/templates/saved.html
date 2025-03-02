@@ -20,8 +20,11 @@
           <div class="card-body" data-image-url="{{ item.image_url }}" data-ebay-id="{{ item.ebay_id }}" data-current-bid-price="91.00">
               <h5 class="card-title">{{ item.name }}</h5>
               <p class="card-text">
-                  <strong>Item Number: </strong>{{ item.ebay_id }}<br>
-                  <strong>Time Left: </strong>{{ item.time_left }}<br>
+                  <strong>Item Number: </strong>{{ item.ebay_id }} 
+                  <button class="copy-ebay-id btn btn-sm btn-light" style="background-color: #FFFFFF;" data-clipboard-text="{{ item.ebay_id }}">
+                  <i class="fas fa-paperclip"></i>
+                  </button><br>
+                  <strong>End Time: </strong>{{ item.end_time }}<br>
                   <strong>Current Bid: </strong>${{ item.price }}<br>
                   <strong>Max Bid: </strong>${{ item.max_bid_price }}<br>
                   {% if item.ungraded_price %}
@@ -68,6 +71,8 @@
 
 {% block scripts %}
 <script>
+    new ClipboardJS('.btn');
+
     $(document).ready(function() {
         $(document).on('click', '.deleteSavedItemBtn', function() {
             var cardContainer = $(this).closest('.card-body');
