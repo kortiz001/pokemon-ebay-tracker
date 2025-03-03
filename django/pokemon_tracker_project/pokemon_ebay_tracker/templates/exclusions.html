@@ -45,7 +45,7 @@
                             <tr>
                                 <td>{{ item.exclusion }}</td>
                                 <td>
-                                    <button id="deleteSearchExclusionBtn" data-search-exclusion="{{ item.exclusion }}" class="btn btn-danger">Delete</button>
+                                    <button data-search-exclusion="{{ item.exclusion }}" class="deleteSearchExclusionBtn btn btn-danger">Delete</button>
                                 </td>
                             </tr>
                         {% endfor %}
@@ -84,22 +84,22 @@
                 }
             });
         });
-        $('#deleteSearchExclusionBtn').click(function() {
+        $('.deleteSearchExclusionBtn').click(function() {
             var searchExclusion = $(this).data('search-exclusion');
             var requestUrl = '/delete_exclusion/?search_exclusion=' + encodeURIComponent(searchExclusion);
-
+            var $button = $(this); // store the element that was clicked
+        
             console.log("Request URL:", requestUrl);
-
+        
             $.ajax({
                 url: requestUrl,
                 method: 'GET',
                 dataType: 'json',
-                success: function(response) {
-
+                success: (response) => {
                     console.log("Response from server:", response);
-                    $('#deleteSearchExclusionBtn').addClass('btn-success').removeClass('btn-danger').text('Search Exclusion deleted!');
+                    $button.addClass('btn-success').removeClass('btn-dark').text('Search Exclusion deleted!');
                 },
-                error: function(xhr, status, error) {
+                error: (xhr, status, error) => {
                     console.error('Error saving search exclusion:', error);
                 }
             });

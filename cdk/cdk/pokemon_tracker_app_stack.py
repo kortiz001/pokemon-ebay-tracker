@@ -97,7 +97,7 @@ class PokemonTrackerAppStack(Stack):
                         removal_policy=RemovalPolicy.DESTROY,
                     ),
                     rule_name="pokemon_tracker_backup_rule",
-                    schedule_expression="cron(0 0 * * ? *)",
+                    schedule_expression=events.Schedule.expression("cron(0 0 * * ? *)"),
                     delete_after=Duration.days(1),
                 ),
             ],
