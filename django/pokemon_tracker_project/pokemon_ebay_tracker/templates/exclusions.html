@@ -42,13 +42,13 @@
                     </thead>
                     <tbody>
                         {% for item in search_exclusions %}
-                            <tr>
-                                <td>{{ item.exclusion }}</td>
-                                <td>
-                                    <button data-search-exclusion="{{ item.exclusion }}" class="deleteSearchExclusionBtn btn btn-danger">Delete</button>
-                                </td>
-                            </tr>
-                        {% endfor %}
+                        <tr>
+                            <td style="width: 80%;">{{ item.exclusion }}</td>
+                            <td style="width: 20%;">
+                                <button data-search-exclusion="{{ item.exclusion }}" class="deleteSearchExclusionBtn btn btn-danger">Delete</button>
+                            </td>
+                        </tr>
+                    {% endfor %}
                     </tbody>
                   </table>
                 </div>
@@ -97,7 +97,7 @@
                 dataType: 'json',
                 success: (response) => {
                     console.log("Response from server:", response);
-                    $button.addClass('btn-success').removeClass('btn-dark').text('Search Exclusion deleted!');
+                    $button.addClass('btn-success').removeClass('btn-danger').text('Search Exclusion deleted!');
                 },
                 error: (xhr, status, error) => {
                     console.error('Error saving search exclusion:', error);
