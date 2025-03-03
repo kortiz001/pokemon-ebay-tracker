@@ -33,7 +33,7 @@ h1.section-title {
   padding-right: 50px;
 }
 
-#saveApiKeyBtn {
+#saveApiKeyBtn, #saveSearchExclusionBtn {
   margin-left: 20px;
 }
 

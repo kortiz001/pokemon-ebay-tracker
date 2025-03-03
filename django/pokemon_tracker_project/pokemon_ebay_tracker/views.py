@@ -6,10 +6,12 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from django.views.decorators.http import require_GET
 from .scripts import pokemon_tracker, tcgplayer_cards_info
-from .models import EbayAPIKey, SavedItem
+from .models import EbayAPIKey, SavedItem, SearchExclusion
 
 @require_GET
 def load_data(request):
+    search_exclusions = SearchExclusion.objects.values()
+
     ebay_api_key = request.GET.get('ebay_api_key')
     graded_check = request.GET.get('graded_check', "All")
     set_to_check = request.GET.get('set_to_check', "All")
@@ -28,7 +30,8 @@ def load_data(request):
         minimum_bid_price=minimum_bid_price,
         max_market_value=max_market_value,
         maximum_bid_percentage=maximum_bid_percentage,
-        time_left_hours=time_left_hours
+        time_left_hours=time_left_hours,
+        search_exclusions=search_exclusions
     ) 
     return JsonResponse({'cards_info': cards_info["cards"], 'api_counter': cards_info["api_counter"]})
 
@@ -40,6 +43,7 @@ def write_saved_item(request):
         image_url = request.GET.get('image_url')
         ebay_url = request.GET.get('ebay_url')
         sold_url = request.GET.get('sold_url')
+        buy_it_now_url = request.GET.get('buy_it_now_url')
         price = request.GET.get('price')
         max_bid_price = request.GET.get('max_bid_price')
         time_left = request.GET.get('time_left')
@@ -71,6 +75,7 @@ def write_saved_item(request):
             image_url=image_url,
             ebay_url=ebay_url,
             sold_url=sold_url,
+            buy_it_now_url=buy_it_now_url,
             price=price,
             max_bid_price=max_bid_price,
             time_left=time_left,
@@ -97,6 +102,35 @@ def delete_saved_item(request):
     except Exception as e:
         return JsonResponse({"message": f"Error: {str(e)}"}, status=500)
 
+def write_search_exclusion(request):
+    try:
+        # Getting parameters from the GET request
+        search_exclusion = request.GET.get('search_exclusion')
+
+        # Check if all required fields are present
+        if not search_exclusion:
+            return JsonResponse({"message": "Missing required parameters"}, status=400)
+
+        try:
+            SearchExclusion.objects.get(exclusion=search_exclusion)
+            print("Exclusion already exists")
+        except SearchExclusion.DoesNotExist:
+            SearchExclusion.objects.create(exclusion=search_exclusion)
+            print("Exclusion created successfully")
+
+        return JsonResponse({"message": "Search exclusion created successfully"})
+
+    except Exception as e:
+        return JsonResponse({"message": f"Error: {str(e)}"}, status=500)
+    
+def delete_search_exclusion(request):
+    try:
+        search_exclusion = request.GET.get('search_exclusion')
+        SearchExclusion.objects.filter(exclusion=search_exclusion).delete()
+        return JsonResponse({"message": "Search exclusion deleted successfully"})
+    except Exception as e:
+        return JsonResponse({"message": f"Error: {str(e)}"}, status=500)
+
 def save_api_key(request):
     try:
         api_key = request.GET.get('ebay_api_key')
@@ -109,6 +143,10 @@ def save_api_key(request):
         return JsonResponse({"message": "API key saved successfully"})
     except Exception as e:
         return JsonResponse({"message": f"Error: {str(e)}"}, status=500)
+    
+def search_exclusions(request):
+    search_exclusions = SearchExclusion.objects.all()
+    return render(request, 'exclusions.html', {'search_exclusions': search_exclusions})
     
 def home(request):
     return render(request, 'home.html')

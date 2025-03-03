@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section id="billboard" class="bg-light py-4">
+  <div class="container">
+    <div class="row justify-content-center">
+      <h1 class="section-title text-center mt-4" data-aos="fade-up">Exclusions</h1>
+      <div class="col-md-6 text-center" data-aos="fade-up" data-aos-delay="300">
+        <p>Enter strings below to be exluded from searches</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container cards">
+    <div class="row">
+        <div class="col-12 d-flex flex-column flex-md-row justify-content-between align-items-start">
+            <!-- First Row -->
+            <div class="row w-100">
+                <div class="ebay-form card-form-field col-12 col-md-8 mb-3 d-flex justify-content-between align-items-center">
+                    <div class="form-group flex-grow-1">
+                        <input type="text" id="search-exclusion" placeholder="Search Exclusion" class="form-control form-control-sm">
+                    </div>
+                    <button id="saveSearchExclusionBtn" class="btn btn-dark">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container cards">
+    <div class="row">
+        <div class="col-12 d-flex flex-column flex-md-row justify-content-between align-items-start">
+            <div class="row w-100">
+                <div class="col-md-12">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Search Exclusions</th>
+                        <th>Delete</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in search_exclusions %}
+                            <tr>
+                                <td>{{ item.exclusion }}</td>
+                                <td>
+                                    <button id="deleteSearchExclusionBtn" data-search-exclusion="{{ item.exclusion }}" class="btn btn-danger">Delete</button>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    $(document).ready(function() {
+        $('#saveSearchExclusionBtn').click(function() {
+            var searchExclusion = $('#search-exclusion').val();
+            var requestUrl = '/write_exclusion/?search_exclusion=' + encodeURIComponent(searchExclusion);
+
+            console.log("Request URL:", requestUrl);
+
+            $.ajax({
+                url: requestUrl,
+                method: 'GET',
+                dataType: 'json',
+                success: function(response) {
+
+                    console.log("Response from server:", response);
+                    $('#saveSearchExclusionBtn').addClass('btn-success').removeClass('btn-dark').text('Search Exclusion Saved!');
+                    setTimeout(function() {
+                        $('#saveSearchExclusionBtn').addClass('btn-dark').removeClass('btn-success').text('Save Search Exclusion');
+                    }, 3000); // Revert the button after 3 seconds
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error saving search exclusion:', error);
+                }
+            });
+        });
+        $('#deleteSearchExclusionBtn').click(function() {
+            var searchExclusion = $(this).data('search-exclusion');
+            var requestUrl = '/delete_exclusion/?search_exclusion=' + encodeURIComponent(searchExclusion);
+
+            console.log("Request URL:", requestUrl);
+
+            $.ajax({
+                url: requestUrl,
+                method: 'GET',
+                dataType: 'json',
+                success: function(response) {
+
+                    console.log("Response from server:", response);
+                    $('#deleteSearchExclusionBtn').addClass('btn-success').removeClass('btn-danger').text('Search Exclusion deleted!');
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error saving search exclusion:', error);
+                }
+            });
+        });
+    });
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+{% endblock %}

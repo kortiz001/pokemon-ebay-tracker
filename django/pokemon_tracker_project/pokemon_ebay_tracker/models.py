@@ -8,6 +8,7 @@ class SavedItem(models.Model):
     image_url = models.URLField(default='https://example.com/default-image.jpg')
     ebay_url = models.URLField(default='https://www.ebay.com/')
     sold_url = models.URLField(default='https://www.ebay.com/')
+    buy_it_now_url = models.URLField(default='https://www.ebay.com/')
     price = models.DecimalField(max_digits=10, decimal_places=2)
     max_bid_price = models.DecimalField(max_digits=10, decimal_places=2)
     time_left = models.CharField(max_length=255, default='')
@@ -40,3 +41,13 @@ class EbayAPIKey(models.Model):
     class Meta:
         verbose_name = 'eBay API Key'
         verbose_name_plural = 'eBay API Keys'
+
+class SearchExclusion(models.Model):
+    exclusion = models.CharField(max_length=255, unique=True)
+
+    def __str__(self):
+        return self.exclusion
+    
+    class Meta:
+        verbose_name = 'Search Exclusion'
+        verbose_name_plural = 'Search Exclusions'

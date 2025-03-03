@@ -22,7 +22,8 @@ def fetch_pokemon_cards(
         minimum_bid_price: int,
         max_market_value: int,
         maximum_bid_percentage: float,
-        time_left_hours: int
+        time_left_hours: int,
+        search_exclusions: list
     ):
     query_end_time = (datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(hours=int(time_left_hours))).strftime('%Y-%m-%dT%H:%M:%S') + 'Z'
 
@@ -158,24 +159,26 @@ def fetch_pokemon_cards(
 
                             if graded_check == "Graded":
                                 sold_link = f"https://www.ebay.com/sch/i.html?_nkw={urllib.parse.quote(item.get('title'))}&_sacat=0&_from=R40&rt=nc&LH_Sold=1&LH_Complete=1&Graded=Yes&_dcat=183454"
+                                buy_it_now_link = f"https://www.ebay.com/sch/i.html?_nkw={urllib.parse.quote(item.get('title'))}&_sacat=0&_from=R40&Graded=Yes&_dcat=183454&LH_BIN=1&_sop=15"
                             else:
                                 sold_link = f"https://www.ebay.com/sch/i.html?_nkw={urllib.parse.quote(item.get('title'))}&_sacat=0&_from=R40&rt=nc&LH_Sold=1&LH_Complete=1"
+                                buy_it_now_link = f"https://www.ebay.com/sch/i.html?_nkw={urllib.parse.quote(item.get('title'))}&_sacat=0&_from=R40&_dcat=183454&LH_BIN=1&_sop=15"
 
                             suggested_price = "N/A"
                             if "PSA 7" in item.get("title") or "CGC 7" in item.get("title"):
-                                if card.get("graded_prices").get("grade7") != "N/A":
+                                if card.get("graded_prices").get("grade7") != "N/A" and card.get("graded_prices").get("grade7") != "-":
                                     suggested_price = float(card.get("graded_prices").get("grade7").replace("$", "").replace(",", "")) * 0.68
                             if "PSA 8" in item.get("title") or "CGC 8" in item.get("title"):
-                                if card.get("graded_prices").get("grade8") != "N/A":
+                                if card.get("graded_prices").get("grade8") != "N/A" and card.get("graded_prices").get("grade8") != "-":
                                     suggested_price = float(card.get("graded_prices").get("grade8").replace("$", "").replace(",", "")) * 0.68
                             if "PSA 9" in item.get("title") or "CGC 9" in item.get("title"):
-                                if card.get("graded_prices").get("grade9") != "N/A":
+                                if card.get("graded_prices").get("grade9") != "N/A" and card.get("graded_prices").get("grade9") != "-":
                                     suggested_price = float(card.get("graded_prices").get("grade9").replace("$", "").replace(",", "")) * 0.68
                             if "CGC 9.5" in item.get("title"):
-                                if card.get("graded_prices").get("grade95") != "N/A":
+                                if card.get("graded_prices").get("grade95") != "N/A" and card.get("graded_prices").get("grade95") != "-":
                                     suggested_price = float(card.get("graded_prices").get("grade95").replace("$", "").replace(",", "")) * 0.68
                             if "PSA 10" in item.get("title") or "CGC 10" in item.get("title"):
-                                if card.get("graded_prices").get("grade10") != "N/A":
+                                if card.get("graded_prices").get("grade10") != "N/A" and card.get("graded_prices").get("grade10") != "-":
                                     suggested_price = float(card.get("graded_prices").get("grade10").replace("$", "").replace(",", "")) * 0.68
                             if suggested_price != "N/A":
                                 suggested_price = round(suggested_price, 2)
@@ -201,6 +204,7 @@ def fetch_pokemon_cards(
                                 "shipping_cost": shipping_cost,
                                 "shipping_cost_type": shipping_cost_type,
                                 "sold_link": sold_link,
+                                "buy_it_now_link": buy_it_now_link,
                                 "ungraded_price":  card.get("graded_prices").get("ungraded"),
                                 "grade7_price": card.get("graded_prices").get("grade7"),
                                 "grade8_price": card.get("graded_prices").get("grade8"),
@@ -228,6 +232,9 @@ def fetch_pokemon_cards(
             seen_ids.add(card["item_id"])
             unique_cards.append(card)
     cards_info["cards"] = unique_cards
+
+    exclusions = [exclusion["exclusion"] for exclusion in search_exclusions]
+    cards_info["cards"] = [card for card in cards_info["cards"] if not any(exclusion.lower() in card["card_name"].lower() for exclusion in exclusions)]
 
     cards_info["api_counter"] = api_counter
 
