@@ -1,5 +1,6 @@
 from aws_cdk import (
     aws_autoscaling as autoscaling,
+    aws_backup as backup,
     aws_events as events,
     aws_ec2 as ec2,
     aws_iam as iam,
@@ -9,6 +10,7 @@ from aws_cdk import (
     aws_ssm as ssm,
     aws_events_targets as targets,
     Duration,
+    RemovalPolicy,
     Stack,
     Tags
 )
@@ -83,7 +85,39 @@ class PokemonTrackerAppStack(Stack):
             min_capacity=1,
             max_capacity=1,
         )
-        self.asg = asg
+
+        backup_plan = backup.BackupPlan(
+            self, "pokemon_tracker_backup_plan",
+            backup_plan_name="pokemon_tracker_backup_plan",
+            rules=[
+                backup.BackupRule(
+                    backup_vault=backup.BackupVault(
+                        self, "pokemon_tracker_backup_vault",
+                        backup_vault_name="Default",
+                        removal_policy=RemovalPolicy.DESTROY,
+                    ),
+                    rule_name="pokemon_tracker_backup_rule",
+                    schedule_expression="cron(0 0 * * ? *)",
+                    delete_after=Duration.days(1),
+                ),
+            ],
+        )
+
+        backup_selection = backup.BackupSelection(
+            self, "pokemon_tracker_backup_selection",
+            backup_plan=backup_plan,
+            name="pokemon_tracker_backup_selection",
+            selections=[
+                backup.Selection(
+                    name="pokemon_tracker_backup_selection",
+                    iam_role=iam_role,
+                    selection_tag=backup.SelectionTag(
+                        key="pokemon_ec2",
+                        value="true",
+                    ),
+                ),
+            ],
+        )
 
         s3_bucket = s3.Bucket(
             self,
