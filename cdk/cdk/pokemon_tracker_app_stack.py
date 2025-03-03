@@ -90,7 +90,7 @@ class PokemonTrackerAppStack(Stack):
             self, "pokemon_tracker_backup_plan",
             backup_plan_name="pokemon_tracker_backup_plan",
             rules=[
-                backup.BackupRule(
+                backup.BackupPlanRule(
                     backup_vault=backup.BackupVault(
                         self, "pokemon_tracker_backup_vault",
                         backup_vault_name="Default",
