@@ -86,16 +86,17 @@ class PokemonTrackerAppStack(Stack):
             max_capacity=1,
         )
 
+        default_backup_vault = backup.BackupVault.from_backup_vault_name(self,
+            "pokemon_tracker_backup_vault",
+            backup_vault_name="Default",
+        )
+
         backup_plan = backup.BackupPlan(
             self, "pokemon_tracker_backup_plan",
             backup_plan_name="pokemon_tracker_backup_plan",
-            rules=[
+            backup_plan_rules =[
                 backup.BackupPlanRule(
-                    backup_vault=backup.BackupVault(
-                        self, "pokemon_tracker_backup_vault",
-                        backup_vault_name="Default",
-                        removal_policy=RemovalPolicy.DESTROY,
-                    ),
+                    backup_vault=default_backup_vault,
                     rule_name="pokemon_tracker_backup_rule",
                     schedule_expression=events.Schedule.expression("cron(0 0 * * ? *)"),
                     delete_after=Duration.days(1),
@@ -103,20 +104,10 @@ class PokemonTrackerAppStack(Stack):
             ],
         )
 
-        backup_selection = backup.BackupSelection(
-            self, "pokemon_tracker_backup_selection",
-            backup_plan=backup_plan,
-            name="pokemon_tracker_backup_selection",
-            selections=[
-                backup.Selection(
-                    name="pokemon_tracker_backup_selection",
-                    iam_role=iam_role,
-                    selection_tag=backup.SelectionTag(
-                        key="pokemon_ec2",
-                        value="true",
-                    ),
-                ),
-            ],
+        backup_plan.add_selection("pokemon_tracker_backup_selection",
+            resources=[
+                backup.BackupResource.from_tag("pokemon_ec2", "true"),
+            ]                    
         )
 
         s3_bucket = s3.Bucket(
