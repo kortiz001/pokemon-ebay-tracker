@@ -2,3 +2,4 @@ beautifulsoup4
 pokemontcgsdk
 requests
 django
+pytz
