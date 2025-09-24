@@ -1,4 +1,4 @@
-name: Generate index.html from Django
+name: Update Website
 
 on:
   workflow_dispatch:
