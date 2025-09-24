@@ -60,7 +60,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install pokemontcgsdk
+          pip install pokemontcgsdk requests
 
       - name: Run Python script
         run: |
