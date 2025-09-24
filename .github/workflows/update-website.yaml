@@ -51,16 +51,6 @@ jobs:
         run: |
           curl -s http://127.0.0.1:8000/psa_tracker > rendered_index.html
 
-      - name: Commit rendered index.html
-        run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git add rendered_index.html
-          git commit -m "Auto-generated index.html"
-          git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Upload to S3
         run: |
           aws s3 cp rendered_index.html s3://psa.kevs-pokemon-tracker.com/index.html
