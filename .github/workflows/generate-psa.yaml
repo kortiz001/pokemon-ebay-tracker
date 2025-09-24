@@ -54,7 +54,7 @@ jobs:
           pip install -r requirements.txt
       - name: Run Python script
         run: |
-          python generate_psa_json.py "${{ matrix.set }}"
+          python scripts/generate_psa_json.py "${{ matrix.set }}"
 
       - name: Commit and push changes
         run: |
