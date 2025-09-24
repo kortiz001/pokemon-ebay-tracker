@@ -49,7 +49,7 @@ jobs:
 
       - name: Curl index.html
         run: |
-          curl -s http://127.0.0.1:8000/psa_tracker > rendered_index.html
+          curl -s http://127.0.0.1:8000/psa_tracker/ > rendered_index.html
 
       - name: Upload to S3
         run: |
