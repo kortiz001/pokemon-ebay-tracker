@@ -1,26 +1,23 @@
 import os
 import importlib.util
 from pathlib import Path
+import pprint
 
 # Path to folder containing the .py files
-FOLDER_PATH = Path("psa_results")  # ⬅️ Update this to your folder path
+FOLDER_PATH = Path("psa_results")  # ⬅️ Change this to your folder path
 
 combined_cards_info = {}
 
 for file_path in FOLDER_PATH.glob("*.py"):
     if file_path.name == "combined_cards_info.py":
-        continue
+        continue  # Avoid loading the output file
 
     try:
-        # Create a unique module name
         module_name = f"module_{file_path.stem}"
-
-        # Load the module from file
         spec = importlib.util.spec_from_file_location(module_name, file_path)
         module = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(module)
 
-        # Check if it has cards_info dict
         if hasattr(module, "cards_info") and isinstance(module.cards_info, dict):
             combined_cards_info.update(module.cards_info)
             print(f"✅ Loaded {len(module.cards_info)} entries from {file_path.name}")
@@ -31,13 +28,13 @@ for file_path in FOLDER_PATH.glob("*.py"):
         print(f"❌ Error loading {file_path.name}: {e}")
 
 # Output file path
-output_path = FOLDER_PATH / "combined_cards_info.py"
+output_path = "django/pokemon_tracker_project/pokemon_ebay_tracker/scripts/tcgplayer_cards_info_psa_check.py"
 
-# Write the combined dictionary as a Python file
+# Pretty-print dictionary to the Python file
 with open(output_path, "w", encoding="utf-8") as f:
     f.write("# Auto-generated file containing combined cards_info dictionary\n")
-    f.write("cards_info = ")
-    f.write(repr(combined_cards_info))  # Write as a Python literal
+    f.write("cards_info = \\\n")
+    pprint.pprint(combined_cards_info, stream=f, indent=2, width=100, sort_dicts=False)
 
 print(f"\n✅ Combined total: {len(combined_cards_info)} cards")
-print(f"📁 Saved to: {output_path}")
+print(f"📁 Saved nicely formatted to: {output_path}")
