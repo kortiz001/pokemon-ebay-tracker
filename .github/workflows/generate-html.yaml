@@ -22,17 +22,17 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run migrations (if needed)
-        working-directory: ./django
+        working-directory: ./django/pokemon_tracker_project
         run: |
           python manage.py migrate || echo "No migrations needed"
 
       - name: Collect static files (optional)
-        working-directory: ./django
+        working-directory: ./django/pokemon_tracker_project
         run: |
           python manage.py collectstatic --noinput || echo "No static files"
 
       - name: Start Django server in background
-        working-directory: ./django
+        working-directory: ./django/pokemon_tracker_project
         run: |
           nohup python manage.py runserver 127.0.0.1:8000 &
           sleep 5  # wait for the server to start
