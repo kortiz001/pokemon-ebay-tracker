@@ -2,8 +2,6 @@ name: Generate index.html from Django
 
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
 
 jobs:
   build:
@@ -19,21 +17,25 @@ jobs:
           python-version: '3.10'
 
       - name: Install dependencies
+        working-directory: ./django
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
       - name: Run migrations (if needed)
+        working-directory: ./django
         run: |
-          python django/manage.py migrate || echo "No migrations needed"
+          python manage.py migrate || echo "No migrations needed"
 
       - name: Collect static files (optional)
+        working-directory: ./django
         run: |
-          python django/manage.py collectstatic --noinput || echo "No static files"
+          python manage.py collectstatic --noinput || echo "No static files"
 
       - name: Start Django server in background
+        working-directory: ./django
         run: |
-          nohup python django/manage.py runserver 127.0.0.1:8000 &
+          nohup python manage.py runserver 127.0.0.1:8000 &
           sleep 5  # wait for the server to start
 
       - name: Curl index.html
