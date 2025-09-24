@@ -60,8 +60,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install pokemontcgsdk requests
-
+          pip install -r requirements.txt
       - name: Run Python script
         run: |
           python generate_psa_json.py "${{ matrix.set }}"
