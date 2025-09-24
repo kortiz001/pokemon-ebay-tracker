@@ -1,4 +1,5 @@
 import json
+import os
 import random
 import requests
 import time
@@ -194,12 +195,23 @@ if __name__ == "__main__":
         "White Flare": "rsv10pt5"
     }
 
-    set = sets.get(set_name)
-    set = {"name": set_name, "code": set}
+    set_code = sets.get(set_name)
+    if not set_code:
+        print(f"❌ Unknown set: {set_name}")
+        sys.exit(1)
+
+    set = {"name": set_name, "code": set_code}
 
     print(f"\n=== Processing Set: {set['name']} ===")
     cards_info = generate_tcgplayer_json(set=set)
-    output_filename = f'psa_results/tcgplayer_cards_info_{set.get("name").replace(" ", "_").replace("&", "and")}.py'
+
+    output_dir = 'psa_results'
+    os.makedirs(output_dir, exist_ok=True)
+
+    filename_safe = set_name.replace(" ", "_").replace("&", "and")
+    output_filename = f'{output_dir}/tcgplayer_cards_info_{filename_safe}.py'
+
     with open(output_filename, 'w') as f:
         f.write('cards_info = ' + json.dumps(cards_info, indent=4) + '\n')
+
     print(f"✅ Saved: {output_filename}")
