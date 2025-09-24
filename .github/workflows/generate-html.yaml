@@ -1,0 +1,51 @@
+name: Generate index.html from Django
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run migrations (if needed)
+        run: |
+          python django/manage.py migrate || echo "No migrations needed"
+
+      - name: Collect static files (optional)
+        run: |
+          python django/manage.py collectstatic --noinput || echo "No static files"
+
+      - name: Start Django server in background
+        run: |
+          nohup python django/manage.py runserver 127.0.0.1:8000 &
+          sleep 5  # wait for the server to start
+
+      - name: Curl index.html
+        run: |
+          curl -s http://127.0.0.1:8000/ > rendered_index.html
+
+      - name: Commit rendered index.html
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add rendered_index.html
+          git commit -m "Auto-generated index.html"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
