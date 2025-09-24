@@ -9,7 +9,7 @@ jobs:
     permissions:
       id-token: write
       contents: write
-
+    continue-on-error: ${{ matrix.set }}
     strategy:
       max-parallel: 6
       matrix:
