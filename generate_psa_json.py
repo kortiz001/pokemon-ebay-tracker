@@ -162,7 +162,7 @@ def generate_tcgplayer_json(set: dict):
 # Runner
 # -------------------------------
 if __name__ == "__main__":
-    set_name = sys.argv[0]
+    set_name = sys.argv[1]
 
     sets = {
         "Sword & Shield": "swsh1",
