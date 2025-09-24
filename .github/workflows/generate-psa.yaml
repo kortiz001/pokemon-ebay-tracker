@@ -1,0 +1,73 @@
+name: Generate PSA JSON
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: write
+    strategy:
+strategy:
+  max-parallel: 4  # Limit concurrency to 2 matrix jobs at once
+  matrix:
+    set:
+      # - "Sword & Shield"
+      # - "Rebel Clash"
+      # - "Darkness Ablaze"
+      # - "Champion's Path"
+      # - "Vivid Voltage"
+      # - "Shining Fates"
+      # - "Battle Styles"
+      # - "Chilling Reign"
+      # - "Evolving Skies"
+      # - "Fusion Strike"
+      # - "Brilliant Stars"
+      # - "Astral Radiance"
+      # - "Lost Origin"
+      # - "Silver Tempest"
+      # - "Paradox Rift"
+      # - "Paldean Fates"
+      # - "Twilight Masquerade"
+      # - "Brilliant Stars"
+      # - "Astral Radiance"
+      # - "Silver Tempest"
+      # - "Vivid Voltage"
+      # - "Obsidian Flames"
+      # - "151"
+      # - "Paldea Evolved"
+      # - "Crown Zenith Galarian Gallery"
+      # - "Evolving Skies"
+      # - "Crown Zenith"
+      # - "Surging Sparks"
+      # - "Prismatic Evolutions"
+      # - "Journey Together"
+      # - "Destined Rivals"
+      - "Black Bolt"
+      - "White Flare"
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Assume role with OIDC
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::870927831149:role/kortiz-github-repository
+          role-session-name: GitHubActionsSession
+          aws-region: us-east-1
+
+      - name: Run Python
+        run: |
+          python generate_psa_json.py ${{ matrix.set }}
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add .
+          git commit -m "Update PSA JSON"
+          git push origin main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block title %}PSA Tracker - Pokemon Ebay Tracker{% endblock %}
+{% load static %}
+
+{% block content %}
+<section id="billboard" class="bg-light py-4">
+    <div class="container">
+      <div class="row justify-content-center">
+        <h1 class="section-title text-center aos-init aos-animate" data-aos="fade-up">PSA Tracker</h1>
+      </div>
+    </div>
+</section>
+
+<div class="container cards">
+    {% for set_name, set_data in cards_info.items %}
+        {% if set_data.cards %}
+        <div class="row mb-4">
+            <div class="col-12">
+                <h3 class="mt-2">{{ set_name }}</h3>
+            </div>
+        </div>
+        {% endif %}
+
+        <div class="row">
+            {% for card in set_data.cards %}
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        
+                        {% if card.image_url %}
+                            <img src="{{ card.image_url }}" 
+                                    alt="{{ card.name }}" 
+                                    class="card-img-top img-fluid rounded shadow-sm border"
+                                    style="object-fit: contain; max-height: 250px; background: #f8f9fa;">
+                        {% endif %}
+                        
+                        <div class="card-body">
+                            <h5 class="card-title fw-semibold">{{ card.name }}</h5>
+                            <p class="card-text">
+                                Market Price: <span class="badge bg-primary">${{ card.market }}</span>
+                            </p>
+                            <p class="card-text">
+                                PSA 10 Price: <span class="badge bg-primary">{{ card.graded_prices.grade10 }}</span>
+                            </p>
+                            <a href="https://www.facebook.com/marketplace/103462413027188/search/?query={{ card.name | urlencode }}" 
+                            target="_blank" rel="noopener noreferrer">
+                            Facebook Marketplace
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>

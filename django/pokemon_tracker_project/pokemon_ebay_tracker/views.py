@@ -5,7 +5,7 @@ from datetime import datetime, date
 from django.shortcuts import render
 from django.http import JsonResponse
 from django.views.decorators.http import require_GET
-from .scripts import pokemon_tracker, tcgplayer_cards_info
+from .scripts import pokemon_tracker, tcgplayer_cards_info, tcgplayer_cards_info_psa_check
 from .models import EbayAPIKey, SavedItem, SearchExclusion
 
 @require_GET
@@ -171,3 +171,8 @@ def saved(request):
     today = date.today()
     saved_items = SavedItem.objects.filter(date__gte=today)
     return render(request, 'saved.html', {'saved_items': saved_items})
+
+def psa_tracker(request):
+    tcg_player_cards = tcgplayer_cards_info_psa_check.cards_info
+
+    return render(request, 'psa_tracker.html', {'cards_info': tcg_player_cards})

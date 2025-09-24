@@ -2,6 +2,7 @@ import json
 import random
 import requests
 import time
+import sys
 from pokemontcgsdk import Card, RestClient
 from bs4 import BeautifulSoup
 
@@ -160,55 +161,53 @@ def generate_tcgplayer_json(set: dict):
 # Runner
 # -------------------------------
 if __name__ == "__main__":
+    set_name = sys.argv[0]
+
     sets = [
-        # {"name": "Sword & Shield", "code": "swsh1"},
-        # {"name": "Rebel Clash", "code": "swsh2"},
-        # {"name": "Darkness Ablaze", "code": "swsh3"},
-        # {"name": "Champion's Path", "code": "swsh35"},
-        # {"name": "Vivid Voltage", "code": "swsh4"},
-        # {"name": "Shining Fates", "code": "swsh45"},
-        # {"name": "Battle Styles", "code": "swsh5"},
-        # {"name": "Chilling Reign", "code": "swsh6"},
-        # {"name": "Evolving Skies", "code": "swsh7"},
-        # {"name": "Fusion Strike", "code": "swsh8"},
-        # {"name": "Brilliant Stars", "code": "swsh9"},
-        # {"name": "Astral Radiance", "code": "swsh10"},
-        # {"name": "Lost Origin", "code": "swsh11"},
-        # {"name": "Silver Tempest", "code": "swsh12"},
-        # {"name": "Paradox Rift", "code": "sv4"},
-        # {"name": "Paldean Fates", "code": "sv4pt5"},
-        # {"name": "Twilight Masquerade", "code": "sv6"},
-        # {"name": "Brilliant Stars", "code": "swsh9"},
-        # {"name": "Astral Radiance", "code": "swsh10"},
-        # {"name": "Silver Tempest", "code": "swsh12"},
-        # {"name": "Vivid Voltage", "code": "swsh4"},
-        # {"name": "Obsidian Flames", "code": "sv3"},
-        # {"name": "151", "code": "sv3pt5"},
-        # {"name": "Paldea Evolved", "code": "sv2"},
-        # {"name": "Crown Zenith Galarian Gallery", "code": "swsh12pt5gg"},
-        # {"name": "Evolving Skies", "code": "swsh7"},
-        # {"name": "Crown Zenith", "code": "swsh12pt5"},
-        # {"name": "Surging Sparks", "code": "sv8"},
+        {"name": "Sword & Shield", "code": "swsh1"},
+        {"name": "Rebel Clash", "code": "swsh2"},
+        {"name": "Darkness Ablaze", "code": "swsh3"},
+        {"name": "Champion's Path", "code": "swsh35"},
+        {"name": "Vivid Voltage", "code": "swsh4"},
+        {"name": "Shining Fates", "code": "swsh45"},
+        {"name": "Battle Styles", "code": "swsh5"},
+        {"name": "Chilling Reign", "code": "swsh6"},
+        {"name": "Evolving Skies", "code": "swsh7"},
+        {"name": "Fusion Strike", "code": "swsh8"},
+        {"name": "Brilliant Stars", "code": "swsh9"},
+        {"name": "Astral Radiance", "code": "swsh10"},
+        {"name": "Lost Origin", "code": "swsh11"},
+        {"name": "Silver Tempest", "code": "swsh12"},
+        {"name": "Paradox Rift", "code": "sv4"},
+        {"name": "Paldean Fates", "code": "sv4pt5"},
+        {"name": "Twilight Masquerade", "code": "sv6"},
+        {"name": "Brilliant Stars", "code": "swsh9"},
+        {"name": "Astral Radiance", "code": "swsh10"},
+        {"name": "Silver Tempest", "code": "swsh12"},
+        {"name": "Vivid Voltage", "code": "swsh4"},
+        {"name": "Obsidian Flames", "code": "sv3"},
+        {"name": "151", "code": "sv3pt5"},
+        {"name": "Paldea Evolved", "code": "sv2"},
+        {"name": "Crown Zenith Galarian Gallery", "code": "swsh12pt5gg"},
+        {"name": "Evolving Skies", "code": "swsh7"},
+        {"name": "Crown Zenith", "code": "swsh12pt5"},
+        {"name": "Surging Sparks", "code": "sv8"},
         {"name": "Prismatic Evolutions", "code": "sv8pt5"},
         {"name": "Journey Together", "code": "sv9"},
         {"name": "Destined Rivals", "code": "sv10"},
-        # {"name": "Black Bolt", "code": "zsv10pt5"},
-        # {"name": "White Flare", "code": "rsv10pt5"}
+        {"name": "Black Bolt", "code": "zsv10pt5"},
+        {"name": "White Flare", "code": "rsv10pt5"}
     ]
+
+    set = [set for set in sets if set.get("name") == set_name][0]
 
     full_set_dict = {}
 
-    for set in sets:
-        print(f"\n=== Processing Set: {set['name']} ===")
-        cards_info = generate_tcgplayer_json(set=set)
-        full_set_dict[set.get("name")] = cards_info
+    print(f"\n=== Processing Set: {set['name']} ===")
+    cards_info = generate_tcgplayer_json(set=set)
+    full_set_dict[set.get("name")] = cards_info
 
-        output_filename = f'tcgplayer_cards_info_{set.get("name").replace(" ", "_").replace("&", "and")}.py'
-        with open(output_filename, 'w') as f:
-            f.write('cards_info = ' + json.dumps(cards_info, indent=4) + '\n')
-        print(f"Saved: {output_filename}")
-
-    # Final combined output
-    with open('tcgplayer_cards_info_psa_check.py', 'w') as f:
-        f.write('cards_info = ' + json.dumps(full_set_dict, indent=4) + '\n')
-    print("✅ All done. Combined output saved to tcgplayer_cards_info_psa_check.py")
+    output_filename = f'psa_results/tcgplayer_cards_info_{set.get("name").replace(" ", "_").replace("&", "and")}.py'
+    with open(output_filename, 'w') as f:
+        f.write('cards_info = ' + json.dumps(cards_info, indent=4) + '\n')
+    print(f"✅ Saved: {output_filename}")
