@@ -195,6 +195,7 @@ if __name__ == "__main__":
     }
 
     set = sets.get(set_name)
+    set = {"name": set_name, "code": set}
 
     print(f"\n=== Processing Set: {set['name']} ===")
     cards_info = generate_tcgplayer_json(set=set)
