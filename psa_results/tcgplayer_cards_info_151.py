@@ -11,12 +11,12 @@ cards_info = {
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv3pt5-199",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-scarlet-&-violet-151/charizard-ex-199",
                 "graded_prices": {
-                    "ungraded": "$297.94",
-                    "grade7": "$171.59",
-                    "grade8": "$268.40",
-                    "grade9": "$332.85",
+                    "ungraded": "$300.00",
+                    "grade7": "$194.05",
+                    "grade8": "$270.31",
+                    "grade9": "$337.51",
                     "grade95": "$567.50",
-                    "grade10": "$1,347.89"
+                    "grade10": "$1,300.50"
                 },
                 "image_url": "https://images.pokemontcg.io/sv3pt5/199_hires.png"
             },
