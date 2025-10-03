@@ -39,7 +39,7 @@ jobs:
           - "Destined Rivals"
           - "Black Bolt"
           - "White Flare"
-          - "Mega Evolutions"
+          - "Mega Evolution"
 
     steps:
       - name: Checkout repository
