@@ -29,12 +29,12 @@ cards_info = {
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/swsh12tg-TG20",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-silver-tempest/rayquaza-vmax-TG20",
                 "graded_prices": {
-                    "ungraded": "$138.56",
+                    "ungraded": "$138.64",
                     "grade7": "$51.00",
                     "grade8": "$63.72",
-                    "grade9": "$122.50",
-                    "grade95": "$135.00",
-                    "grade10": "$382.39"
+                    "grade9": "$133.92",
+                    "grade95": "$147.00",
+                    "grade10": "$379.50"
                 },
                 "image_url": "https://images.pokemontcg.io/swsh12tg/TG20_hires.png"
             }
