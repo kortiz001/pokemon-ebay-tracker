@@ -193,7 +193,7 @@ if __name__ == "__main__":
         "Destined Rivals": "sv10",
         "Black Bolt": "zsv10pt5",
         "White Flare": "rsv10pt5",
-        "Mega Evolutions": "me1",
+        "Mega Evolution": "me1",
     }
 
     set_code = sets.get(set_name)
