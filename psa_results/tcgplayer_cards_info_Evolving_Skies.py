@@ -4,91 +4,73 @@ cards_info = {
         "cards": [
             {
                 "name": "Glaceon V",
-                "market": 106.07,
+                "market": 110.26,
                 "price_high": 300.0,
                 "printed_total": 203,
                 "number": "175",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/swsh7-175",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-evolving-skies/glaceon-v-175",
                 "graded_prices": {
-                    "ungraded": "$101.24",
-                    "grade7": "$55.85",
-                    "grade8": "$81.39",
-                    "grade9": "$103.77",
-                    "grade95": "$149.56",
-                    "grade10": "$300.00"
+                    "ungraded": "$110.04",
+                    "grade7": "$56.22",
+                    "grade8": "$90.49",
+                    "grade9": "$117.49",
+                    "grade95": "$138.39",
+                    "grade10": "$332.67"
                 },
                 "image_url": "https://images.pokemontcg.io/swsh7/175_hires.png"
             },
             {
                 "name": "Espeon V",
-                "market": 141.67,
+                "market": 159.84,
                 "price_high": 280.0,
                 "printed_total": 203,
                 "number": "180",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/swsh7-180",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-evolving-skies/espeon-v-180",
                 "graded_prices": {
-                    "ungraded": "$132.10",
-                    "grade7": "$91.00",
-                    "grade8": "$114.25",
-                    "grade9": "$179.99",
-                    "grade95": "$180.81",
-                    "grade10": "$434.75"
+                    "ungraded": "$144.26",
+                    "grade7": "$120.00",
+                    "grade8": "$128.65",
+                    "grade9": "$167.50",
+                    "grade95": "$180.52",
+                    "grade10": "$449.36"
                 },
                 "image_url": "https://images.pokemontcg.io/swsh7/180_hires.png"
             },
             {
-                "name": "Sylveon V",
-                "market": 133.57,
-                "price_high": 280.0,
-                "printed_total": 203,
-                "number": "184",
-                "card_link": "https://prices.pokemontcg.io/tcgplayer/swsh7-184",
-                "pricecharting_url": "https://pricecharting.com/game/pokemon-evolving-skies/sylveon-v-184",
-                "graded_prices": {
-                    "ungraded": "$111.28",
-                    "grade7": "$74.50",
-                    "grade8": "$100.97",
-                    "grade9": "$124.50",
-                    "grade95": "$126.75",
-                    "grade10": "$346.50"
-                },
-                "image_url": "https://images.pokemontcg.io/swsh7/184_hires.png"
-            },
-            {
                 "name": "Rayquaza V",
-                "market": 284.0,
+                "market": 293.74,
                 "price_high": 1000.0,
                 "printed_total": 203,
                 "number": "194",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/swsh7-194",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-evolving-skies/rayquaza-v-194",
                 "graded_prices": {
-                    "ungraded": "$238.52",
-                    "grade7": "$157.50",
-                    "grade8": "$171.14",
-                    "grade9": "$289.09",
-                    "grade95": "$310.00",
-                    "grade10": "$840.00"
+                    "ungraded": "$239.27",
+                    "grade7": "$172.74",
+                    "grade8": "$179.38",
+                    "grade9": "$350.00",
+                    "grade95": "$385.00",
+                    "grade10": "$860.75"
                 },
                 "image_url": "https://images.pokemontcg.io/swsh7/194_hires.png"
             },
             {
                 "name": "Rayquaza VMAX",
-                "market": 666.89,
+                "market": 682.47,
                 "price_high": 999.69,
                 "printed_total": 203,
                 "number": "218",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/swsh7-218",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-evolving-skies/rayquaza-vmax-218",
                 "graded_prices": {
-                    "ungraded": "$667.00",
+                    "ungraded": "$660.05",
                     "grade7": "$499.00",
-                    "grade8": "$561.89",
-                    "grade9": "$720.00",
-                    "grade95": "$808.78",
-                    "grade10": "$1,862.50"
+                    "grade8": "$558.67",
+                    "grade9": "$732.98",
+                    "grade95": "$862.54",
+                    "grade10": "$1,825.00"
                 },
                 "image_url": "https://images.pokemontcg.io/swsh7/218_hires.png"
             }
