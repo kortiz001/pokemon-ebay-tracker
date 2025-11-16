@@ -3,74 +3,74 @@ cards_info = {
         "code": "swsh12pt5",
         "cards": [
             {
-                "name": "Origin Forme Palkia VSTAR",
-                "market": 91.22,
-                "price_high": 299.99,
+                "name": "Mewtwo VSTAR",
+                "market": 172.37,
+                "price_high": 399.99,
                 "printed_total": 70,
-                "number": "GG67",
-                "card_link": "https://prices.pokemontcg.io/tcgplayer/swsh12pt5gg-GG67",
-                "pricecharting_url": "https://pricecharting.com/game/pokemon-crown-zenith/origin-forme-palkia-vstar-GG67",
+                "number": "GG44",
+                "card_link": "https://prices.pokemontcg.io/tcgplayer/swsh12pt5gg-GG44",
+                "pricecharting_url": "https://pricecharting.com/game/pokemon-crown-zenith/mewtwo-vstar-GG44",
                 "graded_prices": {
-                    "ungraded": "$73.49",
-                    "grade7": "$52.00",
-                    "grade8": "$65.00",
-                    "grade9": "$78.60",
-                    "grade95": "$102.69",
-                    "grade10": "$240.00"
+                    "ungraded": "$185.63",
+                    "grade7": "$75.00",
+                    "grade8": "$157.45",
+                    "grade9": "$176.74",
+                    "grade95": "$182.19",
+                    "grade10": "$441.28"
                 },
-                "image_url": "https://images.pokemontcg.io/swsh12pt5gg/GG67_hires.png"
+                "image_url": "https://images.pokemontcg.io/swsh12pt5gg/GG44_hires.png"
             },
             {
                 "name": "Origin Forme Dialga VSTAR",
-                "market": 91.12,
+                "market": 85.65,
                 "price_high": 200.0,
                 "printed_total": 70,
                 "number": "GG68",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/swsh12pt5gg-GG68",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-crown-zenith/origin-forme-dialga-vstar-GG68",
                 "graded_prices": {
-                    "ungraded": "$76.75",
-                    "grade7": "$49.00",
-                    "grade8": "$60.75",
-                    "grade9": "$84.92",
-                    "grade95": "$89.00",
-                    "grade10": "$257.85"
+                    "ungraded": "$83.60",
+                    "grade7": "$52.00",
+                    "grade8": "$65.00",
+                    "grade9": "$89.99",
+                    "grade95": "$90.00",
+                    "grade10": "$215.00"
                 },
                 "image_url": "https://images.pokemontcg.io/swsh12pt5gg/GG68_hires.png"
             },
             {
                 "name": "Giratina VSTAR",
-                "market": 223.27,
-                "price_high": 600.0,
+                "market": 198.63,
+                "price_high": 500.0,
                 "printed_total": 70,
                 "number": "GG69",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/swsh12pt5gg-GG69",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-crown-zenith/giratina-vstar-GG69",
                 "graded_prices": {
-                    "ungraded": "$200.00",
-                    "grade7": "$124.00",
-                    "grade8": "$154.50",
-                    "grade9": "$192.50",
-                    "grade95": "$199.00",
-                    "grade10": "$561.75"
+                    "ungraded": "$199.84",
+                    "grade7": "$159.00",
+                    "grade8": "$163.31",
+                    "grade9": "$212.50",
+                    "grade95": "$240.02",
+                    "grade10": "$500.29"
                 },
                 "image_url": "https://images.pokemontcg.io/swsh12pt5gg/GG69_hires.png"
             },
             {
                 "name": "Arceus VSTAR",
-                "market": 122.54,
-                "price_high": 299.99,
+                "market": 121.94,
+                "price_high": 249.99,
                 "printed_total": 70,
                 "number": "GG70",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/swsh12pt5gg-GG70",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-crown-zenith/arceus-vstar-GG70",
                 "graded_prices": {
-                    "ungraded": "$120.00",
+                    "ungraded": "$128.03",
                     "grade7": "$48.00",
-                    "grade8": "$89.62",
-                    "grade9": "$129.83",
-                    "grade95": "$143.00",
-                    "grade10": "$349.99"
+                    "grade8": "$90.34",
+                    "grade9": "$125.18",
+                    "grade95": "$162.85",
+                    "grade10": "$317.50"
                 },
                 "image_url": "https://images.pokemontcg.io/swsh12pt5gg/GG70_hires.png"
             }
