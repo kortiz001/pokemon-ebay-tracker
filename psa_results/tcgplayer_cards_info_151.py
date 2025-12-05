@@ -3,40 +3,40 @@ cards_info = {
         "code": "sv3pt5",
         "cards": [
             {
-                "name": "Venusaur ex",
-                "market": 81.81,
-                "price_high": 676.89,
-                "printed_total": 165,
-                "number": "198",
-                "card_link": "https://prices.pokemontcg.io/tcgplayer/sv3pt5-198",
-                "pricecharting_url": "https://pricecharting.com/game/pokemon-scarlet-&-violet-151/venusaur-ex-198",
-                "graded_prices": {
-                    "ungraded": "$76.03",
-                    "grade7": "$49.99",
-                    "grade8": "$62.48",
-                    "grade9": "$86.01",
-                    "grade95": "$117.68",
-                    "grade10": "$389.50"
-                },
-                "image_url": "https://images.pokemontcg.io/sv3pt5/198_hires.png"
-            },
-            {
                 "name": "Charizard ex",
-                "market": 245.23,
+                "market": 234.2,
                 "price_high": 900.0,
                 "printed_total": 165,
                 "number": "199",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv3pt5-199",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-scarlet-&-violet-151/charizard-ex-199",
                 "graded_prices": {
-                    "ungraded": "$264.03",
-                    "grade7": "$179.95",
-                    "grade8": "$231.41",
-                    "grade9": "$298.00",
-                    "grade95": "$391.32",
-                    "grade10": "$1,220.00"
+                    "ungraded": "$239.59",
+                    "grade7": "$177.19",
+                    "grade8": "$208.98",
+                    "grade9": "$236.51",
+                    "grade95": "$383.73",
+                    "grade10": "$970.00"
                 },
                 "image_url": "https://images.pokemontcg.io/sv3pt5/199_hires.png"
+            },
+            {
+                "name": "Blastoise ex",
+                "market": 82.37,
+                "price_high": 199.99,
+                "printed_total": 165,
+                "number": "200",
+                "card_link": "https://prices.pokemontcg.io/tcgplayer/sv3pt5-200",
+                "pricecharting_url": "https://pricecharting.com/game/pokemon-scarlet-&-violet-151/blastoise-ex-200",
+                "graded_prices": {
+                    "ungraded": "$72.13",
+                    "grade7": "$55.30",
+                    "grade8": "$72.25",
+                    "grade9": "$85.00",
+                    "grade95": "$125.00",
+                    "grade10": "$355.00"
+                },
+                "image_url": "https://images.pokemontcg.io/sv3pt5/200_hires.png"
             }
         ]
     }
