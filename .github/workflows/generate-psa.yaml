@@ -3,7 +3,11 @@ name: Generate PSA and Update Website
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 5 * * *"   # Runs every night at midnight UTC
+    - cron: "0 5 * * *"   # Runs every night at midnight Eastern Time
+
+concurrency:
+  group: "generate-psa-and-update-website"
+  cancel-in-progress: true  # optional: cancels any running workflow in the same group
 
 jobs:
   deploy:
@@ -42,6 +46,7 @@ jobs:
           - "White Flare"
           - "Mega Evolution"
           - "Phantasmal Flames"
+      max-parallel: 1   # <--- run only one matrix job at a time
 
     steps:
       - name: Checkout repository
