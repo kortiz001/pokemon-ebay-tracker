@@ -131,7 +131,7 @@ def generate_tcgplayer_json(set: dict):
                 continue
             try:
                 grade10_value = float(grade10_str)
-                if (grade10_value * 0.28) <= tcg_player_market:
+                if (grade10_value * 0.33) <= tcg_player_market:
                     continue
             except ValueError:
                 continue
