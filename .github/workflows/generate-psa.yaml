@@ -90,23 +90,22 @@ jobs:
       
           git checkout main
       
-          # Reset any unstaged/untracked changes to avoid pull errors
-          git reset --hard
-          git clean -fd
-      
-          # Pull latest from origin
-          git pull origin main --rebase || true
-      
-          # Stage changes
+          # Stage all generated files
           git add .
       
           # Commit only if there are changes
           if ! git diff --cached --quiet; then
               git commit -m "Update PSA JSON for ${{ matrix.set }}"
-              git push origin main
           else
               echo "No changes to commit"
           fi
+      
+          # Pull latest changes from remote and merge (not rebase)
+          git pull origin main --no-rebase || echo "Pull failed, proceeding to push"
+      
+          # Push the commit
+          git push origin main
+
 
   trigger_followups:
     runs-on: ubuntu-latest
