@@ -1,6 +1,7 @@
 name: Combine PSA JSON
 
 on:
+  workflow_call:
   workflow_dispatch:
 
 jobs:
