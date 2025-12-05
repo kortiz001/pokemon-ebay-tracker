@@ -60,7 +60,7 @@ jobs:
           
       - name: Run Python script with retry
         run: |
-          max_attempts=20
+          max_attempts=25
           delay=10
           attempt=1
       
