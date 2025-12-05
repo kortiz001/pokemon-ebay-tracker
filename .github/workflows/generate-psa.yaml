@@ -46,7 +46,7 @@ jobs:
           - "White Flare"
           - "Mega Evolution"
           - "Phantasmal Flames"
-      max-parallel: 1   # <--- run only one matrix job at a time
+      max-parallel: 10   # <--- run only one matrix job at a time
 
     steps:
       - name: Checkout repository
