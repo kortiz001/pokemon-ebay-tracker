@@ -95,14 +95,33 @@ jobs:
           else
               echo "No changes to commit"
 
-  call-combine-psa-json:
+  trigger_followups:
+    runs-on: ubuntu-latest
     needs: deploy
-    uses: ./.github/workflows/combine-psa.yaml
-    secrets:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Trigger Combine PSA workflow
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.POKEMON_PAT_TOKEN }}
+          script: |
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: "combine-psa.yaml",
+              ref: "main"
+            })
 
-  call-update-website:
-    needs: call-combine-psa-json
-    uses: ./.github/workflows/update-website.yaml
-    secrets:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Wait 1 Minute
+        run: sleep 60
+
+      - name: Trigger Update Website workflow
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.POKEMON_PAT_TOKEN }}
+          script: |
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: "update-website.yaml",
+              ref: "main"
+            })
