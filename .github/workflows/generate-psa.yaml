@@ -3,11 +3,11 @@ name: Generate PSA and Update Website
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 5 * * *"   # Runs every night at midnight Eastern Time
+    - cron: "0 5 * * *"   # Runs nightly at midnight Eastern Time (05:00 UTC)
 
 concurrency:
   group: "generate-psa-and-update-website"
-  cancel-in-progress: true  # optional: cancels any running workflow in the same group
+  cancel-in-progress: true
 
 jobs:
   deploy:
@@ -46,7 +46,7 @@ jobs:
           - "White Flare"
           - "Mega Evolution"
           - "Phantasmal Flames"
-      max-parallel: 10   # <--- run only one matrix job at a time
+      max-parallel: 10
 
     steps:
       - name: Checkout repository
@@ -60,15 +60,14 @@ jobs:
           python-version: "3.10"
 
       - name: Install dependencies
-        run: |
-          pip install -r requirements.txt
-          
+        run: pip install -r requirements.txt
+
       - name: Run Python script with retry
         run: |
           max_attempts=25
           delay=10
           attempt=1
-      
+
           until python scripts/generate_psa_json.py "${{ matrix.set }}"; do
             echo "Attempt $attempt failed. Retrying in $delay seconds..."
             if [ $attempt -ge $max_attempts ]; then
@@ -78,61 +77,32 @@ jobs:
             attempt=$(( attempt + 1 ))
             sleep $delay
           done
-      
+
           echo "Script completed successfully on attempt $attempt."
-      
+
       - name: Commit and push changes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-      
           git checkout main
-      
-          # Stage all generated files
+          git pull origin main --no-rebase || echo "Pull failed, proceeding to push"
           git add .
-      
-          # Commit only if there are changes
           if ! git diff --cached --quiet; then
               git commit -m "Update PSA JSON for ${{ matrix.set }}"
+              git push origin main
           else
               echo "No changes to commit"
-          fi
-      
-          # Pull latest changes from remote and merge (not rebase)
-          git pull origin main --no-rebase || echo "Pull failed, proceeding to push"
-      
-          # Push the commit
-          git push origin main
 
-
-  trigger_followups:
-    runs-on: ubuntu-latest
+  call-combine-psa-json:
     needs: deploy
-    steps:
-      - name: Trigger Combine PSA workflow
-        uses: actions/github-script@v6
-        with:
-          script: |
-            await github.rest.actions.createWorkflowDispatch({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              workflow_id: "combine-psa.yaml",
-              ref: "main"
-            })
+    uses: ./.github/workflows/combine-psa.yaml
+    secrets:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Wait 1 Minute
-        run: |
-          sleep 60
-
-      - name: Trigger Update Website workflow
-        uses: actions/github-script@v6
-        with:
-          script: |
-            await github.rest.actions.createWorkflowDispatch({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              workflow_id: "update-website.yaml",
-              ref: "main"
-            })
+  call-update-website:
+    needs: call-combine-psa-json
+    uses: ./.github/workflows/update-website.yaml
+    secrets:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
