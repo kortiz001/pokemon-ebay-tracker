@@ -13,16 +13,16 @@ RestClient.configure('39270b46-5e88-40cd-baa3-b09d088bebcd')
 # -------------------------------
 # Helper: Retry requests with exponential backoff
 # -------------------------------
-def get_with_retry(url, retries=5, backoff_factor=2):
+def get_with_retry(url, retries=5, wait_time=15):
     for i in range(retries):
         try:
-            response = requests.get(url, timeout=10)  # 10s timeout
+            response = requests.get(url, timeout=30)
             response.raise_for_status()
             return response
         except requests.exceptions.RequestException as e:
-            wait_time = backoff_factor ** i + random.uniform(0, 1)
-            print(f"[Retry {i + 1}/{retries}] Error fetching {url}: {e}. Retrying in {wait_time:.2f}s")
+            print(f"[Retry {i + 1}/{retries}] Error fetching {url}: {e}. Retrying in {wait_time}s")
             time.sleep(wait_time)
+
     print(f"[FAILED] Max retries exceeded for {url}")
     return None
 
