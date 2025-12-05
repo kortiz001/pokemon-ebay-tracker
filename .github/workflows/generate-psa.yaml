@@ -32,7 +32,6 @@ jobs:
           - "Obsidian Flames"
           - "151"
           - "Paldea Evolved"
-          - "Crown Zenith Galarian Gallery"
           - "Evolving Skies"
           - "Crown Zenith"
           - "Surging Sparks"
@@ -42,6 +41,7 @@ jobs:
           - "Black Bolt"
           - "White Flare"
           - "Mega Evolution"
+          - "Phantasmal Flames"
 
     steps:
       - name: Checkout repository
