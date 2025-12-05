@@ -185,7 +185,6 @@ if __name__ == "__main__":
         "Obsidian Flames": "sv3",
         "151": "sv3pt5",
         "Paldea Evolved": "sv2",
-        "Crown Zenith Galarian Gallery": "swsh12pt5gg",
         "Crown Zenith": "swsh12pt5",
         "Surging Sparks": "sv8",
         "Prismatic Evolutions": "sv8pt5",
@@ -194,6 +193,7 @@ if __name__ == "__main__":
         "Black Bolt": "zsv10pt5",
         "White Flare": "rsv10pt5",
         "Mega Evolution": "me1",
+        "Phantasmal Flames": "me2",
     }
 
     set_code = sets.get(set_name)
