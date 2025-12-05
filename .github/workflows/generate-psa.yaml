@@ -1,4 +1,4 @@
-name: Generate PSA JSON
+name: Generate PSA and Update Website
 
 on:
   workflow_dispatch:
