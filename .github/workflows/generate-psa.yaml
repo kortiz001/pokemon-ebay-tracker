@@ -53,9 +53,24 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
-      - name: Run Python script
+          
+      - name: Run Python script with retry
         run: |
-          python scripts/generate_psa_json.py "${{ matrix.set }}"
+          max_attempts=20
+          delay=10
+          attempt=1
+      
+          until python scripts/generate_psa_json.py "${{ matrix.set }}"; do
+            echo "Attempt $attempt failed. Retrying in $delay seconds..."
+            if [ $attempt -ge $max_attempts ]; then
+              echo "All $max_attempts attempts failed. Exiting."
+              exit 1
+            fi
+            attempt=$(( attempt + 1 ))
+            sleep $delay
+          done
+      
+          echo "Script completed successfully on attempt $attempt."
 
       - name: Commit and push changes
         run: |
