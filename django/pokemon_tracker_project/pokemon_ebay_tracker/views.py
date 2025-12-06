@@ -174,7 +174,7 @@ def saved(request):
     return render(request, 'saved.html', {'saved_items': saved_items})
 
 def psa_tracker(request):
-    tcg_player_cards = tcg_player_cards_info_psa_check.cards_info
+    tcg_player_cards = tcgplayer_cards_info_psa_check.cards_info
     current_time = timezone.now()
 
     def clean_price(value):
