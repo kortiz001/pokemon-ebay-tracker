@@ -66,10 +66,13 @@
                                 PSA 10 Price: <span class="badge bg-primary">{{ card.graded_prices.grade10 }}</span>
                             </p>
                             <p class="card-text">
-                                Value Submission Profit: <span class="badge bg-primary">{{ card.value_submission_profit }}</span>
+                                Grade 9 Loss: <span class="badge bg-primary">${{ card.grade9_value_loss }}</span>
                             </p>
                             <p class="card-text">
-                                Regular Submission Profit: <span class="badge bg-primary">{{ card.regular_submission_profit }}</span>
+                                Value Submission Profit: <span class="badge bg-primary">${{ card.value_submission_profit }}</span>
+                            </p>
+                            <p class="card-text">
+                                Regular Submission Profit: <span class="badge bg-primary">${{ card.regular_submission_profit }}</span>
                             </p>
                             <a href="https://www.facebook.com/marketplace/103462413027188/search/?query={{ card.name | urlencode }}" 
                                target="_blank" rel="noopener noreferrer">
