@@ -187,10 +187,10 @@ def psa_tracker(request):
 
         for card_data in set_data.get("cards"):    
             grade10 = float(
-                card_data.get("graded_prices", {}).get("grade10", "0").replace("$", "").replace(",", "")
+                card_data.get("graded_prices", {}).get("grade10", "0").replace("$", "")
             )
             
-            market = float(card_data.get("market", "0").replace("$", "").replace(",", ""))
+            market = float(card_data.get("market", "0"))
 
     
             value_submission_profit = grade10 * 0.87 - 60 - market
