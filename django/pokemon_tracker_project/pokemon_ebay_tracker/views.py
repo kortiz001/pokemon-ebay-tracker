@@ -182,17 +182,18 @@ def psa_tracker(request):
             return 0
         return float(str(value).replace('$', '').replace(',', '').strip())
 
-    for card in tcg_player_cards:
-        card_data = tcg_player_cards.get("card")
-        
-        grade10 = clean_price(getattr(getattr(card_data, "graded_prices", None), "grade10", 0))
-        market = clean_price(getattr(card_data, "market", 0))
+    for set in tcg_player_cards:
+        set_data = tcg_player_cards.get(set)
 
-        value_submission_profit = grade10 * 0.87 - 60 - market
-        regular_submission_profit = grade10 * 0.87 - 90 - market
-        
-        card_data["value_submission_profit"] = value_submission_profit
-        card_data["regular_submission_profit"] = regular_submission_profit
+        for card_data in set_data.get("cards"):    
+            grade10 = clean_price(getattr(getattr(card_data, "graded_prices", None), "grade10", 0))
+            market = clean_price(getattr(card_data, "market", 0))
+    
+            value_submission_profit = grade10 * 0.87 - 60 - market
+            regular_submission_profit = grade10 * 0.87 - 90 - market
+            
+            card_data["value_submission_profit"] = value_submission_profit
+            card_data["regular_submission_profit"] = regular_submission_profit
 
     return render(request, 'psa_tracker.html', {
         'cards_info': tcg_player_cards,
