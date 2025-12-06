@@ -187,7 +187,7 @@ def psa_tracker(request):
 
         for card_data in set_data.get("cards"):    
             grade10 = float(
-                int(card_data.get("graded_prices", {}).get("grade10", "0").replace("$", "").replace(",", ""))
+                card_data.get("graded_prices", {}).get("grade10", "0").replace("$", "").replace(",", "")
             )
             
             market = float(card_data.get("market", "0"))
