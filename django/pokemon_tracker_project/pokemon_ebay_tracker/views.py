@@ -4,6 +4,7 @@ from decimal import Decimal
 from datetime import datetime, date
 from django.shortcuts import render
 from django.http import JsonResponse
+from django.utils import timezone
 from django.views.decorators.http import require_GET
 from .scripts import pokemon_tracker, tcgplayer_cards_info, tcgplayer_cards_info_psa_check
 from .models import EbayAPIKey, SavedItem, SearchExclusion
@@ -174,5 +175,9 @@ def saved(request):
 
 def psa_tracker(request):
     tcg_player_cards = tcgplayer_cards_info_psa_check.cards_info
+    current_time = timezone.now()
 
-    return render(request, 'psa_tracker.html', {'cards_info': tcg_player_cards})
+    return render(request, 'psa_tracker.html', {
+        'cards_info': tcg_player_cards,
+        'current_time': current_time
+    })
