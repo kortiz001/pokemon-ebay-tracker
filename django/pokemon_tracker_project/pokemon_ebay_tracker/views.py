@@ -192,7 +192,7 @@ def psa_tracker(request):
                 card_data.get("graded_prices", {}).get("grade10", "0").replace("$", "").replace(",", "")
             )
             
-            market = float(card_data.get("market", "0").replace("$", "").replace(",", ""))
+            market = float(card_data.get("market", "0"))
 
             # compute profits/losses
             grade9_value_loss = round(grade9 * 0.87 - 60 - market, 2)
