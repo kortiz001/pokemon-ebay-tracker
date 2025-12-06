@@ -174,7 +174,7 @@ def saved(request):
     return render(request, 'saved.html', {'saved_items': saved_items})
 
 def psa_tracker(request):
-    tcg_player_cards = tcgplayer_cards_info_psa_check.cards_info
+    tcg_player_cards = tcg_player_cards_info_psa_check.cards_info
     current_time = timezone.now()
 
     def clean_price(value):
@@ -182,10 +182,9 @@ def psa_tracker(request):
             return 0
         return float(str(value).replace('$', '').replace(',', '').strip())
 
-    for set in tcg_player_cards:
-        set_data = tcg_player_cards.get(set)
-
-        for card_data in set_data.get("cards"):    
+    for set_name, set_data in tcg_player_cards.items():
+        filtered_cards = []
+        for card_data in set_data.get("cards", []):    
             grade9 = float(
                 card_data.get("graded_prices", {}).get("grade9", "0").replace("$", "").replace(",", "")
             )
@@ -193,21 +192,31 @@ def psa_tracker(request):
                 card_data.get("graded_prices", {}).get("grade10", "0").replace("$", "").replace(",", "")
             )
             
-            market = float(card_data.get("market", "0"))
+            market = float(card_data.get("market", "0").replace("$", "").replace(",", ""))
 
+            # compute profits/losses
             grade9_value_loss = round(grade9 * 0.87 - 60 - market, 2)
             grade9_regular_loss = round(grade9 * 0.87 - 90 - market, 2)
             value_submission_profit = round(grade10 * 0.87 - 60 - market, 2)
             regular_submission_profit = round(grade10 * 0.87 - 90 - market, 2)
             
+            # attach to card_data
             card_data["grade9_value_loss"] = grade9_value_loss
             card_data["grade9_regular_loss"] = grade9_regular_loss
             card_data["value_submission_profit"] = value_submission_profit
             card_data["regular_submission_profit"] = regular_submission_profit
 
+            # keep card only if value_submission_profit >= 200
+            if value_submission_profit >= 200:
+                filtered_cards.append(card_data)
+
+        # update the cards list in set_data
+        set_data["cards"] = filtered_cards
+
     return render(request, 'psa_tracker.html', {
         'cards_info': tcg_player_cards,
         'current_time': current_time
     })
+
 
 
