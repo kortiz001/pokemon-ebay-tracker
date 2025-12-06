@@ -2,4 +2,5 @@ beautifulsoup4
 pokemontcgsdk
 requests
 django
+django-mathfilters
 pytz
