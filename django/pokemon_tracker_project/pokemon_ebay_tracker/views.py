@@ -186,15 +186,20 @@ def psa_tracker(request):
         set_data = tcg_player_cards.get(set)
 
         for card_data in set_data.get("cards"):    
+            grade9 = float(
+                card_data.get("graded_prices", {}).get("grade9", "0").replace("$", "").replace(",", "")
+            )
             grade10 = float(
                 card_data.get("graded_prices", {}).get("grade10", "0").replace("$", "").replace(",", "")
             )
             
             market = float(card_data.get("market", "0"))
 
-    
-            value_submission_profit = grade10 * 0.87 - 60 - market
-            regular_submission_profit = grade10 * 0.87 - 90 - market
+            grade9_value_loss = round(grade9 * 0.87 - 60 - market, 2)
+            grade9_regular_loss = round(grade9 * 0.87 - 90 - market, 2)
+            value_submission_profit = round(grade10 * 0.87 - 60 - market, 2)
+            regular_submission_profit = round(grade10 * 0.87 - 90 - market, 2)
+            g
             
             card_data["value_submission_profit"] = value_submission_profit
             card_data["regular_submission_profit"] = regular_submission_profit
