@@ -15,7 +15,7 @@
     <!-- Last Updated Timestamp -->
     <div class="row mb-2">
         <div class="col-12 text-end text-muted" id="lastUpdated">
-            Last updated: --
+            Last updated: {{ current_time }}
         </div>
     </div>
 
@@ -97,32 +97,6 @@ function filterCards() {
         }
     });
 }
-
-// ---------------------------
-// Last Updated Timestamp
-// ---------------------------
-function formatDate(date) {
-    const options = {
-        year: 'numeric', month: 'short', day: '2-digit',
-        hour: '2-digit', minute: '2-digit', second: '2-digit',
-        hour12: true
-    };
-    return date.toLocaleString('en-US', options);
-}
-
-function updateTimestamp() {
-    const now = new Date();
-    const timestampElem = document.getElementById("lastUpdated");
-    if (timestampElem) {
-        timestampElem.textContent = "Last updated: " + formatDate(now);
-    }
-}
-
-// Initialize timestamp immediately
-updateTimestamp();
-
-// Optional: refresh every minute
-// setInterval(updateTimestamp, 60000);
 </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
