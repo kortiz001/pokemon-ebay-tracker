@@ -61,6 +61,12 @@
                             <p class="card-text">
                                 PSA 10 Price: <span class="badge bg-primary">{{ card.graded_prices.grade10 }}</span>
                             </p>
+                            <p class="card-text">
+                                Value Submission Profit: <span class="badge bg-primary">{{ card.graded_prices.grade10|mul:0.87|sub:55|sub:card.market }}</span>
+                            </p>
+                            <p class="card-text">
+                                Regular Submission Profit: <span class="badge bg-primary">{{ card.graded_prices.grade10 }}</span>
+                            </p>
                             <a href="https://www.facebook.com/marketplace/103462413027188/search/?query={{ card.name | urlencode }}" 
                                target="_blank" rel="noopener noreferrer">
                                Facebook Marketplace
