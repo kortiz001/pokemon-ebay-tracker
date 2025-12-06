@@ -63,7 +63,7 @@
                                 PSA 10 Price: <span class="badge bg-primary">{{ card.graded_prices.grade10 }}</span>
                             </p>
                             <p class="card-text">
-                                Value Submission Profit: <span class="badge bg-primary">{{ card.graded_prices.grade10|mul:0.87|sub:55|sub:card.market }}</span>
+                                Value Submission Profit: <span class="badge bg-primary">{{ card.graded_prices.grade10|cut:"$"|cut:","|floatformat:""|mul:0.87|sub:55|sub:card.market|cut:"$"|cut:"," }}</span>
                             </p>
                             <p class="card-text">
                                 Regular Submission Profit: <span class="badge bg-primary">{{ card.graded_prices.grade10 }}</span>
