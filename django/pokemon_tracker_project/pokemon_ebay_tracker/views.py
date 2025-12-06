@@ -178,23 +178,35 @@ def psa_tracker(request):
     current_time = timezone.now()
 
     def clean_price(value):
-        """Convert '$123.45' → 123.45 (float)."""
         if not value:
             return 0
         return float(str(value).replace('$', '').replace(',', '').strip())
 
     for card in tcg_player_cards:
-        grade10 = clean_price(getattr(card.graded_prices, 'grade10', 0))
-        market = clean_price(getattr(card, 'market', 0))
+
+        # If card is a dict
+        if isinstance(card, dict):
+            grade10 = clean_price(card.get("graded_prices", {}).get("grade10", 0))
+            market = clean_price(card.get("market", 0))
+
+        else:  # card is an object
+            grade10 = clean_price(getattr(getattr(card, "graded_prices", None), "grade10", 0))
+            market = clean_price(getattr(card, "market", 0))
 
         value_submission_profit = grade10 * 0.87 - 60 - market
         regular_submission_profit = grade10 * 0.87 - 90 - market
 
-        card.value_submission_profit = value_submission_profit
-        card.regular_submission_profit = regular_submission_profit
+        # Attach results (works for dicts and objects)
+        if isinstance(card, dict):
+            card["value_submission_profit"] = value_submission_profit
+            card["regular_submission_profit"] = regular_submission_profit
+        else:
+            card.value_submission_profit = value_submission_profit
+            card.regular_submission_profit = regular_submission_profit
 
     return render(request, 'psa_tracker.html', {
         'cards_info': tcg_player_cards,
         'current_time': current_time
     })
+
 
