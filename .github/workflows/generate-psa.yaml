@@ -46,7 +46,7 @@ jobs:
           - "White Flare"
           - "Mega Evolution"
           - "Phantasmal Flames"
-      max-parallel: 10
+      max-parallel: 15
 
     steps:
       - name: Checkout repository
