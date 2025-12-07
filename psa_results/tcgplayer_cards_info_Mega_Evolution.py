@@ -4,8 +4,8 @@ cards_info = {
         "cards": [
             {
                 "name": "Mega Absol ex",
-                "market": 81.1,
-                "price_high": 239.99,
+                "market": 81.68,
+                "price_high": 199.99,
                 "printed_total": 132,
                 "number": "180",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/me1-180",
@@ -22,7 +22,7 @@ cards_info = {
             },
             {
                 "name": "Mega Latias ex",
-                "market": 104.39,
+                "market": 102.14,
                 "price_high": 298.99,
                 "printed_total": 132,
                 "number": "181",
@@ -37,6 +37,24 @@ cards_info = {
                     "grade10": "$401.69"
                 },
                 "image_url": "https://images.pokemontcg.io/me1/181_hires.png"
+            },
+            {
+                "name": "Mega Venusaur ex",
+                "market": 151.95,
+                "price_high": 298.33,
+                "printed_total": 132,
+                "number": "177",
+                "card_link": "https://prices.pokemontcg.io/tcgplayer/me1-177",
+                "pricecharting_url": "https://pricecharting.com/game/pokemon-mega-evolution/mega-venusaur-ex-177",
+                "graded_prices": {
+                    "ungraded": "$137.27",
+                    "grade7": "-",
+                    "grade8": "$170.00",
+                    "grade9": "$177.50",
+                    "grade95": "$195.00",
+                    "grade10": "$429.27"
+                },
+                "image_url": "https://images.pokemontcg.io/me1/177_hires.png"
             }
         ]
     }
