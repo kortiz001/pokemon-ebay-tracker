@@ -4,7 +4,7 @@ cards_info = {
         "cards": [
             {
                 "name": "Aerodactyl V",
-                "market": 155.63,
+                "market": 154.83,
                 "price_high": 299.95,
                 "printed_total": 196,
                 "number": "180",
@@ -22,7 +22,7 @@ cards_info = {
             },
             {
                 "name": "Giratina V",
-                "market": 579.99,
+                "market": 580.03,
                 "price_high": 1000.0,
                 "printed_total": 196,
                 "number": "186",
