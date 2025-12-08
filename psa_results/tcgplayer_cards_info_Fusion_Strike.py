@@ -4,8 +4,8 @@ cards_info = {
         "cards": [
             {
                 "name": "Mew V",
-                "market": 96.58,
-                "price_high": 500.0,
+                "market": 96.18,
+                "price_high": 299.99,
                 "printed_total": 264,
                 "number": "251",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/swsh8-251",
