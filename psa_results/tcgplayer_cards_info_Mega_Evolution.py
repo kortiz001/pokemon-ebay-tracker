@@ -4,8 +4,8 @@ cards_info = {
         "cards": [
             {
                 "name": "Mega Absol ex",
-                "market": 81.88,
-                "price_high": 199.99,
+                "market": 81.72,
+                "price_high": 999.0,
                 "printed_total": 132,
                 "number": "180",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/me1-180",
@@ -22,8 +22,8 @@ cards_info = {
             },
             {
                 "name": "Mega Latias ex",
-                "market": 100.98,
-                "price_high": 298.99,
+                "market": 100.57,
+                "price_high": 999.0,
                 "printed_total": 132,
                 "number": "181",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/me1-181",
