@@ -4,7 +4,7 @@ cards_info = {
         "cards": [
             {
                 "name": "Tyranitar V",
-                "market": 209.7,
+                "market": 208.69,
                 "price_high": 1000.0,
                 "printed_total": 163,
                 "number": "155",
