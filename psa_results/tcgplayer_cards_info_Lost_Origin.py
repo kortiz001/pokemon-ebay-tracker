@@ -4,7 +4,7 @@ cards_info = {
         "cards": [
             {
                 "name": "Giratina V",
-                "market": 581.21,
+                "market": 580.63,
                 "price_high": 1000.0,
                 "printed_total": 196,
                 "number": "186",
