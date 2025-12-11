@@ -4,7 +4,7 @@ cards_info = {
         "cards": [
             {
                 "name": "Team Rocket's Nidoking ex",
-                "market": 102.88,
+                "market": 102.86,
                 "price_high": 400.0,
                 "printed_total": 182,
                 "number": "233",
