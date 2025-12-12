@@ -64,7 +64,7 @@ jobs:
 
       - name: Run Python script with retry
         run: |
-          max_attempts=40
+          max_attempts=60
           delay=10
           attempt=1
 
