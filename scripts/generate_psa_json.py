@@ -13,7 +13,7 @@ RestClient.configure('39270b46-5e88-40cd-baa3-b09d088bebcd')
 # -------------------------------
 # Helper: Retry requests with exponential backoff
 # -------------------------------
-def get_with_retry(url, retries=5, wait_time=15):
+def get_with_retry(url, retries=5, wait_time=30):
     for i in range(retries):
         try:
             response = requests.get(url, timeout=30)
