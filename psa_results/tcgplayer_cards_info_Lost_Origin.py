@@ -11,12 +11,12 @@ cards_info = {
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/swsh11-186",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-lost-origin/giratina-v-186",
                 "graded_prices": {
-                    "ungraded": "$537.50",
+                    "ungraded": "$492.54",
                     "grade7": "$434.07",
-                    "grade8": "$518.70",
-                    "grade9": "$627.10",
-                    "grade95": "$1,206.96",
-                    "grade10": "$1,924.99"
+                    "grade8": "$518.27",
+                    "grade9": "$625.99",
+                    "grade95": "$1,208.23",
+                    "grade10": "$1,919.13"
                 },
                 "image_url": "https://images.pokemontcg.io/swsh11/186_hires.png"
             }
