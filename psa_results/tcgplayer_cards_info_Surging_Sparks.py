@@ -4,7 +4,7 @@ cards_info = {
         "cards": [
             {
                 "name": "Milotic ex",
-                "market": 96.09,
+                "market": 95.79,
                 "price_high": 199.95,
                 "printed_total": 191,
                 "number": "237",
@@ -22,7 +22,7 @@ cards_info = {
             },
             {
                 "name": "Pikachu ex",
-                "market": 286.03,
+                "market": 285.96,
                 "price_high": 868.0,
                 "printed_total": 191,
                 "number": "238",
@@ -40,7 +40,7 @@ cards_info = {
             },
             {
                 "name": "Latias ex",
-                "market": 169.86,
+                "market": 168.94,
                 "price_high": 370.0,
                 "printed_total": 191,
                 "number": "239",
