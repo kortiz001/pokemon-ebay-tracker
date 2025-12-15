@@ -4,39 +4,57 @@ cards_info = {
         "cards": [
             {
                 "name": "Mega Absol ex",
-                "market": 81.47,
+                "market": 81.84,
                 "price_high": 999.0,
                 "printed_total": 132,
                 "number": "180",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/me1-180",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-mega-evolution/mega-absol-ex-180",
                 "graded_prices": {
-                    "ungraded": "$72.50",
+                    "ungraded": "$70.61",
                     "grade7": "-",
                     "grade8": "$101.20",
                     "grade9": "$111.00",
                     "grade95": "$122.00",
-                    "grade10": "$321.60"
+                    "grade10": "$275.26"
                 },
                 "image_url": "https://images.pokemontcg.io/me1/180_hires.png"
             },
             {
                 "name": "Mega Latias ex",
-                "market": 98.86,
+                "market": 95.54,
                 "price_high": 999.0,
                 "printed_total": 132,
                 "number": "181",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/me1-181",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-mega-evolution/mega-latias-ex-181",
                 "graded_prices": {
-                    "ungraded": "$100.00",
+                    "ungraded": "$104.41",
                     "grade7": "-",
-                    "grade8": "$180.50",
-                    "grade9": "$199.00",
-                    "grade95": "$219.00",
-                    "grade10": "$380.50"
+                    "grade8": "-",
+                    "grade9": "$141.00",
+                    "grade95": "$155.00",
+                    "grade10": "$362.50"
                 },
                 "image_url": "https://images.pokemontcg.io/me1/181_hires.png"
+            },
+            {
+                "name": "Mega Venusaur ex",
+                "market": 146.37,
+                "price_high": 999.0,
+                "printed_total": 132,
+                "number": "177",
+                "card_link": "https://prices.pokemontcg.io/tcgplayer/me1-177",
+                "pricecharting_url": "https://pricecharting.com/game/pokemon-mega-evolution/mega-venusaur-ex-177",
+                "graded_prices": {
+                    "ungraded": "$133.99",
+                    "grade7": "-",
+                    "grade8": "$170.00",
+                    "grade9": "$187.00",
+                    "grade95": "$197.50",
+                    "grade10": "$464.36"
+                },
+                "image_url": "https://images.pokemontcg.io/me1/177_hires.png"
             }
         ]
     }
