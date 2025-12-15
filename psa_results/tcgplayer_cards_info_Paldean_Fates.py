@@ -4,19 +4,19 @@ cards_info = {
         "cards": [
             {
                 "name": "Mew ex",
-                "market": 515.87,
+                "market": 515.61,
                 "price_high": 10000.0,
                 "printed_total": 91,
                 "number": "232",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv4pt5-232",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-paldean-fates/mew-ex-232",
                 "graded_prices": {
-                    "ungraded": "$499.99",
+                    "ungraded": "$482.94",
                     "grade7": "$425.00",
-                    "grade8": "$427.50",
-                    "grade9": "$502.80",
+                    "grade8": "$434.23",
+                    "grade9": "$514.72",
                     "grade95": "$871.99",
-                    "grade10": "$1,463.50"
+                    "grade10": "$1,475.50"
                 },
                 "image_url": "https://images.pokemontcg.io/sv4pt5/232_hires.png"
             }
