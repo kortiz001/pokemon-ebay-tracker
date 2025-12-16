@@ -4,7 +4,7 @@ cards_info = {
         "cards": [
             {
                 "name": "Ceruledge ex",
-                "market": 102.38,
+                "market": 101.79,
                 "price_high": 999.0,
                 "printed_total": 131,
                 "number": "147",
@@ -22,25 +22,25 @@ cards_info = {
             },
             {
                 "name": "Flareon ex",
-                "market": 161.13,
+                "market": 161.05,
                 "price_high": 9999.0,
                 "printed_total": 131,
                 "number": "146",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv8pt5-146",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-prismatic-evolutions/flareon-ex-146",
                 "graded_prices": {
-                    "ungraded": "$139.09",
+                    "ungraded": "$150.00",
                     "grade7": "-",
                     "grade8": "$149.75",
-                    "grade9": "$151.47",
-                    "grade95": "$183.20",
-                    "grade10": "$600.64"
+                    "grade9": "$150.00",
+                    "grade95": "$155.75",
+                    "grade10": "$597.23"
                 },
                 "image_url": "https://images.pokemontcg.io/sv8pt5/146_hires.png"
             },
             {
                 "name": "Jolteon ex",
-                "market": 153.76,
+                "market": 153.39,
                 "price_high": 999.0,
                 "printed_total": 131,
                 "number": "153",
@@ -58,7 +58,7 @@ cards_info = {
             },
             {
                 "name": "Glaceon ex",
-                "market": 193.11,
+                "market": 192.82,
                 "price_high": 999.0,
                 "printed_total": 131,
                 "number": "150",
@@ -76,7 +76,7 @@ cards_info = {
             },
             {
                 "name": "Vaporeon ex",
-                "market": 192.28,
+                "market": 192.02,
                 "price_high": 999.0,
                 "printed_total": 131,
                 "number": "149",
@@ -94,19 +94,19 @@ cards_info = {
             },
             {
                 "name": "Espeon ex",
-                "market": 201.73,
+                "market": 201.84,
                 "price_high": 999.0,
                 "printed_total": 131,
                 "number": "155",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv8pt5-155",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-prismatic-evolutions/espeon-ex-155",
                 "graded_prices": {
-                    "ungraded": "$193.07",
+                    "ungraded": "$190.00",
                     "grade7": "$180.00",
                     "grade8": "$198.75",
-                    "grade9": "$200.00",
-                    "grade95": "$340.00",
-                    "grade10": "$828.50"
+                    "grade9": "$219.00",
+                    "grade95": "$317.50",
+                    "grade10": "$831.15"
                 },
                 "image_url": "https://images.pokemontcg.io/sv8pt5/155_hires.png"
             },
@@ -137,12 +137,12 @@ cards_info = {
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv8pt5-162",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-prismatic-evolutions/roaring-moon-ex-162",
                 "graded_prices": {
-                    "ungraded": "$164.79",
+                    "ungraded": "$167.37",
                     "grade7": "-",
                     "grade8": "$165.81",
-                    "grade9": "$171.36",
+                    "grade9": "$182.00",
                     "grade95": "$425.00",
-                    "grade10": "$749.76"
+                    "grade10": "$736.53"
                 },
                 "image_url": "https://images.pokemontcg.io/sv8pt5/162_hires.png"
             },
@@ -166,18 +166,18 @@ cards_info = {
             },
             {
                 "name": "Eevee ex",
-                "market": 112.87,
+                "market": 112.47,
                 "price_high": 999.0,
                 "printed_total": 131,
                 "number": "167",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv8pt5-167",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-prismatic-evolutions/eevee-ex-167",
                 "graded_prices": {
-                    "ungraded": "$109.22",
+                    "ungraded": "$108.56",
                     "grade7": "-",
                     "grade8": "$90.50",
-                    "grade9": "$117.01",
-                    "grade95": "$180.84",
+                    "grade9": "$110.00",
+                    "grade95": "$180.73",
                     "grade10": "$565.00"
                 },
                 "image_url": "https://images.pokemontcg.io/sv8pt5/167_hires.png"
