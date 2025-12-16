@@ -4,7 +4,7 @@ cards_info = {
         "cards": [
             {
                 "name": "Lillie's Clefairy ex",
-                "market": 137.08,
+                "market": 137.96,
                 "price_high": 375.0,
                 "printed_total": 159,
                 "number": "184",
