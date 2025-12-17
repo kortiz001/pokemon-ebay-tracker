@@ -3,24 +3,6 @@ cards_info = {
         "code": "me1",
         "cards": [
             {
-                "name": "Mega Venusaur ex",
-                "market": 146.37,
-                "price_high": 999.0,
-                "printed_total": 132,
-                "number": "177",
-                "card_link": "https://prices.pokemontcg.io/tcgplayer/me1-177",
-                "pricecharting_url": "https://pricecharting.com/game/pokemon-mega-evolution/mega-venusaur-ex-177",
-                "graded_prices": {
-                    "ungraded": "$133.99",
-                    "grade7": "-",
-                    "grade8": "$170.00",
-                    "grade9": "$187.00",
-                    "grade95": "$197.50",
-                    "grade10": "$464.36"
-                },
-                "image_url": "https://images.pokemontcg.io/me1/177_hires.png"
-            },
-            {
                 "name": "Mega Absol ex",
                 "market": 81.19,
                 "price_high": 999.0,
@@ -55,6 +37,24 @@ cards_info = {
                     "grade10": "$362.50"
                 },
                 "image_url": "https://images.pokemontcg.io/me1/181_hires.png"
+            },
+            {
+                "name": "Mega Venusaur ex",
+                "market": 146.11,
+                "price_high": 999.0,
+                "printed_total": 132,
+                "number": "177",
+                "card_link": "https://prices.pokemontcg.io/tcgplayer/me1-177",
+                "pricecharting_url": "https://pricecharting.com/game/pokemon-mega-evolution/mega-venusaur-ex-177",
+                "graded_prices": {
+                    "ungraded": "$133.99",
+                    "grade7": "-",
+                    "grade8": "$170.00",
+                    "grade9": "$187.00",
+                    "grade95": "$197.50",
+                    "grade10": "$464.36"
+                },
+                "image_url": "https://images.pokemontcg.io/me1/177_hires.png"
             }
         ]
     }
