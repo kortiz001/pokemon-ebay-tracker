@@ -11,12 +11,12 @@ cards_info = {
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv9-184",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-journey-together/lillie's-clefairy-ex-184",
                 "graded_prices": {
-                    "ungraded": "$133.33",
+                    "ungraded": "$133.50",
                     "grade7": "$123.88",
-                    "grade8": "$129.41",
-                    "grade9": "$145.00",
+                    "grade8": "$129.67",
+                    "grade9": "$140.90",
                     "grade95": "$194.85",
-                    "grade10": "$450.00"
+                    "grade10": "$454.55"
                 },
                 "image_url": "https://images.pokemontcg.io/sv9/184_hires.png"
             }
