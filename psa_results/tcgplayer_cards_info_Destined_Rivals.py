@@ -21,8 +21,26 @@ cards_info = {
                 "image_url": "https://images.pokemontcg.io/sv10/229_hires.png"
             },
             {
+                "name": "Cynthia's Garchomp ex",
+                "market": 194.86,
+                "price_high": 500.0,
+                "printed_total": 182,
+                "number": "232",
+                "card_link": "https://prices.pokemontcg.io/tcgplayer/sv10-232",
+                "pricecharting_url": "https://pricecharting.com/game/pokemon-destined-rivals/cynthia's-garchomp-ex-232",
+                "graded_prices": {
+                    "ungraded": "$222.75",
+                    "grade7": "$167.34",
+                    "grade8": "$218.12",
+                    "grade9": "$249.20",
+                    "grade95": "$348.75",
+                    "grade10": "$542.50"
+                },
+                "image_url": "https://images.pokemontcg.io/sv10/232_hires.png"
+            },
+            {
                 "name": "Team Rocket's Nidoking ex",
-                "market": 100.6,
+                "market": 100.3,
                 "price_high": 400.0,
                 "printed_total": 182,
                 "number": "233",
