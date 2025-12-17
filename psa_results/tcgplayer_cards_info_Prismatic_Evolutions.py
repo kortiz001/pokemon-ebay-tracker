@@ -4,19 +4,19 @@ cards_info = {
         "cards": [
             {
                 "name": "Ceruledge ex",
-                "market": 101.79,
+                "market": 101.77,
                 "price_high": 999.0,
                 "printed_total": 131,
                 "number": "147",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv8pt5-147",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-prismatic-evolutions/ceruledge-ex-147",
                 "graded_prices": {
-                    "ungraded": "$89.50",
+                    "ungraded": "$89.00",
                     "grade7": "-",
                     "grade8": "$87.63",
-                    "grade9": "$100.00",
-                    "grade95": "$148.18",
-                    "grade10": "$302.86"
+                    "grade9": "$99.84",
+                    "grade95": "$149.20",
+                    "grade10": "$287.50"
                 },
                 "image_url": "https://images.pokemontcg.io/sv8pt5/147_hires.png"
             },
@@ -47,32 +47,14 @@ cards_info = {
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv8pt5-153",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-prismatic-evolutions/jolteon-ex-153",
                 "graded_prices": {
-                    "ungraded": "$138.01",
+                    "ungraded": "$138.91",
                     "grade7": "-",
-                    "grade8": "$135.50",
-                    "grade9": "$158.20",
-                    "grade95": "$174.00",
-                    "grade10": "$495.68"
+                    "grade8": "$134.13",
+                    "grade9": "$153.75",
+                    "grade95": "$169.00",
+                    "grade10": "$490.06"
                 },
                 "image_url": "https://images.pokemontcg.io/sv8pt5/153_hires.png"
-            },
-            {
-                "name": "Glaceon ex",
-                "market": 192.82,
-                "price_high": 999.0,
-                "printed_total": 131,
-                "number": "150",
-                "card_link": "https://prices.pokemontcg.io/tcgplayer/sv8pt5-150",
-                "pricecharting_url": "https://pricecharting.com/game/pokemon-prismatic-evolutions/glaceon-ex-150",
-                "graded_prices": {
-                    "ungraded": "$182.50",
-                    "grade7": "$128.00",
-                    "grade8": "$159.64",
-                    "grade9": "$163.70",
-                    "grade95": "$219.25",
-                    "grade10": "$577.33"
-                },
-                "image_url": "https://images.pokemontcg.io/sv8pt5/150_hires.png"
             },
             {
                 "name": "Vaporeon ex",
@@ -83,12 +65,12 @@ cards_info = {
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv8pt5-149",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-prismatic-evolutions/vaporeon-ex-149",
                 "graded_prices": {
-                    "ungraded": "$186.21",
+                    "ungraded": "$169.21",
                     "grade7": "$149.25",
                     "grade8": "$170.00",
-                    "grade9": "$194.23",
+                    "grade9": "$187.50",
                     "grade95": "$400.00",
-                    "grade10": "$916.71"
+                    "grade10": "$909.29"
                 },
                 "image_url": "https://images.pokemontcg.io/sv8pt5/149_hires.png"
             },
@@ -112,25 +94,25 @@ cards_info = {
             },
             {
                 "name": "Sylveon ex",
-                "market": 325.3,
+                "market": 322.64,
                 "price_high": 999.0,
                 "printed_total": 131,
                 "number": "156",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv8pt5-156",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-prismatic-evolutions/sylveon-ex-156",
                 "graded_prices": {
-                    "ungraded": "$311.50",
+                    "ungraded": "$302.85",
                     "grade7": "$250.61",
                     "grade8": "$290.63",
-                    "grade9": "$310.00",
-                    "grade95": "$390.65",
-                    "grade10": "$1,079.54"
+                    "grade9": "$305.00",
+                    "grade95": "$390.33",
+                    "grade10": "$1,050.00"
                 },
                 "image_url": "https://images.pokemontcg.io/sv8pt5/156_hires.png"
             },
             {
                 "name": "Roaring Moon ex",
-                "market": 174.19,
+                "market": 173.46,
                 "price_high": 999.0,
                 "printed_total": 131,
                 "number": "162",
@@ -148,25 +130,25 @@ cards_info = {
             },
             {
                 "name": "Umbreon ex",
-                "market": 1027.07,
+                "market": 1029.87,
                 "price_high": 5000.0,
                 "printed_total": 131,
                 "number": "161",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv8pt5-161",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-prismatic-evolutions/umbreon-ex-161",
                 "graded_prices": {
-                    "ungraded": "$925.64",
-                    "grade7": "$870.00",
-                    "grade8": "$890.00",
-                    "grade9": "$980.00",
-                    "grade95": "$1,597.50",
-                    "grade10": "$3,191.42"
+                    "ungraded": "$1,048.00",
+                    "grade7": "$680.00",
+                    "grade8": "$850.00",
+                    "grade9": "$986.00",
+                    "grade95": "$1,547.00",
+                    "grade10": "$3,212.50"
                 },
                 "image_url": "https://images.pokemontcg.io/sv8pt5/161_hires.png"
             },
             {
                 "name": "Eevee ex",
-                "market": 112.47,
+                "market": 111.91,
                 "price_high": 999.0,
                 "printed_total": 131,
                 "number": "167",
