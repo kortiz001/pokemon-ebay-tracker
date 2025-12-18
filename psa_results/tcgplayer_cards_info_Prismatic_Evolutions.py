@@ -4,7 +4,7 @@ cards_info = {
         "cards": [
             {
                 "name": "Ceruledge ex",
-                "market": 101.77,
+                "market": 101.73,
                 "price_high": 999.0,
                 "printed_total": 131,
                 "number": "147",
@@ -22,7 +22,7 @@ cards_info = {
             },
             {
                 "name": "Flareon ex",
-                "market": 161.05,
+                "market": 160.66,
                 "price_high": 9999.0,
                 "printed_total": 131,
                 "number": "146",
@@ -112,7 +112,7 @@ cards_info = {
             },
             {
                 "name": "Roaring Moon ex",
-                "market": 173.46,
+                "market": 173.81,
                 "price_high": 999.0,
                 "printed_total": 131,
                 "number": "162",
@@ -148,7 +148,7 @@ cards_info = {
             },
             {
                 "name": "Eevee ex",
-                "market": 111.91,
+                "market": 110.99,
                 "price_high": 999.0,
                 "printed_total": 131,
                 "number": "167",
