@@ -4,7 +4,7 @@ cards_info = {
         "cards": [
             {
                 "name": "Milotic ex",
-                "market": 95.89,
+                "market": 95.83,
                 "price_high": 199.95,
                 "printed_total": 191,
                 "number": "237",
@@ -40,7 +40,7 @@ cards_info = {
             },
             {
                 "name": "Latias ex",
-                "market": 170.2,
+                "market": 169.44,
                 "price_high": 370.0,
                 "printed_total": 191,
                 "number": "239",
