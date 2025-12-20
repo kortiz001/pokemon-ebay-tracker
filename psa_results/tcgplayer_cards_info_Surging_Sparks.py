@@ -4,19 +4,19 @@ cards_info = {
         "cards": [
             {
                 "name": "Milotic ex",
-                "market": 95.83,
+                "market": 95.93,
                 "price_high": 199.95,
                 "printed_total": 191,
                 "number": "237",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv8-237",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-surging-sparks/milotic-ex-237",
                 "graded_prices": {
-                    "ungraded": "$90.39",
+                    "ungraded": "$89.88",
                     "grade7": "$68.00",
                     "grade8": "$85.50",
-                    "grade9": "$97.67",
+                    "grade9": "$96.49",
                     "grade95": "$158.75",
-                    "grade10": "$274.57"
+                    "grade10": "$270.91"
                 },
                 "image_url": "https://images.pokemontcg.io/sv8/237_hires.png"
             },
@@ -29,12 +29,12 @@ cards_info = {
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv8-238",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-surging-sparks/pikachu-ex-238",
                 "graded_prices": {
-                    "ungraded": "$280.34",
-                    "grade7": "$197.00",
-                    "grade8": "$246.60",
-                    "grade9": "$272.89",
-                    "grade95": "$406.14",
-                    "grade10": "$874.69"
+                    "ungraded": "$267.77",
+                    "grade7": "$198.00",
+                    "grade8": "$247.00",
+                    "grade9": "$275.00",
+                    "grade95": "$447.95",
+                    "grade10": "$865.00"
                 },
                 "image_url": "https://images.pokemontcg.io/sv8/238_hires.png"
             },
@@ -47,12 +47,12 @@ cards_info = {
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv8-239",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-surging-sparks/latias-ex-239",
                 "graded_prices": {
-                    "ungraded": "$155.72",
+                    "ungraded": "$151.90",
                     "grade7": "$123.00",
-                    "grade8": "$153.62",
+                    "grade8": "$153.61",
                     "grade9": "$169.00",
                     "grade95": "$240.68",
-                    "grade10": "$560.00"
+                    "grade10": "$547.00"
                 },
                 "image_url": "https://images.pokemontcg.io/sv8/239_hires.png"
             }
