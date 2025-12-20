@@ -4,7 +4,7 @@ cards_info = {
         "cards": [
             {
                 "name": "Charizard ex",
-                "market": 263.0,
+                "market": 259.27,
                 "price_high": 1000.0,
                 "printed_total": 165,
                 "number": "199",
