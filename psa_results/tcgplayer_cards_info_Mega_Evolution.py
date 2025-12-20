@@ -4,7 +4,7 @@ cards_info = {
         "cards": [
             {
                 "name": "Mega Absol ex",
-                "market": 81.01,
+                "market": 80.81,
                 "price_high": 999.0,
                 "printed_total": 132,
                 "number": "180",
@@ -22,7 +22,7 @@ cards_info = {
             },
             {
                 "name": "Mega Latias ex",
-                "market": 91.18,
+                "market": 88.21,
                 "price_high": 999.0,
                 "printed_total": 132,
                 "number": "181",
@@ -40,7 +40,7 @@ cards_info = {
             },
             {
                 "name": "Mega Venusaur ex",
-                "market": 144.14,
+                "market": 143.35,
                 "price_high": 999.0,
                 "printed_total": 132,
                 "number": "177",
