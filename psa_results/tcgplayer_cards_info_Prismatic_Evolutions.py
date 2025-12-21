@@ -3,8 +3,26 @@ cards_info = {
         "code": "sv8pt5",
         "cards": [
             {
+                "name": "Ceruledge ex",
+                "market": 101.17,
+                "price_high": 999.0,
+                "printed_total": 131,
+                "number": "147",
+                "card_link": "https://prices.pokemontcg.io/tcgplayer/sv8pt5-147",
+                "pricecharting_url": "https://pricecharting.com/game/pokemon-prismatic-evolutions/ceruledge-ex-147",
+                "graded_prices": {
+                    "ungraded": "$88.50",
+                    "grade7": "-",
+                    "grade8": "$87.63",
+                    "grade9": "$100.00",
+                    "grade95": "$145.24",
+                    "grade10": "$282.50"
+                },
+                "image_url": "https://images.pokemontcg.io/sv8pt5/147_hires.png"
+            },
+            {
                 "name": "Flareon ex",
-                "market": 160.02,
+                "market": 159.26,
                 "price_high": 9999.0,
                 "printed_total": 131,
                 "number": "146",
@@ -22,7 +40,7 @@ cards_info = {
             },
             {
                 "name": "Jolteon ex",
-                "market": 152.43,
+                "market": 149.48,
                 "price_high": 999.0,
                 "printed_total": 131,
                 "number": "153",
@@ -40,7 +58,7 @@ cards_info = {
             },
             {
                 "name": "Vaporeon ex",
-                "market": 190.92,
+                "market": 190.52,
                 "price_high": 999.0,
                 "printed_total": 131,
                 "number": "149",
@@ -94,7 +112,7 @@ cards_info = {
             },
             {
                 "name": "Roaring Moon ex",
-                "market": 173.81,
+                "market": 173.01,
                 "price_high": 999.0,
                 "printed_total": 131,
                 "number": "162",
@@ -130,7 +148,7 @@ cards_info = {
             },
             {
                 "name": "Eevee ex",
-                "market": 110.28,
+                "market": 109.54,
                 "price_high": 999.0,
                 "printed_total": 131,
                 "number": "167",
