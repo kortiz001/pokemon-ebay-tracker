@@ -4,19 +4,19 @@ cards_info = {
         "cards": [
             {
                 "name": "Starmie V",
-                "market": 95.4,
+                "market": 95.15,
                 "price_high": 300.0,
                 "printed_total": 30,
                 "number": "TG13",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/swsh10tg-TG13",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-astral-radiance/starmie-v-TG13",
                 "graded_prices": {
-                    "ungraded": "$93.37",
+                    "ungraded": "$94.81",
                     "grade7": "$77.02",
                     "grade8": "$89.00",
-                    "grade9": "$101.54",
-                    "grade95": "$126.94",
-                    "grade10": "$279.53"
+                    "grade9": "$99.45",
+                    "grade95": "$128.09",
+                    "grade10": "$280.00"
                 },
                 "image_url": "https://images.pokemontcg.io/swsh10tg/TG13_hires.png"
             }
