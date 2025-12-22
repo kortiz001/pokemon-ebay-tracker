@@ -4,7 +4,7 @@ cards_info = {
         "cards": [
             {
                 "name": "Team Rocket's Mewtwo ex",
-                "market": 401.21,
+                "market": 402.5,
                 "price_high": 9999.0,
                 "printed_total": 182,
                 "number": "231",
@@ -22,19 +22,19 @@ cards_info = {
             },
             {
                 "name": "Team Rocket's Nidoking ex",
-                "market": 96.62,
+                "market": 96.25,
                 "price_high": 400.0,
                 "printed_total": 182,
                 "number": "233",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv10-233",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-destined-rivals/team-rocket's-nidoking-ex-233",
                 "graded_prices": {
-                    "ungraded": "$96.19",
+                    "ungraded": "$100.00",
                     "grade7": "$76.00",
-                    "grade8": "$94.79",
-                    "grade9": "$120.00",
-                    "grade95": "$132.00",
-                    "grade10": "$290.31"
+                    "grade8": "$95.06",
+                    "grade9": "$116.51",
+                    "grade95": "$128.00",
+                    "grade10": "$271.90"
                 },
                 "image_url": "https://images.pokemontcg.io/sv10/233_hires.png"
             }
