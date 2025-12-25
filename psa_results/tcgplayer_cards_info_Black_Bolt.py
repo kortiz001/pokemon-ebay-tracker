@@ -4,7 +4,7 @@ cards_info = {
         "cards": [
             {
                 "name": "Seismitoad",
-                "market": 146.73,
+                "market": 140.27,
                 "price_high": 450.0,
                 "printed_total": 86,
                 "number": "105",
@@ -14,9 +14,9 @@ cards_info = {
                     "ungraded": "$145.43",
                     "grade7": "$95.00",
                     "grade8": "$118.89",
-                    "grade9": "$134.13",
+                    "grade9": "$131.63",
                     "grade95": "$221.25",
-                    "grade10": "$790.40"
+                    "grade10": "$762.96"
                 },
                 "image_url": "https://images.pokemontcg.io/zsv10pt5/105_hires.png"
             }
