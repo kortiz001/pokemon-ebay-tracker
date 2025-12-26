@@ -18,6 +18,7 @@ jobs:
 
     strategy:
       matrix:
+        fail-fast: false
         set:
           - "Rebel Clash"
           - "Darkness Ablaze"
