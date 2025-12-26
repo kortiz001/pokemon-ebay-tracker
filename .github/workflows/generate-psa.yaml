@@ -15,6 +15,7 @@ jobs:
     permissions:
       id-token: write
       contents: write
+    continue-on-error: ${{ matrix.set }}
 
     strategy:
       matrix:
