@@ -11,11 +11,11 @@ cards_info = {
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv2-203",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-paldea-evolved/magikarp-203",
                 "graded_prices": {
-                    "ungraded": "$241.75",
+                    "ungraded": "$225.66",
                     "grade7": "$185.00",
-                    "grade8": "$214.43",
-                    "grade9": "$280.29",
-                    "grade95": "$713.42",
+                    "grade8": "$214.00",
+                    "grade9": "$290.70",
+                    "grade95": "$716.86",
                     "grade10": "$1,800.00"
                 },
                 "image_url": "https://images.pokemontcg.io/sv2/203_hires.png"
