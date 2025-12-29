@@ -18,8 +18,8 @@ jobs:
     continue-on-error: ${{ matrix.set }}
 
     strategy:
+      fail-fast: false
       matrix:
-        fail-fast: false
         set:
           - "Rebel Clash"
           - "Darkness Ablaze"
@@ -67,7 +67,7 @@ jobs:
       - name: Run Python script with retry
         run: |
           max_attempts=60
-          delay=10
+          delay=15
           attempt=1
 
           until python scripts/generate_psa_json.py "${{ matrix.set }}"; do
