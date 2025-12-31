@@ -29,12 +29,12 @@ cards_info = {
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv10-233",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-destined-rivals/team-rocket's-nidoking-ex-233",
                 "graded_prices": {
-                    "ungraded": "$91.71",
-                    "grade7": "$70.00",
-                    "grade8": "$88.09",
+                    "ungraded": "$92.50",
+                    "grade7": "$77.00",
+                    "grade8": "$96.00",
                     "grade9": "$112.29",
-                    "grade95": "$265.00",
-                    "grade10": "$270.00"
+                    "grade95": "$261.00",
+                    "grade10": "$266.10"
                 },
                 "image_url": "https://images.pokemontcg.io/sv10/233_hires.png"
             }
