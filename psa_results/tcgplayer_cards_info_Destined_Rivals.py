@@ -4,8 +4,8 @@ cards_info = {
         "cards": [
             {
                 "name": "Team Rocket's Mewtwo ex",
-                "market": 400.08,
-                "price_high": 9999.0,
+                "market": 404.09,
+                "price_high": 999.0,
                 "printed_total": 182,
                 "number": "231",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv10-231",
@@ -22,7 +22,7 @@ cards_info = {
             },
             {
                 "name": "Team Rocket's Nidoking ex",
-                "market": 90.06,
+                "market": 90.17,
                 "price_high": 400.0,
                 "printed_total": 182,
                 "number": "233",
