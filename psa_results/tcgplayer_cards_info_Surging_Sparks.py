@@ -4,7 +4,7 @@ cards_info = {
         "cards": [
             {
                 "name": "Pikachu ex",
-                "market": 265.86,
+                "market": 261.9,
                 "price_high": 868.0,
                 "printed_total": 191,
                 "number": "238",
