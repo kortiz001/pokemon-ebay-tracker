@@ -3,6 +3,24 @@ cards_info = {
         "code": "sv10",
         "cards": [
             {
+                "name": "Ethan's Ho-Oh ex",
+                "market": 148.46,
+                "price_high": 9999.0,
+                "printed_total": 182,
+                "number": "230",
+                "card_link": "https://prices.pokemontcg.io/tcgplayer/sv10-230",
+                "pricecharting_url": "https://pricecharting.com/game/pokemon-destined-rivals/ethan's-ho-oh-ex-230",
+                "graded_prices": {
+                    "ungraded": "$156.34",
+                    "grade7": "$114.00",
+                    "grade8": "$142.37",
+                    "grade9": "$168.90",
+                    "grade95": "$362.89",
+                    "grade10": "$412.50"
+                },
+                "image_url": "https://images.pokemontcg.io/sv10/230_hires.png"
+            },
+            {
                 "name": "Team Rocket's Mewtwo ex",
                 "market": 411.53,
                 "price_high": 999.0,
@@ -22,7 +40,7 @@ cards_info = {
             },
             {
                 "name": "Team Rocket's Nidoking ex",
-                "market": 90.25,
+                "market": 90.94,
                 "price_high": 400.0,
                 "printed_total": 182,
                 "number": "233",
