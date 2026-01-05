@@ -22,7 +22,7 @@ cards_info = {
             },
             {
                 "name": "Charizard ex",
-                "market": 201.8,
+                "market": 202.49,
                 "price_high": 799.97,
                 "printed_total": 91,
                 "number": "234",
