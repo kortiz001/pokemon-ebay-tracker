@@ -4,25 +4,25 @@ cards_info = {
         "cards": [
             {
                 "name": "Ethan's Ho-Oh ex",
-                "market": 148.46,
+                "market": 144.99,
                 "price_high": 9999.0,
                 "printed_total": 182,
                 "number": "230",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv10-230",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-destined-rivals/ethan's-ho-oh-ex-230",
                 "graded_prices": {
-                    "ungraded": "$156.34",
-                    "grade7": "$114.00",
-                    "grade8": "$142.37",
-                    "grade9": "$168.90",
+                    "ungraded": "$152.80",
+                    "grade7": "$121.00",
+                    "grade8": "$151.25",
+                    "grade9": "$170.00",
                     "grade95": "$362.89",
-                    "grade10": "$412.50"
+                    "grade10": "$429.37"
                 },
                 "image_url": "https://images.pokemontcg.io/sv10/230_hires.png"
             },
             {
                 "name": "Team Rocket's Mewtwo ex",
-                "market": 411.53,
+                "market": 413.26,
                 "price_high": 999.0,
                 "printed_total": 182,
                 "number": "231",
@@ -40,19 +40,19 @@ cards_info = {
             },
             {
                 "name": "Team Rocket's Nidoking ex",
-                "market": 90.94,
+                "market": 91.14,
                 "price_high": 400.0,
                 "printed_total": 182,
                 "number": "233",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv10-233",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-destined-rivals/team-rocket's-nidoking-ex-233",
                 "graded_prices": {
-                    "ungraded": "$94.85",
-                    "grade7": "$77.00",
-                    "grade8": "$96.00",
-                    "grade9": "$111.05",
+                    "ungraded": "$90.95",
+                    "grade7": "$78.00",
+                    "grade8": "$97.11",
+                    "grade9": "$115.30",
                     "grade95": "$265.00",
-                    "grade10": "$270.00"
+                    "grade10": "$269.99"
                 },
                 "image_url": "https://images.pokemontcg.io/sv10/233_hires.png"
             }
