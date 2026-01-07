@@ -4,7 +4,7 @@ cards_info = {
         "cards": [
             {
                 "name": "Starmie V",
-                "market": 95.9,
+                "market": 95.56,
                 "price_high": 300.0,
                 "printed_total": 30,
                 "number": "TG13",
