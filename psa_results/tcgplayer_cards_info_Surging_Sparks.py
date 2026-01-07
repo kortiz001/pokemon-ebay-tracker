@@ -4,37 +4,37 @@ cards_info = {
         "cards": [
             {
                 "name": "Pikachu ex",
-                "market": 256.64,
+                "market": 252.22,
                 "price_high": 868.0,
                 "printed_total": 191,
                 "number": "238",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv8-238",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-surging-sparks/pikachu-ex-238",
                 "graded_prices": {
-                    "ungraded": "$250.98",
-                    "grade7": "$201.00",
-                    "grade8": "$251.50",
-                    "grade9": "$262.60",
-                    "grade95": "$450.00",
-                    "grade10": "$860.20"
+                    "ungraded": "$269.44",
+                    "grade7": "$205.00",
+                    "grade8": "$256.63",
+                    "grade9": "$275.00",
+                    "grade95": "$429.70",
+                    "grade10": "$850.00"
                 },
                 "image_url": "https://images.pokemontcg.io/sv8/238_hires.png"
             },
             {
                 "name": "Latias ex",
-                "market": 153.95,
+                "market": 154.63,
                 "price_high": 370.0,
                 "printed_total": 191,
                 "number": "239",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv8-239",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-surging-sparks/latias-ex-239",
                 "graded_prices": {
-                    "ungraded": "$145.00",
-                    "grade7": "$115.00",
-                    "grade8": "$144.25",
-                    "grade9": "$145.76",
-                    "grade95": "$240.66",
-                    "grade10": "$495.00"
+                    "ungraded": "$151.55",
+                    "grade7": "$109.00",
+                    "grade8": "$136.65",
+                    "grade9": "$150.00",
+                    "grade95": "$240.62",
+                    "grade10": "$499.38"
                 },
                 "image_url": "https://images.pokemontcg.io/sv8/239_hires.png"
             }
