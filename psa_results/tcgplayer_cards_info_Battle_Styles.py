@@ -11,12 +11,12 @@ cards_info = {
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/swsh5-155",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-battle-styles/tyranitar-v-155",
                 "graded_prices": {
-                    "ungraded": "$200.00",
-                    "grade7": "$87.57",
+                    "ungraded": "$193.00",
+                    "grade7": "$87.53",
                     "grade8": "$171.56",
-                    "grade9": "$222.50",
-                    "grade95": "$326.56",
-                    "grade10": "$672.65"
+                    "grade9": "$211.06",
+                    "grade95": "$328.33",
+                    "grade10": "$662.50"
                 },
                 "image_url": "https://images.pokemontcg.io/swsh5/155_hires.png"
             }
