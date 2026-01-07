@@ -4,7 +4,7 @@ cards_info = {
         "cards": [
             {
                 "name": "Mega Lucario ex",
-                "market": 312.71,
+                "market": 311.57,
                 "price_high": 999.0,
                 "printed_total": 132,
                 "number": "188",
