@@ -4,7 +4,7 @@ cards_info = {
         "cards": [
             {
                 "name": "Ceruledge ex",
-                "market": 93.12,
+                "market": 93.07,
                 "price_high": 999.0,
                 "printed_total": 131,
                 "number": "147",
@@ -22,7 +22,7 @@ cards_info = {
             },
             {
                 "name": "Flareon ex",
-                "market": 155.85,
+                "market": 155.84,
                 "price_high": 9999.0,
                 "printed_total": 131,
                 "number": "146",
@@ -40,7 +40,7 @@ cards_info = {
             },
             {
                 "name": "Jolteon ex",
-                "market": 140.32,
+                "market": 141.06,
                 "price_high": 999.0,
                 "printed_total": 131,
                 "number": "153",
@@ -58,7 +58,7 @@ cards_info = {
             },
             {
                 "name": "Vaporeon ex",
-                "market": 183.16,
+                "market": 182.38,
                 "price_high": 999.0,
                 "printed_total": 131,
                 "number": "149",
@@ -76,7 +76,7 @@ cards_info = {
             },
             {
                 "name": "Espeon ex",
-                "market": 198.67,
+                "market": 198.37,
                 "price_high": 999.0,
                 "printed_total": 131,
                 "number": "155",
@@ -94,7 +94,7 @@ cards_info = {
             },
             {
                 "name": "Sylveon ex",
-                "market": 305.73,
+                "market": 306.92,
                 "price_high": 999.0,
                 "printed_total": 131,
                 "number": "156",
@@ -130,7 +130,7 @@ cards_info = {
             },
             {
                 "name": "Umbreon ex",
-                "market": 947.46,
+                "market": 949.38,
                 "price_high": 5000.0,
                 "printed_total": 131,
                 "number": "161",
@@ -148,7 +148,7 @@ cards_info = {
             },
             {
                 "name": "Eevee ex",
-                "market": 107.45,
+                "market": 108.31,
                 "price_high": 999.0,
                 "printed_total": 131,
                 "number": "167",
