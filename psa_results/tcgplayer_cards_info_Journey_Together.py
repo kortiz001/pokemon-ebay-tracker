@@ -4,19 +4,19 @@ cards_info = {
         "cards": [
             {
                 "name": "Lillie's Clefairy ex",
-                "market": 116.79,
+                "market": 116.75,
                 "price_high": 375.0,
                 "printed_total": 159,
                 "number": "184",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv9-184",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-journey-together/lillie's-clefairy-ex-184",
                 "graded_prices": {
-                    "ungraded": "$125.08",
-                    "grade7": "$104.88",
-                    "grade8": "$122.01",
-                    "grade9": "$130.00",
+                    "ungraded": "$117.00",
+                    "grade7": "$104.82",
+                    "grade8": "$122.54",
+                    "grade9": "$127.70",
                     "grade95": "$194.85",
-                    "grade10": "$427.33"
+                    "grade10": "$421.00"
                 },
                 "image_url": "https://images.pokemontcg.io/sv9/184_hires.png"
             }
