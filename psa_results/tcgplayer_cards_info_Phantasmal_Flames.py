@@ -4,7 +4,7 @@ cards_info = {
         "cards": [
             {
                 "name": "Mega Charizard X ex",
-                "market": 488.61,
+                "market": 497.99,
                 "price_high": 2222.0,
                 "printed_total": 94,
                 "number": "125",
@@ -22,8 +22,8 @@ cards_info = {
             },
             {
                 "name": "Mega Charizard X ex",
-                "market": 340.36,
-                "price_high": 999.0,
+                "market": 339.19,
+                "price_high": 99999.0,
                 "printed_total": 94,
                 "number": "130",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/me2-130",
