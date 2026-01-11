@@ -22,7 +22,7 @@ cards_info = {
             },
             {
                 "name": "Giratina V",
-                "market": 587.39,
+                "market": 591.51,
                 "price_high": 1500.0,
                 "printed_total": 196,
                 "number": "186",
