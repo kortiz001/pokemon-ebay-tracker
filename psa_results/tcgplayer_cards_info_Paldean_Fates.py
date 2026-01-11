@@ -4,8 +4,8 @@ cards_info = {
         "cards": [
             {
                 "name": "Mew ex",
-                "market": 483.22,
-                "price_high": 2100.0,
+                "market": 483.71,
+                "price_high": 10000.0,
                 "printed_total": 91,
                 "number": "232",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv4pt5-232",
@@ -22,7 +22,7 @@ cards_info = {
             },
             {
                 "name": "Charizard ex",
-                "market": 202.62,
+                "market": 202.58,
                 "price_high": 799.97,
                 "printed_total": 91,
                 "number": "234",
