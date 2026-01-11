@@ -4,7 +4,7 @@ cards_info = {
         "cards": [
             {
                 "name": "Team Rocket's Moltres ex",
-                "market": 108.38,
+                "market": 104.68,
                 "price_high": 300.0,
                 "printed_total": 182,
                 "number": "229",
@@ -40,7 +40,7 @@ cards_info = {
             },
             {
                 "name": "Team Rocket's Nidoking ex",
-                "market": 90.41,
+                "market": 89.51,
                 "price_high": 400.0,
                 "printed_total": 182,
                 "number": "233",
