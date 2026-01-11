@@ -4,7 +4,7 @@ cards_info = {
         "cards": [
             {
                 "name": "Ceruledge ex",
-                "market": 91.86,
+                "market": 91.57,
                 "price_high": 999.0,
                 "printed_total": 131,
                 "number": "147",
@@ -22,7 +22,7 @@ cards_info = {
             },
             {
                 "name": "Flareon ex",
-                "market": 154.75,
+                "market": 154.55,
                 "price_high": 9999.0,
                 "printed_total": 131,
                 "number": "146",
@@ -58,7 +58,7 @@ cards_info = {
             },
             {
                 "name": "Vaporeon ex",
-                "market": 181.26,
+                "market": 181.84,
                 "price_high": 999.0,
                 "printed_total": 131,
                 "number": "149",
@@ -94,7 +94,7 @@ cards_info = {
             },
             {
                 "name": "Sylveon ex",
-                "market": 306.58,
+                "market": 305.71,
                 "price_high": 999.0,
                 "printed_total": 131,
                 "number": "156",
@@ -112,7 +112,7 @@ cards_info = {
             },
             {
                 "name": "Roaring Moon ex",
-                "market": 157.11,
+                "market": 156.53,
                 "price_high": 999.0,
                 "printed_total": 131,
                 "number": "162",
@@ -130,7 +130,7 @@ cards_info = {
             },
             {
                 "name": "Umbreon ex",
-                "market": 948.2,
+                "market": 948.24,
                 "price_high": 1999.99,
                 "printed_total": 131,
                 "number": "161",
@@ -148,7 +148,7 @@ cards_info = {
             },
             {
                 "name": "Eevee ex",
-                "market": 108.47,
+                "market": 107.6,
                 "price_high": 999.0,
                 "printed_total": 131,
                 "number": "167",
