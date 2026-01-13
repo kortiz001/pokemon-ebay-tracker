@@ -4,8 +4,8 @@ cards_info = {
         "cards": [
             {
                 "name": "Starmie V",
-                "market": 95.02,
-                "price_high": 300.0,
+                "market": 95.47,
+                "price_high": 299.0,
                 "printed_total": 30,
                 "number": "TG13",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/swsh10tg-TG13",
