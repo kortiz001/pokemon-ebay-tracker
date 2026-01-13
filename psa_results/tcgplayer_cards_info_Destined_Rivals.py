@@ -4,7 +4,7 @@ cards_info = {
         "cards": [
             {
                 "name": "Team Rocket's Moltres ex",
-                "market": 102.99,
+                "market": 99.76,
                 "price_high": 300.0,
                 "printed_total": 182,
                 "number": "229",
@@ -22,7 +22,7 @@ cards_info = {
             },
             {
                 "name": "Ethan's Ho-Oh ex",
-                "market": 139.7,
+                "market": 137.91,
                 "price_high": 9999.0,
                 "printed_total": 182,
                 "number": "230",
@@ -40,7 +40,7 @@ cards_info = {
             },
             {
                 "name": "Team Rocket's Nidoking ex",
-                "market": 89.61,
+                "market": 89.77,
                 "price_high": 400.0,
                 "printed_total": 182,
                 "number": "233",
