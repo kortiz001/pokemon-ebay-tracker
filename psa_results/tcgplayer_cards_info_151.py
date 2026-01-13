@@ -4,8 +4,8 @@ cards_info = {
         "cards": [
             {
                 "name": "Charizard ex",
-                "market": 258.99,
-                "price_high": 1000.0,
+                "market": 263.05,
+                "price_high": 900.0,
                 "printed_total": 165,
                 "number": "199",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv3pt5-199",
@@ -22,7 +22,7 @@ cards_info = {
             },
             {
                 "name": "Blastoise ex",
-                "market": 80.99,
+                "market": 80.87,
                 "price_high": 199.99,
                 "printed_total": 165,
                 "number": "200",
