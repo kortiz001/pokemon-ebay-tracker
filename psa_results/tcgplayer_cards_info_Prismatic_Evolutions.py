@@ -4,7 +4,7 @@ cards_info = {
         "cards": [
             {
                 "name": "Flareon ex",
-                "market": 153.62,
+                "market": 153.08,
                 "price_high": 9999.0,
                 "printed_total": 131,
                 "number": "146",
@@ -22,7 +22,7 @@ cards_info = {
             },
             {
                 "name": "Jolteon ex",
-                "market": 142.53,
+                "market": 142.92,
                 "price_high": 999.0,
                 "printed_total": 131,
                 "number": "153",
@@ -76,7 +76,7 @@ cards_info = {
             },
             {
                 "name": "Sylveon ex",
-                "market": 306.5,
+                "market": 306.25,
                 "price_high": 999.0,
                 "printed_total": 131,
                 "number": "156",
@@ -112,8 +112,8 @@ cards_info = {
             },
             {
                 "name": "Umbreon ex",
-                "market": 938.82,
-                "price_high": 1999.99,
+                "market": 938.32,
+                "price_high": 1499.99,
                 "printed_total": 131,
                 "number": "161",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv8pt5-161",
@@ -130,7 +130,7 @@ cards_info = {
             },
             {
                 "name": "Eevee ex",
-                "market": 108.24,
+                "market": 108.12,
                 "price_high": 999.0,
                 "printed_total": 131,
                 "number": "167",
