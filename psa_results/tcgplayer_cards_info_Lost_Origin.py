@@ -4,7 +4,7 @@ cards_info = {
         "cards": [
             {
                 "name": "Aerodactyl V",
-                "market": 137.21,
+                "market": 139.83,
                 "price_high": 299.95,
                 "printed_total": 196,
                 "number": "180",
@@ -22,8 +22,8 @@ cards_info = {
             },
             {
                 "name": "Giratina V",
-                "market": 591.51,
-                "price_high": 1500.0,
+                "market": 593.71,
+                "price_high": 899.0,
                 "printed_total": 196,
                 "number": "186",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/swsh11-186",
