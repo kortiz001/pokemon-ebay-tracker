@@ -4,19 +4,19 @@ cards_info = {
         "cards": [
             {
                 "name": "Mega Lucario ex",
-                "market": 303.21,
+                "market": 301.36,
                 "price_high": 999.0,
                 "printed_total": 132,
                 "number": "188",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/me1-188",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-mega-evolution/mega-lucario-ex-188",
                 "graded_prices": {
-                    "ungraded": "$301.71",
+                    "ungraded": "$299.97",
                     "grade7": "-",
-                    "grade8": "$275.00",
-                    "grade9": "$309.25",
+                    "grade8": "$263.75",
+                    "grade9": "$303.84",
                     "grade95": "$405.00",
-                    "grade10": "$950.00"
+                    "grade10": "$985.00"
                 },
                 "image_url": "https://images.pokemontcg.io/me1/188_hires.png"
             }
