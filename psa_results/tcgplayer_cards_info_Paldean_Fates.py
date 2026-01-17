@@ -4,7 +4,7 @@ cards_info = {
         "cards": [
             {
                 "name": "Mew ex",
-                "market": 492.89,
+                "market": 488.52,
                 "price_high": 10000.0,
                 "printed_total": 91,
                 "number": "232",
