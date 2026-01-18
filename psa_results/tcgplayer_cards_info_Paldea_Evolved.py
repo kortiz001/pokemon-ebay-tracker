@@ -4,7 +4,7 @@ cards_info = {
         "cards": [
             {
                 "name": "Magikarp",
-                "market": 267.38,
+                "market": 268.58,
                 "price_high": 1200.0,
                 "printed_total": 193,
                 "number": "203",
