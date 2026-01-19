@@ -4,37 +4,37 @@ cards_info = {
         "cards": [
             {
                 "name": "Mew ex",
-                "market": 488.58,
+                "market": 488.54,
                 "price_high": 10000.0,
                 "printed_total": 91,
                 "number": "232",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv4pt5-232",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-paldean-fates/mew-ex-232",
                 "graded_prices": {
-                    "ungraded": "$482.50",
-                    "grade7": "$425.00",
+                    "ungraded": "$479.90",
+                    "grade7": "$437.50",
                     "grade8": "$440.00",
-                    "grade9": "$512.14",
+                    "grade9": "$541.00",
                     "grade95": "$720.00",
-                    "grade10": "$1,598.09"
+                    "grade10": "$1,724.00"
                 },
                 "image_url": "https://images.pokemontcg.io/sv4pt5/232_hires.png"
             },
             {
                 "name": "Charizard ex",
-                "market": 202.95,
+                "market": 202.39,
                 "price_high": 799.97,
                 "printed_total": 91,
                 "number": "234",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv4pt5-234",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-paldean-fates/charizard-ex-234",
                 "graded_prices": {
-                    "ungraded": "$214.61",
-                    "grade7": "$156.98",
-                    "grade8": "$207.50",
-                    "grade9": "$217.44",
-                    "grade95": "$243.91",
-                    "grade10": "$600.00"
+                    "ungraded": "$214.42",
+                    "grade7": "$159.99",
+                    "grade8": "$205.62",
+                    "grade9": "$223.29",
+                    "grade95": "$244.07",
+                    "grade10": "$601.05"
                 },
                 "image_url": "https://images.pokemontcg.io/sv4pt5/234_hires.png"
             }
