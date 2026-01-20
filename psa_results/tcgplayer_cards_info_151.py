@@ -4,26 +4,26 @@ cards_info = {
         "cards": [
             {
                 "name": "Charizard ex",
-                "market": 260.8,
+                "market": 258.54,
                 "price_high": 1000.0,
                 "printed_total": 165,
                 "number": "199",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv3pt5-199",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-scarlet-&-violet-151/charizard-ex-199",
                 "graded_prices": {
-                    "ungraded": "$255.00",
-                    "grade7": "$200.54",
-                    "grade8": "$221.61",
-                    "grade9": "$260.00",
-                    "grade95": "$472.70",
-                    "grade10": "$949.50"
+                    "ungraded": "$258.67",
+                    "grade7": "$205.10",
+                    "grade8": "$225.38",
+                    "grade9": "$262.50",
+                    "grade95": "$499.99",
+                    "grade10": "$962.50"
                 },
                 "image_url": "https://images.pokemontcg.io/sv3pt5/199_hires.png"
             },
             {
                 "name": "Blastoise ex",
-                "market": 82.19,
-                "price_high": 199.99,
+                "market": 81.21,
+                "price_high": 231.98,
                 "printed_total": 165,
                 "number": "200",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv3pt5-200",
