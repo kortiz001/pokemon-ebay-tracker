@@ -4,7 +4,7 @@ cards_info = {
         "cards": [
             {
                 "name": "Team Rocket's Moltres ex",
-                "market": 96.31,
+                "market": 96.01,
                 "price_high": 300.0,
                 "printed_total": 182,
                 "number": "229",
@@ -22,7 +22,7 @@ cards_info = {
             },
             {
                 "name": "Ethan's Ho-Oh ex",
-                "market": 132.59,
+                "market": 133.59,
                 "price_high": 9999.0,
                 "printed_total": 182,
                 "number": "230",
@@ -40,25 +40,25 @@ cards_info = {
             },
             {
                 "name": "Team Rocket's Mewtwo ex",
-                "market": 388.38,
+                "market": 388.1,
                 "price_high": 1000.0,
                 "printed_total": 182,
                 "number": "231",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv10-231",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-destined-rivals/team-rocket's-mewtwo-ex-231",
                 "graded_prices": {
-                    "ungraded": "$426.34",
+                    "ungraded": "$425.00",
                     "grade7": "$370.00",
-                    "grade8": "$373.00",
-                    "grade9": "$448.98",
+                    "grade8": "$372.50",
+                    "grade9": "$451.25",
                     "grade95": "$786.80",
-                    "grade10": "$1,152.00"
+                    "grade10": "$1,150.50"
                 },
                 "image_url": "https://images.pokemontcg.io/sv10/231_hires.png"
             },
             {
                 "name": "Team Rocket's Nidoking ex",
-                "market": 91.5,
+                "market": 92.21,
                 "price_high": 400.0,
                 "printed_total": 182,
                 "number": "233",
