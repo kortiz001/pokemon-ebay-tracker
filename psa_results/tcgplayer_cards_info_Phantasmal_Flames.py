@@ -4,7 +4,7 @@ cards_info = {
         "cards": [
             {
                 "name": "Mega Charizard X ex",
-                "market": 613.31,
+                "market": 598.35,
                 "price_high": 2222.0,
                 "printed_total": 94,
                 "number": "125",
@@ -22,7 +22,7 @@ cards_info = {
             },
             {
                 "name": "Mega Charizard X ex",
-                "market": 355.56,
+                "market": 367.74,
                 "price_high": 99999.0,
                 "printed_total": 94,
                 "number": "130",
