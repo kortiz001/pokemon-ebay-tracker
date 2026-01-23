@@ -5,7 +5,7 @@ cards_info = {
             {
                 "name": "Giratina V",
                 "market": 652.8,
-                "price_high": 999.69,
+                "price_high": 1500.0,
                 "printed_total": 196,
                 "number": "186",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/swsh11-186",
