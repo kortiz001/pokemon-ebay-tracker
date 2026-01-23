@@ -4,8 +4,8 @@ cards_info = {
         "cards": [
             {
                 "name": "Tyranitar V",
-                "market": 200.75,
-                "price_high": 599.95,
+                "market": 199.98,
+                "price_high": 1000.0,
                 "printed_total": 163,
                 "number": "155",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/swsh5-155",
