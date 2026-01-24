@@ -11,36 +11,36 @@ cards_info = {
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv10-229",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-destined-rivals/team-rocket's-moltres-ex-229",
                 "graded_prices": {
-                    "ungraded": "$99.50",
+                    "ungraded": "$108.30",
                     "grade7": "$78.00",
                     "grade8": "$98.09",
-                    "grade9": "$116.38",
+                    "grade9": "$113.35",
                     "grade95": "$230.50",
-                    "grade10": "$300.00"
+                    "grade10": "$297.00"
                 },
                 "image_url": "https://images.pokemontcg.io/sv10/229_hires.png"
             },
             {
                 "name": "Ethan's Ho-Oh ex",
-                "market": 133.52,
+                "market": 133.41,
                 "price_high": 9999.0,
                 "printed_total": 182,
                 "number": "230",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv10-230",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-destined-rivals/ethan's-ho-oh-ex-230",
                 "graded_prices": {
-                    "ungraded": "$140.00",
+                    "ungraded": "$140.22",
                     "grade7": "$141.00",
                     "grade8": "$143.00",
-                    "grade9": "$164.90",
+                    "grade9": "$161.32",
                     "grade95": "$335.00",
-                    "grade10": "$400.00"
+                    "grade10": "$393.60"
                 },
                 "image_url": "https://images.pokemontcg.io/sv10/230_hires.png"
             },
             {
                 "name": "Team Rocket's Mewtwo ex",
-                "market": 387.41,
+                "market": 384.26,
                 "price_high": 1000.0,
                 "printed_total": 182,
                 "number": "231",
@@ -58,17 +58,17 @@ cards_info = {
             },
             {
                 "name": "Team Rocket's Nidoking ex",
-                "market": 92.05,
+                "market": 92.91,
                 "price_high": 400.0,
                 "printed_total": 182,
                 "number": "233",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/sv10-233",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-destined-rivals/team-rocket's-nidoking-ex-233",
                 "graded_prices": {
-                    "ungraded": "$91.12",
+                    "ungraded": "$90.68",
                     "grade7": "$77.00",
                     "grade8": "$96.00",
-                    "grade9": "$99.03",
+                    "grade9": "$105.00",
                     "grade95": "$260.00",
                     "grade10": "$265.00"
                 },
