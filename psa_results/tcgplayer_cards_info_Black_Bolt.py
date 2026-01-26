@@ -4,7 +4,7 @@ cards_info = {
         "cards": [
             {
                 "name": "Seismitoad",
-                "market": 119.65,
+                "market": 119.8,
                 "price_high": 450.0,
                 "printed_total": 86,
                 "number": "105",
