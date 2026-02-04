@@ -5,7 +5,6 @@ cards_info = {
             {
                 "name": "Mewtwo & Mew GX",
                 "market": 93.48,
-                "price_high": 148.6,
                 "printed_total": 236,
                 "number": "71",
                 "card_link": "https://www.tcgplayer.com/product/194997",
@@ -23,7 +22,6 @@ cards_info = {
             {
                 "name": "Slowpoke & Psyduck GX",
                 "market": 99.78,
-                "price_high": 140.94,
                 "printed_total": 236,
                 "number": "217",
                 "card_link": "https://www.tcgplayer.com/product/194954",
@@ -41,7 +39,6 @@ cards_info = {
             {
                 "name": "Slowpoke & Psyduck GX",
                 "market": 279.04,
-                "price_high": 450,
                 "printed_total": 236,
                 "number": "218",
                 "card_link": "https://www.tcgplayer.com/product/194955",
@@ -59,7 +56,6 @@ cards_info = {
             {
                 "name": "Raichu & Alolan Raichu GX",
                 "market": 304.75,
-                "price_high": 1000,
                 "printed_total": 236,
                 "number": "221",
                 "card_link": "https://www.tcgplayer.com/product/194979",
@@ -77,7 +73,6 @@ cards_info = {
             {
                 "name": "Mewtwo & Mew GX",
                 "market": 135.17,
-                "price_high": 182.99,
                 "printed_total": 236,
                 "number": "222",
                 "card_link": "https://www.tcgplayer.com/product/194998",
@@ -95,7 +90,6 @@ cards_info = {
             {
                 "name": "Mega Sableye & Tyranitar GX",
                 "market": 326.55,
-                "price_high": 425,
                 "printed_total": 236,
                 "number": "226",
                 "card_link": "https://www.tcgplayer.com/product/195290",
@@ -113,7 +107,6 @@ cards_info = {
             {
                 "name": "Dragonite GX",
                 "market": 119.78,
-                "price_high": 195.66,
                 "printed_total": 236,
                 "number": "248",
                 "card_link": "https://www.tcgplayer.com/product/195150",
