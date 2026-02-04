@@ -1,6 +1,6 @@
 cards_info = {
     "Shining Fates": {
-        "code": "swsh45",
+        "code": "swsh4.5",
         "cards": []
     }
 }
