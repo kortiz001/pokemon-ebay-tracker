@@ -5,6 +5,7 @@ cards_info = {
             {
                 "name": "Sylveon GX",
                 "market": 124.72,
+                "price_high": 279.99,
                 "printed_total": 145,
                 "number": "158",
                 "card_link": "https://www.tcgplayer.com/product/131008",
