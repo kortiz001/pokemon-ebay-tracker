@@ -5,6 +5,7 @@ cards_info = {
             {
                 "name": "Leafeon GX",
                 "market": 86.38,
+                "price_high": 699.95,
                 "printed_total": 156,
                 "number": "157",
                 "card_link": "https://www.tcgplayer.com/product/157773",

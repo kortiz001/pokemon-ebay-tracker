@@ -5,7 +5,6 @@ cards_info = {
             {
                 "name": "Ultra Necrozma GX",
                 "market": 92.73,
-                "price_high": 227,
                 "printed_total": 70,
                 "number": "78",
                 "card_link": "https://www.tcgplayer.com/product/175508",
