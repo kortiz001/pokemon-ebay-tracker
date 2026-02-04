@@ -4,7 +4,7 @@ cards_info = {
         "cards": [
             {
                 "name": "Umbreon V",
-                "market": 301.88,
+                "market": 299.49,
                 "price_high": 4321.0,
                 "printed_total": 203,
                 "number": "189",
