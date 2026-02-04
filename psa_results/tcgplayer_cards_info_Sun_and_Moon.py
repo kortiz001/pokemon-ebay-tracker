@@ -5,7 +5,6 @@ cards_info = {
             {
                 "name": "Umbreon GX",
                 "market": 104.11,
-                "price_high": 250,
                 "printed_total": 149,
                 "number": "154",
                 "card_link": "https://www.tcgplayer.com/product/127193",
