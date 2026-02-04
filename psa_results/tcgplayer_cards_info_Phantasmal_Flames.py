@@ -4,25 +4,25 @@ cards_info = {
         "cards": [
             {
                 "name": "Mega Charizard X ex",
-                "market": 635.95,
+                "market": 638.85,
                 "price_high": 2222.0,
                 "printed_total": 94,
                 "number": "125",
                 "card_link": "https://prices.pokemontcg.io/tcgplayer/me2-125",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-phantasmal-flames/mega-charizard-x-ex-125",
                 "graded_prices": {
-                    "ungraded": "$784.04",
+                    "ungraded": "$819.24",
                     "grade7": "$499.00",
-                    "grade8": "$580.82",
-                    "grade9": "$748.20",
-                    "grade95": "$1,102.00",
-                    "grade10": "$1,977.77"
+                    "grade8": "$582.98",
+                    "grade9": "$741.00",
+                    "grade95": "$1,101.00",
+                    "grade10": "$1,931.82"
                 },
                 "image_url": "https://images.pokemontcg.io/me2/125_hires.png"
             },
             {
                 "name": "Mega Charizard X ex",
-                "market": 358.75,
+                "market": 362.69,
                 "price_high": 99999.0,
                 "printed_total": 94,
                 "number": "130",
