@@ -5,10 +5,10 @@ cards_info = {
             {
                 "name": "Mew V",
                 "market": 87.85,
-                "price_high": 500.0,
+                "price_high": 500,
                 "printed_total": 264,
                 "number": "251",
-                "card_link": "https://prices.pokemontcg.io/tcgplayer/swsh8-251",
+                "card_link": "https://www.tcgplayer.com/product/253147",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-fusion-strike/mew-v-251",
                 "graded_prices": {
                     "ungraded": "$85.00",
@@ -18,7 +18,7 @@ cards_info = {
                     "grade95": "$151.87",
                     "grade10": "$322.50"
                 },
-                "image_url": "https://images.pokemontcg.io/swsh8/251_hires.png"
+                "image_url": "https://assets.tcgdex.net/en/swsh/swsh8/251/high.png"
             }
         ]
     }
