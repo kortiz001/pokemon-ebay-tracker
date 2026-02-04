@@ -7,6 +7,7 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('tracker/', views.tracker, name='tracker'),
     path('psa_tracker/', views.psa_tracker, name='psa_tracker'),
+    path('psa_tracker_api/', views.psa_tracker_api, name='psa_tracker_api'),
     path('saved/', views.saved, name='saved'),
     path('load_data/', views.load_data, name='load_data'),
     path('delete_saved_item/', views.delete_saved_item, name='delete_saved_item'),

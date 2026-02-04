@@ -220,3 +220,40 @@ def psa_tracker(request):
 
 
 
+
+@require_GET
+def psa_tracker_api(request):
+    tcg_player_cards = tcgplayer_cards_info_psa_check.cards_info
+    current_time = timezone.now()
+
+    for set_name, set_data in tcg_player_cards.items():
+        filtered_cards = []
+        for card_data in set_data.get("cards", []):
+            grade9 = float(
+                card_data.get("graded_prices", {}).get("grade9", "0").replace("$", "").replace(",", "")
+            )
+            grade10 = float(
+                card_data.get("graded_prices", {}).get("grade10", "0").replace("$", "").replace(",", "")
+            )
+
+            market = float(card_data.get("market", "0"))
+
+            grade9_value_loss = round(grade9 * 0.87 - 60 - market, 2)
+            grade9_regular_loss = round(grade9 * 0.87 - 90 - market, 2)
+            value_submission_profit = round(grade10 * 0.87 - 60 - market, 2)
+            regular_submission_profit = round(grade10 * 0.87 - 90 - market, 2)
+
+            card_data["grade9_value_loss"] = grade9_value_loss
+            card_data["grade9_regular_loss"] = grade9_regular_loss
+            card_data["value_submission_profit"] = value_submission_profit
+            card_data["regular_submission_profit"] = regular_submission_profit
+
+            if value_submission_profit >= 200:
+                filtered_cards.append(card_data)
+
+        set_data["cards"] = filtered_cards
+
+    return JsonResponse({
+        'cards_info': tcg_player_cards,
+        'current_time': current_time.isoformat()
+    })
