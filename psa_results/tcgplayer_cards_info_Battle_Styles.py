@@ -5,10 +5,10 @@ cards_info = {
             {
                 "name": "Tyranitar V",
                 "market": 200.31,
-                "price_high": 1000.0,
+                "price_high": 1000,
                 "printed_total": 163,
                 "number": "155",
-                "card_link": "https://prices.pokemontcg.io/tcgplayer/swsh5-155",
+                "card_link": "https://www.tcgplayer.com/product/234060",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-battle-styles/tyranitar-v-155",
                 "graded_prices": {
                     "ungraded": "$182.24",
@@ -18,7 +18,7 @@ cards_info = {
                     "grade95": "$335.00",
                     "grade10": "$627.50"
                 },
-                "image_url": "https://images.pokemontcg.io/swsh5/155_hires.png"
+                "image_url": "https://assets.tcgdex.net/en/swsh/swsh5/155/high.png"
             }
         ]
     }
