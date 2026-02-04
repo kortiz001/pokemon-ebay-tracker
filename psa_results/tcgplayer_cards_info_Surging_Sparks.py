@@ -1,14 +1,6 @@
-cards_info = {   'Surging Sparks': {   'cards': [   {   'card_link': 'https://pricecharting.com/game/pokemon-surging-sparks/latias-ex-239',
-                                           'graded_prices': {   'grade10': '$465.51',
-                                                                'grade7': '$97.00',
-                                                                'grade8': '$121.25',
-                                                                'grade9': '$142.50',
-                                                                'grade95': '$239.04',
-                                                                'ungraded': '$150.00'},
-                                           'image_url': 'https://assets.tcgdex.net/en/sv/sv08/239/high.png',
-                                           'market': 164.2,
-                                           'name': 'Latias ex',
-                                           'number': '239',
-                                           'pricecharting_url': 'https://pricecharting.com/game/pokemon-surging-sparks/latias-ex-239',
-                                           'printed_total': 191}],
-                          'code': 'sv08'}}
+cards_info = {
+    "Surging Sparks": {
+        "code": "sv08",
+        "cards": []
+    }
+}
