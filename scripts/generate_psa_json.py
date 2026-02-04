@@ -8,6 +8,59 @@ import sys
 from bs4 import BeautifulSoup
 
 TCGDEX_BASE = "https://api.tcgdex.net/v2/en"
+POKEWALLET_BASE = "https://api.pokewallet.io"
+POKEWALLET_API_KEY = os.environ.get(
+    "POKEWALLET_API_KEY", "pk_live_409d09208df8d373418919fae0b9060c9169082da88cca22"
+)
+
+# Mapping from our set names to PokeWallet set codes
+POKEWALLET_SET_CODES = {
+    "Sword & Shield": "SWSH01",
+    "Rebel Clash": "SWSH02",
+    "Darkness Ablaze": "SWSH03",
+    "Champion's Path": "CHP",
+    "Vivid Voltage": "SWSH04",
+    "Shining Fates": "SHF",
+    "Battle Styles": "SWSH05",
+    "Chilling Reign": "SWSH06",
+    "Evolving Skies": "SWSH07",
+    "Fusion Strike": "SWSH08",
+    "Brilliant Stars": "SWSH09",
+    "Astral Radiance": "SWSH10",
+    "Lost Origin": "SWSH11",
+    "Silver Tempest": "SWSH12",
+    "Crown Zenith": "CRZ",
+    "Paradox Rift": "PAR",
+    "Paldean Fates": "PAF",
+    "Twilight Masquerade": "TWM",
+    "Obsidian Flames": "OBF",
+    "151": "MEW",
+    "Paldea Evolved": "PAL",
+    "Surging Sparks": "SSP",
+    "Prismatic Evolutions": "PRE",
+    "Journey Together": "JTG",
+    "Destined Rivals": "DRI",
+    "Black Bolt": "BLK",
+    "White Flare": "WHT",
+    "Mega Evolution": "MEG",
+    "Phantasmal Flames": "PFL",
+    "Sun & Moon": "SM01",
+    "Guardians Rising": "SM02",
+    "Burning Shadows": "SM03",
+    "Shining Legends": "SHL",
+    "Crimson Invasion": "SM04",
+    "Ultra Prism": "SM05",
+    "Forbidden Light": "SM06",
+    "Celestial Storm": "CES",
+    "Dragon Majesty": "DRM",
+    "Lost Thunder": "SM8",
+    "Team Up": "SM9",
+    "Unbroken Bonds": "SM10",
+    "Unified Minds": "SM11",
+    "Hidden Fates": "HIF",
+    "Cosmic Eclipse": "SM12",
+}
+
 # Fetch live EUR to USD conversion rate
 def get_eur_to_usd():
     try:
@@ -24,10 +77,10 @@ EUR_TO_USD = get_eur_to_usd()
 # -------------------------------
 # Helper: Retry requests with exponential backoff
 # -------------------------------
-def get_with_retry(url, retries=5, wait_time=30):
+def get_with_retry(url, retries=5, wait_time=30, headers=None):
     for i in range(retries):
         try:
-            response = requests.get(url, timeout=30)
+            response = requests.get(url, timeout=30, headers=headers)
             response.raise_for_status()
             return response
         except requests.exceptions.RequestException as e:
@@ -150,6 +203,76 @@ def extract_market_prices(card_data):
     return None, None
 
 # -------------------------------
+# Helper: Fetch price from PokeWallet API (fallback)
+# Returns (market_price, tcgplayer_url) or (None, None)
+# -------------------------------
+def fetch_pokewallet_price(card_name, card_number, set_name):
+    pw_set_code = POKEWALLET_SET_CODES.get(set_name)
+    if not pw_set_code:
+        print(f"  [PokeWallet] No set code mapping for {set_name}")
+        return None, None
+
+    headers = {"X-API-Key": POKEWALLET_API_KEY}
+
+    # Search by card name + number to find the right card
+    query = f"{card_name} {card_number}"
+    url = f"{POKEWALLET_BASE}/search?q={requests.utils.quote(query)}&limit=10"
+
+    try:
+        response = get_with_retry(url, retries=3, wait_time=5, headers=headers)
+        if not response:
+            return None, None
+
+        data = response.json()
+        results = data.get("results", [])
+
+        for result in results:
+            card_info = result.get("card_info", {})
+            result_set_code = card_info.get("set_code", "")
+            result_number = card_info.get("card_number", "")
+
+            # Match by pokewallet set code (set_code field is the set_id number as string)
+            # Also match by card number
+            # The card_number format from pokewallet is like "161/131"
+            # Our card_number from TCGdex is like "161"
+            number_match = (
+                result_number == card_number
+                or result_number.startswith(f"{card_number}/")
+            )
+
+            if not number_match:
+                continue
+
+            # Check TCGplayer prices
+            tcg = result.get("tcgplayer", {})
+            tcg_prices = tcg.get("prices", {})
+            if isinstance(tcg_prices, dict):
+                market_price = tcg_prices.get("market_price")
+                tcg_url = tcg.get("url", "")
+                if market_price is not None:
+                    print(f"  [PokeWallet] Found TCGplayer price: ${market_price}")
+                    return market_price, tcg_url
+
+            # Check Cardmarket prices as fallback
+            cm = result.get("cardmarket", {})
+            if cm:
+                cm_prices = cm.get("prices", [])
+                for variant in cm_prices:
+                    if variant.get("variant_type") == "normal" and variant.get("avg") is not None:
+                        avg_eur = variant["avg"]
+                        market_usd = round(avg_eur * EUR_TO_USD, 2)
+                        print(f"  [PokeWallet] Using Cardmarket avg: {avg_eur} EUR -> ${market_usd} USD")
+                        cm_url = cm.get("product_url", "")
+                        return market_usd, cm_url
+
+        print(f"  [PokeWallet] No matching card found for {card_name} #{card_number} in {set_name}")
+        return None, None
+
+    except Exception as e:
+        print(f"  [PokeWallet] Error fetching price: {e}")
+        return None, None
+
+# -------------------------------
 # Main Card Fetching Logic
 # -------------------------------
 def generate_tcgplayer_json(set_info: dict):
@@ -197,15 +320,25 @@ def generate_tcgplayer_json(set_info: dict):
             if card_data.get("category") != "Pokemon":
                 continue
 
-            # Extract market prices (TCGplayer or Cardmarket fallback)
-            market_price, product_id = extract_market_prices(card_data)
-            if market_price is None or market_price <= 80:
-                continue
-
             card_number = card_data.get("localId", "")
             card_name = card_data.get("name", card_name_stub)
 
-            # Fetch PriceCharting data
+            # Extract market prices from TCGdex (TCGplayer or Cardmarket)
+            market_price, product_id = extract_market_prices(card_data)
+
+            # If TCGdex has no price, fall back to PokeWallet
+            tcg_url_from_pokewallet = None
+            if market_price is None:
+                print(f"  [TCGdex] No price available, trying PokeWallet...")
+                market_price, tcg_url_from_pokewallet = fetch_pokewallet_price(
+                    card_name, card_number, set_name
+                )
+                time.sleep(random.uniform(0.5, 1.5))  # Rate limit pokewallet
+
+            if market_price is None or market_price <= 80:
+                continue
+
+            # Fetch PriceCharting data for graded prices
             pricecharting_url = generate_pricecharting_url(card_name, card_number, set_name)
             extracted_prices = return_graded_prices(pricecharting_url)
 
@@ -220,8 +353,13 @@ def generate_tcgplayer_json(set_info: dict):
                 except ValueError:
                     print(f"  [Skip] Could not parse grade10 price: {grade10_str}")
 
-            # Build card link from productId, fall back to PriceCharting URL
-            card_link = f"https://www.tcgplayer.com/product/{product_id}" if product_id else pricecharting_url
+            # Build card link: TCGplayer productId > PokeWallet URL > PriceCharting
+            if product_id:
+                card_link = f"https://www.tcgplayer.com/product/{product_id}"
+            elif tcg_url_from_pokewallet:
+                card_link = tcg_url_from_pokewallet
+            else:
+                card_link = pricecharting_url
 
             # Image URL from TCGdex
             card_image_url = card_data.get("image", "")
