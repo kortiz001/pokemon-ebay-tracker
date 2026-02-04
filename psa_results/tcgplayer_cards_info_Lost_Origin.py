@@ -19,6 +19,24 @@ cards_info = {
                     "grade10": "$2,025.17"
                 },
                 "image_url": "https://assets.tcgdex.net/en/swsh/swsh11/186/high.png"
+            },
+            {
+                "name": "Pikachu V",
+                "market": 81.28,
+                "price_high": null,
+                "printed_total": 196,
+                "number": "TG16",
+                "card_link": "https://pricecharting.com/game/pokemon-lost-origin/pikachu-v-TG16",
+                "pricecharting_url": "https://pricecharting.com/game/pokemon-lost-origin/pikachu-v-TG16",
+                "graded_prices": {
+                    "ungraded": "$62.86",
+                    "grade7": "$54.18",
+                    "grade8": "$56.69",
+                    "grade9": "$72.80",
+                    "grade95": "$89.77",
+                    "grade10": "$229.33"
+                },
+                "image_url": "https://assets.tcgdex.net/en/swsh/swsh11/TG16/high.png"
             }
         ]
     }
