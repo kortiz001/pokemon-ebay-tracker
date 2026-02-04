@@ -48,6 +48,21 @@ jobs:
           - "White Flare"
           - "Mega Evolution"
           - "Phantasmal Flames"
+          - "Sun & Moon"
+          - "Guardians Rising"
+          - "Burning Shadows"
+          - "Shining Legends"
+          - "Crimson Invasion"
+          - "Ultra Prism"
+          - "Forbidden Light"
+          - "Celestial Storm"
+          - "Dragon Majesty"
+          - "Lost Thunder"
+          - "Team Up"
+          - "Unbroken Bonds"
+          - "Unified Minds"
+          - "Hidden Fates"
+          - "Cosmic Eclipse"
 
 
     steps:
