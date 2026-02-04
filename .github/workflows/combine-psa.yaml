@@ -23,6 +23,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
+
       - name: Run Python script
         run: |
           python scripts/combine_json.py
@@ -37,3 +38,15 @@ jobs:
           git push origin main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Trigger Update Website workflow
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.POKEMON_PAT_TOKEN }}
+          script: |
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: "update-website.yaml",
+              ref: "main"
+            })
