@@ -1,6 +1,6 @@
 cards_info = {
     "Obsidian Flames": {
-        "code": "sv3",
+        "code": "sv03",
         "cards": []
     }
 }
