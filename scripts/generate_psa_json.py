@@ -7,6 +7,18 @@ import sys
 from bs4 import BeautifulSoup
 
 TCGDEX_BASE = "https://api.tcgdex.net/v2/en"
+# Fetch live EUR to USD conversion rate
+def get_eur_to_usd():
+    try:
+        resp = requests.get("https://api.exchangerate-api.com/v4/latest/EUR", timeout=10)
+        rate = resp.json()["rates"]["USD"]
+        print(f"EUR to USD rate: {rate}")
+        return rate
+    except Exception as e:
+        print(f"[Warning] Failed to fetch EUR/USD rate, using fallback 1.04: {e}")
+        return 1.04
+
+EUR_TO_USD = get_eur_to_usd()
 
 # -------------------------------
 # Helper: Retry requests with exponential backoff
@@ -97,22 +109,31 @@ def fetch_card_details(card_id):
     return response.json()
 
 # -------------------------------
-# Helper: Extract TCGplayer market and high prices from TCGdex card data
+# Helper: Extract market and high prices from TCGdex card data
+# Uses TCGplayer (USD) if available, falls back to Cardmarket (EUR -> USD)
 # -------------------------------
-def extract_tcgplayer_prices(card_data):
+def extract_market_prices(card_data):
     pricing = card_data.get("pricing", {})
-    tcgplayer = pricing.get("tcgplayer")
-    if not tcgplayer:
-        return None, None, None
 
-    for variant in ["normal", "holofoil", "reverse-holofoil"]:
-        variant_data = tcgplayer.get(variant)
-        if variant_data and variant_data.get("marketPrice") is not None:
-            return (
-                variant_data["marketPrice"],
-                variant_data.get("highPrice"),
-                variant_data.get("productId"),
-            )
+    # Try TCGplayer first (USD)
+    tcgplayer = pricing.get("tcgplayer")
+    if tcgplayer:
+        for variant in ["normal", "holofoil", "reverse-holofoil"]:
+            variant_data = tcgplayer.get(variant)
+            if variant_data and variant_data.get("marketPrice") is not None:
+                return (
+                    variant_data["marketPrice"],
+                    variant_data.get("highPrice"),
+                    variant_data.get("productId"),
+                )
+
+    # Fall back to Cardmarket (EUR -> USD)
+    cardmarket = pricing.get("cardmarket")
+    if cardmarket and cardmarket.get("avg") is not None:
+        avg_eur = cardmarket["avg"]
+        market_usd = round(avg_eur * EUR_TO_USD, 2)
+        print(f"  Using Cardmarket avg: {avg_eur} EUR -> ${market_usd} USD")
+        return market_usd, None, None
 
     return None, None, None
 
@@ -164,9 +185,9 @@ def generate_tcgplayer_json(set_info: dict):
             if card_data.get("category") != "Pokemon":
                 continue
 
-            # Extract TCGplayer prices
-            tcg_player_market, tcg_player_high, product_id = extract_tcgplayer_prices(card_data)
-            if tcg_player_market is None or tcg_player_market <= 80:
+            # Extract market prices (TCGplayer or Cardmarket fallback)
+            market_price, price_high, product_id = extract_market_prices(card_data)
+            if market_price is None or market_price <= 80:
                 continue
 
             card_number = card_data.get("localId", "")
@@ -182,13 +203,13 @@ def generate_tcgplayer_json(set_info: dict):
                 continue
             try:
                 grade10_value = float(grade10_str)
-                if (grade10_value * 0.36) <= tcg_player_market:
+                if (grade10_value * 0.36) <= market_price:
                     continue
             except ValueError:
                 continue
 
-            # Build card link from productId
-            card_link = f"https://www.tcgplayer.com/product/{product_id}" if product_id else ""
+            # Build card link from productId, fall back to PriceCharting URL
+            card_link = f"https://www.tcgplayer.com/product/{product_id}" if product_id else pricecharting_url
 
             # Image URL from TCGdex
             card_image_url = card_data.get("image", "")
@@ -197,8 +218,8 @@ def generate_tcgplayer_json(set_info: dict):
 
             full_set_dicts[set_name]["cards"].append({
                 "name": card_name,
-                "market": tcg_player_market,
-                "price_high": tcg_player_high,
+                "market": market_price,
+                "price_high": price_high,
                 "printed_total": printed_total,
                 "number": card_number,
                 "card_link": card_link,
