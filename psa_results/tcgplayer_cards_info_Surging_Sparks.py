@@ -22,7 +22,7 @@ cards_info = {
             },
             {
                 "name": "Latias ex",
-                "market": 153.03,
+                "market": 154.35,
                 "price_high": 370.0,
                 "printed_total": 191,
                 "number": "239",
