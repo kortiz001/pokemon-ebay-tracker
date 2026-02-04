@@ -1,6 +1,6 @@
 cards_info = {
     "Crown Zenith": {
-        "code": "swsh12pt5",
+        "code": "swsh12.5",
         "cards": []
     }
 }
