@@ -3,12 +3,12 @@ cards_info = {
         "code": "sm8",
         "cards": [
             {
-                "name": "Lugia-GX",
+                "name": "Lugia GX",
                 "market": 101.01,
-                "price_high": 150.0,
+                "price_high": 150,
                 "printed_total": 214,
                 "number": "207",
-                "card_link": "https://prices.pokemontcg.io/tcgplayer/sm8-207",
+                "card_link": "https://www.tcgplayer.com/product/178981",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-lost-thunder/lugia-gx-207",
                 "graded_prices": {
                     "ungraded": "$98.73",
@@ -18,15 +18,15 @@ cards_info = {
                     "grade95": "$219.99",
                     "grade10": "$802.50"
                 },
-                "image_url": "https://images.pokemontcg.io/sm8/207_hires.png"
+                "image_url": "https://assets.tcgdex.net/en/sm/sm8/207/high.png"
             },
             {
-                "name": "Suicune-GX",
+                "name": "Suicune GX",
                 "market": 87.16,
                 "price_high": 128.13,
                 "printed_total": 214,
                 "number": "220",
-                "card_link": "https://prices.pokemontcg.io/tcgplayer/sm8-220",
+                "card_link": "https://www.tcgplayer.com/product/178869",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-lost-thunder/suicune-gx-220",
                 "graded_prices": {
                     "ungraded": "$74.86",
@@ -36,15 +36,15 @@ cards_info = {
                     "grade95": "$95.00",
                     "grade10": "$381.51"
                 },
-                "image_url": "https://images.pokemontcg.io/sm8/220_hires.png"
+                "image_url": "https://assets.tcgdex.net/en/sm/sm8/220/high.png"
             },
             {
-                "name": "Tyranitar-GX",
+                "name": "Tyranitar GX",
                 "market": 102.4,
-                "price_high": 200.0,
+                "price_high": 200,
                 "printed_total": 214,
                 "number": "223",
-                "card_link": "https://prices.pokemontcg.io/tcgplayer/sm8-223",
+                "card_link": "https://www.tcgplayer.com/product/178936",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-lost-thunder/tyranitar-gx-223",
                 "graded_prices": {
                     "ungraded": "$50.60",
@@ -54,15 +54,15 @@ cards_info = {
                     "grade95": "$103.00",
                     "grade10": "$370.00"
                 },
-                "image_url": "https://images.pokemontcg.io/sm8/223_hires.png"
+                "image_url": "https://assets.tcgdex.net/en/sm/sm8/223/high.png"
             },
             {
-                "name": "Mimikyu-GX",
+                "name": "Mimikyu GX",
                 "market": 197.83,
                 "price_high": 354.37,
                 "printed_total": 214,
                 "number": "226",
-                "card_link": "https://prices.pokemontcg.io/tcgplayer/sm8-226",
+                "card_link": "https://www.tcgplayer.com/product/178970",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-lost-thunder/mimikyu-gx-226",
                 "graded_prices": {
                     "ungraded": "$195.00",
@@ -72,25 +72,25 @@ cards_info = {
                     "grade95": "$251.00",
                     "grade10": "$710.00"
                 },
-                "image_url": "https://images.pokemontcg.io/sm8/226_hires.png"
+                "image_url": "https://assets.tcgdex.net/en/sm/sm8/226/high.png"
             },
             {
-                "name": "Lugia-GX",
+                "name": "Lugia GX",
                 "market": 216.27,
                 "price_high": 259.99,
                 "printed_total": 214,
                 "number": "227",
-                "card_link": "https://prices.pokemontcg.io/tcgplayer/sm8-227",
+                "card_link": "https://www.tcgplayer.com/product/178982",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-lost-thunder/lugia-gx-227",
                 "graded_prices": {
-                    "ungraded": "$213.20",
+                    "ungraded": "$208.30",
                     "grade7": "$90.00",
-                    "grade8": "$197.90",
+                    "grade8": "$226.26",
                     "grade9": "$250.00",
                     "grade95": "$367.57",
-                    "grade10": "$1,009.75"
+                    "grade10": "$1,010.60"
                 },
-                "image_url": "https://images.pokemontcg.io/sm8/227_hires.png"
+                "image_url": "https://assets.tcgdex.net/en/sm/sm8/227/high.png"
             }
         ]
     }
