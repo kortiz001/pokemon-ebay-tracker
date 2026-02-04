@@ -5,6 +5,7 @@ cards_info = {
             {
                 "name": "Vileplume GX",
                 "market": 104.9,
+                "price_high": 249.99,
                 "printed_total": 236,
                 "number": "211",
                 "card_link": "https://www.tcgplayer.com/product/201331",
@@ -22,6 +23,7 @@ cards_info = {
             {
                 "name": "Blastoise & Piplup GX",
                 "market": 363.36,
+                "price_high": 1000,
                 "printed_total": 236,
                 "number": "215",
                 "card_link": "https://www.tcgplayer.com/product/201334",
@@ -39,6 +41,7 @@ cards_info = {
             {
                 "name": "Solgaleo & Lunala GX",
                 "market": 327.25,
+                "price_high": 534.46,
                 "printed_total": 236,
                 "number": "216",
                 "card_link": "https://www.tcgplayer.com/product/201250",
@@ -56,6 +59,7 @@ cards_info = {
             {
                 "name": "Arceus & Dialga & Palkia GX",
                 "market": 458.21,
+                "price_high": 599.75,
                 "printed_total": 236,
                 "number": "221",
                 "card_link": "https://www.tcgplayer.com/product/201338",
@@ -73,6 +77,7 @@ cards_info = {
             {
                 "name": "Reshiram & Zekrom GX",
                 "market": 424.08,
+                "price_high": 669.95,
                 "printed_total": 236,
                 "number": "222",
                 "card_link": "https://www.tcgplayer.com/product/201339",
@@ -90,6 +95,7 @@ cards_info = {
             {
                 "name": "Naganadel & Guzzlord GX",
                 "market": 104.12,
+                "price_high": 250,
                 "printed_total": 236,
                 "number": "224",
                 "card_link": "https://www.tcgplayer.com/product/201341",
@@ -107,6 +113,7 @@ cards_info = {
             {
                 "name": "Mega Lopunny & Jigglypuff GX",
                 "market": 227.55,
+                "price_high": 323.08,
                 "printed_total": 236,
                 "number": "226",
                 "card_link": "https://www.tcgplayer.com/product/201286",
@@ -124,6 +131,7 @@ cards_info = {
             {
                 "name": "Pikachu",
                 "market": 118.1,
+                "price_high": 300,
                 "printed_total": 236,
                 "number": "241",
                 "card_link": "https://www.tcgplayer.com/product/201352",
@@ -141,6 +149,7 @@ cards_info = {
             {
                 "name": "Blastoise & Piplup GX",
                 "market": 87.48,
+                "price_high": 139.7,
                 "printed_total": 236,
                 "number": "253",
                 "card_link": "https://www.tcgplayer.com/product/201612",
