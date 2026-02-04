@@ -1,4 +1,5 @@
 import json
+import pprint
 import os
 import random
 import requests
@@ -210,17 +211,14 @@ def generate_tcgplayer_json(set_info: dict):
 
             # Check if it's worth considering based on grade10 price
             grade10_str = extracted_prices.get("grade10", "N/A").replace("$", "").replace(",", "")
-            if grade10_str == "N/A":
-                print(f"  [Skip] No grade10 price for {card_name} #{card_number}")
-                continue
-            try:
-                grade10_value = float(grade10_str)
-                if (grade10_value * 0.36) <= market_price:
-                    print(f"  [Skip] Grade10 profit too low: ${grade10_value} * 0.36 = ${grade10_value * 0.36:.2f} <= ${market_price}")
-                    continue
-            except ValueError:
-                print(f"  [Skip] Could not parse grade10 price: {grade10_str}")
-                continue
+            if grade10_str != "N/A":
+                try:
+                    grade10_value = float(grade10_str)
+                    if (grade10_value * 0.36) <= market_price:
+                        print(f"  [Skip] Grade10 profit too low: ${grade10_value} * 0.36 = ${grade10_value * 0.36:.2f} <= ${market_price}")
+                        continue
+                except ValueError:
+                    print(f"  [Skip] Could not parse grade10 price: {grade10_str}")
 
             # Build card link from productId, fall back to PriceCharting URL
             card_link = f"https://www.tcgplayer.com/product/{product_id}" if product_id else pricecharting_url
@@ -320,6 +318,6 @@ if __name__ == "__main__":
     output_filename = f'{output_dir}/tcgplayer_cards_info_{filename_safe}.py'
 
     with open(output_filename, 'w') as f:
-        f.write('cards_info = ' + json.dumps(cards_info, indent=4) + '\n')
+        f.write('cards_info = ' + pprint.pformat(cards_info, indent=4, width=120) + '\n')
 
     print(f"Saved: {output_filename}")
