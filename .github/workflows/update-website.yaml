@@ -51,7 +51,9 @@ jobs:
       - name: Curl index.html
         run: |
           curl -s http://127.0.0.1:8000/psa_tracker/ > rendered_index.html
+          curl -s http://127.0.0.1:8000/psa_tracker_api/ > rendered_index_api.html
 
       - name: Upload to S3
         run: |
           aws s3 cp rendered_index.html s3://psa.kevs-pokemon-tracker.com/index.html
+          aws s3 cp rendered_index_api.html s3://psa-api.kevs-pokemon-tracker.com/index.html
