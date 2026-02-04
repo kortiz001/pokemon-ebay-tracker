@@ -17,7 +17,6 @@ cards_info = \
                                                    'grade95': '$97.00',
                                                    'grade10': '$242.30'},
                                 'image_url': 'https://assets.tcgdex.net/en/sm/sm5/157/high.png'}]},
-  'Phantasmal Flames': {'code': 'me02', 'cards': []},
   'Prismatic Evolutions': {'code': 'sv08.5', 'cards': []},
   'Crimson Invasion': {'code': 'sm4', 'cards': []},
   'Team Up': { 'code': 'sm9',
