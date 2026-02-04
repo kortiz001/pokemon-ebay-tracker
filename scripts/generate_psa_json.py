@@ -62,10 +62,19 @@ def return_graded_prices(pricecharting_url):
 
     response = get_with_retry(pricecharting_url)
     if not response:
+        print(f"[PriceCharting] No response from {pricecharting_url}")
         return default_prices
 
     try:
         soup = BeautifulSoup(response.content, 'html.parser')
+
+        # Detect Cloudflare challenge or blocked response
+        title = soup.find('title')
+        title_text = title.text.strip() if title else ""
+        if "just a moment" in title_text.lower() or "attention required" in title_text.lower():
+            print(f"[PriceCharting] BLOCKED by Cloudflare for {pricecharting_url}")
+            return default_prices
+
         prices = {
             'ungraded': soup.find('td', {'id': 'used_price'}),
             'grade7': soup.find('td', {'id': 'complete_price'}),
@@ -78,6 +87,9 @@ def return_graded_prices(pricecharting_url):
         extracted_prices = {}
         for grade, td in prices.items():
             extracted_prices[grade] = td.find('span', {'class': 'price'}).text.strip() if td and td.find('span', {'class': 'price'}) else "N/A"
+
+        if all(v == "N/A" for v in extracted_prices.values()):
+            print(f"[PriceCharting] All prices returned N/A for {pricecharting_url}")
 
         return extracted_prices
     except Exception as e:
@@ -200,12 +212,15 @@ def generate_tcgplayer_json(set_info: dict):
             # Check if it's worth considering based on grade10 price
             grade10_str = extracted_prices.get("grade10", "N/A").replace("$", "").replace(",", "")
             if grade10_str == "N/A":
+                print(f"  [Skip] No grade10 price for {card_name} #{card_number}")
                 continue
             try:
                 grade10_value = float(grade10_str)
                 if (grade10_value * 0.36) <= market_price:
+                    print(f"  [Skip] Grade10 profit too low: ${grade10_value} * 0.36 = ${grade10_value * 0.36:.2f} <= ${market_price}")
                     continue
             except ValueError:
+                print(f"  [Skip] Could not parse grade10 price: {grade10_str}")
                 continue
 
             # Build card link from productId, fall back to PriceCharting URL
