@@ -5,6 +5,7 @@ cards_info = {
             {
                 "name": "Mega Gardevoir ex",
                 "market": 234.44,
+                "price_high": 1199.99,
                 "printed_total": 132,
                 "number": "187",
                 "card_link": "https://www.tcgplayer.com/product/654526",
@@ -22,6 +23,7 @@ cards_info = {
             {
                 "name": "Mega Lucario ex",
                 "market": 289.15,
+                "price_high": 999,
                 "printed_total": 132,
                 "number": "188",
                 "card_link": "https://www.tcgplayer.com/product/654527",
