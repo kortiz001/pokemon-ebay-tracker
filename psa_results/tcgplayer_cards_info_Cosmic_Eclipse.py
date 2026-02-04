@@ -3,12 +3,12 @@ cards_info = {
         "code": "sm12",
         "cards": [
             {
-                "name": "Vileplume-GX",
+                "name": "Vileplume GX",
                 "market": 104.9,
                 "price_high": 249.99,
                 "printed_total": 236,
                 "number": "211",
-                "card_link": "https://prices.pokemontcg.io/tcgplayer/sm12-211",
+                "card_link": "https://www.tcgplayer.com/product/201331",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-cosmic-eclipse/vileplume-gx-211",
                 "graded_prices": {
                     "ungraded": "$100.00",
@@ -18,15 +18,15 @@ cards_info = {
                     "grade95": "$112.00",
                     "grade10": "$365.48"
                 },
-                "image_url": "https://images.pokemontcg.io/sm12/211_hires.png"
+                "image_url": "https://assets.tcgdex.net/en/sm/sm12/211/high.png"
             },
             {
-                "name": "Blastoise & Piplup-GX",
+                "name": "Blastoise & Piplup GX",
                 "market": 363.36,
-                "price_high": 1000.0,
+                "price_high": 1000,
                 "printed_total": 236,
                 "number": "215",
-                "card_link": "https://prices.pokemontcg.io/tcgplayer/sm12-215",
+                "card_link": "https://www.tcgplayer.com/product/201334",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-cosmic-eclipse/blastoise-&-piplup-gx-215",
                 "graded_prices": {
                     "ungraded": "$275.50",
@@ -36,15 +36,15 @@ cards_info = {
                     "grade95": "$500.00",
                     "grade10": "$1,480.45"
                 },
-                "image_url": "https://images.pokemontcg.io/sm12/215_hires.png"
+                "image_url": "https://assets.tcgdex.net/en/sm/sm12/215/high.png"
             },
             {
-                "name": "Solgaleo & Lunala-GX",
+                "name": "Solgaleo & Lunala GX",
                 "market": 327.25,
                 "price_high": 534.46,
                 "printed_total": 236,
                 "number": "216",
-                "card_link": "https://prices.pokemontcg.io/tcgplayer/sm12-216",
+                "card_link": "https://www.tcgplayer.com/product/201250",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-cosmic-eclipse/solgaleo-&-lunala-gx-216",
                 "graded_prices": {
                     "ungraded": "$249.44",
@@ -54,15 +54,15 @@ cards_info = {
                     "grade95": "$379.00",
                     "grade10": "$1,155.00"
                 },
-                "image_url": "https://images.pokemontcg.io/sm12/216_hires.png"
+                "image_url": "https://assets.tcgdex.net/en/sm/sm12/216/high.png"
             },
             {
-                "name": "Arceus & Dialga & Palkia-GX",
+                "name": "Arceus & Dialga & Palkia GX",
                 "market": 458.21,
                 "price_high": 599.75,
                 "printed_total": 236,
                 "number": "221",
-                "card_link": "https://prices.pokemontcg.io/tcgplayer/sm12-221",
+                "card_link": "https://www.tcgplayer.com/product/201338",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-cosmic-eclipse/arceus-&-dialga-&-palkia-gx-221",
                 "graded_prices": {
                     "ungraded": "$263.29",
@@ -72,15 +72,15 @@ cards_info = {
                     "grade95": "$508.00",
                     "grade10": "$1,800.00"
                 },
-                "image_url": "https://images.pokemontcg.io/sm12/221_hires.png"
+                "image_url": "https://assets.tcgdex.net/en/sm/sm12/221/high.png"
             },
             {
-                "name": "Reshiram & Zekrom-GX",
+                "name": "Reshiram & Zekrom GX",
                 "market": 424.08,
                 "price_high": 669.95,
                 "printed_total": 236,
                 "number": "222",
-                "card_link": "https://prices.pokemontcg.io/tcgplayer/sm12-222",
+                "card_link": "https://www.tcgplayer.com/product/201339",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-cosmic-eclipse/reshiram-&-zekrom-gx-222",
                 "graded_prices": {
                     "ungraded": "$325.00",
@@ -90,15 +90,15 @@ cards_info = {
                     "grade95": "$440.00",
                     "grade10": "$1,391.00"
                 },
-                "image_url": "https://images.pokemontcg.io/sm12/222_hires.png"
+                "image_url": "https://assets.tcgdex.net/en/sm/sm12/222/high.png"
             },
             {
-                "name": "Naganadel & Guzzlord-GX",
+                "name": "Naganadel & Guzzlord GX",
                 "market": 104.12,
-                "price_high": 250.0,
+                "price_high": 250,
                 "printed_total": 236,
                 "number": "224",
-                "card_link": "https://prices.pokemontcg.io/tcgplayer/sm12-224",
+                "card_link": "https://www.tcgplayer.com/product/201341",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-cosmic-eclipse/naganadel-&-guzzlord-gx-224",
                 "graded_prices": {
                     "ungraded": "$94.01",
@@ -108,15 +108,15 @@ cards_info = {
                     "grade95": "$114.00",
                     "grade10": "$325.00"
                 },
-                "image_url": "https://images.pokemontcg.io/sm12/224_hires.png"
+                "image_url": "https://assets.tcgdex.net/en/sm/sm12/224/high.png"
             },
             {
-                "name": "Mega Lopunny & Jigglypuff-GX",
+                "name": "Mega Lopunny & Jigglypuff GX",
                 "market": 227.55,
                 "price_high": 323.08,
                 "printed_total": 236,
                 "number": "226",
-                "card_link": "https://prices.pokemontcg.io/tcgplayer/sm12-226",
+                "card_link": "https://www.tcgplayer.com/product/201286",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-cosmic-eclipse/mega-lopunny-&-jigglypuff-gx-226",
                 "graded_prices": {
                     "ungraded": "$193.16",
@@ -126,15 +126,15 @@ cards_info = {
                     "grade95": "$244.00",
                     "grade10": "$757.67"
                 },
-                "image_url": "https://images.pokemontcg.io/sm12/226_hires.png"
+                "image_url": "https://assets.tcgdex.net/en/sm/sm12/226/high.png"
             },
             {
                 "name": "Pikachu",
                 "market": 118.1,
-                "price_high": 300.0,
+                "price_high": 300,
                 "printed_total": 236,
                 "number": "241",
-                "card_link": "https://prices.pokemontcg.io/tcgplayer/sm12-241",
+                "card_link": "https://www.tcgplayer.com/product/201352",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-cosmic-eclipse/pikachu-241",
                 "graded_prices": {
                     "ungraded": "$99.86",
@@ -144,15 +144,15 @@ cards_info = {
                     "grade95": "$200.48",
                     "grade10": "$829.50"
                 },
-                "image_url": "https://images.pokemontcg.io/sm12/241_hires.png"
+                "image_url": "https://assets.tcgdex.net/en/sm/sm12/241/high.png"
             },
             {
-                "name": "Blastoise & Piplup-GX",
+                "name": "Blastoise & Piplup GX",
                 "market": 87.48,
                 "price_high": 139.7,
                 "printed_total": 236,
                 "number": "253",
-                "card_link": "https://prices.pokemontcg.io/tcgplayer/sm12-253",
+                "card_link": "https://www.tcgplayer.com/product/201612",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-cosmic-eclipse/blastoise-&-piplup-gx-253",
                 "graded_prices": {
                     "ungraded": "$84.81",
@@ -162,7 +162,7 @@ cards_info = {
                     "grade95": "$98.00",
                     "grade10": "$305.00"
                 },
-                "image_url": "https://images.pokemontcg.io/sm12/253_hires.png"
+                "image_url": "https://assets.tcgdex.net/en/sm/sm12/253/high.png"
             }
         ]
     }
