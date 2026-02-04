@@ -3,12 +3,12 @@ cards_info = {
         "code": "sm1",
         "cards": [
             {
-                "name": "Umbreon-GX",
+                "name": "Umbreon GX",
                 "market": 104.11,
-                "price_high": 250.0,
+                "price_high": 250,
                 "printed_total": 149,
                 "number": "154",
-                "card_link": "https://prices.pokemontcg.io/tcgplayer/sm1-154",
+                "card_link": "https://www.tcgplayer.com/product/127193",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-sun-&-moon/umbreon-gx-154",
                 "graded_prices": {
                     "ungraded": "$64.16",
@@ -18,7 +18,7 @@ cards_info = {
                     "grade95": "$140.00",
                     "grade10": "$670.00"
                 },
-                "image_url": "https://images.pokemontcg.io/sm1/154_hires.png"
+                "image_url": "https://assets.tcgdex.net/en/sm/sm1/154/high.png"
             }
         ]
     }
