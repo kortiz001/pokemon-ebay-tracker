@@ -1,6 +1,6 @@
 cards_info = {
     "Champion's Path": {
-        "code": "swsh35",
+        "code": "swsh3.5",
         "cards": []
     }
 }
