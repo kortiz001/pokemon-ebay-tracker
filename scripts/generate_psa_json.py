@@ -4,11 +4,9 @@ import random
 import requests
 import time
 import sys
-from pokemontcgsdk import Card, RestClient
 from bs4 import BeautifulSoup
 
-# Configure RestClient with your API key
-RestClient.configure('39270b46-5e88-40cd-baa3-b09d088bebcd')
+TCGDEX_BASE = "https://api.tcgdex.net/v2/en"
 
 # -------------------------------
 # Helper: Retry requests with exponential backoff
@@ -75,54 +73,107 @@ def return_graded_prices(pricecharting_url):
         return default_prices
 
 # -------------------------------
+# Helper: Fetch all cards in a set from TCGdex
+# -------------------------------
+def fetch_set_cards(set_code):
+    url = f"{TCGDEX_BASE}/sets/{set_code}"
+    response = get_with_retry(url)
+    if not response:
+        return [], 0
+
+    data = response.json()
+    cards = data.get("cards", [])
+    printed_total = data.get("cardCount", {}).get("official", 0)
+    return cards, printed_total
+
+# -------------------------------
+# Helper: Fetch single card details from TCGdex
+# -------------------------------
+def fetch_card_details(card_id):
+    url = f"{TCGDEX_BASE}/cards/{card_id}"
+    response = get_with_retry(url, retries=3, wait_time=5)
+    if not response:
+        return None
+    return response.json()
+
+# -------------------------------
+# Helper: Extract TCGplayer market and high prices from TCGdex card data
+# -------------------------------
+def extract_tcgplayer_prices(card_data):
+    pricing = card_data.get("pricing", {})
+    tcgplayer = pricing.get("tcgplayer")
+    if not tcgplayer:
+        return None, None, None
+
+    for variant in ["normal", "holofoil", "reverse-holofoil"]:
+        variant_data = tcgplayer.get(variant)
+        if variant_data and variant_data.get("marketPrice") is not None:
+            return (
+                variant_data["marketPrice"],
+                variant_data.get("highPrice"),
+                variant_data.get("productId"),
+            )
+
+    return None, None, None
+
+# -------------------------------
 # Main Card Fetching Logic
 # -------------------------------
-def generate_tcgplayer_json(set: dict):
+def generate_tcgplayer_json(set_info: dict):
+    set_name = set_info.get("name")
+    set_code = set_info.get("code")
+
     full_set_dicts = {
-        set.get("name"): {
-            "code": set.get("code"),
+        set_name: {
+            "code": set_code,
             "cards": []
         }
     }
 
-    # Retry logic for fetching cards from TCG API
+    # Fetch all card IDs in the set
     max_retries = 5
-    cards = []
+    card_list = []
+    printed_total = 0
     for attempt in range(max_retries):
         try:
-            print(f"Fetching cards for set: {set.get('name')} (Attempt {attempt + 1}/{max_retries})")
-            cards = Card.where(q=f'set.name:"{set.get("name")}" supertype:pokemon')
-            break
+            print(f"Fetching cards for set: {set_name} (Attempt {attempt + 1}/{max_retries})")
+            card_list, printed_total = fetch_set_cards(set_code)
+            if card_list:
+                break
         except Exception as e:
-            err_str = e.read().decode('utf-8') if hasattr(e, 'read') else str(e)
-            print(f"[Retry {attempt + 1}] Failed to fetch cards: {err_str}")
-            time.sleep(2 ** attempt + random.uniform(0, 1))  # exponential backoff
+            print(f"[Retry {attempt + 1}] Failed to fetch set: {e}")
+            time.sleep(2 ** attempt + random.uniform(0, 1))
     else:
-        print(f"[FATAL] Giving up on set: {set.get('name')} after {max_retries} attempts.")
+        print(f"[FATAL] Giving up on set: {set_name} after {max_retries} attempts.")
         return full_set_dicts
 
-    for card in cards:
-        try:
-            print(f"Processing: {card.name} - #{card.number} ({set.get('name')})")
+    print(f"Found {len(card_list)} cards in {set_name}")
 
-            if not card.tcgplayer or not card.tcgplayer.prices:
+    for card_stub in card_list:
+        card_id = card_stub.get("id")
+        card_name_stub = card_stub.get("name", "Unknown")
+
+        try:
+            print(f"Processing: {card_name_stub} - #{card_stub.get('localId')} ({set_name})")
+
+            card_data = fetch_card_details(card_id)
+            if not card_data:
                 continue
 
-            tcg_player_prices = card.tcgplayer.prices
+            # Skip non-Pokemon cards
+            if card_data.get("category") != "Pokemon":
+                continue
 
-            # Find first available price type
-            tcg_player_market = None
-            tcg_player_high = None
-            for price_type in ['normal', 'holofoil', 'reverseHolofoil']:
-                if getattr(tcg_player_prices, price_type):
-                    tcg_player_market = getattr(tcg_player_prices, price_type).market
-                    tcg_player_high = getattr(tcg_player_prices, price_type).high
-                    break
+            # Extract TCGplayer prices
+            tcg_player_market, tcg_player_high, product_id = extract_tcgplayer_prices(card_data)
             if tcg_player_market is None or tcg_player_market <= 80:
                 continue
 
+            card_number = card_data.get("localId", "")
+            card_name = card_data.get("name", card_name_stub)
+
             # Fetch PriceCharting data
-            pricecharting_url = generate_pricecharting_url(card.name, card.number, set.get("name"))
+            pricecharting_url = generate_pricecharting_url(card_name, card_number, set_name)
             extracted_prices = return_graded_prices(pricecharting_url)
 
             # Check if it's worth considering based on grade10 price
@@ -136,14 +187,21 @@ def generate_tcgplayer_json(set: dict):
             except ValueError:
                 continue
 
-            card_image_url = card.images.large
-            full_set_dicts[set.get("name")]["cards"].append({
-                "name": card.name,
+            # Build card link from productId
+            card_link = f"https://www.tcgplayer.com/product/{product_id}" if product_id else ""
+
+            # Image URL from TCGdex
+            card_image_url = card_data.get("image", "")
+            if card_image_url:
+                card_image_url += "/high.png"
+
+            full_set_dicts[set_name]["cards"].append({
+                "name": card_name,
                 "market": tcg_player_market,
                 "price_high": tcg_player_high,
-                "printed_total": card.set.printedTotal,
-                "number": card.number,
-                "card_link": card.tcgplayer.url,
+                "printed_total": printed_total,
+                "number": card_number,
+                "card_link": card_link,
                 "pricecharting_url": pricecharting_url,
                 "graded_prices": extracted_prices,
                 "image_url": card_image_url
@@ -168,9 +226,9 @@ if __name__ == "__main__":
         "Sword & Shield": "swsh1",
         "Rebel Clash": "swsh2",
         "Darkness Ablaze": "swsh3",
-        "Champion's Path": "swsh35",
+        "Champion's Path": "swsh3.5",
         "Vivid Voltage": "swsh4",
-        "Shining Fates": "swsh45",
+        "Shining Fates": "swsh4.5",
         "Battle Styles": "swsh5",
         "Chilling Reign": "swsh6",
         "Evolving Skies": "swsh7",
@@ -179,30 +237,30 @@ if __name__ == "__main__":
         "Astral Radiance": "swsh10",
         "Lost Origin": "swsh11",
         "Silver Tempest": "swsh12",
-        "Paradox Rift": "sv4",
-        "Paldean Fates": "sv4pt5",
-        "Twilight Masquerade": "sv6",
-        "Obsidian Flames": "sv3",
-        "151": "sv3pt5",
-        "Paldea Evolved": "sv2",
-        "Crown Zenith": "swsh12pt5",
-        "Surging Sparks": "sv8",
-        "Prismatic Evolutions": "sv8pt5",
-        "Journey Together": "sv9",
+        "Crown Zenith": "swsh12.5",
+        "Paradox Rift": "sv04",
+        "Paldean Fates": "sv04.5",
+        "Twilight Masquerade": "sv06",
+        "Obsidian Flames": "sv03",
+        "151": "sv03.5",
+        "Paldea Evolved": "sv02",
+        "Surging Sparks": "sv08",
+        "Prismatic Evolutions": "sv08.5",
+        "Journey Together": "sv09",
         "Destined Rivals": "sv10",
-        "Black Bolt": "zsv10pt5",
-        "White Flare": "rsv10pt5",
-        "Mega Evolution": "me1",
-        "Phantasmal Flames": "me2",
+        "Black Bolt": "sv10.5b",
+        "White Flare": "sv10.5w",
+        "Mega Evolution": "me01",
+        "Phantasmal Flames": "me02",
         "Sun & Moon": "sm1",
         "Guardians Rising": "sm2",
         "Burning Shadows": "sm3",
-        "Shining Legends": "sm35",
+        "Shining Legends": "sm3.5",
         "Crimson Invasion": "sm4",
         "Ultra Prism": "sm5",
         "Forbidden Light": "sm6",
         "Celestial Storm": "sm7",
-        "Dragon Majesty": "sm75",
+        "Dragon Majesty": "sm7.5",
         "Lost Thunder": "sm8",
         "Team Up": "sm9",
         "Unbroken Bonds": "sm10",
@@ -213,13 +271,13 @@ if __name__ == "__main__":
 
     set_code = sets.get(set_name)
     if not set_code:
-        print(f"❌ Unknown set: {set_name}")
+        print(f"Unknown set: {set_name}")
         sys.exit(1)
 
-    set = {"name": set_name, "code": set_code}
+    set_info = {"name": set_name, "code": set_code}
 
-    print(f"\n=== Processing Set: {set['name']} ===")
-    cards_info = generate_tcgplayer_json(set=set)
+    print(f"\n=== Processing Set: {set_info['name']} ===")
+    cards_info = generate_tcgplayer_json(set_info=set_info)
 
     output_dir = 'psa_results'
     os.makedirs(output_dir, exist_ok=True)
@@ -230,4 +288,4 @@ if __name__ == "__main__":
     with open(output_filename, 'w') as f:
         f.write('cards_info = ' + json.dumps(cards_info, indent=4) + '\n')
 
-    print(f"✅ Saved: {output_filename}")
+    print(f"Saved: {output_filename}")

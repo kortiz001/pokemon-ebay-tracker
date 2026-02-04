@@ -4,11 +4,11 @@ cards_info = {
         "cards": [
             {
                 "name": "Umbreon V",
-                "market": 299.49,
-                "price_high": 4321.0,
+                "market": 301.88,
+                "price_high": 4321,
                 "printed_total": 203,
                 "number": "189",
-                "card_link": "https://prices.pokemontcg.io/tcgplayer/swsh7-189",
+                "card_link": "https://www.tcgplayer.com/product/246719",
                 "pricecharting_url": "https://pricecharting.com/game/pokemon-evolving-skies/umbreon-v-189",
                 "graded_prices": {
                     "ungraded": "$295.00",
@@ -18,7 +18,7 @@ cards_info = {
                     "grade95": "$420.00",
                     "grade10": "$913.33"
                 },
-                "image_url": "https://images.pokemontcg.io/swsh7/189_hires.png"
+                "image_url": "https://assets.tcgdex.net/en/swsh/swsh7/189/high.png"
             }
         ]
     }
