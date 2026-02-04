@@ -5,7 +5,6 @@ cards_info = {
             {
                 "name": "Reshiram & Charizard GX",
                 "market": 85.79,
-                "price_high": 249.95,
                 "printed_total": 214,
                 "number": "194",
                 "card_link": "https://www.tcgplayer.com/product/189318",
@@ -23,7 +22,6 @@ cards_info = {
             {
                 "name": "Greninja & Zoroark GX",
                 "market": 283.81,
-                "price_high": 499.95,
                 "printed_total": 214,
                 "number": "201",
                 "card_link": "https://www.tcgplayer.com/product/189310",
@@ -41,7 +39,6 @@ cards_info = {
             {
                 "name": "Gardevoir & Sylveon GX",
                 "market": 535.55,
-                "price_high": 999.99,
                 "printed_total": 214,
                 "number": "205",
                 "card_link": "https://www.tcgplayer.com/product/189316",
@@ -59,7 +56,6 @@ cards_info = {
             {
                 "name": "Blastoise GX",
                 "market": 100.51,
-                "price_high": 115.59,
                 "printed_total": 214,
                 "number": "218",
                 "card_link": "https://www.tcgplayer.com/product/189100",

@@ -5,6 +5,7 @@ cards_info = {
             {
                 "name": "Shining Mew",
                 "market": 82.3,
+                "price_high": 149.98,
                 "printed_total": 73,
                 "number": "40",
                 "card_link": "https://www.tcgplayer.com/product/146699",
@@ -22,6 +23,7 @@ cards_info = {
             {
                 "name": "Mewtwo GX",
                 "market": 519.72,
+                "price_high": 699.99,
                 "printed_total": 73,
                 "number": "78",
                 "card_link": "https://www.tcgplayer.com/product/146698",
