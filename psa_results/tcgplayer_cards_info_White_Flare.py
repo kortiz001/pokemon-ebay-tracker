@@ -1,6 +1,6 @@
 cards_info = {
     "White Flare": {
-        "code": "rsv10pt5",
+        "code": "sv10.5w",
         "cards": []
     }
 }
