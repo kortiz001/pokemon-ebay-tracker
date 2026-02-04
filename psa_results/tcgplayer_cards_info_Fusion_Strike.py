@@ -5,6 +5,7 @@ cards_info = {
             {
                 "name": "Mew V",
                 "market": 87.85,
+                "price_high": 500,
                 "printed_total": 264,
                 "number": "251",
                 "card_link": "https://www.tcgplayer.com/product/253147",
