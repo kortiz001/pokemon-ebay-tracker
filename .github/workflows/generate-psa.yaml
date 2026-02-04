@@ -103,15 +103,34 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git checkout main
-          git pull origin main --no-rebase || echo "Pull failed, continuing"
-          git add .
-          if ! git diff --cached --quiet; then
-              git commit -m "Update PSA JSON for ${{ matrix.set }}"
-              git push https://${PAT_TOKEN}@github.com/${{ github.repository }} HEAD:main
-          else
+
+          max_push_attempts=10
+          push_attempt=1
+
+          while [ $push_attempt -le $max_push_attempts ]; do
+            git fetch origin main
+            git reset --soft origin/main
+            git add .
+
+            if git diff --cached --quiet; then
               echo "No changes to commit"
-          fi
+              exit 0
+            fi
+
+            git commit -m "Update PSA JSON for ${{ matrix.set }}"
+
+            if git push https://${PAT_TOKEN}@github.com/${{ github.repository }} HEAD:main; then
+              echo "Push succeeded on attempt $push_attempt"
+              exit 0
+            fi
+
+            echo "Push failed (attempt $push_attempt/$max_push_attempts). Retrying..."
+            push_attempt=$((push_attempt + 1))
+            sleep $((RANDOM % 10 + 5))
+          done
+
+          echo "All push attempts failed."
+          exit 1
 
   trigger_followups:
     runs-on: ubuntu-latest
