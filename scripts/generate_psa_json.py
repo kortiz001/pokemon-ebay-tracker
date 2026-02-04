@@ -194,6 +194,21 @@ if __name__ == "__main__":
         "White Flare": "rsv10pt5",
         "Mega Evolution": "me1",
         "Phantasmal Flames": "me2",
+        "Sun & Moon": "sm1",
+        "Guardians Rising": "sm2",
+        "Burning Shadows": "sm3",
+        "Shining Legends": "sm35",
+        "Crimson Invasion": "sm4",
+        "Ultra Prism": "sm5",
+        "Forbidden Light": "sm6",
+        "Celestial Storm": "sm7",
+        "Dragon Majesty": "sm75",
+        "Lost Thunder": "sm8",
+        "Team Up": "sm9",
+        "Unbroken Bonds": "sm10",
+        "Unified Minds": "sm11",
+        "Hidden Fates": "sm115",
+        "Cosmic Eclipse": "sm12",
     }
 
     set_code = sets.get(set_name)
