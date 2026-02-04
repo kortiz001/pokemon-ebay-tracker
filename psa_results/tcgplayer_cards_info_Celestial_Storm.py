@@ -5,6 +5,7 @@ cards_info = {
             {
                 "name": "Rayquaza GX",
                 "market": 231.7,
+                "price_high": 699.99,
                 "printed_total": 168,
                 "number": "177",
                 "card_link": "https://www.tcgplayer.com/product/170938",
