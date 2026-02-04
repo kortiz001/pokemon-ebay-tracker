@@ -5,6 +5,7 @@ cards_info = {
             {
                 "name": "Gengar & Mimikyu GX",
                 "market": 241.86,
+                "price_high": 499,
                 "printed_total": 181,
                 "number": "53",
                 "card_link": "https://www.tcgplayer.com/product/183828",
@@ -22,6 +23,7 @@ cards_info = {
             {
                 "name": "Magikarp & Wailord GX",
                 "market": 97.08,
+                "price_high": 133.47,
                 "printed_total": 181,
                 "number": "160",
                 "card_link": "https://www.tcgplayer.com/product/183963",
@@ -39,6 +41,7 @@ cards_info = {
             {
                 "name": "Pikachu & Zekrom GX",
                 "market": 142.98,
+                "price_high": 445,
                 "printed_total": 181,
                 "number": "162",
                 "card_link": "https://www.tcgplayer.com/product/183805",
@@ -56,6 +59,7 @@ cards_info = {
             {
                 "name": "Gengar & Mimikyu GX",
                 "market": 285.23,
+                "price_high": 329.98,
                 "printed_total": 181,
                 "number": "164",
                 "card_link": "https://www.tcgplayer.com/product/183829",
@@ -73,6 +77,7 @@ cards_info = {
             {
                 "name": "Gengar & Mimikyu GX",
                 "market": 1234.61,
+                "price_high": 1675,
                 "printed_total": 181,
                 "number": "165",
                 "card_link": "https://www.tcgplayer.com/product/183830",
@@ -90,6 +95,7 @@ cards_info = {
             {
                 "name": "Latias & Latios GX",
                 "market": 91.34,
+                "price_high": 149.99,
                 "printed_total": 181,
                 "number": "169",
                 "card_link": "https://www.tcgplayer.com/product/183898",
@@ -107,6 +113,7 @@ cards_info = {
             {
                 "name": "Latias & Latios GX",
                 "market": 2682.47,
+                "price_high": 2942.11,
                 "printed_total": 181,
                 "number": "170",
                 "card_link": "https://www.tcgplayer.com/product/183899",
@@ -124,6 +131,7 @@ cards_info = {
             {
                 "name": "Magikarp & Wailord GX",
                 "market": 116.99,
+                "price_high": 329.95,
                 "printed_total": 181,
                 "number": "183",
                 "card_link": "https://www.tcgplayer.com/product/183965",
@@ -141,6 +149,7 @@ cards_info = {
             {
                 "name": "Pikachu & Zekrom GX",
                 "market": 214.33,
+                "price_high": 499.95,
                 "printed_total": 181,
                 "number": "184",
                 "card_link": "https://www.tcgplayer.com/product/183806",
@@ -158,6 +167,7 @@ cards_info = {
             {
                 "name": "Gengar & Mimikyu GX",
                 "market": 332.16,
+                "price_high": 399,
                 "printed_total": 181,
                 "number": "186",
                 "card_link": "https://www.tcgplayer.com/product/183831",
@@ -175,6 +185,7 @@ cards_info = {
             {
                 "name": "Latias & Latios GX",
                 "market": 177.67,
+                "price_high": 290.19,
                 "printed_total": 181,
                 "number": "190",
                 "card_link": "https://www.tcgplayer.com/product/183900",
