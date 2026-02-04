@@ -135,7 +135,6 @@ def extract_market_prices(card_data):
             if variant_data and variant_data.get("marketPrice") is not None:
                 return (
                     variant_data["marketPrice"],
-                    variant_data.get("highPrice"),
                     variant_data.get("productId"),
                 )
 
@@ -145,9 +144,9 @@ def extract_market_prices(card_data):
         avg_eur = cardmarket["avg"]
         market_usd = round(avg_eur * EUR_TO_USD, 2)
         print(f"  Using Cardmarket avg: {avg_eur} EUR -> ${market_usd} USD")
-        return market_usd, None, None
+        return market_usd, None
 
-    return None, None, None
+    return None, None
 
 # -------------------------------
 # Main Card Fetching Logic
@@ -198,7 +197,7 @@ def generate_tcgplayer_json(set_info: dict):
                 continue
 
             # Extract market prices (TCGplayer or Cardmarket fallback)
-            market_price, price_high, product_id = extract_market_prices(card_data)
+            market_price, product_id = extract_market_prices(card_data)
             if market_price is None or market_price <= 80:
                 continue
 
@@ -234,7 +233,6 @@ def generate_tcgplayer_json(set_info: dict):
             full_set_dicts[set_name]["cards"].append({
                 "name": card_name,
                 "market": market_price,
-                "price_high": price_high,
                 "printed_total": printed_total,
                 "number": card_number,
                 "card_link": card_link,
