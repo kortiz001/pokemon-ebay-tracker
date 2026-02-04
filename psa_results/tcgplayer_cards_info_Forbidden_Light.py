@@ -5,7 +5,6 @@ cards_info = {
             {
                 "name": "Greninja GX",
                 "market": 94.79,
-                "price_high": 154.9,
                 "printed_total": 131,
                 "number": "133",
                 "card_link": "https://www.tcgplayer.com/product/165675",
@@ -23,7 +22,6 @@ cards_info = {
             {
                 "name": "Lucario GX",
                 "market": 117.25,
-                "price_high": 193.22,
                 "printed_total": 131,
                 "number": "135",
                 "card_link": "https://www.tcgplayer.com/product/165781",
