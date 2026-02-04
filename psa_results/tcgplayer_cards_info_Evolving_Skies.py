@@ -5,6 +5,7 @@ cards_info = {
             {
                 "name": "Umbreon V",
                 "market": 301.88,
+                "price_high": 4321,
                 "printed_total": 203,
                 "number": "189",
                 "card_link": "https://www.tcgplayer.com/product/246719",

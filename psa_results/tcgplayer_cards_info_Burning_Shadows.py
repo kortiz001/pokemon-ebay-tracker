@@ -5,7 +5,6 @@ cards_info = {
             {
                 "name": "Charizard GX",
                 "market": 533.61,
-                "price_high": 999.98,
                 "printed_total": 147,
                 "number": "150",
                 "card_link": "https://www.tcgplayer.com/product/138497",
