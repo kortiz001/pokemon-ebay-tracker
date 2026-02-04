@@ -5,6 +5,7 @@ cards_info = {
             {
                 "name": "Tyranitar V",
                 "market": 200.31,
+                "price_high": 1000,
                 "printed_total": 163,
                 "number": "155",
                 "card_link": "https://www.tcgplayer.com/product/234060",
