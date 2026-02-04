@@ -5,7 +5,6 @@ cards_info = {
             {
                 "name": "Mega Charizard X ex",
                 "market": 564.41,
-                "price_high": null,
                 "printed_total": 94,
                 "number": "125",
                 "card_link": "https://pricecharting.com/game/pokemon-phantasmal-flames/mega-charizard-x-ex-125",
@@ -23,7 +22,6 @@ cards_info = {
             {
                 "name": "Mega Charizard X ex",
                 "market": 349.01,
-                "price_high": null,
                 "printed_total": 94,
                 "number": "130",
                 "card_link": "https://pricecharting.com/game/pokemon-phantasmal-flames/mega-charizard-x-ex-130",
