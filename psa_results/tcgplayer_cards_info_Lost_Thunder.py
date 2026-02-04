@@ -5,6 +5,7 @@ cards_info = {
             {
                 "name": "Lugia GX",
                 "market": 101.01,
+                "price_high": 150,
                 "printed_total": 214,
                 "number": "207",
                 "card_link": "https://www.tcgplayer.com/product/178981",
@@ -22,6 +23,7 @@ cards_info = {
             {
                 "name": "Suicune GX",
                 "market": 87.16,
+                "price_high": 128.13,
                 "printed_total": 214,
                 "number": "220",
                 "card_link": "https://www.tcgplayer.com/product/178869",
@@ -39,6 +41,7 @@ cards_info = {
             {
                 "name": "Tyranitar GX",
                 "market": 102.4,
+                "price_high": 200,
                 "printed_total": 214,
                 "number": "223",
                 "card_link": "https://www.tcgplayer.com/product/178936",
@@ -56,6 +59,7 @@ cards_info = {
             {
                 "name": "Mimikyu GX",
                 "market": 197.83,
+                "price_high": 354.37,
                 "printed_total": 214,
                 "number": "226",
                 "card_link": "https://www.tcgplayer.com/product/178970",
@@ -73,6 +77,7 @@ cards_info = {
             {
                 "name": "Lugia GX",
                 "market": 216.27,
+                "price_high": 259.99,
                 "printed_total": 214,
                 "number": "227",
                 "card_link": "https://www.tcgplayer.com/product/178982",
