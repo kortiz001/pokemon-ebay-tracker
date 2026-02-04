@@ -1,6 +1,6 @@
 cards_info = {
     "Twilight Masquerade": {
-        "code": "sv6",
+        "code": "sv06",
         "cards": []
     }
 }
