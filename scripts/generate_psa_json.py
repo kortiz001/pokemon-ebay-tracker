@@ -156,7 +156,7 @@ def extract_market_prices(card_data):
     cardmarket = pricing.get("cardmarket")
     if cardmarket:
         # Prefer trend price, then avg30, avg7, avg1, avg
-        for price_key in ["avg30"]:
+        for price_key in ["avg7"]:
             price_eur = cardmarket.get(price_key)
             if price_eur is not None:
                 price_usd = round(price_eur * EUR_TO_USD, 2)
