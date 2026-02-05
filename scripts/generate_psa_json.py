@@ -8,9 +8,7 @@ from bs4 import BeautifulSoup
 
 TCGDEX_BASE = "https://api.tcgdex.net/v2/en"
 POKEWALLET_BASE = "https://api.pokewallet.io"
-POKEWALLET_API_KEY = os.environ.get(
-    "POKEWALLET_API_KEY", "pk_live_409d09208df8d373418919fae0b9060c9169082da88cca22"
-)
+POKEWALLET_API_KEY = os.environ.get("POKEWALLET_API_KEY", "")
 
 # Mapping from our set names to PokeWallet set codes
 POKEWALLET_SET_CODES = {

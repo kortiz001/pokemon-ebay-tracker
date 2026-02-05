@@ -80,6 +80,8 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run Python script with retry
+        env:
+          POKEWALLET_API_KEY: ${{ secrets.POKEWALLET_API_KEY }}
         run: |
           max_attempts=60
           delay=15
