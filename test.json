@@ -1,0 +1,26 @@
+{
+  "app": {
+    "name": "example-service",
+    "version": "1.2.3",
+    "environment": "development",
+    "debug": true
+  },
+  "server": {
+    "host": "localhost",
+    "port": 8080,
+    "timeouts": {
+      "read": 5000,
+      "write": 5000,
+      "idle": 30000
+    }
+  },
+  "features": [
+    "auth",
+    "logging",
+    "metrics"
+  ],
+  "database": {
+    "type": "postgres",
+    "host": "127.0.0.1",
+    "port": 5432,
+    "username": "test_use_

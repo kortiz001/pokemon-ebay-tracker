@@ -9,6 +9,7 @@ requests = "*"
 django = "*"
 django-mathfilters = "*"
 pytz = "*"
+pre-commit = "*"
 
 [build-system]
 requires = ["poetry-core"]
