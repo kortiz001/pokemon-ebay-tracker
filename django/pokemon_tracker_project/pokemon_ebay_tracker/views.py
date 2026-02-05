@@ -207,7 +207,7 @@ def psa_tracker(request):
             card_data["regular_submission_profit"] = regular_submission_profit
 
             # keep card only if value_submission_profit >= 200
-            if value_submission_profit >= 200:
+            if value_submission_profit >= 150:
                 filtered_cards.append(card_data)
 
         # update the cards list in set_data
