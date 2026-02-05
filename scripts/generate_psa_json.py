@@ -65,6 +65,12 @@ def get_with_retry(url, retries=5, wait_time=30, headers=None):
     for i in range(retries):
         try:
             response = requests.get(url, timeout=30, headers=headers)
+            if response.status_code == 403:
+                print(f"[403 Forbidden] {url}")
+                print(f"  Response body: {response.text[:500]}")
+                if headers:
+                    safe_headers = {k: (v[:4] + "***" if k.lower() in ("x-api-key", "authorization") else v) for k, v in headers.items()}
+                    print(f"  Headers sent: {safe_headers}")
             response.raise_for_status()
             return response
         except requests.exceptions.RequestException as e:
@@ -407,6 +413,11 @@ if __name__ == "__main__":
     if not set_code:
         print(f"Unknown set: {set_name}")
         sys.exit(1)
+
+    if not POKEWALLET_API_KEY:
+        print("[WARNING] POKEWALLET_API_KEY is not set — PokeWallet fallback will fail")
+    else:
+        print(f"[INFO] POKEWALLET_API_KEY is set (starts with {POKEWALLET_API_KEY[:4]}***)")
 
     set_info = {"name": set_name, "code": set_code}
 
