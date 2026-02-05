@@ -205,6 +205,7 @@ def psa_tracker(request):
             card_data["grade9_regular_loss"] = grade9_regular_loss
             card_data["value_submission_profit"] = value_submission_profit
             card_data["regular_submission_profit"] = regular_submission_profit
+            card_data["market"] = market
 
             # keep card only if value_submission_profit >= 200
             if value_submission_profit >= 150:
@@ -247,6 +248,7 @@ def psa_tracker_api(request):
             card_data["grade9_regular_loss"] = grade9_regular_loss
             card_data["value_submission_profit"] = value_submission_profit
             card_data["regular_submission_profit"] = regular_submission_profit
+            card_data["market"] = market
 
             if value_submission_profit >= 200:
                 filtered_cards.append(card_data)

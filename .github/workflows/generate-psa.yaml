@@ -20,52 +20,99 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        set:
-          - "Rebel Clash"
-          - "Darkness Ablaze"
-          - "Champion's Path"
-          - "Vivid Voltage"
-          - "Shining Fates"
-          - "Battle Styles"
-          - "Chilling Reign"
-          - "Fusion Strike"
-          - "Astral Radiance"
-          - "Lost Origin"
-          - "Silver Tempest"
-          - "Paradox Rift"
-          - "Paldean Fates"
-          - "Twilight Masquerade"
-          - "Obsidian Flames"
-          - "151"
-          - "Paldea Evolved"
-          - "Evolving Skies"
-          - "Crown Zenith"
-          - "Surging Sparks"
-          - "Prismatic Evolutions"
-          - "Journey Together"
-          - "Destined Rivals"
-          - "Black Bolt"
-          - "White Flare"
-          - "Mega Evolution"
-          - "Phantasmal Flames"
-          - "Sun & Moon"
-          - "Guardians Rising"
-          - "Burning Shadows"
-          - "Shining Legends"
-          - "Crimson Invasion"
-          - "Ultra Prism"
-          - "Forbidden Light"
-          - "Celestial Storm"
-          - "Dragon Majesty"
-          - "Lost Thunder"
-          - "Team Up"
-          - "Unbroken Bonds"
-          - "Unified Minds"
-          - "Hidden Fates"
-          - "Cosmic Eclipse"
-
+        include:
+          - set: "Rebel Clash"
+            index: 0
+          - set: "Darkness Ablaze"
+            index: 1
+          - set: "Champion's Path"
+            index: 2
+          - set: "Vivid Voltage"
+            index: 3
+          - set: "Shining Fates"
+            index: 4
+          - set: "Battle Styles"
+            index: 5
+          - set: "Chilling Reign"
+            index: 6
+          - set: "Fusion Strike"
+            index: 7
+          - set: "Astral Radiance"
+            index: 8
+          - set: "Lost Origin"
+            index: 9
+          - set: "Silver Tempest"
+            index: 10
+          - set: "Paradox Rift"
+            index: 11
+          - set: "Paldean Fates"
+            index: 12
+          - set: "Twilight Masquerade"
+            index: 13
+          - set: "Obsidian Flames"
+            index: 14
+          - set: "151"
+            index: 15
+          - set: "Paldea Evolved"
+            index: 16
+          - set: "Evolving Skies"
+            index: 17
+          - set: "Crown Zenith"
+            index: 18
+          - set: "Surging Sparks"
+            index: 19
+          - set: "Prismatic Evolutions"
+            index: 20
+          - set: "Journey Together"
+            index: 21
+          - set: "Destined Rivals"
+            index: 22
+          - set: "Black Bolt"
+            index: 23
+          - set: "White Flare"
+            index: 24
+          - set: "Mega Evolution"
+            index: 25
+          - set: "Phantasmal Flames"
+            index: 26
+          - set: "Sun & Moon"
+            index: 27
+          - set: "Guardians Rising"
+            index: 28
+          - set: "Burning Shadows"
+            index: 29
+          - set: "Shining Legends"
+            index: 30
+          - set: "Crimson Invasion"
+            index: 31
+          - set: "Ultra Prism"
+            index: 32
+          - set: "Forbidden Light"
+            index: 33
+          - set: "Celestial Storm"
+            index: 34
+          - set: "Dragon Majesty"
+            index: 35
+          - set: "Lost Thunder"
+            index: 36
+          - set: "Team Up"
+            index: 37
+          - set: "Unbroken Bonds"
+            index: 38
+          - set: "Unified Minds"
+            index: 39
+          - set: "Hidden Fates"
+            index: 40
+          - set: "Cosmic Eclipse"
+            index: 41
 
     steps:
+      - name: Stagger job start
+        run: |
+          delay=$((10 * ${{ matrix.index }}))
+          echo "Waiting ${delay}s before starting (index ${{ matrix.index }})"
+          sleep $delay
+
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
