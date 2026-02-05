@@ -234,8 +234,8 @@ def generate_tcgplayer_json(set_info: dict):
             if grade10_str != "N/A":
                 try:
                     grade10_value = float(grade10_str)
-                    if (grade10_value * 0.36) <= market_price:
-                        print(f"  [Skip] Grade10 profit too low: ${grade10_value} * 0.36 = ${grade10_value * 0.36:.2f} <= ${market_price}")
+                    if (grade10_value * 0.38) <= market_price:
+                        print(f"  [Skip] Grade10 profit too low: ${grade10_value} * 0.38 = ${grade10_value * 0.38:.2f} <= ${market_price}")
                         continue
                 except ValueError:
                     print(f"  [Skip] Could not parse grade10 price: {grade10_str}")
