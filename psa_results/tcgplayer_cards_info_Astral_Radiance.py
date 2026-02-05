@@ -1,14 +1,1 @@
-cards_info = {   'Astral Radiance': {   'cards': [   {   'card_link': 'https://prices.pokemontcg.io/tcgplayer/swsh10tg-TG13',
-                                            'graded_prices': {   'grade10': '$274.71',
-                                                                 'grade7': '$79.99',
-                                                                 'grade8': '$84.59',
-                                                                 'grade9': '$102.25',
-                                                                 'grade95': '$137.83',
-                                                                 'ungraded': '$91.10'},
-                                            'image_url': 'https://assets.tcgdex.net/en/swsh/swsh10/TG13/high.png',
-                                            'market': 91.54,
-                                            'name': 'Starmie V',
-                                            'number': 'TG13',
-                                            'pricecharting_url': 'https://pricecharting.com/game/pokemon-astral-radiance/starmie-v-TG13',
-                                            'printed_total': 189}],
-                           'code': 'swsh10'}}
+cards_info = {'Astral Radiance': {'cards': [], 'code': 'swsh10'}}
