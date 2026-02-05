@@ -187,7 +187,11 @@ def extract_market_prices(card_data):
 # Returns (market_price, tcgplayer_url) or (None, None)
 # -------------------------------
 def fetch_pokewallet_price(card_name, card_number, set_name):
-    headers = {"X-API-Key": POKEWALLET_API_KEY}
+    headers = {
+        "X-API-Key": POKEWALLET_API_KEY,
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+        "Accept": "application/json",
+    }
 
     # Search by card name + number to find the right card
     query = f"{card_name} {card_number}"
