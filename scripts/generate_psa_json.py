@@ -2,6 +2,7 @@ import pprint
 import os
 import random
 import requests
+import cloudscraper
 import time
 import sys
 from bs4 import BeautifulSoup
@@ -9,6 +10,9 @@ from bs4 import BeautifulSoup
 TCGDEX_BASE = "https://api.tcgdex.net/v2/en"
 POKEWALLET_BASE = "https://api.pokewallet.io"
 POKEWALLET_API_KEY = os.environ.get("POKEWALLET_API_KEY", "")
+
+# Use cloudscraper for Cloudflare-protected endpoints (PokeWallet)
+scraper = cloudscraper.create_scraper()
 
 # Mapping from our set names to PokeWallet set codes
 POKEWALLET_SET_CODES = {
@@ -61,10 +65,11 @@ POKEWALLET_SET_CODES = {
 # -------------------------------
 # Helper: Retry requests with exponential backoff
 # -------------------------------
-def get_with_retry(url, retries=5, wait_time=30, headers=None):
+def get_with_retry(url, retries=5, wait_time=30, headers=None, session=None):
+    http = session or requests
     for i in range(retries):
         try:
-            response = requests.get(url, timeout=30, headers=headers)
+            response = http.get(url, timeout=30, headers=headers)
             if response.status_code == 403:
                 print(f"[403 Forbidden] {url}")
                 print(f"  Response body: {response.text[:500]}")
@@ -189,7 +194,6 @@ def extract_market_prices(card_data):
 def fetch_pokewallet_price(card_name, card_number, set_name):
     headers = {
         "X-API-Key": POKEWALLET_API_KEY,
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
         "Accept": "application/json",
     }
 
@@ -198,7 +202,7 @@ def fetch_pokewallet_price(card_name, card_number, set_name):
     url = f"{POKEWALLET_BASE}/search?q={requests.utils.quote(query)}&limit=10"
 
     try:
-        response = get_with_retry(url, retries=3, wait_time=5, headers=headers)
+        response = get_with_retry(url, retries=3, wait_time=5, headers=headers, session=scraper)
         if not response:
             return None, None
 
