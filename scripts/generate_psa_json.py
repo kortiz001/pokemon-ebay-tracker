@@ -137,6 +137,7 @@ def fetch_card_details(card_id):
 # -------------------------------
 # Helper: Extract market price from TCGdex card data
 # Tries TCGplayer first, then falls back to Cardmarket (EUR → USD)
+# Returns (price, product_id, source) where source is "tcgplayer" or "cardmarket"
 # -------------------------------
 def extract_market_prices(card_data):
     pricing = card_data.get("pricing", {})
@@ -150,20 +151,20 @@ def extract_market_prices(card_data):
                 return (
                     variant_data["marketPrice"],
                     variant_data.get("productId"),
+                    "tcgplayer",
                 )
 
     # Fall back to Cardmarket (prices are in EUR, convert to USD)
     cardmarket = pricing.get("cardmarket")
     if cardmarket:
-        # Prefer trend price, then avg30, avg7, avg1, avg
         for price_key in ["avg7"]:
             price_eur = cardmarket.get(price_key)
             if price_eur is not None:
                 price_usd = round(price_eur * EUR_TO_USD, 2)
                 print(f"  [Cardmarket] Using {price_key}: €{price_eur} → ${price_usd}")
-                return price_usd, None
+                return price_usd, None, "cardmarket"
 
-    return None, None
+    return None, None, None
 
 # -------------------------------
 # Main Card Fetching Logic
@@ -217,7 +218,7 @@ def generate_tcgplayer_json(set_info: dict):
             card_name = card_data.get("name", card_name_stub)
 
             # Extract market price from TCGdex (TCGplayer first, then Cardmarket)
-            market_price, product_id = extract_market_prices(card_data)
+            market_price, product_id, price_source = extract_market_prices(card_data)
 
             if market_price is None:
                 print(f"  [TCGdex] No price available from TCGplayer or Cardmarket")
@@ -229,13 +230,25 @@ def generate_tcgplayer_json(set_info: dict):
             pricecharting_url = generate_pricecharting_url(card_name, card_number, set_name)
             extracted_prices = return_graded_prices(pricecharting_url)
 
+            # Determine which price to use for grade analysis
+            # If Cardmarket price > $150, use PriceCharting ungraded price instead (more accurate for US market)
+            analysis_price = market_price
+            if price_source == "cardmarket" and market_price > 150:
+                ungraded_str = extracted_prices.get("ungraded", "N/A").replace("$", "").replace(",", "")
+                if ungraded_str != "N/A":
+                    try:
+                        analysis_price = float(ungraded_str)
+                        print(f"  [PriceCharting] Using ungraded price ${analysis_price} for analysis (Cardmarket ${market_price} > $150)")
+                    except ValueError:
+                        print(f"  [Warning] Could not parse PriceCharting ungraded price: {ungraded_str}, using Cardmarket price")
+
             # Check if it's worth considering based on grade10 price
             grade10_str = extracted_prices.get("grade10", "N/A").replace("$", "").replace(",", "")
             if grade10_str != "N/A":
                 try:
                     grade10_value = float(grade10_str)
-                    if (grade10_value * 0.38) <= market_price:
-                        print(f"  [Skip] Grade10 profit too low: ${grade10_value} * 0.38 = ${grade10_value * 0.38:.2f} <= ${market_price}")
+                    if (grade10_value * 0.38) <= analysis_price:
+                        print(f"  [Skip] Grade10 profit too low: ${grade10_value} * 0.38 = ${grade10_value * 0.38:.2f} <= ${analysis_price}")
                         continue
                 except ValueError:
                     print(f"  [Skip] Could not parse grade10 price: {grade10_str}")
