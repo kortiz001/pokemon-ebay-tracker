@@ -80,8 +80,6 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run Python script with retry
-        env:
-          POKEMONTCG_API_KEY: ${{ secrets.POKEMONTCG_API_KEY }}
         run: |
           max_attempts=60
           delay=15

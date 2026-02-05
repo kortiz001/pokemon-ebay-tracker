@@ -7,8 +7,21 @@ import sys
 from bs4 import BeautifulSoup
 
 TCGDEX_BASE = "https://api.tcgdex.net/v2/en"
-POKEMONTCG_BASE = "https://api.pokemontcg.io/v2"
-POKEMONTCG_API_KEY = os.environ.get("POKEMONTCG_API_KEY", "")
+EUR_TO_USD_FALLBACK = 1.08  # Fallback rate if live fetch fails
+
+def fetch_eur_to_usd():
+    """Fetch live EUR to USD exchange rate from frankfurter.app (no API key needed)."""
+    try:
+        response = requests.get("https://api.frankfurter.app/latest?from=EUR&to=USD", timeout=10)
+        response.raise_for_status()
+        rate = response.json()["rates"]["USD"]
+        print(f"[INFO] Live EUR→USD rate: {rate}")
+        return rate
+    except Exception as e:
+        print(f"[WARNING] Could not fetch live EUR→USD rate: {e}. Using fallback {EUR_TO_USD_FALLBACK}")
+        return EUR_TO_USD_FALLBACK
+
+EUR_TO_USD = fetch_eur_to_usd()
 
 # -------------------------------
 # Helper: Retry requests with exponential backoff
@@ -22,11 +35,17 @@ def get_with_retry(url, retries=5, wait_time=30, headers=None):
                 print(f"[Rate Limited] {url} — waiting {retry_after}s")
                 time.sleep(retry_after)
                 continue
+            if response.status_code in (502, 503, 504):
+                backoff = wait_time * (2 ** i) + random.uniform(0, 5)
+                print(f"[{response.status_code}] {url} — retrying in {backoff:.0f}s (attempt {i + 1}/{retries})")
+                time.sleep(backoff)
+                continue
             response.raise_for_status()
             return response
         except requests.exceptions.RequestException as e:
-            print(f"[Retry {i + 1}/{retries}] Error fetching {url}: {e}. Retrying in {wait_time}s")
-            time.sleep(wait_time)
+            backoff = wait_time * (2 ** i) + random.uniform(0, 5)
+            print(f"[Retry {i + 1}/{retries}] Error fetching {url}: {e}. Retrying in {backoff:.0f}s")
+            time.sleep(backoff)
 
     print(f"[FAILED] Max retries exceeded for {url}")
     return None
@@ -116,11 +135,13 @@ def fetch_card_details(card_id):
     return response.json()
 
 # -------------------------------
-# Helper: Extract TCGplayer market price from TCGdex card data
+# Helper: Extract market price from TCGdex card data
+# Tries TCGplayer first, then falls back to Cardmarket (EUR → USD)
 # -------------------------------
 def extract_market_prices(card_data):
     pricing = card_data.get("pricing", {})
 
+    # Try TCGplayer first
     tcgplayer = pricing.get("tcgplayer")
     if tcgplayer:
         for variant in ["normal", "holofoil", "reverse-holofoil"]:
@@ -131,52 +152,18 @@ def extract_market_prices(card_data):
                     variant_data.get("productId"),
                 )
 
+    # Fall back to Cardmarket (prices are in EUR, convert to USD)
+    cardmarket = pricing.get("cardmarket")
+    if cardmarket:
+        # Prefer trend price, then avg30, avg7, avg1, avg
+        for price_key in ["trend", "avg30", "avg7", "avg1", "avg"]:
+            price_eur = cardmarket.get(price_key)
+            if price_eur is not None:
+                price_usd = round(price_eur * EUR_TO_USD, 2)
+                print(f"  [Cardmarket] Using {price_key}: €{price_eur} → ${price_usd}")
+                return price_usd, None
+
     return None, None
-
-# -------------------------------
-# Helper: Fetch price from pokemontcg.io API (fallback)
-# Returns (market_price, tcgplayer_url) or (None, None)
-# -------------------------------
-def fetch_pokemontcg_price(card_name, card_number, set_name):
-    headers = {"X-Api-Key": POKEMONTCG_API_KEY}
-
-    # Build Lucene query: name + number + set name
-    # Quotes around multi-word values for exact matching
-    q = f'name:"{card_name}" number:{card_number} set.name:"{set_name}"'
-    url = f"{POKEMONTCG_BASE}/cards?q={requests.utils.quote(q)}&pageSize=5"
-
-    try:
-        response = get_with_retry(url, retries=5, wait_time=15, headers=headers)
-        if not response:
-            return None, None
-
-        data = response.json()
-        cards = data.get("data", [])
-
-        if not cards:
-            print(f"  [pokemontcg.io] No results for {card_name} #{card_number} in {set_name}")
-            return None, None
-
-        # Use the first matching card
-        card = cards[0]
-        tcgplayer = card.get("tcgplayer", {})
-        tcg_url = tcgplayer.get("url", "")
-        tcg_prices = tcgplayer.get("prices", {})
-
-        # Check each variant for a market price
-        for variant in ["holofoil", "normal", "reverseHolofoil", "1stEditionHolofoil", "1stEditionNormal"]:
-            variant_data = tcg_prices.get(variant, {})
-            market_price = variant_data.get("market")
-            if market_price is not None:
-                print(f"  [pokemontcg.io] Found price: ${market_price} ({variant})")
-                return market_price, tcg_url
-
-        print(f"  [pokemontcg.io] Card found but no market price for {card_name} #{card_number}")
-        return None, None
-
-    except Exception as e:
-        print(f"  [pokemontcg.io] Error fetching price: {e}")
-        return None, None
 
 # -------------------------------
 # Main Card Fetching Logic
@@ -229,17 +216,11 @@ def generate_tcgplayer_json(set_info: dict):
             card_number = card_data.get("localId", "")
             card_name = card_data.get("name", card_name_stub)
 
-            # Extract TCGplayer price from TCGdex
+            # Extract market price from TCGdex (TCGplayer first, then Cardmarket)
             market_price, product_id = extract_market_prices(card_data)
 
-            # If TCGdex has no TCGplayer price, fall back to pokemontcg.io
-            tcg_url_from_fallback = None
             if market_price is None:
-                print(f"  [TCGdex] No TCGplayer price, trying pokemontcg.io...")
-                market_price, tcg_url_from_fallback = fetch_pokemontcg_price(
-                    card_name, card_number, set_name
-                )
-                time.sleep(random.uniform(0.5, 1.5))  # Rate limit pokemontcg.io
+                print(f"  [TCGdex] No price available from TCGplayer or Cardmarket")
 
             if market_price is None or market_price <= 80:
                 continue
@@ -259,11 +240,9 @@ def generate_tcgplayer_json(set_info: dict):
                 except ValueError:
                     print(f"  [Skip] Could not parse grade10 price: {grade10_str}")
 
-            # Build card link: TCGplayer productId > pokemontcg.io URL > PriceCharting
+            # Build card link: TCGplayer productId > PriceCharting
             if product_id:
                 card_link = f"https://www.tcgplayer.com/product/{product_id}"
-            elif tcg_url_from_fallback:
-                card_link = tcg_url_from_fallback
             else:
                 card_link = pricecharting_url
 
@@ -349,11 +328,6 @@ if __name__ == "__main__":
     if not set_code:
         print(f"Unknown set: {set_name}")
         sys.exit(1)
-
-    if not POKEMONTCG_API_KEY:
-        print("[WARNING] POKEMONTCG_API_KEY is not set — pokemontcg.io fallback will fail")
-    else:
-        print(f"[INFO] POKEMONTCG_API_KEY is set (starts with {POKEMONTCG_API_KEY[:4]}***)")
 
     set_info = {"name": set_name, "code": set_code}
 
