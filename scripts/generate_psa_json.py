@@ -206,6 +206,13 @@ def fetch_pokewallet_price(card_name, card_number, set_name):
         if not response:
             return None, None
 
+        # Detect Cloudflare challenge still being served
+        content_type = response.headers.get("Content-Type", "")
+        if "text/html" in content_type:
+            print(f"  [PokeWallet] WARNING: Got HTML instead of JSON (Cloudflare still blocking)")
+            print(f"  [PokeWallet] Status: {response.status_code}, Body preview: {response.text[:200]}")
+            return None, None
+
         data = response.json()
         results = data.get("results", [])
 
