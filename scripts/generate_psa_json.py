@@ -1,4 +1,3 @@
-import json
 import pprint
 import os
 import random
@@ -60,19 +59,6 @@ POKEWALLET_SET_CODES = {
     "Hidden Fates": "HIF",
     "Cosmic Eclipse": "SM12",
 }
-
-# Fetch live EUR to USD conversion rate
-def get_eur_to_usd():
-    try:
-        resp = requests.get("https://api.exchangerate-api.com/v4/latest/EUR", timeout=10)
-        rate = resp.json()["rates"]["USD"]
-        print(f"EUR to USD rate: {rate}")
-        return rate
-    except Exception as e:
-        print(f"[Warning] Failed to fetch EUR/USD rate, using fallback 1.04: {e}")
-        return 1.04
-
-EUR_TO_USD = get_eur_to_usd()
 
 # -------------------------------
 # Helper: Retry requests with exponential backoff
@@ -175,13 +161,11 @@ def fetch_card_details(card_id):
     return response.json()
 
 # -------------------------------
-# Helper: Extract market and high prices from TCGdex card data
-# Uses TCGplayer (USD) if available, falls back to Cardmarket (EUR -> USD)
+# Helper: Extract TCGplayer market price from TCGdex card data
 # -------------------------------
 def extract_market_prices(card_data):
     pricing = card_data.get("pricing", {})
 
-    # Try TCGplayer first (USD)
     tcgplayer = pricing.get("tcgplayer")
     if tcgplayer:
         for variant in ["normal", "holofoil", "reverse-holofoil"]:
@@ -192,14 +176,6 @@ def extract_market_prices(card_data):
                     variant_data.get("productId"),
                 )
 
-    # Fall back to Cardmarket (EUR -> USD)
-    cardmarket = pricing.get("cardmarket")
-    if cardmarket and cardmarket.get("avg") is not None:
-        avg_eur = cardmarket["avg"]
-        market_usd = round(avg_eur * EUR_TO_USD, 2)
-        print(f"  Using Cardmarket avg: {avg_eur} EUR -> ${market_usd} USD")
-        return market_usd, None
-
     return None, None
 
 # -------------------------------
@@ -207,11 +183,6 @@ def extract_market_prices(card_data):
 # Returns (market_price, tcgplayer_url) or (None, None)
 # -------------------------------
 def fetch_pokewallet_price(card_name, card_number, set_name):
-    pw_set_code = POKEWALLET_SET_CODES.get(set_name)
-    if not pw_set_code:
-        print(f"  [PokeWallet] No set code mapping for {set_name}")
-        return None, None
-
     headers = {"X-API-Key": POKEWALLET_API_KEY}
 
     # Search by card name + number to find the right card
@@ -226,44 +197,39 @@ def fetch_pokewallet_price(card_name, card_number, set_name):
         data = response.json()
         results = data.get("results", [])
 
-        for result in results:
-            card_info = result.get("card_info", {})
-            result_set_code = card_info.get("set_code", "")
-            result_number = card_info.get("card_number", "")
+        # First pass: match by card number AND correct set
+        # Second pass: match by card number only (any set)
+        for strict in [True, False]:
+            for result in results:
+                card_info = result.get("card_info", {})
+                result_number = card_info.get("card_number", "")
+                result_set_name = card_info.get("set_name", "")
 
-            # Match by pokewallet set code (set_code field is the set_id number as string)
-            # Also match by card number
-            # The card_number format from pokewallet is like "161/131"
-            # Our card_number from TCGdex is like "161"
-            number_match = (
-                result_number == card_number
-                or result_number.startswith(f"{card_number}/")
-            )
+                number_match = (
+                    result_number is not None
+                    and card_number is not None
+                    and (
+                        result_number == card_number
+                        or result_number.startswith(f"{card_number}/")
+                    )
+                )
 
-            if not number_match:
-                continue
+                if not number_match:
+                    continue
 
-            # Check TCGplayer prices
-            tcg = result.get("tcgplayer", {})
-            tcg_prices = tcg.get("prices", {})
-            if isinstance(tcg_prices, dict):
-                market_price = tcg_prices.get("market_price")
-                tcg_url = tcg.get("url", "")
-                if market_price is not None:
-                    print(f"  [PokeWallet] Found TCGplayer price: ${market_price}")
-                    return market_price, tcg_url
+                # In strict mode, also require the set name to match
+                if strict and set_name.lower() not in result_set_name.lower():
+                    continue
 
-            # Check Cardmarket prices as fallback
-            cm = result.get("cardmarket", {})
-            if cm:
-                cm_prices = cm.get("prices", [])
-                for variant in cm_prices:
-                    if variant.get("variant_type") == "normal" and variant.get("avg") is not None:
-                        avg_eur = variant["avg"]
-                        market_usd = round(avg_eur * EUR_TO_USD, 2)
-                        print(f"  [PokeWallet] Using Cardmarket avg: {avg_eur} EUR -> ${market_usd} USD")
-                        cm_url = cm.get("product_url", "")
-                        return market_usd, cm_url
+                # Check TCGplayer prices
+                tcg = result.get("tcgplayer", {})
+                tcg_prices = tcg.get("prices", {})
+                if isinstance(tcg_prices, dict):
+                    market_price = tcg_prices.get("market_price")
+                    tcg_url = tcg.get("url", "")
+                    if market_price is not None:
+                        print(f"  [PokeWallet] Found TCGplayer price: ${market_price} ({result_set_name})")
+                        return market_price, tcg_url
 
         print(f"  [PokeWallet] No matching card found for {card_name} #{card_number} in {set_name}")
         return None, None
@@ -323,13 +289,13 @@ def generate_tcgplayer_json(set_info: dict):
             card_number = card_data.get("localId", "")
             card_name = card_data.get("name", card_name_stub)
 
-            # Extract market prices from TCGdex (TCGplayer or Cardmarket)
+            # Extract TCGplayer price from TCGdex
             market_price, product_id = extract_market_prices(card_data)
 
-            # If TCGdex has no price, fall back to PokeWallet
+            # If TCGdex has no TCGplayer price, fall back to PokeWallet
             tcg_url_from_pokewallet = None
             if market_price is None:
-                print(f"  [TCGdex] No price available, trying PokeWallet...")
+                print(f"  [TCGdex] No TCGplayer price, trying PokeWallet...")
                 market_price, tcg_url_from_pokewallet = fetch_pokewallet_price(
                     card_name, card_number, set_name
                 )
