@@ -2,80 +2,26 @@ import pprint
 import os
 import random
 import requests
-import cloudscraper
 import time
 import sys
 from bs4 import BeautifulSoup
 
 TCGDEX_BASE = "https://api.tcgdex.net/v2/en"
-POKEWALLET_BASE = "https://api.pokewallet.io"
-POKEWALLET_API_KEY = os.environ.get("POKEWALLET_API_KEY", "")
-
-# Use cloudscraper for Cloudflare-protected endpoints (PokeWallet)
-scraper = cloudscraper.create_scraper()
-
-# Mapping from our set names to PokeWallet set codes
-POKEWALLET_SET_CODES = {
-    "Sword & Shield": "SWSH01",
-    "Rebel Clash": "SWSH02",
-    "Darkness Ablaze": "SWSH03",
-    "Champion's Path": "CHP",
-    "Vivid Voltage": "SWSH04",
-    "Shining Fates": "SHF",
-    "Battle Styles": "SWSH05",
-    "Chilling Reign": "SWSH06",
-    "Evolving Skies": "SWSH07",
-    "Fusion Strike": "SWSH08",
-    "Brilliant Stars": "SWSH09",
-    "Astral Radiance": "SWSH10",
-    "Lost Origin": "SWSH11",
-    "Silver Tempest": "SWSH12",
-    "Crown Zenith": "CRZ",
-    "Paradox Rift": "PAR",
-    "Paldean Fates": "PAF",
-    "Twilight Masquerade": "TWM",
-    "Obsidian Flames": "OBF",
-    "151": "MEW",
-    "Paldea Evolved": "PAL",
-    "Surging Sparks": "SSP",
-    "Prismatic Evolutions": "PRE",
-    "Journey Together": "JTG",
-    "Destined Rivals": "DRI",
-    "Black Bolt": "BLK",
-    "White Flare": "WHT",
-    "Mega Evolution": "MEG",
-    "Phantasmal Flames": "PFL",
-    "Sun & Moon": "SM01",
-    "Guardians Rising": "SM02",
-    "Burning Shadows": "SM03",
-    "Shining Legends": "SHL",
-    "Crimson Invasion": "SM04",
-    "Ultra Prism": "SM05",
-    "Forbidden Light": "SM06",
-    "Celestial Storm": "CES",
-    "Dragon Majesty": "DRM",
-    "Lost Thunder": "SM8",
-    "Team Up": "SM9",
-    "Unbroken Bonds": "SM10",
-    "Unified Minds": "SM11",
-    "Hidden Fates": "HIF",
-    "Cosmic Eclipse": "SM12",
-}
+POKEMONTCG_BASE = "https://api.pokemontcg.io/v2"
+POKEMONTCG_API_KEY = os.environ.get("POKEMONTCG_API_KEY", "")
 
 # -------------------------------
 # Helper: Retry requests with exponential backoff
 # -------------------------------
-def get_with_retry(url, retries=5, wait_time=30, headers=None, session=None):
-    http = session or requests
+def get_with_retry(url, retries=5, wait_time=30, headers=None):
     for i in range(retries):
         try:
-            response = http.get(url, timeout=30, headers=headers)
-            if response.status_code == 403:
-                print(f"[403 Forbidden] {url}")
-                print(f"  Response body: {response.text[:500]}")
-                if headers:
-                    safe_headers = {k: (v[:4] + "***" if k.lower() in ("x-api-key", "authorization") else v) for k, v in headers.items()}
-                    print(f"  Headers sent: {safe_headers}")
+            response = requests.get(url, timeout=30, headers=headers)
+            if response.status_code == 429:
+                retry_after = int(response.headers.get("Retry-After", wait_time))
+                print(f"[Rate Limited] {url} — waiting {retry_after}s")
+                time.sleep(retry_after)
+                continue
             response.raise_for_status()
             return response
         except requests.exceptions.RequestException as e:
@@ -188,73 +134,48 @@ def extract_market_prices(card_data):
     return None, None
 
 # -------------------------------
-# Helper: Fetch price from PokeWallet API (fallback)
+# Helper: Fetch price from pokemontcg.io API (fallback)
 # Returns (market_price, tcgplayer_url) or (None, None)
 # -------------------------------
-def fetch_pokewallet_price(card_name, card_number, set_name):
-    headers = {
-        "X-API-Key": POKEWALLET_API_KEY,
-        "Accept": "application/json",
-    }
+def fetch_pokemontcg_price(card_name, card_number, set_name):
+    headers = {"X-Api-Key": POKEMONTCG_API_KEY}
 
-    # Search by card name + number to find the right card
-    query = f"{card_name} {card_number}"
-    url = f"{POKEWALLET_BASE}/search?q={requests.utils.quote(query)}&limit=10"
+    # Build Lucene query: name + number + set name
+    # Quotes around multi-word values for exact matching
+    q = f'name:"{card_name}" number:{card_number} set.name:"{set_name}"'
+    url = f"{POKEMONTCG_BASE}/cards?q={requests.utils.quote(q)}&pageSize=5"
 
     try:
-        response = get_with_retry(url, retries=3, wait_time=5, headers=headers, session=scraper)
+        response = get_with_retry(url, retries=5, wait_time=15, headers=headers)
         if not response:
             return None, None
 
-        # Detect Cloudflare challenge still being served
-        content_type = response.headers.get("Content-Type", "")
-        if "text/html" in content_type:
-            print(f"  [PokeWallet] WARNING: Got HTML instead of JSON (Cloudflare still blocking)")
-            print(f"  [PokeWallet] Status: {response.status_code}, Body preview: {response.text[:200]}")
+        data = response.json()
+        cards = data.get("data", [])
+
+        if not cards:
+            print(f"  [pokemontcg.io] No results for {card_name} #{card_number} in {set_name}")
             return None, None
 
-        data = response.json()
-        results = data.get("results", [])
+        # Use the first matching card
+        card = cards[0]
+        tcgplayer = card.get("tcgplayer", {})
+        tcg_url = tcgplayer.get("url", "")
+        tcg_prices = tcgplayer.get("prices", {})
 
-        # First pass: match by card number AND correct set
-        # Second pass: match by card number only (any set)
-        for strict in [True, False]:
-            for result in results:
-                card_info = result.get("card_info", {})
-                result_number = card_info.get("card_number", "")
-                result_set_name = card_info.get("set_name", "")
+        # Check each variant for a market price
+        for variant in ["holofoil", "normal", "reverseHolofoil", "1stEditionHolofoil", "1stEditionNormal"]:
+            variant_data = tcg_prices.get(variant, {})
+            market_price = variant_data.get("market")
+            if market_price is not None:
+                print(f"  [pokemontcg.io] Found price: ${market_price} ({variant})")
+                return market_price, tcg_url
 
-                number_match = (
-                    result_number is not None
-                    and card_number is not None
-                    and (
-                        result_number == card_number
-                        or result_number.startswith(f"{card_number}/")
-                    )
-                )
-
-                if not number_match:
-                    continue
-
-                # In strict mode, also require the set name to match
-                if strict and set_name.lower() not in result_set_name.lower():
-                    continue
-
-                # Check TCGplayer prices
-                tcg = result.get("tcgplayer", {})
-                tcg_prices = tcg.get("prices", {})
-                if isinstance(tcg_prices, dict):
-                    market_price = tcg_prices.get("market_price")
-                    tcg_url = tcg.get("url", "")
-                    if market_price is not None:
-                        print(f"  [PokeWallet] Found TCGplayer price: ${market_price} ({result_set_name})")
-                        return market_price, tcg_url
-
-        print(f"  [PokeWallet] No matching card found for {card_name} #{card_number} in {set_name}")
+        print(f"  [pokemontcg.io] Card found but no market price for {card_name} #{card_number}")
         return None, None
 
     except Exception as e:
-        print(f"  [PokeWallet] Error fetching price: {e}")
+        print(f"  [pokemontcg.io] Error fetching price: {e}")
         return None, None
 
 # -------------------------------
@@ -311,14 +232,14 @@ def generate_tcgplayer_json(set_info: dict):
             # Extract TCGplayer price from TCGdex
             market_price, product_id = extract_market_prices(card_data)
 
-            # If TCGdex has no TCGplayer price, fall back to PokeWallet
-            tcg_url_from_pokewallet = None
+            # If TCGdex has no TCGplayer price, fall back to pokemontcg.io
+            tcg_url_from_fallback = None
             if market_price is None:
-                print(f"  [TCGdex] No TCGplayer price, trying PokeWallet...")
-                market_price, tcg_url_from_pokewallet = fetch_pokewallet_price(
+                print(f"  [TCGdex] No TCGplayer price, trying pokemontcg.io...")
+                market_price, tcg_url_from_fallback = fetch_pokemontcg_price(
                     card_name, card_number, set_name
                 )
-                time.sleep(random.uniform(0.5, 1.5))  # Rate limit pokewallet
+                time.sleep(random.uniform(0.5, 1.5))  # Rate limit pokemontcg.io
 
             if market_price is None or market_price <= 80:
                 continue
@@ -338,11 +259,11 @@ def generate_tcgplayer_json(set_info: dict):
                 except ValueError:
                     print(f"  [Skip] Could not parse grade10 price: {grade10_str}")
 
-            # Build card link: TCGplayer productId > PokeWallet URL > PriceCharting
+            # Build card link: TCGplayer productId > pokemontcg.io URL > PriceCharting
             if product_id:
                 card_link = f"https://www.tcgplayer.com/product/{product_id}"
-            elif tcg_url_from_pokewallet:
-                card_link = tcg_url_from_pokewallet
+            elif tcg_url_from_fallback:
+                card_link = tcg_url_from_fallback
             else:
                 card_link = pricecharting_url
 
@@ -429,10 +350,10 @@ if __name__ == "__main__":
         print(f"Unknown set: {set_name}")
         sys.exit(1)
 
-    if not POKEWALLET_API_KEY:
-        print("[WARNING] POKEWALLET_API_KEY is not set — PokeWallet fallback will fail")
+    if not POKEMONTCG_API_KEY:
+        print("[WARNING] POKEMONTCG_API_KEY is not set — pokemontcg.io fallback will fail")
     else:
-        print(f"[INFO] POKEWALLET_API_KEY is set (starts with {POKEWALLET_API_KEY[:4]}***)")
+        print(f"[INFO] POKEMONTCG_API_KEY is set (starts with {POKEMONTCG_API_KEY[:4]}***)")
 
     set_info = {"name": set_name, "code": set_code}
 

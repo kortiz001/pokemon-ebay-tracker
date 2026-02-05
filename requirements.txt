@@ -1,6 +1,5 @@
 beautifulsoup4
 requests
-cloudscraper
 django
 django-mathfilters
 pytz
