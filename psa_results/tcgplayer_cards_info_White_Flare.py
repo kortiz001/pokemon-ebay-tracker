@@ -1,6 +1,14 @@
-cards_info = {
-    "White Flare": {
-        "code": "sv10.5w",
-        "cards": []
-    }
-}
+cards_info = {   'White Flare': {   'cards': [   {   'card_link': 'https://pricecharting.com/game/pokemon-white-flare/victini-172',
+                                        'graded_prices': {   'grade10': '$855.14',
+                                                             'grade7': '$310.00',
+                                                             'grade8': '$357.66',
+                                                             'grade9': '$370.18',
+                                                             'grade95': '$467.50',
+                                                             'ungraded': '$384.00'},
+                                        'image_url': 'https://assets.tcgdex.net/en/sv/sv10.5w/172/high.png',
+                                        'market': 295.98,
+                                        'name': 'Victini',
+                                        'number': '172',
+                                        'pricecharting_url': 'https://pricecharting.com/game/pokemon-white-flare/victini-172',
+                                        'printed_total': 86}],
+                       'code': 'sv10.5w'}}
