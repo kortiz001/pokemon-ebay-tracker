@@ -1,6 +1,14 @@
-cards_info = {
-    "Surging Sparks": {
-        "code": "sv08",
-        "cards": []
-    }
-}
+cards_info = {   'Surging Sparks': {   'cards': [   {   'card_link': 'https://pricecharting.com/game/pokemon-surging-sparks/pikachu-ex-238',
+                                           'graded_prices': {   'grade10': '$832.50',
+                                                                'grade7': '$192.00',
+                                                                'grade8': '$240.25',
+                                                                'grade9': '$265.00',
+                                                                'grade95': '$492.09',
+                                                                'ungraded': '$260.10'},
+                                           'image_url': 'https://assets.tcgdex.net/en/sv/sv08/238/high.png',
+                                           'market': 310.38,
+                                           'name': 'Pikachu ex',
+                                           'number': '238',
+                                           'pricecharting_url': 'https://pricecharting.com/game/pokemon-surging-sparks/pikachu-ex-238',
+                                           'printed_total': 191}],
+                          'code': 'sv08'}}
