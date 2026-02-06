@@ -6,7 +6,7 @@ cards_info = {   'Paradox Rift': {   'cards': [   {   'card_link': 'https://pric
                                                               'grade95': '$135.00',
                                                               'ungraded': '$73.54'},
                                          'image_url': 'https://assets.tcgdex.net/en/sv/sv04/199/high.png',
-                                         'market': 100.59,
+                                         'market': 91.18,
                                          'name': 'Groudon',
                                          'number': '199',
                                          'pricecharting_url': 'https://pricecharting.com/game/pokemon-paradox-rift/groudon-199',
