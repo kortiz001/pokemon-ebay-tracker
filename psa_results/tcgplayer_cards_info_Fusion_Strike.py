@@ -6,7 +6,7 @@ cards_info = {   'Fusion Strike': {   'cards': [   {   'card_link': 'https://www
                                                                'grade95': '$151.87',
                                                                'ungraded': '$85.00'},
                                           'image_url': 'https://assets.tcgdex.net/en/swsh/swsh8/251/high.png',
-                                          'market': 87.59,
+                                          'market': 87.07,
                                           'name': 'Mew V',
                                           'number': '251',
                                           'pricecharting_url': 'https://pricecharting.com/game/pokemon-fusion-strike/mew-v-251',
