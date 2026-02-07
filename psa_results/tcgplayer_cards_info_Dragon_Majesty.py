@@ -1,25 +1,14 @@
-cards_info = {
-    "Dragon Majesty": {
-        "code": "sm7.5",
-        "cards": [
-            {
-                "name": "Ultra Necrozma GX",
-                "market": 92.73,
-                "price_high": 227,
-                "printed_total": 70,
-                "number": "78",
-                "card_link": "https://www.tcgplayer.com/product/175508",
-                "pricecharting_url": "https://pricecharting.com/game/pokemon-dragon-majesty/ultra-necrozma-gx-78",
-                "graded_prices": {
-                    "ungraded": "$77.68",
-                    "grade7": "$24.36",
-                    "grade8": "$81.10",
-                    "grade9": "$108.16",
-                    "grade95": "$112.00",
-                    "grade10": "$360.00"
-                },
-                "image_url": ""
-            }
-        ]
-    }
-}
+cards_info = {   'Dragon Majesty': {   'cards': [   {   'card_link': 'https://www.tcgplayer.com/product/175508',
+                                           'graded_prices': {   'grade10': '$375.00',
+                                                                'grade7': '$24.38',
+                                                                'grade8': '$70.00',
+                                                                'grade9': '$108.18',
+                                                                'grade95': '$112.00',
+                                                                'ungraded': '$78.92'},
+                                           'image_url': '',
+                                           'market': 92.44,
+                                           'name': 'Ultra Necrozma GX',
+                                           'number': '78',
+                                           'pricecharting_url': 'https://pricecharting.com/game/pokemon-dragon-majesty/ultra-necrozma-gx-78',
+                                           'printed_total': 70}],
+                          'code': 'sm7.5'}}
