@@ -1,24 +1,27 @@
-cards_info = {
-    "Journey Together": {
-        "code": "sv09",
-        "cards": [
-            {
-                "name": "Lillie's Clefairy ex",
-                "market": 117.59,
-                "printed_total": 159,
-                "number": "184",
-                "card_link": "https://pricecharting.com/game/pokemon-journey-together/lillie's-clefairy-ex-184",
-                "pricecharting_url": "https://pricecharting.com/game/pokemon-journey-together/lillie's-clefairy-ex-184",
-                "graded_prices": {
-                    "ungraded": "$129.99",
-                    "grade7": "$104.99",
-                    "grade8": "$118.29",
-                    "grade9": "$135.00",
-                    "grade95": "$185.00",
-                    "grade10": "$428.00"
-                },
-                "image_url": "https://assets.tcgdex.net/en/sv/sv09/184/high.png"
-            }
-        ]
-    }
-}
+cards_info = {   'Journey Together': {   'cards': [   {   'card_link': "https://pricecharting.com/game/pokemon-journey-together/lillie's-clefairy-ex-184",
+                                             'graded_prices': {   'grade10': '$423.33',
+                                                                  'grade7': '$105.00',
+                                                                  'grade8': '$113.22',
+                                                                  'grade9': '$135.98',
+                                                                  'grade95': '$172.75',
+                                                                  'ungraded': '$129.77'},
+                                             'image_url': 'https://assets.tcgdex.net/en/sv/sv09/184/high.png',
+                                             'market': 119.53,
+                                             'name': "Lillie's Clefairy ex",
+                                             'number': '184',
+                                             'pricecharting_url': "https://pricecharting.com/game/pokemon-journey-together/lillie's-clefairy-ex-184",
+                                             'printed_total': 159},
+                                         {   'card_link': 'https://pricecharting.com/game/pokemon-journey-together/salamence-ex-187',
+                                             'graded_prices': {   'grade10': '$225.50',
+                                                                  'grade7': '$39.00',
+                                                                  'grade8': '$49.06',
+                                                                  'grade9': '$60.00',
+                                                                  'grade95': '$90.00',
+                                                                  'ungraded': '$54.35'},
+                                             'image_url': 'https://assets.tcgdex.net/en/sv/sv09/187/high.png',
+                                             'market': 84.98,
+                                             'name': 'Salamence ex',
+                                             'number': '187',
+                                             'pricecharting_url': 'https://pricecharting.com/game/pokemon-journey-together/salamence-ex-187',
+                                             'printed_total': 159}],
+                            'code': 'sv09'}}
