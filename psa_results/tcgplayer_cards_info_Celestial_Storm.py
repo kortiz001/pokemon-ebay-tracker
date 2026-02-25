@@ -1,27 +1,25 @@
-cards_info = {   'Celestial Storm': {   'cards': [   {   'card_link': 'https://www.tcgplayer.com/product/170937',
-                                            'graded_prices': {   'grade10': '$599.99',
-                                                                 'grade7': '$18.52',
-                                                                 'grade8': '$64.68',
-                                                                 'grade9': '$99.50',
-                                                                 'grade95': '$109.00',
-                                                                 'ungraded': '$71.50'},
-                                            'image_url': 'https://assets.tcgdex.net/en/sm/sm7/160/high.png',
-                                            'market': 80.05,
-                                            'name': 'Rayquaza GX',
-                                            'number': '160',
-                                            'pricecharting_url': 'https://pricecharting.com/game/pokemon-celestial-storm/rayquaza-gx-160',
-                                            'printed_total': 168},
-                                        {   'card_link': 'https://www.tcgplayer.com/product/170938',
-                                            'graded_prices': {   'grade10': '$825.68',
-                                                                 'grade7': '$122.50',
-                                                                 'grade8': '$150.00',
-                                                                 'grade9': '$229.04',
-                                                                 'grade95': '$288.58',
-                                                                 'ungraded': '$150.00'},
-                                            'image_url': 'https://assets.tcgdex.net/en/sm/sm7/177/high.png',
-                                            'market': 234.87,
-                                            'name': 'Rayquaza GX',
-                                            'number': '177',
-                                            'pricecharting_url': 'https://pricecharting.com/game/pokemon-celestial-storm/rayquaza-gx-177',
-                                            'printed_total': 168}],
-                           'code': 'sm7'}}
+cards_info = {
+    "Celestial Storm": {
+        "code": "sm7",
+        "cards": [
+            {
+                "name": "Rayquaza GX",
+                "market": 231.7,
+                "price_high": 699.99,
+                "printed_total": 168,
+                "number": "177",
+                "card_link": "https://www.tcgplayer.com/product/170938",
+                "pricecharting_url": "https://pricecharting.com/game/pokemon-celestial-storm/rayquaza-gx-177",
+                "graded_prices": {
+                    "ungraded": "$169.06",
+                    "grade7": "$120.00",
+                    "grade8": "$144.67",
+                    "grade9": "$202.92",
+                    "grade95": "$289.14",
+                    "grade10": "$795.50"
+                },
+                "image_url": "https://assets.tcgdex.net/en/sm/sm7/177/high.png"
+            }
+        ]
+    }
+}
