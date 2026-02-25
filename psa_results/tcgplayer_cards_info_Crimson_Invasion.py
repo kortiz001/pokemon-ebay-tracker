@@ -1,6 +1,1 @@
-cards_info = {
-    "Crimson Invasion": {
-        "code": "sm4",
-        "cards": []
-    }
-}
+cards_info = {'Crimson Invasion': {'cards': [], 'code': 'sm4'}}
