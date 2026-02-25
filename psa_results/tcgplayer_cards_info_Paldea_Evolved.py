@@ -1,6 +1,1 @@
-cards_info = {
-    "Paldea Evolved": {
-        "code": "sv02",
-        "cards": []
-    }
-}
+cards_info = {'Paldea Evolved': {'cards': [], 'code': 'sv02'}}
