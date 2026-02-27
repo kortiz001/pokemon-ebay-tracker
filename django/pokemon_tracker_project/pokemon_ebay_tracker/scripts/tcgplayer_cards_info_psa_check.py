@@ -306,7 +306,7 @@ cards_info = \
                                  'pricecharting_url': 'https://pricecharting.com/game/pokemon-lost-thunder/lugia-gx-227',
                                  'printed_total': 214}],
                     'code': 'sm8'},
-  'Hidden Fates': {'code': 'sm115', 'cards': []},
+  'Hidden Fates': {'cards': [], 'code': 'sm115'},
   'Cosmic Eclipse': { 'cards': [ { 'card_link': 'https://www.tcgplayer.com/product/201331',
                                    'graded_prices': { 'grade10': '$405.00',
                                                       'grade7': '$29.55',
