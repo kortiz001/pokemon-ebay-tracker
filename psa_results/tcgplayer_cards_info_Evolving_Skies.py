@@ -1,25 +1,14 @@
-cards_info = {
-    "Evolving Skies": {
-        "code": "swsh7",
-        "cards": [
-            {
-                "name": "Umbreon V",
-                "market": 301.88,
-                "price_high": 4321,
-                "printed_total": 203,
-                "number": "189",
-                "card_link": "https://www.tcgplayer.com/product/246719",
-                "pricecharting_url": "https://pricecharting.com/game/pokemon-evolving-skies/umbreon-v-189",
-                "graded_prices": {
-                    "ungraded": "$295.00",
-                    "grade7": "$131.49",
-                    "grade8": "$246.25",
-                    "grade9": "$325.00",
-                    "grade95": "$420.00",
-                    "grade10": "$913.33"
-                },
-                "image_url": "https://assets.tcgdex.net/en/swsh/swsh7/189/high.png"
-            }
-        ]
-    }
-}
+cards_info = {   'Evolving Skies': {   'cards': [   {   'card_link': 'https://www.tcgplayer.com/product/246719',
+                                           'graded_prices': {   'grade10': '$896.51',
+                                                                'grade7': '$208.64',
+                                                                'grade8': '$250.00',
+                                                                'grade9': '$320.25',
+                                                                'grade95': '$400.44',
+                                                                'ungraded': '$289.76'},
+                                           'image_url': 'https://assets.tcgdex.net/en/swsh/swsh7/189/high.png',
+                                           'market': 297.99,
+                                           'name': 'Umbreon V',
+                                           'number': '189',
+                                           'pricecharting_url': 'https://pricecharting.com/game/pokemon-evolving-skies/umbreon-v-189',
+                                           'printed_total': 203}],
+                          'code': 'swsh7'}}
