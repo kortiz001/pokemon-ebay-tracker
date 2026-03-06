@@ -1,1 +1,14 @@
-cards_info = {'Silver Tempest': {'cards': [], 'code': 'swsh12'}}
+cards_info = {   'Silver Tempest': {   'cards': [   {   'card_link': 'https://www.tcgplayer.com/product/451834',
+                                           'graded_prices': {   'grade10': '$990.00',
+                                                                'grade7': '$279.99',
+                                                                'grade8': '$313.75',
+                                                                'grade9': '$391.00',
+                                                                'grade95': '$579.08',
+                                                                'ungraded': '$350.00'},
+                                           'image_url': 'https://assets.tcgdex.net/en/swsh/swsh12/186/high.png',
+                                           'market': 356.15,
+                                           'name': 'Lugia V',
+                                           'number': '186',
+                                           'pricecharting_url': 'https://pricecharting.com/game/pokemon-silver-tempest/lugia-v-186',
+                                           'printed_total': 195}],
+                          'code': 'swsh12'}}
