@@ -1,14 +1,1 @@
-cards_info = {   'Crown Zenith': {   'cards': [   {   'card_link': 'https://pricecharting.com/game/pokemon-crown-zenith/mewtwo-vstar-GG44',
-                                         'graded_prices': {   'grade10': '$385.85',
-                                                              'grade7': '$113.81',
-                                                              'grade8': '$165.04',
-                                                              'grade9': '$177.75',
-                                                              'grade95': '$257.50',
-                                                              'ungraded': '$178.97'},
-                                         'image_url': 'https://assets.tcgdex.net/en/swsh/swsh12.5/GG44/high.png',
-                                         'market': 143.52,
-                                         'name': 'Mewtwo VSTAR',
-                                         'number': 'GG44',
-                                         'pricecharting_url': 'https://pricecharting.com/game/pokemon-crown-zenith/mewtwo-vstar-GG44',
-                                         'printed_total': 159}],
-                        'code': 'swsh12.5'}}
+cards_info = {'Crown Zenith': {'cards': [], 'code': 'swsh12.5'}}
