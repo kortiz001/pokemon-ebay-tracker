@@ -1,24 +1,14 @@
-cards_info = {
-    "Journey Together": {
-        "code": "sv09",
-        "cards": [
-            {
-                "name": "Lillie's Clefairy ex",
-                "market": 117.59,
-                "printed_total": 159,
-                "number": "184",
-                "card_link": "https://pricecharting.com/game/pokemon-journey-together/lillie's-clefairy-ex-184",
-                "pricecharting_url": "https://pricecharting.com/game/pokemon-journey-together/lillie's-clefairy-ex-184",
-                "graded_prices": {
-                    "ungraded": "$129.99",
-                    "grade7": "$104.99",
-                    "grade8": "$118.29",
-                    "grade9": "$135.00",
-                    "grade95": "$185.00",
-                    "grade10": "$428.00"
-                },
-                "image_url": "https://assets.tcgdex.net/en/sv/sv09/184/high.png"
-            }
-        ]
-    }
-}
+cards_info = {   'Journey Together': {   'cards': [   {   'card_link': "https://pricecharting.com/game/pokemon-journey-together/lillie's-clefairy-ex-184",
+                                             'graded_prices': {   'grade10': '$445.00',
+                                                                  'grade7': '$108.84',
+                                                                  'grade8': '$115.94',
+                                                                  'grade9': '$130.00',
+                                                                  'grade95': '$156.37',
+                                                                  'ungraded': '$122.00'},
+                                             'image_url': 'https://assets.tcgdex.net/en/sv/sv09/184/high.png',
+                                             'market': 115.05,
+                                             'name': "Lillie's Clefairy ex",
+                                             'number': '184',
+                                             'pricecharting_url': "https://pricecharting.com/game/pokemon-journey-together/lillie's-clefairy-ex-184",
+                                             'printed_total': 159}],
+                            'code': 'sv09'}}
