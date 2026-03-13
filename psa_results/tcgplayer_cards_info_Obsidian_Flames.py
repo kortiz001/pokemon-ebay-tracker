@@ -1,1 +1,6 @@
-cards_info = {'Obsidian Flames': {'cards': [], 'code': 'sv03'}}
+cards_info = {
+    "Obsidian Flames": {
+        "code": "sv03",
+        "cards": []
+    }
+}
