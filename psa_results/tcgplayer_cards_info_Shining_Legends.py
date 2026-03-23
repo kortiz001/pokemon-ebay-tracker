@@ -1,27 +1,43 @@
-cards_info = {   'Shining Legends': {   'cards': [   {   'card_link': 'https://www.tcgplayer.com/product/146699',
-                                            'graded_prices': {   'grade10': '$650.00',
-                                                                 'grade7': '$69.00',
-                                                                 'grade8': '$76.57',
-                                                                 'grade9': '$134.77',
-                                                                 'grade95': '$146.25',
-                                                                 'ungraded': '$80.05'},
-                                            'image_url': '',
-                                            'market': 100.39,
-                                            'name': 'Shining Mew',
-                                            'number': '40',
-                                            'pricecharting_url': 'https://pricecharting.com/game/pokemon-shining-legends/shining-mew-40',
-                                            'printed_total': 73},
-                                        {   'card_link': 'https://www.tcgplayer.com/product/146698',
-                                            'graded_prices': {   'grade10': '$4,565.93',
-                                                                 'grade7': '$486.76',
-                                                                 'grade8': '$578.38',
-                                                                 'grade9': '$1,144.00',
-                                                                 'grade95': '$3,200.00',
-                                                                 'ungraded': '$498.76'},
-                                            'image_url': '',
-                                            'market': 530.72,
-                                            'name': 'Mewtwo GX',
-                                            'number': '78',
-                                            'pricecharting_url': 'https://pricecharting.com/game/pokemon-shining-legends/mewtwo-gx-78',
-                                            'printed_total': 73}],
-                           'code': 'sm3.5'}}
+cards_info = {
+    "Shining Legends": {
+        "code": "sm3.5",
+        "cards": [
+            {
+                "name": "Shining Mew",
+                "market": 82.3,
+                "price_high": 149.98,
+                "printed_total": 73,
+                "number": "40",
+                "card_link": "https://www.tcgplayer.com/product/146699",
+                "pricecharting_url": "https://pricecharting.com/game/pokemon-shining-legends/shining-mew-40",
+                "graded_prices": {
+                    "ungraded": "$75.00",
+                    "grade7": "$66.00",
+                    "grade8": "$80.00",
+                    "grade9": "$117.88",
+                    "grade95": "$171.13",
+                    "grade10": "$468.35"
+                },
+                "image_url": ""
+            },
+            {
+                "name": "Mewtwo GX",
+                "market": 519.72,
+                "price_high": 699.99,
+                "printed_total": 73,
+                "number": "78",
+                "card_link": "https://www.tcgplayer.com/product/146698",
+                "pricecharting_url": "https://pricecharting.com/game/pokemon-shining-legends/mewtwo-gx-78",
+                "graded_prices": {
+                    "ungraded": "$330.57",
+                    "grade7": "$420.00",
+                    "grade8": "$502.36",
+                    "grade9": "$834.07",
+                    "grade95": "$2,550.00",
+                    "grade10": "$4,334.95"
+                },
+                "image_url": ""
+            }
+        ]
+    }
+}
