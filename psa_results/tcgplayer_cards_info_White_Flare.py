@@ -1,27 +1,6 @@
-cards_info = {   'White Flare': {   'cards': [   {   'card_link': 'https://pricecharting.com/game/pokemon-white-flare/oshawott-105',
-                                        'graded_prices': {   'grade10': '$407.34',
-                                                             'grade7': '$32.00',
-                                                             'grade8': '$40.00',
-                                                             'grade9': '$46.00',
-                                                             'grade95': '$51.00',
-                                                             'ungraded': '$41.08'},
-                                        'image_url': 'https://assets.tcgdex.net/en/sv/sv10.5w/105/high.png',
-                                        'market': 86.52,
-                                        'name': 'Oshawott',
-                                        'number': '105',
-                                        'pricecharting_url': 'https://pricecharting.com/game/pokemon-white-flare/oshawott-105',
-                                        'printed_total': 86},
-                                    {   'card_link': 'https://pricecharting.com/game/pokemon-white-flare/reshiram-ex-166',
-                                        'graded_prices': {   'grade10': '$391.18',
-                                                             'grade7': '$124.62',
-                                                             'grade8': '$127.50',
-                                                             'grade9': '$150.00',
-                                                             'grade95': '$156.45',
-                                                             'ungraded': '$157.50'},
-                                        'image_url': 'https://assets.tcgdex.net/en/sv/sv10.5w/166/high.png',
-                                        'market': 144.0,
-                                        'name': 'Reshiram ex',
-                                        'number': '166',
-                                        'pricecharting_url': 'https://pricecharting.com/game/pokemon-white-flare/reshiram-ex-166',
-                                        'printed_total': 86}],
-                       'code': 'sv10.5w'}}
+cards_info = {
+    "White Flare": {
+        "code": "sv10.5w",
+        "cards": []
+    }
+}
