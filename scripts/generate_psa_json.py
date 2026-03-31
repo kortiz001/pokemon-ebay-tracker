@@ -311,7 +311,7 @@ if __name__ == "__main__":
         "Twilight Masquerade": "sv06",
         "Obsidian Flames": "sv03",
         "151": "sv03.5",
-        "Shrouded Fables": "sv6pt5",
+        "Shrouded Fable": "sv6pt5",
         "Scarlet & Violet": "sv01",
         "Temporal Forces": "sv05",
         "Stellar Crown": "sv07",
