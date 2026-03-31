@@ -311,6 +311,10 @@ if __name__ == "__main__":
         "Twilight Masquerade": "sv06",
         "Obsidian Flames": "sv03",
         "151": "sv03.5",
+        "Shrouded Fables": "sv6pt5",
+        "Scarlet & Violet": "sv01",
+        "Temporal Forces": "sv05",
+        "Stellar Crown": "sv07",
         "Paldea Evolved": "sv02",
         "Surging Sparks": "sv08",
         "Prismatic Evolutions": "sv08.5",
@@ -320,7 +324,7 @@ if __name__ == "__main__":
         "White Flare": "sv10.5w",
         "Mega Evolution": "me01",
         "Phantasmal Flames": "me02",
-        "Ascended Heroes": "me03",
+        "Ascended Heroes": "me02.5",
     }
 
     set_code = sets.get(set_name)
