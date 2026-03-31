@@ -304,6 +304,7 @@ cards_info = \
                                    'image_url': 'https://assets.tcgdex.net/en/me/me01/188/high.png'}]},
   '151': {'code': 'sv03.5', 'cards': []},
   'Vivid Voltage': {'code': 'swsh4', 'cards': []},
+  'Shrouded Fable': {'cards': [], 'code': 'sv6pt5'},
   'Guardians Rising': { 'cards': [ { 'card_link': 'https://www.tcgplayer.com/product/131008',
                                      'graded_prices': { 'grade10': '$411.65',
                                                         'grade7': '$72.76',
