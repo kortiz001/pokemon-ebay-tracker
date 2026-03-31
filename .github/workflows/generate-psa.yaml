@@ -21,90 +21,72 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - set: "Rebel Clash"
+          - set: "Sword & Shield"
             index: 0
-          - set: "Darkness Ablaze"
+          - set: "Rebel Clash"
             index: 1
-          - set: "Champion's Path"
+          - set: "Darkness Ablaze"
             index: 2
-          - set: "Vivid Voltage"
+          - set: "Champion's Path"
             index: 3
-          - set: "Shining Fates"
+          - set: "Vivid Voltage"
             index: 4
-          - set: "Battle Styles"
+          - set: "Shining Fates"
             index: 5
-          - set: "Chilling Reign"
+          - set: "Battle Styles"
             index: 6
-          - set: "Fusion Strike"
+          - set: "Chilling Reign"
             index: 7
-          - set: "Astral Radiance"
-            index: 8
-          - set: "Lost Origin"
-            index: 9
-          - set: "Silver Tempest"
-            index: 10
-          - set: "Paradox Rift"
-            index: 11
-          - set: "Paldean Fates"
-            index: 12
-          - set: "Twilight Masquerade"
-            index: 13
-          - set: "Obsidian Flames"
-            index: 14
-          - set: "151"
-            index: 15
-          - set: "Paldea Evolved"
-            index: 16
           - set: "Evolving Skies"
-            index: 17
+            index: 8
+          - set: "Brilliant Stars"
+            index: 9
+          - set: "Astral Radiance"
+            index: 10
+          - set: "Lost Origin"
+            index: 11
+          - set: "Silver Tempest"
+            index: 12
           - set: "Crown Zenith"
+            index: 13
+          - set: "Scarlet & Violet"
+            index: 14
+          - set: "Paldea Evolved"
+            index: 15
+          - set: "Obsidian Flames"
+            index: 16
+          - set: "151"
+            index: 17
+          - set: "Paradox Rift"
             index: 18
-          - set: "Surging Sparks"
+          - set: "Paldean Fates"
             index: 19
-          - set: "Prismatic Evolutions"
+          - set: "Temporal Forces"
             index: 20
-          - set: "Journey Together"
+          - set: "Twilight Masquerade"
             index: 21
-          - set: "Destined Rivals"
+          - set: "Shrouded Fable"
             index: 22
-          - set: "Black Bolt"
+          - set: "Stellar Crown"
             index: 23
-          - set: "White Flare"
+          - set: "Surging Sparks"
             index: 24
-          - set: "Mega Evolution"
+          - set: "Prismatic Evolutions"
             index: 25
-          - set: "Phantasmal Flames"
+          - set: "Journey Together"
             index: 26
-          - set: "Sun & Moon"
+          - set: "Destined Rivals"
             index: 27
-          - set: "Guardians Rising"
+          - set: "Black Bolt"
             index: 28
-          - set: "Burning Shadows"
+          - set: "White Flare"
             index: 29
-          - set: "Shining Legends"
+          - set: "Mega Evolution"
             index: 30
-          - set: "Crimson Invasion"
+          - set: "Phantasmal Flames"
             index: 31
-          - set: "Ultra Prism"
+          - set: "Ascended Heroes"
             index: 32
-          - set: "Forbidden Light"
-            index: 33
-          - set: "Celestial Storm"
-            index: 34
-          - set: "Dragon Majesty"
-            index: 35
-          - set: "Lost Thunder"
-            index: 36
-          - set: "Team Up"
-            index: 37
-          - set: "Unbroken Bonds"
-            index: 38
-          - set: "Unified Minds"
-            index: 39
-          - set: "Hidden Fates"
-            index: 40
-          - set: "Cosmic Eclipse"
-            index: 41
 
     steps:
       - name: Stagger job start
