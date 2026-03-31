@@ -1,27 +1,25 @@
-cards_info = {   'Lost Origin': {   'cards': [   {   'card_link': 'https://www.tcgplayer.com/product/284137',
-                                        'graded_prices': {   'grade10': '$2,287.50',
-                                                             'grade7': '$475.00',
-                                                             'grade8': '$569.97',
-                                                             'grade9': '$723.46',
-                                                             'grade95': '$1,106.29',
-                                                             'ungraded': '$649.71'},
-                                        'image_url': 'https://assets.tcgdex.net/en/swsh/swsh11/186/high.png',
-                                        'market': 666.86,
-                                        'name': 'Giratina V',
-                                        'number': '186',
-                                        'pricecharting_url': 'https://pricecharting.com/game/pokemon-lost-origin/giratina-v-186',
-                                        'printed_total': 196},
-                                    {   'card_link': 'https://pricecharting.com/game/pokemon-lost-origin/pikachu-v-TG16',
-                                        'graded_prices': {   'grade10': '$292.95',
-                                                             'grade7': '$33.90',
-                                                             'grade8': '$59.99',
-                                                             'grade9': '$75.33',
-                                                             'grade95': '$110.00',
-                                                             'ungraded': '$73.20'},
-                                        'image_url': 'https://assets.tcgdex.net/en/swsh/swsh11/TG16/high.png',
-                                        'market': 80.37,
-                                        'name': 'Pikachu V',
-                                        'number': 'TG16',
-                                        'pricecharting_url': 'https://pricecharting.com/game/pokemon-lost-origin/pikachu-v-TG16',
-                                        'printed_total': 196}],
-                       'code': 'swsh11'}}
+cards_info = {
+    "Lost Origin": {
+        "code": "swsh11",
+        "cards": [
+            {
+                "name": "Giratina V",
+                "market": 658.24,
+                "price_high": 1500,
+                "printed_total": 196,
+                "number": "186",
+                "card_link": "https://www.tcgplayer.com/product/284137",
+                "pricecharting_url": "https://pricecharting.com/game/pokemon-lost-origin/giratina-v-186",
+                "graded_prices": {
+                    "ungraded": "$569.58",
+                    "grade7": "$460.00",
+                    "grade8": "$534.84",
+                    "grade9": "$661.00",
+                    "grade95": "$1,100.00",
+                    "grade10": "$2,025.17"
+                },
+                "image_url": "https://assets.tcgdex.net/en/swsh/swsh11/186/high.png"
+            }
+        ]
+    }
+}
