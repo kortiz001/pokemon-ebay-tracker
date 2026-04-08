@@ -1,1 +1,14 @@
-cards_info = {'Crown Zenith': {'cards': [], 'code': 'swsh12.5'}}
+cards_info = {   'Crown Zenith': {   'cards': [   {   'card_link': 'https://pricecharting.com/game/pokemon-crown-zenith/arceus-vstar-GG70',
+                                         'graded_prices': {   'grade10': '$331.59',
+                                                              'grade7': '$73.00',
+                                                              'grade8': '$108.37',
+                                                              'grade9': '$135.44',
+                                                              'grade95': '$145.49',
+                                                              'ungraded': '$125.00'},
+                                         'image_url': 'https://assets.tcgdex.net/en/swsh/swsh12.5/GG70/high.png',
+                                         'market': 172.56,
+                                         'name': 'Arceus VSTAR',
+                                         'number': 'GG70',
+                                         'pricecharting_url': 'https://pricecharting.com/game/pokemon-crown-zenith/arceus-vstar-GG70',
+                                         'printed_total': 159}],
+                        'code': 'swsh12.5'}}
