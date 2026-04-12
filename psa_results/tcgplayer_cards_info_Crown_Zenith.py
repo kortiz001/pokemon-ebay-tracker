@@ -1,14 +1,1 @@
-cards_info = {   'Crown Zenith': {   'cards': [   {   'card_link': 'https://pricecharting.com/game/pokemon-crown-zenith/origin-forme-dialga-vstar-GG68',
-                                         'graded_prices': {   'grade10': '$269.15',
-                                                              'grade7': '$72.18',
-                                                              'grade8': '$79.79',
-                                                              'grade9': '$98.56',
-                                                              'grade95': '$108.00',
-                                                              'ungraded': '$97.38'},
-                                         'image_url': 'https://assets.tcgdex.net/en/swsh/swsh12.5/GG68/high.png',
-                                         'market': 154.37,
-                                         'name': 'Origin Forme Dialga VSTAR',
-                                         'number': 'GG68',
-                                         'pricecharting_url': 'https://pricecharting.com/game/pokemon-crown-zenith/origin-forme-dialga-vstar-GG68',
-                                         'printed_total': 159}],
-                        'code': 'swsh12.5'}}
+cards_info = {'Crown Zenith': {'cards': [], 'code': 'swsh12.5'}}
