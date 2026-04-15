@@ -1,1 +1,14 @@
-cards_info = {'Astral Radiance': {'cards': [], 'code': 'swsh10'}}
+cards_info = {   'Astral Radiance': {   'cards': [   {   'card_link': 'https://pricecharting.com/game/pokemon-astral-radiance/origin-forme-palkia-v-167',
+                                            'graded_prices': {   'grade10': '$266.83',
+                                                                 'grade7': '$58.51',
+                                                                 'grade8': '$63.15',
+                                                                 'grade9': '$77.71',
+                                                                 'grade95': '$78.06',
+                                                                 'ungraded': '$73.54'},
+                                            'image_url': 'https://assets.tcgdex.net/en/swsh/swsh10/167/high.png',
+                                            'market': 97.58,
+                                            'name': 'Origin Forme Palkia V',
+                                            'number': '167',
+                                            'pricecharting_url': 'https://pricecharting.com/game/pokemon-astral-radiance/origin-forme-palkia-v-167',
+                                            'printed_total': 189}],
+                           'code': 'swsh10'}}
