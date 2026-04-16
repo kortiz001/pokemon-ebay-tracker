@@ -1,14 +1,1 @@
-cards_info = {   'Crown Zenith': {   'cards': [   {   'card_link': 'https://pricecharting.com/game/pokemon-crown-zenith/darkrai-vstar-GG50',
-                                         'graded_prices': {   'grade10': '$260.66',
-                                                              'grade7': '$18.30',
-                                                              'grade8': '$42.92',
-                                                              'grade9': '$69.99',
-                                                              'grade95': '$77.00',
-                                                              'ungraded': '$60.00'},
-                                         'image_url': 'https://assets.tcgdex.net/en/swsh/swsh12.5/GG50/high.png',
-                                         'market': 81.21,
-                                         'name': 'Darkrai VSTAR',
-                                         'number': 'GG50',
-                                         'pricecharting_url': 'https://pricecharting.com/game/pokemon-crown-zenith/darkrai-vstar-GG50',
-                                         'printed_total': 159}],
-                        'code': 'swsh12.5'}}
+cards_info = {'Crown Zenith': {'cards': [], 'code': 'swsh12.5'}}
