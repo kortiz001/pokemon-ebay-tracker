@@ -1,6 +1,14 @@
-cards_info = {
-    "Chilling Reign": {
-        "code": "swsh6",
-        "cards": []
-    }
-}
+cards_info = {   'Chilling Reign': {   'cards': [   {   'card_link': 'https://pricecharting.com/game/pokemon-chilling-reign/snorlax-224',
+                                           'graded_prices': {   'grade10': '$258.00',
+                                                                'grade7': '$54.00',
+                                                                'grade8': '$68.00',
+                                                                'grade9': '$109.25',
+                                                                'grade95': '$121.94',
+                                                                'ungraded': '$95.00'},
+                                           'image_url': 'https://assets.tcgdex.net/en/swsh/swsh6/224/high.png',
+                                           'market': 82.4,
+                                           'name': 'Snorlax',
+                                           'number': '224',
+                                           'pricecharting_url': 'https://pricecharting.com/game/pokemon-chilling-reign/snorlax-224',
+                                           'printed_total': 198}],
+                          'code': 'swsh6'}}
