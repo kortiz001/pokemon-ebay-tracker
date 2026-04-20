@@ -1,25 +1,40 @@
-cards_info = {
-    "Lost Origin": {
-        "code": "swsh11",
-        "cards": [
-            {
-                "name": "Giratina V",
-                "market": 658.24,
-                "price_high": 1500,
-                "printed_total": 196,
-                "number": "186",
-                "card_link": "https://www.tcgplayer.com/product/284137",
-                "pricecharting_url": "https://pricecharting.com/game/pokemon-lost-origin/giratina-v-186",
-                "graded_prices": {
-                    "ungraded": "$569.58",
-                    "grade7": "$460.00",
-                    "grade8": "$534.84",
-                    "grade9": "$661.00",
-                    "grade95": "$1,100.00",
-                    "grade10": "$2,025.17"
-                },
-                "image_url": "https://assets.tcgdex.net/en/swsh/swsh11/186/high.png"
-            }
-        ]
-    }
-}
+cards_info = {   'Lost Origin': {   'cards': [   {   'card_link': 'https://pricecharting.com/game/pokemon-lost-origin/giratina-v-186',
+                                        'graded_prices': {   'grade10': '$2,649.50',
+                                                             'grade7': '$475.00',
+                                                             'grade8': '$604.86',
+                                                             'grade9': '$756.35',
+                                                             'grade95': '$1,094.53',
+                                                             'ungraded': '$657.51'},
+                                        'image_url': 'https://assets.tcgdex.net/en/swsh/swsh11/186/high.png',
+                                        'market': 1157.16,
+                                        'name': 'Giratina V',
+                                        'number': '186',
+                                        'pricecharting_url': 'https://pricecharting.com/game/pokemon-lost-origin/giratina-v-186',
+                                        'printed_total': 196},
+                                    {   'card_link': 'https://pricecharting.com/game/pokemon-lost-origin/pikachu-v-TG16',
+                                        'graded_prices': {   'grade10': '$334.48',
+                                                             'grade7': '$35.91',
+                                                             'grade8': '$60.00',
+                                                             'grade9': '$96.99',
+                                                             'grade95': '$110.00',
+                                                             'ungraded': '$86.00'},
+                                        'image_url': 'https://assets.tcgdex.net/en/swsh/swsh11/TG16/high.png',
+                                        'market': 92.46,
+                                        'name': 'Pikachu V',
+                                        'number': 'TG16',
+                                        'pricecharting_url': 'https://pricecharting.com/game/pokemon-lost-origin/pikachu-v-TG16',
+                                        'printed_total': 196},
+                                    {   'card_link': 'https://pricecharting.com/game/pokemon-lost-origin/pikachu-vmax-TG17',
+                                        'graded_prices': {   'grade10': '$248.98',
+                                                             'grade7': '$40.00',
+                                                             'grade8': '$71.00',
+                                                             'grade9': '$95.06',
+                                                             'grade95': '$105.00',
+                                                             'ungraded': '$88.97'},
+                                        'image_url': 'https://assets.tcgdex.net/en/swsh/swsh11/TG17/high.png',
+                                        'market': 81.47,
+                                        'name': 'Pikachu VMAX',
+                                        'number': 'TG17',
+                                        'pricecharting_url': 'https://pricecharting.com/game/pokemon-lost-origin/pikachu-vmax-TG17',
+                                        'printed_total': 196}],
+                       'code': 'swsh11'}}
