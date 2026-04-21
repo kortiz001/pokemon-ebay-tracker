@@ -1,6 +1,27 @@
-cards_info = {
-    "Chilling Reign": {
-        "code": "swsh6",
-        "cards": []
-    }
-}
+cards_info = {   'Chilling Reign': {   'cards': [   {   'card_link': 'https://pricecharting.com/game/pokemon-chilling-reign/galarian-moltres-v-177',
+                                           'graded_prices': {   'grade10': '$468.27',
+                                                                'grade7': '$140.00',
+                                                                'grade8': '$172.00',
+                                                                'grade9': '$180.00',
+                                                                'grade95': '$239.88',
+                                                                'ungraded': '$167.50'},
+                                           'image_url': 'https://assets.tcgdex.net/en/swsh/swsh6/177/high.png',
+                                           'market': 285.27,
+                                           'name': 'Galarian Moltres V',
+                                           'number': '177',
+                                           'pricecharting_url': 'https://pricecharting.com/game/pokemon-chilling-reign/galarian-moltres-v-177',
+                                           'printed_total': 198},
+                                       {   'card_link': 'https://pricecharting.com/game/pokemon-chilling-reign/snorlax-224',
+                                           'graded_prices': {   'grade10': '$255.25',
+                                                                'grade7': '$54.00',
+                                                                'grade8': '$68.00',
+                                                                'grade9': '$109.25',
+                                                                'grade95': '$121.94',
+                                                                'ungraded': '$92.40'},
+                                           'image_url': 'https://assets.tcgdex.net/en/swsh/swsh6/224/high.png',
+                                           'market': 82.14,
+                                           'name': 'Snorlax',
+                                           'number': '224',
+                                           'pricecharting_url': 'https://pricecharting.com/game/pokemon-chilling-reign/snorlax-224',
+                                           'printed_total': 198}],
+                          'code': 'swsh6'}}
