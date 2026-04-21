@@ -1,6 +1,14 @@
-cards_info = {
-    "Shining Fates": {
-        "code": "swsh4.5",
-        "cards": []
-    }
-}
+cards_info = {   'Shining Fates': {   'cards': [   {   'card_link': 'https://pricecharting.com/game/pokemon-shining-fates/charizard-vmax-SV107',
+                                          'graded_prices': {   'grade10': '$293.70',
+                                                               'grade7': '$80.43',
+                                                               'grade8': '$103.79',
+                                                               'grade9': '$126.53',
+                                                               'grade95': '$178.25',
+                                                               'ungraded': '$107.23'},
+                                          'image_url': 'https://assets.tcgdex.net/en/swsh/swsh4.5/SV107/high.png',
+                                          'market': 163.25,
+                                          'name': 'Charizard VMAX',
+                                          'number': 'SV107',
+                                          'pricecharting_url': 'https://pricecharting.com/game/pokemon-shining-fates/charizard-vmax-SV107',
+                                          'printed_total': 72}],
+                         'code': 'swsh4.5'}}
