@@ -1,6 +1,14 @@
-cards_info = {
-    "Vivid Voltage": {
-        "code": "swsh4",
-        "cards": []
-    }
-}
+cards_info = {   'Vivid Voltage': {   'cards': [   {   'card_link': 'https://pricecharting.com/game/pokemon-vivid-voltage/pikachu-vmax-188',
+                                          'graded_prices': {   'grade10': '$367.39',
+                                                               'grade7': '$85.00',
+                                                               'grade8': '$105.67',
+                                                               'grade9': '$155.00',
+                                                               'grade95': '$192.50',
+                                                               'ungraded': '$126.00'},
+                                          'image_url': 'https://assets.tcgdex.net/en/swsh/swsh4/188/high.png',
+                                          'market': 204.29,
+                                          'name': 'Pikachu VMAX',
+                                          'number': '188',
+                                          'pricecharting_url': 'https://pricecharting.com/game/pokemon-vivid-voltage/pikachu-vmax-188',
+                                          'printed_total': 185}],
+                         'code': 'swsh4'}}
