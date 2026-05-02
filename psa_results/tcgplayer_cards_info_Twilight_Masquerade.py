@@ -1,6 +1,27 @@
-cards_info = {
-    "Twilight Masquerade": {
-        "code": "sv06",
-        "cards": []
-    }
-}
+cards_info = {   'Twilight Masquerade': {   'cards': [   {   'card_link': 'https://pricecharting.com/game/pokemon-twilight-masquerade/eevee-188',
+                                                'graded_prices': {   'grade10': '$300.00',
+                                                                     'grade7': '$50.00',
+                                                                     'grade8': '$70.00',
+                                                                     'grade9': '$82.00',
+                                                                     'grade95': '$131.75',
+                                                                     'ungraded': '$76.00'},
+                                                'image_url': 'https://assets.tcgdex.net/en/sv/sv06/188/high.png',
+                                                'market': 80.87,
+                                                'name': 'Eevee',
+                                                'number': '188',
+                                                'pricecharting_url': 'https://pricecharting.com/game/pokemon-twilight-masquerade/eevee-188',
+                                                'printed_total': 167},
+                                            {   'card_link': 'https://pricecharting.com/game/pokemon-twilight-masquerade/greninja-ex-214',
+                                                'graded_prices': {   'grade10': '$971.68',
+                                                                     'grade7': '$264.38',
+                                                                     'grade8': '$279.69',
+                                                                     'grade9': '$369.50',
+                                                                     'grade95': '$498.94',
+                                                                     'ungraded': '$335.00'},
+                                                'image_url': 'https://assets.tcgdex.net/en/sv/sv06/214/high.png',
+                                                'market': 296.03,
+                                                'name': 'Greninja ex',
+                                                'number': '214',
+                                                'pricecharting_url': 'https://pricecharting.com/game/pokemon-twilight-masquerade/greninja-ex-214',
+                                                'printed_total': 167}],
+                               'code': 'sv06'}}
