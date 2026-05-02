@@ -1,14 +1,1 @@
-cards_info = {   'Astral Radiance': {   'cards': [   {   'card_link': 'https://pricecharting.com/game/pokemon-astral-radiance/machamp-v-172',
-                                            'graded_prices': {   'grade10': '$417.73',
-                                                                 'grade7': '$127.50',
-                                                                 'grade8': '$135.00',
-                                                                 'grade9': '$171.38',
-                                                                 'grade95': '$187.00',
-                                                                 'ungraded': '$148.95'},
-                                            'image_url': 'https://assets.tcgdex.net/en/swsh/swsh10/172/high.png',
-                                            'market': 173.79,
-                                            'name': 'Machamp V',
-                                            'number': '172',
-                                            'pricecharting_url': 'https://pricecharting.com/game/pokemon-astral-radiance/machamp-v-172',
-                                            'printed_total': 189}],
-                           'code': 'swsh10'}}
+cards_info = {'Astral Radiance': {'cards': [], 'code': 'swsh10'}}
