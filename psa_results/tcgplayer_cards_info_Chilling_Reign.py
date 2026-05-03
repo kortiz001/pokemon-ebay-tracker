@@ -1,27 +1,6 @@
-cards_info = {   'Chilling Reign': {   'cards': [   {   'card_link': 'https://pricecharting.com/game/pokemon-chilling-reign/galarian-articuno-v-170',
-                                           'graded_prices': {   'grade10': '$240.00',
-                                                                'grade7': '$37.51',
-                                                                'grade8': '$45.00',
-                                                                'grade9': '$62.20',
-                                                                'grade95': '$66.99',
-                                                                'ungraded': '$55.00'},
-                                           'image_url': 'https://assets.tcgdex.net/en/swsh/swsh6/170/high.png',
-                                           'market': 90.76,
-                                           'name': 'Galarian Articuno V',
-                                           'number': '170',
-                                           'pricecharting_url': 'https://pricecharting.com/game/pokemon-chilling-reign/galarian-articuno-v-170',
-                                           'printed_total': 198},
-                                       {   'card_link': 'https://pricecharting.com/game/pokemon-chilling-reign/galarian-moltres-v-177',
-                                           'graded_prices': {   'grade10': '$575.00',
-                                                                'grade7': '$140.00',
-                                                                'grade8': '$171.00',
-                                                                'grade9': '$197.24',
-                                                                'grade95': '$296.29',
-                                                                'ungraded': '$183.19'},
-                                           'image_url': 'https://assets.tcgdex.net/en/swsh/swsh6/177/high.png',
-                                           'market': 191.13,
-                                           'name': 'Galarian Moltres V',
-                                           'number': '177',
-                                           'pricecharting_url': 'https://pricecharting.com/game/pokemon-chilling-reign/galarian-moltres-v-177',
-                                           'printed_total': 198}],
-                          'code': 'swsh6'}}
+cards_info = {
+    "Chilling Reign": {
+        "code": "swsh6",
+        "cards": []
+    }
+}
