@@ -1,14 +1,24 @@
-cards_info = {   'Journey Together': {   'cards': [   {   'card_link': "https://pricecharting.com/game/pokemon-journey-together/lillie's-clefairy-ex-184",
-                                             'graded_prices': {   'grade10': '$455.14',
-                                                                  'grade7': '$108.50',
-                                                                  'grade8': '$110.41',
-                                                                  'grade9': '$132.50',
-                                                                  'grade95': '$171.88',
-                                                                  'ungraded': '$124.07'},
-                                             'image_url': 'https://assets.tcgdex.net/en/sv/sv09/184/high.png',
-                                             'market': 117.36,
-                                             'name': "Lillie's Clefairy ex",
-                                             'number': '184',
-                                             'pricecharting_url': "https://pricecharting.com/game/pokemon-journey-together/lillie's-clefairy-ex-184",
-                                             'printed_total': 159}],
-                            'code': 'sv09'}}
+cards_info = {
+    "Journey Together": {
+        "code": "sv09",
+        "cards": [
+            {
+                "name": "Lillie's Clefairy ex",
+                "market": 117.59,
+                "printed_total": 159,
+                "number": "184",
+                "card_link": "https://pricecharting.com/game/pokemon-journey-together/lillie's-clefairy-ex-184",
+                "pricecharting_url": "https://pricecharting.com/game/pokemon-journey-together/lillie's-clefairy-ex-184",
+                "graded_prices": {
+                    "ungraded": "$129.99",
+                    "grade7": "$104.99",
+                    "grade8": "$118.29",
+                    "grade9": "$135.00",
+                    "grade95": "$185.00",
+                    "grade10": "$428.00"
+                },
+                "image_url": "https://assets.tcgdex.net/en/sv/sv09/184/high.png"
+            }
+        ]
+    }
+}
