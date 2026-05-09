@@ -1,27 +1,6 @@
-cards_info = {   'Chilling Reign': {   'cards': [   {   'card_link': 'https://pricecharting.com/game/pokemon-chilling-reign/galarian-moltres-v-177',
-                                           'graded_prices': {   'grade10': '$594.75',
-                                                                'grade7': '$140.00',
-                                                                'grade8': '$172.00',
-                                                                'grade9': '$199.49',
-                                                                'grade95': '$296.29',
-                                                                'ungraded': '$180.93'},
-                                           'image_url': 'https://assets.tcgdex.net/en/swsh/swsh6/177/high.png',
-                                           'market': 185.82,
-                                           'name': 'Galarian Moltres V',
-                                           'number': '177',
-                                           'pricecharting_url': 'https://pricecharting.com/game/pokemon-chilling-reign/galarian-moltres-v-177',
-                                           'printed_total': 198},
-                                       {   'card_link': 'https://pricecharting.com/game/pokemon-chilling-reign/blaziken-vmax-201',
-                                           'graded_prices': {   'grade10': '$830.00',
-                                                                'grade7': '$115.50',
-                                                                'grade8': '$300.89',
-                                                                'grade9': '$358.92',
-                                                                'grade95': '$405.00',
-                                                                'ungraded': '$299.31'},
-                                           'image_url': 'https://assets.tcgdex.net/en/swsh/swsh6/201/high.png',
-                                           'market': 366.0,
-                                           'name': 'Blaziken VMAX',
-                                           'number': '201',
-                                           'pricecharting_url': 'https://pricecharting.com/game/pokemon-chilling-reign/blaziken-vmax-201',
-                                           'printed_total': 198}],
-                          'code': 'swsh6'}}
+cards_info = {
+    "Chilling Reign": {
+        "code": "swsh6",
+        "cards": []
+    }
+}
