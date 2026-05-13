@@ -1,6 +1,14 @@
-cards_info = {
-    "Chilling Reign": {
-        "code": "swsh6",
-        "cards": []
-    }
-}
+cards_info = {   'Chilling Reign': {   'cards': [   {   'card_link': 'https://pricecharting.com/game/pokemon-chilling-reign/galarian-moltres-v-177',
+                                           'graded_prices': {   'grade10': '$591.22',
+                                                                'grade7': '$140.00',
+                                                                'grade8': '$172.00',
+                                                                'grade9': '$199.49',
+                                                                'grade95': '$296.29',
+                                                                'ungraded': '$178.80'},
+                                           'image_url': 'https://assets.tcgdex.net/en/swsh/swsh6/177/high.png',
+                                           'market': 191.27,
+                                           'name': 'Galarian Moltres V',
+                                           'number': '177',
+                                           'pricecharting_url': 'https://pricecharting.com/game/pokemon-chilling-reign/galarian-moltres-v-177',
+                                           'printed_total': 198}],
+                          'code': 'swsh6'}}
