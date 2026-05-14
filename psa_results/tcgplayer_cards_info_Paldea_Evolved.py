@@ -1,6 +1,14 @@
-cards_info = {
-    "Paldea Evolved": {
-        "code": "sv02",
-        "cards": []
-    }
-}
+cards_info = {   'Paldea Evolved': {   'cards': [   {   'card_link': 'https://pricecharting.com/game/pokemon-paldea-evolved/magikarp-203',
+                                           'graded_prices': {   'grade10': '$3,517.99',
+                                                                'grade7': '$274.86',
+                                                                'grade8': '$350.97',
+                                                                'grade9': '$499.89',
+                                                                'grade95': '$632.81',
+                                                                'ungraded': '$358.04'},
+                                           'image_url': 'https://assets.tcgdex.net/en/sv/sv02/203/high.png',
+                                           'market': 491.35,
+                                           'name': 'Magikarp',
+                                           'number': '203',
+                                           'pricecharting_url': 'https://pricecharting.com/game/pokemon-paldea-evolved/magikarp-203',
+                                           'printed_total': 193}],
+                          'code': 'sv02'}}
