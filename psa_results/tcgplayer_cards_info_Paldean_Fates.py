@@ -1,6 +1,27 @@
-cards_info = {
-    "Paldean Fates": {
-        "code": "sv04.5",
-        "cards": []
-    }
-}
+cards_info = {   'Paldean Fates': {   'cards': [   {   'card_link': 'https://pricecharting.com/game/pokemon-paldean-fates/mew-ex-232',
+                                          'graded_prices': {   'grade10': '$2,909.00',
+                                                               'grade7': '$660.00',
+                                                               'grade8': '$747.28',
+                                                               'grade9': '$850.50',
+                                                               'grade95': '$1,150.00',
+                                                               'ungraded': '$815.76'},
+                                          'image_url': 'https://assets.tcgdex.net/en/sv/sv04.5/232/high.png',
+                                          'market': 830.06,
+                                          'name': 'Mew ex',
+                                          'number': '232',
+                                          'pricecharting_url': 'https://pricecharting.com/game/pokemon-paldean-fates/mew-ex-232',
+                                          'printed_total': 91},
+                                      {   'card_link': 'https://pricecharting.com/game/pokemon-paldean-fates/charizard-ex-234',
+                                          'graded_prices': {   'grade10': '$948.41',
+                                                               'grade7': '$192.27',
+                                                               'grade8': '$257.27',
+                                                               'grade9': '$324.78',
+                                                               'grade95': '$386.50',
+                                                               'ungraded': '$290.00'},
+                                          'image_url': 'https://assets.tcgdex.net/en/sv/sv04.5/234/high.png',
+                                          'market': 297.12,
+                                          'name': 'Charizard ex',
+                                          'number': '234',
+                                          'pricecharting_url': 'https://pricecharting.com/game/pokemon-paldean-fates/charizard-ex-234',
+                                          'printed_total': 91}],
+                         'code': 'sv04.5'}}
