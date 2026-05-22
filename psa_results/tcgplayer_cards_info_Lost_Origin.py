@@ -1,40 +1,25 @@
-cards_info = {   'Lost Origin': {   'cards': [   {   'card_link': 'https://pricecharting.com/game/pokemon-lost-origin/giratina-v-186',
-                                        'graded_prices': {   'grade10': '$3,121.73',
-                                                             'grade7': '$524.10',
-                                                             'grade8': '$724.79',
-                                                             'grade9': '$809.20',
-                                                             'grade95': '$1,099.01',
-                                                             'ungraded': '$754.58'},
-                                        'image_url': 'https://assets.tcgdex.net/en/swsh/swsh11/186/high.png',
-                                        'market': 767.19,
-                                        'name': 'Giratina V',
-                                        'number': '186',
-                                        'pricecharting_url': 'https://pricecharting.com/game/pokemon-lost-origin/giratina-v-186',
-                                        'printed_total': 196},
-                                    {   'card_link': 'https://pricecharting.com/game/pokemon-lost-origin/pikachu-v-TG16',
-                                        'graded_prices': {   'grade10': '$510.00',
-                                                             'grade7': '$37.81',
-                                                             'grade8': '$84.48',
-                                                             'grade9': '$124.28',
-                                                             'grade95': '$137.00',
-                                                             'ungraded': '$107.98'},
-                                        'image_url': 'https://assets.tcgdex.net/en/swsh/swsh11/TG16/high.png',
-                                        'market': 147.24,
-                                        'name': 'Pikachu V',
-                                        'number': 'TG16',
-                                        'pricecharting_url': 'https://pricecharting.com/game/pokemon-lost-origin/pikachu-v-TG16',
-                                        'printed_total': 196},
-                                    {   'card_link': 'https://pricecharting.com/game/pokemon-lost-origin/pikachu-vmax-TG17',
-                                        'graded_prices': {   'grade10': '$331.42',
-                                                             'grade7': '$31.73',
-                                                             'grade8': '$75.48',
-                                                             'grade9': '$109.75',
-                                                             'grade95': '$109.93',
-                                                             'ungraded': '$92.20'},
-                                        'image_url': 'https://assets.tcgdex.net/en/swsh/swsh11/TG17/high.png',
-                                        'market': 84.92,
-                                        'name': 'Pikachu VMAX',
-                                        'number': 'TG17',
-                                        'pricecharting_url': 'https://pricecharting.com/game/pokemon-lost-origin/pikachu-vmax-TG17',
-                                        'printed_total': 196}],
-                       'code': 'swsh11'}}
+cards_info = {
+    "Lost Origin": {
+        "code": "swsh11",
+        "cards": [
+            {
+                "name": "Giratina V",
+                "market": 658.24,
+                "price_high": 1500,
+                "printed_total": 196,
+                "number": "186",
+                "card_link": "https://www.tcgplayer.com/product/284137",
+                "pricecharting_url": "https://pricecharting.com/game/pokemon-lost-origin/giratina-v-186",
+                "graded_prices": {
+                    "ungraded": "$569.58",
+                    "grade7": "$460.00",
+                    "grade8": "$534.84",
+                    "grade9": "$661.00",
+                    "grade95": "$1,100.00",
+                    "grade10": "$2,025.17"
+                },
+                "image_url": "https://assets.tcgdex.net/en/swsh/swsh11/186/high.png"
+            }
+        ]
+    }
+}
