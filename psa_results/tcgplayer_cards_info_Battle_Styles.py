@@ -1,25 +1,14 @@
-cards_info = {
-    "Battle Styles": {
-        "code": "swsh5",
-        "cards": [
-            {
-                "name": "Tyranitar V",
-                "market": 200.31,
-                "price_high": 1000,
-                "printed_total": 163,
-                "number": "155",
-                "card_link": "https://www.tcgplayer.com/product/234060",
-                "pricecharting_url": "https://pricecharting.com/game/pokemon-battle-styles/tyranitar-v-155",
-                "graded_prices": {
-                    "ungraded": "$182.24",
-                    "grade7": "$87.50",
-                    "grade8": "$198.51",
-                    "grade9": "$209.11",
-                    "grade95": "$335.00",
-                    "grade10": "$627.50"
-                },
-                "image_url": "https://assets.tcgdex.net/en/swsh/swsh5/155/high.png"
-            }
-        ]
-    }
-}
+cards_info = {   'Battle Styles': {   'cards': [   {   'card_link': 'https://www.tcgplayer.com/product/234060',
+                                          'graded_prices': {   'grade10': '$896.46',
+                                                               'grade7': '$153.35',
+                                                               'grade8': '$204.71',
+                                                               'grade9': '$259.39',
+                                                               'grade95': '$346.88',
+                                                               'ungraded': '$231.19'},
+                                          'image_url': 'https://assets.tcgdex.net/en/swsh/swsh5/155/high.png',
+                                          'market': 262.72,
+                                          'name': 'Tyranitar V',
+                                          'number': '155',
+                                          'pricecharting_url': 'https://pricecharting.com/game/pokemon-battle-styles/tyranitar-v-155',
+                                          'printed_total': 163}],
+                         'code': 'swsh5'}}
