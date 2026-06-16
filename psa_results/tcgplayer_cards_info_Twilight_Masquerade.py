@@ -1,6 +1,14 @@
-cards_info = {
-    "Twilight Masquerade": {
-        "code": "sv06",
-        "cards": []
-    }
-}
+cards_info = {   'Twilight Masquerade': {   'cards': [   {   'card_link': 'https://www.tcgplayer.com/product/550232',
+                                                'graded_prices': {   'grade10': '$374.97',
+                                                                     'grade7': '$50.00',
+                                                                     'grade8': '$75.00',
+                                                                     'grade9': '$97.59',
+                                                                     'grade95': '$114.65',
+                                                                     'ungraded': '$87.25'},
+                                                'image_url': 'https://assets.tcgdex.net/en/sv/sv06/188/high.png',
+                                                'market': 91.14,
+                                                'name': 'Eevee',
+                                                'number': '188',
+                                                'pricecharting_url': 'https://pricecharting.com/game/pokemon-twilight-masquerade/eevee-188',
+                                                'printed_total': 167}],
+                               'code': 'sv06'}}
