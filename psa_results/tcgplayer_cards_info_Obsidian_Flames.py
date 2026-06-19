@@ -1,14 +1,6 @@
-cards_info = {   'Obsidian Flames': {   'cards': [   {   'card_link': 'https://www.tcgplayer.com/product/509980',
-                                            'graded_prices': {   'grade10': '$752.50',
-                                                                 'grade7': '$102.76',
-                                                                 'grade8': '$115.00',
-                                                                 'grade9': '$151.25',
-                                                                 'grade95': '$156.88',
-                                                                 'ungraded': '$119.00'},
-                                            'image_url': 'https://assets.tcgdex.net/en/sv/sv03/223/high.png',
-                                            'market': 132.29,
-                                            'name': 'Charizard ex',
-                                            'number': '223',
-                                            'pricecharting_url': 'https://pricecharting.com/game/pokemon-obsidian-flames/charizard-ex-223',
-                                            'printed_total': 197}],
-                           'code': 'sv03'}}
+cards_info = {
+    "Obsidian Flames": {
+        "code": "sv03",
+        "cards": []
+    }
+}
