@@ -1,40 +1,43 @@
-cards_info = {   'Mega Evolution': {   'cards': [   {   'card_link': 'https://www.tcgplayer.com/product/654520',
-                                           'graded_prices': {   'grade10': '$309.99',
-                                                                'grade7': '-',
-                                                                'grade8': '$75.00',
-                                                                'grade9': '$91.30',
-                                                                'grade95': '$146.70',
-                                                                'ungraded': '$89.00'},
-                                           'image_url': 'https://assets.tcgdex.net/en/me/me01/181/high.png',
-                                           'market': 92.3,
-                                           'name': 'Mega Latias ex',
-                                           'number': '181',
-                                           'pricecharting_url': 'https://pricecharting.com/game/pokemon-mega-evolution/mega-latias-ex-181',
-                                           'printed_total': 132},
-                                       {   'card_link': 'https://www.tcgplayer.com/product/654526',
-                                           'graded_prices': {   'grade10': '$665.79',
-                                                                'grade7': '$186.50',
-                                                                'grade8': '$189.99',
-                                                                'grade9': '$213.10',
-                                                                'grade95': '$485.00',
-                                                                'ungraded': '$209.51'},
-                                           'image_url': 'https://assets.tcgdex.net/en/me/me01/187/high.png',
-                                           'market': 223.76,
-                                           'name': 'Mega Gardevoir ex',
-                                           'number': '187',
-                                           'pricecharting_url': 'https://pricecharting.com/game/pokemon-mega-evolution/mega-gardevoir-ex-187',
-                                           'printed_total': 132},
-                                       {   'card_link': 'https://www.tcgplayer.com/product/654527',
-                                           'graded_prices': {   'grade10': '$782.13',
-                                                                'grade7': '$207.50',
-                                                                'grade8': '$228.75',
-                                                                'grade9': '$245.75',
-                                                                'grade95': '$383.72',
-                                                                'ungraded': '$264.26'},
-                                           'image_url': 'https://assets.tcgdex.net/en/me/me01/188/high.png',
-                                           'market': 281.76,
-                                           'name': 'Mega Lucario ex',
-                                           'number': '188',
-                                           'pricecharting_url': 'https://pricecharting.com/game/pokemon-mega-evolution/mega-lucario-ex-188',
-                                           'printed_total': 132}],
-                          'code': 'me01'}}
+cards_info = {
+    "Mega Evolution": {
+        "code": "me01",
+        "cards": [
+            {
+                "name": "Mega Gardevoir ex",
+                "market": 234.44,
+                "price_high": 1199.99,
+                "printed_total": 132,
+                "number": "187",
+                "card_link": "https://www.tcgplayer.com/product/654526",
+                "pricecharting_url": "https://pricecharting.com/game/pokemon-mega-evolution/mega-gardevoir-ex-187",
+                "graded_prices": {
+                    "ungraded": "$236.05",
+                    "grade7": "$160.00",
+                    "grade8": "$200.00",
+                    "grade9": "$249.97",
+                    "grade95": "$355.00",
+                    "grade10": "$675.00"
+                },
+                "image_url": "https://assets.tcgdex.net/en/me/me01/187/high.png"
+            },
+            {
+                "name": "Mega Lucario ex",
+                "market": 289.15,
+                "price_high": 999,
+                "printed_total": 132,
+                "number": "188",
+                "card_link": "https://www.tcgplayer.com/product/654527",
+                "pricecharting_url": "https://pricecharting.com/game/pokemon-mega-evolution/mega-lucario-ex-188",
+                "graded_prices": {
+                    "ungraded": "$288.69",
+                    "grade7": "$180.00",
+                    "grade8": "$266.22",
+                    "grade9": "$295.00",
+                    "grade95": "$420.50",
+                    "grade10": "$925.51"
+                },
+                "image_url": "https://assets.tcgdex.net/en/me/me01/188/high.png"
+            }
+        ]
+    }
+}
