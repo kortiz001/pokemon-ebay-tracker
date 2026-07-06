@@ -1,27 +1,6 @@
-cards_info = {   'Paldea Evolved': {   'cards': [   {   'card_link': 'https://pricecharting.com/game/pokemon-paldea-evolved/magikarp-203',
-                                           'graded_prices': {   'grade10': '$4,650.00',
-                                                                'grade7': '$355.00',
-                                                                'grade8': '$377.92',
-                                                                'grade9': '$549.95',
-                                                                'grade95': '$724.79',
-                                                                'ungraded': '$390.45'},
-                                           'image_url': 'https://assets.tcgdex.net/en/sv/sv02/203/high.png',
-                                           'market': 344.49,
-                                           'name': 'Magikarp',
-                                           'number': '203',
-                                           'pricecharting_url': 'https://pricecharting.com/game/pokemon-paldea-evolved/magikarp-203',
-                                           'printed_total': 193},
-                                       {   'card_link': 'https://pricecharting.com/game/pokemon-paldea-evolved/tyranitar-222',
-                                           'graded_prices': {   'grade10': '$800.00',
-                                                                'grade7': '$45.93',
-                                                                'grade8': '$63.00',
-                                                                'grade9': '$85.00',
-                                                                'grade95': '$94.00',
-                                                                'ungraded': '$63.00'},
-                                           'image_url': 'https://assets.tcgdex.net/en/sv/sv02/222/high.png',
-                                           'market': 89.13,
-                                           'name': 'Tyranitar',
-                                           'number': '222',
-                                           'pricecharting_url': 'https://pricecharting.com/game/pokemon-paldea-evolved/tyranitar-222',
-                                           'printed_total': 193}],
-                          'code': 'sv02'}}
+cards_info = {
+    "Paldea Evolved": {
+        "code": "sv02",
+        "cards": []
+    }
+}
