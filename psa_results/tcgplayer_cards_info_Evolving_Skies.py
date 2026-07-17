@@ -1,40 +1,25 @@
-cards_info = {   'Evolving Skies': {   'cards': [   {   'card_link': 'https://www.tcgplayer.com/product/246727',
-                                           'graded_prices': {   'grade10': '$450.00',
-                                                                'grade7': '$13.55',
-                                                                'grade8': '$49.53',
-                                                                'grade9': '$83.00',
-                                                                'grade95': '$91.00',
-                                                                'ungraded': '$71.07'},
-                                           'image_url': 'https://assets.tcgdex.net/en/swsh/swsh7/193/high.png',
-                                           'market': 84.37,
-                                           'name': 'Rayquaza V',
-                                           'number': '193',
-                                           'pricecharting_url': 'https://pricecharting.com/game/pokemon-evolving-skies/rayquaza-v-193',
-                                           'printed_total': 203},
-                                       {   'card_link': 'https://www.tcgplayer.com/product/246728',
-                                           'graded_prices': {   'grade10': '$1,633.94',
-                                                                'grade7': '$331.54',
-                                                                'grade8': '$439.99',
-                                                                'grade9': '$535.00',
-                                                                'grade95': '$549.29',
-                                                                'ungraded': '$426.31'},
-                                           'image_url': 'https://assets.tcgdex.net/en/swsh/swsh7/194/high.png',
-                                           'market': 516.05,
-                                           'name': 'Rayquaza V',
-                                           'number': '194',
-                                           'pricecharting_url': 'https://pricecharting.com/game/pokemon-evolving-skies/rayquaza-v-194',
-                                           'printed_total': 203},
-                                       {   'card_link': 'https://www.tcgplayer.com/product/246731',
-                                           'graded_prices': {   'grade10': '$365.00',
-                                                                'grade7': '$41.57',
-                                                                'grade8': '$49.10',
-                                                                'grade9': '$116.88',
-                                                                'grade95': '$129.00',
-                                                                'ungraded': '$101.80'},
-                                           'image_url': 'https://assets.tcgdex.net/en/swsh/swsh7/217/high.png',
-                                           'market': 126.21,
-                                           'name': 'Rayquaza VMAX',
-                                           'number': '217',
-                                           'pricecharting_url': 'https://pricecharting.com/game/pokemon-evolving-skies/rayquaza-vmax-217',
-                                           'printed_total': 203}],
-                          'code': 'swsh7'}}
+cards_info = {
+    "Evolving Skies": {
+        "code": "swsh7",
+        "cards": [
+            {
+                "name": "Umbreon V",
+                "market": 301.88,
+                "price_high": 4321,
+                "printed_total": 203,
+                "number": "189",
+                "card_link": "https://www.tcgplayer.com/product/246719",
+                "pricecharting_url": "https://pricecharting.com/game/pokemon-evolving-skies/umbreon-v-189",
+                "graded_prices": {
+                    "ungraded": "$295.00",
+                    "grade7": "$131.49",
+                    "grade8": "$246.25",
+                    "grade9": "$325.00",
+                    "grade95": "$420.00",
+                    "grade10": "$913.33"
+                },
+                "image_url": "https://assets.tcgdex.net/en/swsh/swsh7/189/high.png"
+            }
+        ]
+    }
+}
