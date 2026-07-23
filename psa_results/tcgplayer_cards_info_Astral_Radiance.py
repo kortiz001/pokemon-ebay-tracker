@@ -1,14 +1,1 @@
-cards_info = {   'Astral Radiance': {   'cards': [   {   'card_link': 'https://www.tcgplayer.com/product/272419',
-                                            'graded_prices': {   'grade10': '$385.86',
-                                                                 'grade7': '$59.90',
-                                                                 'grade8': '$73.19',
-                                                                 'grade9': '$111.46',
-                                                                 'grade95': '$127.17',
-                                                                 'ungraded': '$85.36'},
-                                            'image_url': 'https://assets.tcgdex.net/en/swsh/swsh10/167/high.png',
-                                            'market': 92.52,
-                                            'name': 'Origin Forme Palkia V',
-                                            'number': '167',
-                                            'pricecharting_url': 'https://pricecharting.com/game/pokemon-astral-radiance/origin-forme-palkia-v-167',
-                                            'printed_total': 189}],
-                           'code': 'swsh10'}}
+cards_info = {'Astral Radiance': {'cards': [], 'code': 'swsh10'}}
