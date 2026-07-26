@@ -1,27 +1,6 @@
-cards_info = {   'Paldean Fates': {   'cards': [   {   'card_link': 'https://www.tcgplayer.com/product/534522',
-                                          'graded_prices': {   'grade10': '$925.00',
-                                                               'grade7': '$52.80',
-                                                               'grade8': '$78.86',
-                                                               'grade9': '$108.75',
-                                                               'grade95': '$120.00',
-                                                               'ungraded': '$79.51'},
-                                          'image_url': 'https://assets.tcgdex.net/en/sv/sv04.5/131/high.png',
-                                          'market': 84.68,
-                                          'name': 'Pikachu',
-                                          'number': '131',
-                                          'pricecharting_url': 'https://pricecharting.com/game/pokemon-paldean-fates/pikachu-131',
-                                          'printed_total': 91},
-                                      {   'card_link': 'https://www.tcgplayer.com/product/534919',
-                                          'graded_prices': {   'grade10': '$3,630.00',
-                                                               'grade7': '$797.82',
-                                                               'grade8': '$815.50',
-                                                               'grade9': '$990.00',
-                                                               'grade95': '$1,490.87',
-                                                               'ungraded': '$923.88'},
-                                          'image_url': 'https://assets.tcgdex.net/en/sv/sv04.5/232/high.png',
-                                          'market': 1065.81,
-                                          'name': 'Mew ex',
-                                          'number': '232',
-                                          'pricecharting_url': 'https://pricecharting.com/game/pokemon-paldean-fates/mew-ex-232',
-                                          'printed_total': 91}],
-                         'code': 'sv04.5'}}
+cards_info = {
+    "Paldean Fates": {
+        "code": "sv04.5",
+        "cards": []
+    }
+}
