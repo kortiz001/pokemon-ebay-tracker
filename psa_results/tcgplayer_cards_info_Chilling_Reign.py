@@ -1,6 +1,27 @@
-cards_info = {
-    "Chilling Reign": {
-        "code": "swsh6",
-        "cards": []
-    }
-}
+cards_info = {   'Chilling Reign': {   'cards': [   {   'card_link': 'https://www.tcgplayer.com/product/241712',
+                                           'graded_prices': {   'grade10': '$255.16',
+                                                                'grade7': '$33.53',
+                                                                'grade8': '$55.59',
+                                                                'grade9': '$84.99',
+                                                                'grade95': '$86.79',
+                                                                'ungraded': '$85.56'},
+                                           'image_url': 'https://assets.tcgdex.net/en/swsh/swsh6/166/high.png',
+                                           'market': 93.36,
+                                           'name': 'Zeraora V',
+                                           'number': '166',
+                                           'pricecharting_url': 'https://pricecharting.com/game/pokemon-chilling-reign/zeraora-v-166',
+                                           'printed_total': 198},
+                                       {   'card_link': 'https://www.tcgplayer.com/product/241772',
+                                           'graded_prices': {   'grade10': '$300.00',
+                                                                'grade7': '$58.81',
+                                                                'grade8': '$80.00',
+                                                                'grade9': '$108.03',
+                                                                'grade95': '$109.99',
+                                                                'ungraded': '$103.32'},
+                                           'image_url': 'https://assets.tcgdex.net/en/swsh/swsh6/179/high.png',
+                                           'market': 109.95,
+                                           'name': 'Galarian Slowking V',
+                                           'number': '179',
+                                           'pricecharting_url': 'https://pricecharting.com/game/pokemon-chilling-reign/galarian-slowking-v-179',
+                                           'printed_total': 198}],
+                          'code': 'swsh6'}}
