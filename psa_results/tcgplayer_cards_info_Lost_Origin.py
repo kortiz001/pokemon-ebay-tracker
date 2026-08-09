@@ -1,14 +1,25 @@
-cards_info = {   'Lost Origin': {   'cards': [   {   'card_link': 'https://www.tcgplayer.com/product/284137',
-                                        'graded_prices': {   'grade10': '$3,375.00',
-                                                             'grade7': '$574.45',
-                                                             'grade8': '$765.00',
-                                                             'grade9': '$895.62',
-                                                             'grade95': '$1,705.00',
-                                                             'ungraded': '$770.00'},
-                                        'image_url': 'https://assets.tcgdex.net/en/swsh/swsh11/186/high.png',
-                                        'market': 833.71,
-                                        'name': 'Giratina V',
-                                        'number': '186',
-                                        'pricecharting_url': 'https://pricecharting.com/game/pokemon-lost-origin/giratina-v-186',
-                                        'printed_total': 196}],
-                       'code': 'swsh11'}}
+cards_info = {
+    "Lost Origin": {
+        "code": "swsh11",
+        "cards": [
+            {
+                "name": "Giratina V",
+                "market": 658.24,
+                "price_high": 1500,
+                "printed_total": 196,
+                "number": "186",
+                "card_link": "https://www.tcgplayer.com/product/284137",
+                "pricecharting_url": "https://pricecharting.com/game/pokemon-lost-origin/giratina-v-186",
+                "graded_prices": {
+                    "ungraded": "$569.58",
+                    "grade7": "$460.00",
+                    "grade8": "$534.84",
+                    "grade9": "$661.00",
+                    "grade95": "$1,100.00",
+                    "grade10": "$2,025.17"
+                },
+                "image_url": "https://assets.tcgdex.net/en/swsh/swsh11/186/high.png"
+            }
+        ]
+    }
+}
