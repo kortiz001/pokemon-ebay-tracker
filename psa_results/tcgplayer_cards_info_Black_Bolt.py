@@ -1,1 +1,14 @@
-cards_info = {'Black Bolt': {'cards': [], 'code': 'sv10.5b'}}
+cards_info = {   'Black Bolt': {   'cards': [   {   'card_link': 'https://www.tcgplayer.com/product/642558',
+                                       'graded_prices': {   'grade10': '$2,422.50',
+                                                            'grade7': '$197.50',
+                                                            'grade8': '$206.49',
+                                                            'grade9': '$260.00',
+                                                            'grade95': '$943.98',
+                                                            'ungraded': '$224.66'},
+                                       'image_url': 'https://assets.tcgdex.net/en/sv/sv10.5b/105/high.png',
+                                       'market': 235.67,
+                                       'name': 'Seismitoad',
+                                       'number': '105',
+                                       'pricecharting_url': 'https://pricecharting.com/game/pokemon-black-bolt/seismitoad-105',
+                                       'printed_total': 86}],
+                      'code': 'sv10.5b'}}
