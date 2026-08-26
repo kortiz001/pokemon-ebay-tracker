@@ -1,14 +1,25 @@
-cards_info = {   'Battle Styles': {   'cards': [   {   'card_link': 'https://www.tcgplayer.com/product/234060',
-                                          'graded_prices': {   'grade10': '$699.36',
-                                                               'grade7': '$137.36',
-                                                               'grade8': '$217.00',
-                                                               'grade9': '$254.00',
-                                                               'grade95': '$405.00',
-                                                               'ungraded': '$227.49'},
-                                          'image_url': 'https://assets.tcgdex.net/en/swsh/swsh5/155/high.png',
-                                          'market': 256.08,
-                                          'name': 'Tyranitar V',
-                                          'number': '155',
-                                          'pricecharting_url': 'https://pricecharting.com/game/pokemon-battle-styles/tyranitar-v-155',
-                                          'printed_total': 163}],
-                         'code': 'swsh5'}}
+cards_info = {
+    "Battle Styles": {
+        "code": "swsh5",
+        "cards": [
+            {
+                "name": "Tyranitar V",
+                "market": 200.31,
+                "price_high": 1000,
+                "printed_total": 163,
+                "number": "155",
+                "card_link": "https://www.tcgplayer.com/product/234060",
+                "pricecharting_url": "https://pricecharting.com/game/pokemon-battle-styles/tyranitar-v-155",
+                "graded_prices": {
+                    "ungraded": "$182.24",
+                    "grade7": "$87.50",
+                    "grade8": "$198.51",
+                    "grade9": "$209.11",
+                    "grade95": "$335.00",
+                    "grade10": "$627.50"
+                },
+                "image_url": "https://assets.tcgdex.net/en/swsh/swsh5/155/high.png"
+            }
+        ]
+    }
+}
