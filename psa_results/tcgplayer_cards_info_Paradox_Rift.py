@@ -1,1 +1,14 @@
-cards_info = {'Paradox Rift': {'cards': [], 'code': 'sv04'}}
+cards_info = {   'Paradox Rift': {   'cards': [   {   'card_link': 'https://pricecharting.com/game/pokemon-paradox-rift/groudon-199',
+                                         'graded_prices': {   'grade10': '$387.50',
+                                                              'grade7': '$50.00',
+                                                              'grade8': '$62.72',
+                                                              'grade9': '$86.00',
+                                                              'grade95': '$135.00',
+                                                              'ungraded': '$73.54'},
+                                         'image_url': 'https://assets.tcgdex.net/en/sv/sv04/199/high.png',
+                                         'market': 91.18,
+                                         'name': 'Groudon',
+                                         'number': '199',
+                                         'pricecharting_url': 'https://pricecharting.com/game/pokemon-paradox-rift/groudon-199',
+                                         'printed_total': 182}],
+                        'code': 'sv04'}}
