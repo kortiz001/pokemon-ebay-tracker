@@ -1,25 +1,40 @@
-cards_info = {
-    "Evolving Skies": {
-        "code": "swsh7",
-        "cards": [
-            {
-                "name": "Umbreon V",
-                "market": 301.88,
-                "price_high": 4321,
-                "printed_total": 203,
-                "number": "189",
-                "card_link": "https://www.tcgplayer.com/product/246719",
-                "pricecharting_url": "https://pricecharting.com/game/pokemon-evolving-skies/umbreon-v-189",
-                "graded_prices": {
-                    "ungraded": "$295.00",
-                    "grade7": "$131.49",
-                    "grade8": "$246.25",
-                    "grade9": "$325.00",
-                    "grade95": "$420.00",
-                    "grade10": "$913.33"
-                },
-                "image_url": "https://assets.tcgdex.net/en/swsh/swsh7/189/high.png"
-            }
-        ]
-    }
-}
+cards_info = {   'Evolving Skies': {   'cards': [   {   'card_link': 'https://www.tcgplayer.com/product/246719',
+                                           'graded_prices': {   'grade10': '$1,052.28',
+                                                                'grade7': '$265.51',
+                                                                'grade8': '$329.50',
+                                                                'grade9': '$380.00',
+                                                                'grade95': '$441.75',
+                                                                'ungraded': '$359.15'},
+                                           'image_url': 'https://assets.tcgdex.net/en/swsh/swsh7/189/high.png',
+                                           'market': 391.85,
+                                           'name': 'Umbreon V',
+                                           'number': '189',
+                                           'pricecharting_url': 'https://pricecharting.com/game/pokemon-evolving-skies/umbreon-v-189',
+                                           'printed_total': 203},
+                                       {   'card_link': 'https://www.tcgplayer.com/product/246727',
+                                           'graded_prices': {   'grade10': '$365.00',
+                                                                'grade7': '$13.55',
+                                                                'grade8': '$59.69',
+                                                                'grade9': '$98.99',
+                                                                'grade95': '$109.00',
+                                                                'ungraded': '$72.06'},
+                                           'image_url': 'https://assets.tcgdex.net/en/swsh/swsh7/193/high.png',
+                                           'market': 81.85,
+                                           'name': 'Rayquaza V',
+                                           'number': '193',
+                                           'pricecharting_url': 'https://pricecharting.com/game/pokemon-evolving-skies/rayquaza-v-193',
+                                           'printed_total': 203},
+                                       {   'card_link': 'https://www.tcgplayer.com/product/246728',
+                                           'graded_prices': {   'grade10': '$1,375.00',
+                                                                'grade7': '$400.00',
+                                                                'grade8': '$400.00',
+                                                                'grade9': '$505.51',
+                                                                'grade95': '$773.92',
+                                                                'ungraded': '$451.15'},
+                                           'image_url': 'https://assets.tcgdex.net/en/swsh/swsh7/194/high.png',
+                                           'market': 484.62,
+                                           'name': 'Rayquaza V',
+                                           'number': '194',
+                                           'pricecharting_url': 'https://pricecharting.com/game/pokemon-evolving-skies/rayquaza-v-194',
+                                           'printed_total': 203}],
+                          'code': 'swsh7'}}
