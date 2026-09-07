@@ -1,6 +1,1 @@
-cards_info = {
-    "Vivid Voltage": {
-        "code": "swsh4",
-        "cards": []
-    }
-}
+cards_info = {'Vivid Voltage': {'cards': [], 'code': 'swsh4'}}
