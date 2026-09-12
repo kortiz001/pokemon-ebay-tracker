@@ -1,6 +1,27 @@
-cards_info = {
-    "Surging Sparks": {
-        "code": "sv08",
-        "cards": []
-    }
-}
+cards_info = {   'Surging Sparks': {   'cards': [   {   'card_link': 'https://www.tcgplayer.com/product/590027',
+                                           'graded_prices': {   'grade10': '$937.08',
+                                                                'grade7': '$254.64',
+                                                                'grade8': '$260.00',
+                                                                'grade9': '$286.00',
+                                                                'grade95': '$400.00',
+                                                                'ungraded': '$267.01'},
+                                           'image_url': 'https://assets.tcgdex.net/en/sv/sv08/238/high.png',
+                                           'market': 288.57,
+                                           'name': 'Pikachu ex',
+                                           'number': '238',
+                                           'pricecharting_url': 'https://pricecharting.com/game/pokemon-surging-sparks/pikachu-ex-238',
+                                           'printed_total': 191},
+                                       {   'card_link': 'https://www.tcgplayer.com/product/593169',
+                                           'graded_prices': {   'grade10': '$360.00',
+                                                                'grade7': '$61.00',
+                                                                'grade8': '$76.53',
+                                                                'grade9': '$89.42',
+                                                                'grade95': '$148.75',
+                                                                'ungraded': '$80.26'},
+                                           'image_url': 'https://assets.tcgdex.net/en/sv/sv08/247/high.png',
+                                           'market': 86.06,
+                                           'name': 'Pikachu ex',
+                                           'number': '247',
+                                           'pricecharting_url': 'https://pricecharting.com/game/pokemon-surging-sparks/pikachu-ex-247',
+                                           'printed_total': 191}],
+                          'code': 'sv08'}}
