@@ -1,14 +1,1 @@
-cards_info = {   'Phantasmal Flames': {   'cards': [   {   'card_link': 'https://www.tcgplayer.com/product/662185',
-                                              'graded_prices': {   'grade10': '$2,420.68',
-                                                                   'grade7': '$174.00',
-                                                                   'grade8': '$217.50',
-                                                                   'grade9': '$251.99',
-                                                                   'grade95': '$536.03',
-                                                                   'ungraded': '$226.98'},
-                                              'image_url': 'https://assets.tcgdex.net/en/me/me02/130/high.png',
-                                              'market': 223.23,
-                                              'name': 'Mega Charizard X ex',
-                                              'number': '130',
-                                              'pricecharting_url': 'https://pricecharting.com/game/pokemon-phantasmal-flames/mega-charizard-x-ex-130',
-                                              'printed_total': 94}],
-                             'code': 'me02'}}
+cards_info = {'Phantasmal Flames': {'cards': [], 'code': 'me02'}}
