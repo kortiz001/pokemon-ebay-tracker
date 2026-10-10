@@ -1,1 +1,6 @@
-cards_info = {'Twilight Masquerade': {'cards': [], 'code': 'sv06'}}
+cards_info = {
+    "Twilight Masquerade": {
+        "code": "sv06",
+        "cards": []
+    }
+}
