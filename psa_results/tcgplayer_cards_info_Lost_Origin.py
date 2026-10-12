@@ -1,27 +1,25 @@
-cards_info = {   'Lost Origin': {   'cards': [   {   'card_link': 'https://www.tcgplayer.com/product/284122',
-                                        'graded_prices': {   'grade10': 'N/A',
-                                                             'grade7': 'N/A',
-                                                             'grade8': 'N/A',
-                                                             'grade9': 'N/A',
-                                                             'grade95': 'N/A',
-                                                             'ungraded': 'N/A'},
-                                        'image_url': 'https://assets.tcgdex.net/en/swsh/swsh11/180/high.png',
-                                        'market': 203.23,
-                                        'name': 'Aerodactyl V',
-                                        'number': '180',
-                                        'pricecharting_url': 'https://pricecharting.com/game/pokemon-lost-origin/aerodactyl-v-180',
-                                        'printed_total': 196},
-                                    {   'card_link': 'https://www.tcgplayer.com/product/284137',
-                                        'graded_prices': {   'grade10': 'N/A',
-                                                             'grade7': 'N/A',
-                                                             'grade8': 'N/A',
-                                                             'grade9': 'N/A',
-                                                             'grade95': 'N/A',
-                                                             'ungraded': 'N/A'},
-                                        'image_url': 'https://assets.tcgdex.net/en/swsh/swsh11/186/high.png',
-                                        'market': 851.13,
-                                        'name': 'Giratina V',
-                                        'number': '186',
-                                        'pricecharting_url': 'https://pricecharting.com/game/pokemon-lost-origin/giratina-v-186',
-                                        'printed_total': 196}],
-                       'code': 'swsh11'}}
+cards_info = {
+    "Lost Origin": {
+        "code": "swsh11",
+        "cards": [
+            {
+                "name": "Giratina V",
+                "market": 658.24,
+                "price_high": 1500,
+                "printed_total": 196,
+                "number": "186",
+                "card_link": "https://www.tcgplayer.com/product/284137",
+                "pricecharting_url": "https://pricecharting.com/game/pokemon-lost-origin/giratina-v-186",
+                "graded_prices": {
+                    "ungraded": "$569.58",
+                    "grade7": "$460.00",
+                    "grade8": "$534.84",
+                    "grade9": "$661.00",
+                    "grade95": "$1,100.00",
+                    "grade10": "$2,025.17"
+                },
+                "image_url": "https://assets.tcgdex.net/en/swsh/swsh11/186/high.png"
+            }
+        ]
+    }
+}
