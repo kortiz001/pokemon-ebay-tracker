@@ -1,14 +1,6 @@
-cards_info = {   'Paldean Fates': {   'cards': [   {   'card_link': 'https://www.tcgplayer.com/product/534919',
-                                          'graded_prices': {   'grade10': '$2,195.00',
-                                                               'grade7': '$521.00',
-                                                               'grade8': '$651.01',
-                                                               'grade9': '$738.09',
-                                                               'grade95': '$1,155.00',
-                                                               'ungraded': '$710.07'},
-                                          'image_url': 'https://assets.tcgdex.net/en/sv/sv04.5/232/high.png',
-                                          'market': 814.25,
-                                          'name': 'Mew ex',
-                                          'number': '232',
-                                          'pricecharting_url': 'https://pricecharting.com/game/pokemon-paldean-fates/mew-ex-232',
-                                          'printed_total': 91}],
-                         'code': 'sv04.5'}}
+cards_info = {
+    "Paldean Fates": {
+        "code": "sv04.5",
+        "cards": []
+    }
+}
