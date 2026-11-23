@@ -1,27 +1,6 @@
-cards_info = {   'Paldea Evolved': {   'cards': [   {   'card_link': 'https://www.tcgplayer.com/product/497606',
-                                           'graded_prices': {   'grade10': '$3,400.00',
-                                                                'grade7': '$241.69',
-                                                                'grade8': '$248.47',
-                                                                'grade9': '$360.89',
-                                                                'grade95': '$499.02',
-                                                                'ungraded': '$256.07'},
-                                           'image_url': 'https://assets.tcgdex.net/en/sv/sv02/203/high.png',
-                                           'market': 288.29,
-                                           'name': 'Magikarp',
-                                           'number': '203',
-                                           'pricecharting_url': 'https://pricecharting.com/game/pokemon-paldea-evolved/magikarp-203',
-                                           'printed_total': 193},
-                                       {   'card_link': 'https://www.tcgplayer.com/product/497614',
-                                           'graded_prices': {   'grade10': '$900.00',
-                                                                'grade7': '$59.00',
-                                                                'grade8': '$73.37',
-                                                                'grade9': '$88.70',
-                                                                'grade95': '$98.00',
-                                                                'ungraded': '$77.88'},
-                                           'image_url': 'https://assets.tcgdex.net/en/sv/sv02/211/high.png',
-                                           'market': 80.31,
-                                           'name': 'Raichu',
-                                           'number': '211',
-                                           'pricecharting_url': 'https://pricecharting.com/game/pokemon-paldea-evolved/raichu-211',
-                                           'printed_total': 193}],
-                          'code': 'sv02'}}
+cards_info = {
+    "Paldea Evolved": {
+        "code": "sv02",
+        "cards": []
+    }
+}
